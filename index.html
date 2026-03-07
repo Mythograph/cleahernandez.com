@@ -918,17 +918,12 @@
       inset: 0;
       pointer-events: none;
       z-index: 0;
-      overflow: hidden;
-      opacity: 0.22;
+      opacity: 0.18;
     }
     .hero-wallpaper svg {
-      position: absolute;
-      bottom: -10px;
-      left: 50%;
-      transform: translateX(-50%);
-      min-width: 1400px;
-      width: 120%;
-      height: auto;
+      width: 100%;
+      height: 100%;
+      display: block;
     }
 
     /* ── Responsive ────────────────────────────────────────────── */
@@ -974,61 +969,23 @@
   <section id="hero">
     <!-- Dreamscape wallpaper scene -->
     <div class="hero-wallpaper" aria-hidden="true">
-      <svg viewBox="0 0 1400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <!-- Horizon lines -->
-        <path d="M0 342 Q175 337 350 340 Q525 343 700 339 Q875 335 1050 340 Q1225 345 1400 340" stroke="#051A2F" stroke-width="0.7"/>
-        <path d="M0 356 Q350 352 700 354 Q1050 356 1400 352" stroke="#051A2F" stroke-width="0.35" opacity="0.5"/>
-        <!-- ARCH — double portal gate -->
-        <path d="M240 342 L240 202 Q240 122 310 122 Q380 122 380 202 L380 342" stroke="#051A2F" stroke-width="1"/>
-        <path d="M258 342 L258 207 Q258 142 310 142 Q362 142 362 207 L362 342" stroke="#051A2F" stroke-width="0.5"/>
-        <circle cx="310" cy="122" r="4" stroke="#051A2F" stroke-width="0.6"/>
-        <line x1="296" y1="122" x2="279" y2="105" stroke="#051A2F" stroke-width="0.5"/>
-        <line x1="324" y1="122" x2="341" y2="105" stroke="#051A2F" stroke-width="0.5"/>
-        <!-- STRIPED SPHERE -->
-        <circle cx="980" cy="272" r="88" stroke="#051A2F" stroke-width="0.7"/>
-        <path d="M980 184 Q1060 228 1060 272 Q1060 316 980 360" stroke="#051A2F" stroke-width="0.35"/>
-        <path d="M980 184 Q900 228 900 272 Q900 316 980 360" stroke="#051A2F" stroke-width="0.35"/>
-        <path d="M940 186 Q978 229 978 272 Q978 315 940 358" stroke="#051A2F" stroke-width="0.28"/>
-        <path d="M1020 186 Q982 229 982 272 Q982 315 1020 358" stroke="#051A2F" stroke-width="0.28"/>
-        <ellipse cx="980" cy="242" rx="74" ry="15" stroke="#051A2F" stroke-width="0.28"/>
-        <ellipse cx="980" cy="302" rx="74" ry="15" stroke="#051A2F" stroke-width="0.28"/>
-        <!-- CLOUD form -->
-        <path d="M558 192 Q573 174 596 178 Q606 160 632 164 Q656 150 674 168 Q694 160 704 178 Q722 174 730 192 Q738 210 718 216 Q698 224 674 220 Q656 228 632 222 Q606 228 582 220 Q558 214 550 202 Q546 192 558 192Z" stroke="#051A2F" stroke-width="0.6"/>
-        <!-- EYE motif -->
-        <path d="M82 242 C102 220,128 210,148 220 C128 230,102 240,82 242Z" stroke="#051A2F" stroke-width="0.6"/>
-        <path d="M82 242 C102 264,128 274,148 242" stroke="#051A2F" stroke-width="0.6"/>
-        <circle cx="115" cy="236" r="13" stroke="#051A2F" stroke-width="0.5"/>
-        <circle cx="115" cy="236" r="6" stroke="#051A2F" stroke-width="0.4"/>
-        <line x1="115" y1="223" x2="115" y2="216" stroke="#051A2F" stroke-width="0.3"/>
-        <line x1="115" y1="249" x2="115" y2="256" stroke="#051A2F" stroke-width="0.3"/>
-        <line x1="102" y1="236" x2="95"  y2="236" stroke="#051A2F" stroke-width="0.3"/>
-        <line x1="128" y1="236" x2="135" y2="236" stroke="#051A2F" stroke-width="0.3"/>
-        <!-- COLUMN / CYLINDER -->
-        <rect x="1214" y="262" width="34" height="80" stroke="#051A2F" stroke-width="0.6"/>
-        <ellipse cx="1231" cy="262" rx="17" ry="6" stroke="#051A2F" stroke-width="0.5"/>
-        <ellipse cx="1231" cy="342" rx="17" ry="6" stroke="#051A2F" stroke-width="0.4"/>
-        <line x1="1223" y1="262" x2="1223" y2="342" stroke="#051A2F" stroke-width="0.2"/>
-        <line x1="1231" y1="256" x2="1231" y2="336" stroke="#051A2F" stroke-width="0.2"/>
-        <line x1="1239" y1="262" x2="1239" y2="342" stroke="#051A2F" stroke-width="0.2"/>
-        <!-- ORB — nested circles upper right -->
-        <circle cx="1128" cy="152" r="28" stroke="#051A2F" stroke-width="0.5"/>
-        <circle cx="1128" cy="152" r="17" stroke="#051A2F" stroke-width="0.35"/>
-        <circle cx="1128" cy="152" r="7"  stroke="#051A2F" stroke-width="0.3"/>
-        <!-- PYRAMID forms -->
-        <path d="M500 342 L538 282 L576 342" stroke="#051A2F" stroke-width="0.5"/>
-        <path d="M1278 342 L1308 297 L1338 342" stroke="#051A2F" stroke-width="0.45"/>
-        <!-- CONE far right -->
-        <path d="M1355 342 L1380 262 L1405 342" stroke="#051A2F" stroke-width="0.5"/>
-        <ellipse cx="1380" cy="342" rx="25" ry="6" stroke="#051A2F" stroke-width="0.4"/>
-        <!-- Diamond shape -->
-        <rect x="462" y="280" width="18" height="18" transform="rotate(45 471 289)" stroke="#051A2F" stroke-width="0.45"/>
-        <!-- Floating dots scattered -->
-        <circle cx="180" cy="167" r="3"  stroke="#051A2F" stroke-width="0.4"/>
-        <circle cx="450" cy="147" r="5"  stroke="#051A2F" stroke-width="0.4"/>
-        <circle cx="762" cy="292" r="4"  stroke="#051A2F" stroke-width="0.35"/>
-        <circle cx="822" cy="167" r="3"  stroke="#051A2F" stroke-width="0.4"/>
-        <circle cx="1322" cy="187" r="4" stroke="#051A2F" stroke-width="0.35"/>
-        <circle cx="70"  cy="302" r="5"  stroke="#051A2F" stroke-width="0.35"/>
+      <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <pattern id="arcadePattern" x="0" y="0" width="62" height="80" patternUnits="userSpaceOnUse">
+            <!-- Outer arch -->
+            <path d="M5 80 L5 38 Q5 7 31 7 Q57 7 57 38 L57 80" stroke="#051A2F" stroke-width="0.9" fill="none"/>
+            <!-- Inner arch -->
+            <path d="M12 80 L12 41 Q12 17 31 17 Q50 17 50 41 L50 80" stroke="#051A2F" stroke-width="0.4" fill="none"/>
+            <!-- Apex keystone dot -->
+            <circle cx="31" cy="7" r="2.2" fill="#051A2F"/>
+            <!-- Inner panel crossbar -->
+            <line x1="12" y1="72" x2="50" y2="72" stroke="#051A2F" stroke-width="0.35"/>
+            <!-- Base column dots -->
+            <circle cx="5"  cy="76" r="1.2" fill="#051A2F" opacity="0.6"/>
+            <circle cx="57" cy="76" r="1.2" fill="#051A2F" opacity="0.6"/>
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#arcadePattern)"/>
       </svg>
     </div>
     <!-- Surreal: crescent moon -->
