@@ -1,0 +1,1137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cléa Hernández — Jungian Narrative Coach &amp; Brand Strategist</title>
+  <meta name="description" content="Cléa Hernández is a Jungian Narrative Coach and brand strategist helping visionary founders and organizations find the story that changes everything." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300;1,9..40,400&display=swap" rel="stylesheet" />
+  <style>
+    /* ── Variables ─────────────────────────────────────────────── */
+    :root {
+      --navy:    #051A2F;
+      --lavender:#9D89FC;
+      --lemon:   #E9FA4C;
+      --lotion:  #FCFCFC;
+      --muted:   #6B7A8D;
+      --border:  #E2E4E9;
+      --off:     #F7F7FA;
+      --display: 'Sora', sans-serif;
+      --body:    'DM Sans', sans-serif;
+    }
+
+    /* ── Reset ─────────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--body);
+      background: var(--lotion);
+      color: var(--navy);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+
+    /* ── Layout ────────────────────────────────────────────────── */
+    .container { max-width: 1160px; margin: 0 auto; padding: 0 40px; }
+
+    /* ── Buttons ───────────────────────────────────────────────── */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--body);
+      font-size: 14px;
+      font-weight: 500;
+      padding: 13px 26px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: opacity .2s, transform .15s;
+      border: none;
+      line-height: 1;
+    }
+    .btn:hover { opacity: .82; transform: translateY(-1px); }
+    .btn-navy    { background: var(--navy); color: #fff; }
+    .btn-outline { background: transparent; color: var(--navy); border: 1.5px solid rgba(5,26,47,.25); }
+    .btn-lavender{ background: var(--lavender); color: #fff; }
+    .btn-lemon   { background: var(--lemon); color: var(--navy); }
+
+    /* ── Section utilities ─────────────────────────────────────── */
+    .eyebrow {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--lavender);
+      margin-bottom: 14px;
+    }
+    .eyebrow-light { color: rgba(255,255,255,.5); }
+    .section-h2 {
+      font-family: var(--display);
+      font-size: clamp(28px, 3.5vw, 44px);
+      font-weight: 700;
+      letter-spacing: -.03em;
+      line-height: 1.12;
+      color: var(--navy);
+      margin-bottom: 16px;
+    }
+    .section-h2-light { color: #fff; }
+    .section-lead {
+      font-size: 17px;
+      font-weight: 300;
+      color: var(--muted);
+      line-height: 1.75;
+      max-width: 580px;
+    }
+    .section-lead-light { color: rgba(255,255,255,.65); }
+    .divider { width: 40px; height: 2px; background: var(--lavender); margin-bottom: 20px; }
+
+    /* ── Navigation ────────────────────────────────────────────── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 200;
+      background: rgba(252,252,252,.94);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 40px;
+      max-width: 1160px;
+      margin: 0 auto;
+    }
+    .nav-logo {
+      font-family: var(--display);
+      font-size: 17px;
+      font-weight: 600;
+      letter-spacing: -.02em;
+      color: var(--navy);
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--muted);
+      transition: color .18s;
+    }
+    .nav-links a:hover { color: var(--navy); }
+    .nav-cta {
+      font-family: var(--body);
+      font-size: 13px;
+      font-weight: 500;
+      background: var(--lavender);
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 8px;
+      transition: opacity .18s;
+    }
+    .nav-cta:hover { opacity: .85; }
+
+    /* ── Hero ──────────────────────────────────────────────────── */
+    #hero { padding: 88px 0 80px; }
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1fr 460px;
+      gap: 80px;
+      align-items: center;
+    }
+    .hero-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 28px;
+    }
+    .hero-kicker-line {
+      width: 36px;
+      height: 2px;
+      background: var(--lavender);
+      flex-shrink: 0;
+    }
+    .hero-kicker-text {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .hero-h1 {
+      font-family: var(--display);
+      font-size: clamp(44px, 5.8vw, 72px);
+      font-weight: 800;
+      line-height: 1.04;
+      letter-spacing: -.035em;
+      color: var(--navy);
+      margin-bottom: 24px;
+    }
+    .hero-h1 em {
+      font-style: normal;
+      color: var(--lavender);
+    }
+    .hero-sub {
+      font-size: 18px;
+      font-weight: 300;
+      color: var(--muted);
+      line-height: 1.7;
+      margin-bottom: 44px;
+      max-width: 500px;
+    }
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+    .hero-photo-wrap { position: relative; }
+    .hero-photo {
+      width: 100%;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      object-position: center top;
+      border-radius: 18px;
+    }
+    .hero-photo-tag {
+      position: absolute;
+      bottom: -20px;
+      left: -28px;
+      background: var(--navy);
+      color: #fff;
+      font-family: var(--display);
+      font-size: 13px;
+      line-height: 1.45;
+      padding: 14px 22px;
+      border-radius: 14px;
+      box-shadow: 0 10px 36px rgba(5,26,47,.2);
+    }
+    .hero-photo-tag strong {
+      display: block;
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: -.025em;
+      color: var(--lemon);
+    }
+
+    /* ── Marquee ───────────────────────────────────────────────── */
+    .marquee-wrap {
+      background: var(--navy);
+      padding: 20px 0;
+      overflow: hidden;
+      margin-top: 88px;
+    }
+    .marquee-track {
+      display: flex;
+      white-space: nowrap;
+      animation: scroll-left 90s linear infinite;
+    }
+    .marquee-item {
+      flex-shrink: 0;
+      display: inline-flex;
+      align-items: center;
+      gap: 28px;
+      padding-right: 28px;
+      font-family: var(--display);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.45);
+    }
+    .marquee-gem {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--lavender);
+      flex-shrink: 0;
+    }
+    @keyframes scroll-left {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+
+    /* ── Approach ──────────────────────────────────────────────── */
+    #approach {
+      padding: 112px 0;
+      background: var(--navy);
+    }
+    .approach-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+    .approach-pillars {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      margin-top: 48px;
+    }
+    .pillar {
+      padding: 24px 0;
+      border-top: 1px solid rgba(255,255,255,.1);
+      display: grid;
+      grid-template-columns: 28px 1fr;
+      gap: 20px;
+    }
+    .pillar-num {
+      font-family: var(--display);
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--lavender);
+      padding-top: 2px;
+    }
+    .pillar-title {
+      font-family: var(--display);
+      font-size: 17px;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+    .pillar-body {
+      font-size: 14px;
+      font-weight: 300;
+      color: rgba(255,255,255,.55);
+      line-height: 1.7;
+    }
+    .approach-pullquote {
+      margin-top: 48px;
+      padding: 32px;
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 16px;
+      background: rgba(255,255,255,.04);
+    }
+    .approach-pullquote p {
+      font-family: var(--display);
+      font-size: 20px;
+      font-weight: 300;
+      color: rgba(255,255,255,.85);
+      line-height: 1.6;
+      letter-spacing: -.01em;
+      font-style: italic;
+    }
+    .approach-pullquote cite {
+      display: block;
+      margin-top: 16px;
+      font-size: 12px;
+      font-style: normal;
+      color: rgba(255,255,255,.35);
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+
+    /* ── Work With Me ──────────────────────────────────────────── */
+    #work-with-me { padding: 112px 0; }
+    .work-paths {
+      display: flex;
+      flex-direction: column;
+      gap: 80px;
+      margin-top: 64px;
+    }
+
+    /* Path card shared */
+    .path-card {
+      display: grid;
+      gap: 56px;
+      align-items: start;
+      padding-top: 48px;
+      border-top: 1px solid var(--border);
+    }
+    .path-card-2col { grid-template-columns: 1fr 1fr; }
+    .path-card-3col { grid-template-columns: 1fr 1fr 1fr; }
+
+    .path-number {
+      font-family: var(--display);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--lavender);
+      margin-bottom: 12px;
+    }
+    .path-title {
+      font-family: var(--display);
+      font-size: clamp(22px, 2.5vw, 32px);
+      font-weight: 700;
+      letter-spacing: -.025em;
+      line-height: 1.15;
+      color: var(--navy);
+      margin-bottom: 16px;
+    }
+    .path-body {
+      font-size: 15px;
+      font-weight: 300;
+      color: var(--muted);
+      line-height: 1.75;
+      margin-bottom: 12px;
+    }
+    .path-cta { margin-top: 28px; }
+    .path-detail-list {
+      list-style: none;
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .path-detail-list li {
+      font-size: 14px;
+      color: var(--muted);
+      padding-left: 18px;
+      position: relative;
+    }
+    .path-detail-list li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--lavender);
+    }
+
+    /* Mythograph work images */
+    .myto-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    .myto-img {
+      border-radius: 12px;
+      overflow: hidden;
+      aspect-ratio: 4/3;
+      background: var(--off);
+    }
+    .myto-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .4s ease;
+    }
+    .myto-img:hover img { transform: scale(1.04); }
+
+    /* Client names strip */
+    .client-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 20px;
+    }
+    .client-chip {
+      font-family: var(--display);
+      font-size: 10.5px;
+      font-weight: 600;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      color: #3a2e6e;
+      background: rgba(157, 137, 252, 0.10);
+      border: 1px solid rgba(157, 137, 252, 0.28);
+      border-radius: 100px;
+      padding: 4px 11px;
+      white-space: nowrap;
+    }
+
+    /* Story Loom preview card */
+    .storyloom-preview {
+      background: var(--navy);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+    .storyloom-preview-header {
+      background: rgba(157,137,252,.15);
+      padding: 20px 24px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border-bottom: 1px solid rgba(157,137,252,.2);
+    }
+    .sl-dot { width: 10px; height: 10px; border-radius: 50%; }
+    .sl-dot-1 { background: rgba(255,255,255,.15); }
+    .sl-dot-2 { background: rgba(255,255,255,.15); }
+    .sl-dot-3 { background: var(--lavender); }
+    .storyloom-preview-name {
+      font-family: var(--display);
+      font-size: 13px;
+      font-weight: 600;
+      color: rgba(255,255,255,.7);
+      margin-left: 4px;
+    }
+    .storyloom-preview-body { padding: 24px; }
+    .sl-item {
+      padding: 12px 14px;
+      border-radius: 10px;
+      margin-bottom: 8px;
+      font-size: 13px;
+      font-weight: 400;
+    }
+    .sl-item-active {
+      background: rgba(157,137,252,.2);
+      color: rgba(255,255,255,.9);
+      border-left: 3px solid var(--lavender);
+    }
+    .sl-item-dim {
+      background: rgba(255,255,255,.04);
+      color: rgba(255,255,255,.35);
+    }
+    .sl-label {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.25);
+      margin: 16px 0 8px;
+    }
+
+    /* ── About ─────────────────────────────────────────────────── */
+    #about { padding: 112px 0; background: var(--off); }
+    .about-inner {
+      display: grid;
+      grid-template-columns: 400px 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+    .about-photo-wrap {
+      border-radius: 18px;
+      overflow: hidden;
+      aspect-ratio: 3/4;
+      position: sticky;
+      top: 100px;
+    }
+    .about-photo-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+    }
+    .about-body { font-size: 16px; font-weight: 300; color: var(--muted); line-height: 1.8; margin-bottom: 18px; }
+    .about-body strong { color: var(--navy); font-weight: 500; }
+    .about-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+      padding-top: 40px;
+      border-top: 1px solid var(--border);
+    }
+    .stat-num {
+      font-family: var(--display);
+      font-size: 36px;
+      font-weight: 800;
+      color: var(--navy);
+      letter-spacing: -.03em;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .stat-num-accent { color: var(--lavender); }
+    .stat-label { font-size: 13px; color: var(--muted); }
+
+    /* ── Testimonials ──────────────────────────────────────────── */
+    #testimonials { padding: 112px 0; }
+    .quotes-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 60px;
+    }
+    .quote-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 30px 28px 28px;
+    }
+    .quote-mark {
+      font-family: var(--display);
+      font-size: 40px;
+      line-height: .8;
+      color: var(--lavender);
+      margin-bottom: 14px;
+      font-weight: 700;
+    }
+    .quote-text {
+      font-size: 15px;
+      font-weight: 300;
+      color: var(--navy);
+      line-height: 1.75;
+      margin-bottom: 22px;
+    }
+    .quote-name {
+      font-family: var(--display);
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--navy);
+    }
+    .quote-role { font-size: 12px; color: var(--muted); margin-top: 2px; }
+
+    /* ── Photo Strip ───────────────────────────────────────────── */
+    .photo-strip {
+      width: 100%;
+      height: 420px;
+      overflow: hidden;
+      position: relative;
+    }
+    .photo-strip img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 30%;
+      display: block;
+    }
+
+    /* ── Approach Photo ─────────────────────────────────────────── */
+    .approach-photo {
+      margin-top: 72px;
+      border-radius: 18px;
+      overflow: hidden;
+    }
+    .approach-photo img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      object-position: center 25%;
+      display: block;
+    }
+
+    /* ── Footer ────────────────────────────────────────────────── */
+    footer {
+      background: var(--navy);
+      padding: 72px 0 40px;
+    }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 48px;
+      padding-bottom: 56px;
+      border-bottom: 1px solid rgba(255,255,255,.1);
+      margin-bottom: 32px;
+    }
+    .footer-brand-name {
+      font-family: var(--display);
+      font-size: 22px;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: -.02em;
+      margin-bottom: 10px;
+    }
+    .footer-brand-tag {
+      font-size: 14px;
+      font-weight: 300;
+      color: rgba(255,255,255,.45);
+      line-height: 1.6;
+      max-width: 280px;
+    }
+    .footer-col-head {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.3);
+      margin-bottom: 16px;
+    }
+    .footer-link-list { list-style: none; }
+    .footer-link-list li { margin-bottom: 10px; }
+    .footer-link-list a {
+      font-size: 14px;
+      color: rgba(255,255,255,.55);
+      transition: color .18s;
+    }
+    .footer-link-list a:hover { color: #fff; }
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      color: rgba(255,255,255,.25);
+    }
+
+    /* ── Responsive ────────────────────────────────────────────── */
+    @media (max-width: 980px) {
+      .hero-inner      { grid-template-columns: 1fr; }
+      .hero-photo-wrap { max-width: 420px; }
+      .approach-inner  { grid-template-columns: 1fr; gap: 0; }
+      .path-card-2col  { grid-template-columns: 1fr; }
+      .path-card-3col  { grid-template-columns: 1fr; }
+      .about-inner     { grid-template-columns: 1fr; }
+      .about-photo-wrap{ position: static; max-width: 360px; aspect-ratio: auto; }
+      .quotes-grid     { grid-template-columns: 1fr 1fr; }
+      .footer-top      { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 640px) {
+      .container       { padding: 0 20px; }
+      .nav-inner       { padding: 16px 20px; }
+      .nav-links       { display: none; }
+      .myto-grid       { grid-template-columns: 1fr; }
+      .quotes-grid     { grid-template-columns: 1fr; }
+      .about-stats     { grid-template-columns: 1fr 1fr; }
+      .footer-top      { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── Nav ──────────────────────────────────────────────────────────── -->
+  <nav>
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">Cléa Hernández</a>
+      <ul class="nav-links">
+        <li><a href="#work-with-me">Work With Me</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#testimonials">Kind Words</a></li>
+        <li><a href="mailto:clea@mythograph.co">Contact</a></li>
+      </ul>
+      <a href="mailto:clea@mythograph.co" class="nav-cta">Book a session →</a>
+    </div>
+  </nav>
+
+  <!-- ── Hero ─────────────────────────────────────────────────────────── -->
+  <section id="hero">
+    <div class="container">
+      <div class="hero-inner">
+        <div>
+          <div class="hero-kicker">
+            <div class="hero-kicker-line"></div>
+            <span class="hero-kicker-text">Jungian Narrative Coach &amp; Brand Strategist</span>
+          </div>
+          <h1 class="hero-h1">
+            The right story<br />doesn't just<br /><em>describe</em> you.<br />It becomes you.
+          </h1>
+          <p class="hero-sub">
+            I work at the intersection of depth psychology and brand strategy — helping founders, creatives, and mission-driven women excavate the true story beneath the polished one, and build work that regenerates rather than extracts.
+          </p>
+          <div class="hero-actions">
+            <a href="#work-with-me" class="btn btn-navy">How to work with me</a>
+            <a href="#about" class="btn btn-outline">About Cléa</a>
+          </div>
+        </div>
+        <div class="hero-photo-wrap">
+          <!-- PHOTO: Replace src with any image you prefer -->
+          <img
+            class="hero-photo"
+            src="Clea_Whiteboard.png"
+            alt="Cléa Hernández — Jungian Narrative Coach"
+          />
+          <div class="hero-photo-tag">
+            <strong>25+</strong>
+            years shaping<br />brand narratives
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Marquee ───────────────────────────────────────────────────────── -->
+  <div class="marquee-wrap">
+    <div class="marquee-track">
+      <span class="marquee-item">Liquid Death <span class="marquee-gem"></span></span>
+      <span class="marquee-item">Gulfstream Aerospace <span class="marquee-gem"></span></span>
+      <span class="marquee-item">Braze <span class="marquee-gem"></span></span>
+      <span class="marquee-item">Marketo <span class="marquee-gem"></span></span>
+      <span class="marquee-item">Babylist <span class="marquee-gem"></span></span>
+      <span class="marquee-item">Focus Lab <span class="marquee-gem"></span></span>
+      <span class="marquee-item">SaveLife Foundation <span class="marquee-gem"></span></span>
+      <span class="marquee-item">Outreach <span class="marquee-gem"></span></span>
+      <span class="marquee-item">Heyo <span class="marquee-gem"></span></span>
+      <span class="marquee-item">Elevate Cities <span class="marquee-gem"></span></span>
+      <span class="marquee-item">Miami WaterKeeper <span class="marquee-gem"></span></span>
+      <span class="marquee-item">Geomi <span class="marquee-gem"></span></span>
+      <span class="marquee-item">E.M. Perry Group <span class="marquee-gem"></span></span>
+      <span class="marquee-item">Versus <span class="marquee-gem"></span></span>
+      <span class="marquee-item">Sunrail Strategies <span class="marquee-gem"></span></span>
+      <span class="marquee-item">Brand by Boudica <span class="marquee-gem"></span></span>
+      <span class="marquee-item">Tillster <span class="marquee-gem"></span></span>
+      <span class="marquee-item">Concierge AI <span class="marquee-gem"></span></span>
+      <span class="marquee-item">Bare Metal Project <span class="marquee-gem"></span></span>
+      <span class="marquee-item">The Lab School of Washington <span class="marquee-gem"></span></span>
+      <span class="marquee-item">Brilliant Cities <span class="marquee-gem"></span></span>
+      <span class="marquee-item">Sprimont Health <span class="marquee-gem"></span></span>
+      <span class="marquee-item">Rocket Learning <span class="marquee-gem"></span></span>
+      <span class="marquee-item">Gravitee <span class="marquee-gem"></span></span>
+      <span class="marquee-item">FreeFrom <span class="marquee-gem"></span></span>
+      <span class="marquee-item">Vibe <span class="marquee-gem"></span></span>
+      <span class="marquee-item">Oriel <span class="marquee-gem"></span></span>
+      <span class="marquee-item">Thrum <span class="marquee-gem"></span></span>
+      <span class="marquee-item">LG Nova <span class="marquee-gem"></span></span>
+      <span class="marquee-item">Paytouch <span class="marquee-gem"></span></span>
+      <span class="marquee-item">Pry Financials <span class="marquee-gem"></span></span>
+      <span class="marquee-item">Eventrise <span class="marquee-gem"></span></span>
+      <span class="marquee-item">Four Friends Foundation <span class="marquee-gem"></span></span>
+      <span class="marquee-item">The Robot Agency <span class="marquee-gem"></span></span>
+      <span class="marquee-item">Liquid Death <span class="marquee-gem"></span></span>
+      <span class="marquee-item">Gulfstream Aerospace <span class="marquee-gem"></span></span>
+      <span class="marquee-item">Braze <span class="marquee-gem"></span></span>
+      <span class="marquee-item">Marketo <span class="marquee-gem"></span></span>
+      <span class="marquee-item">Babylist <span class="marquee-gem"></span></span>
+      <span class="marquee-item">Focus Lab <span class="marquee-gem"></span></span>
+      <span class="marquee-item">SaveLife Foundation <span class="marquee-gem"></span></span>
+      <span class="marquee-item">Outreach <span class="marquee-gem"></span></span>
+      <span class="marquee-item">Heyo <span class="marquee-gem"></span></span>
+      <span class="marquee-item">Elevate Cities <span class="marquee-gem"></span></span>
+      <span class="marquee-item">Miami WaterKeeper <span class="marquee-gem"></span></span>
+      <span class="marquee-item">Geomi <span class="marquee-gem"></span></span>
+      <span class="marquee-item">E.M. Perry Group <span class="marquee-gem"></span></span>
+      <span class="marquee-item">Versus <span class="marquee-gem"></span></span>
+      <span class="marquee-item">Sunrail Strategies <span class="marquee-gem"></span></span>
+      <span class="marquee-item">Brand by Boudica <span class="marquee-gem"></span></span>
+      <span class="marquee-item">Tillster <span class="marquee-gem"></span></span>
+      <span class="marquee-item">Concierge AI <span class="marquee-gem"></span></span>
+      <span class="marquee-item">Bare Metal Project <span class="marquee-gem"></span></span>
+      <span class="marquee-item">The Lab School of Washington <span class="marquee-gem"></span></span>
+      <span class="marquee-item">Brilliant Cities <span class="marquee-gem"></span></span>
+      <span class="marquee-item">Sprimont Health <span class="marquee-gem"></span></span>
+      <span class="marquee-item">Rocket Learning <span class="marquee-gem"></span></span>
+      <span class="marquee-item">Gravitee <span class="marquee-gem"></span></span>
+      <span class="marquee-item">FreeFrom <span class="marquee-gem"></span></span>
+      <span class="marquee-item">Vibe <span class="marquee-gem"></span></span>
+      <span class="marquee-item">Oriel <span class="marquee-gem"></span></span>
+      <span class="marquee-item">Thrum <span class="marquee-gem"></span></span>
+      <span class="marquee-item">LG Nova <span class="marquee-gem"></span></span>
+      <span class="marquee-item">Paytouch <span class="marquee-gem"></span></span>
+      <span class="marquee-item">Pry Financials <span class="marquee-gem"></span></span>
+      <span class="marquee-item">Eventrise <span class="marquee-gem"></span></span>
+      <span class="marquee-item">Four Friends Foundation <span class="marquee-gem"></span></span>
+      <span class="marquee-item">The Robot Agency <span class="marquee-gem"></span></span>
+    </div>
+  </div>
+
+  <!-- ── Approach ──────────────────────────────────────────────────────── -->
+  <section id="approach">
+    <div class="container">
+      <div class="approach-inner">
+        <div>
+          <p class="eyebrow eyebrow-light">The Jungian approach</p>
+          <h2 class="section-h2 section-h2-light">Most brand strategy never touches the depth where the real story lives.</h2>
+          <p class="section-lead section-lead-light" style="margin-top: 20px;">
+            Jungian narrative coaching goes beneath the surface — past the polished pitch deck, the performance of success, and the internalized rules of a system you didn't design — to find the story that's already there, waiting to organize your life and your work.
+          </p>
+          <div class="approach-pullquote" style="margin-top: 48px;">
+            <p>"Your lived experience is ideological fuel. The story you've been afraid to tell is usually the one that changes everything."</p>
+            <cite>— Cléa Hernández</cite>
+          </div>
+        </div>
+        <div class="approach-pillars">
+          <div class="pillar">
+            <div class="pillar-num">01</div>
+            <div>
+              <div class="pillar-title">Excavation</div>
+              <p class="pillar-body">We go deep — into origin stories, shadow patterns, wounds, and wisdom — to find the narrative that's been there all along.</p>
+            </div>
+          </div>
+          <div class="pillar">
+            <div class="pillar-num">02</div>
+            <div>
+              <div class="pillar-title">Articulation</div>
+              <p class="pillar-body">We shape the raw material into language that resonates — a brand voice that sounds like you at your most clear and courageous.</p>
+            </div>
+          </div>
+          <div class="pillar">
+            <div class="pillar-num">03</div>
+            <div>
+              <div class="pillar-title">Integration</div>
+              <p class="pillar-body">We build systems so the story lives in your work — not just a document, but a practice that compounds over time.</p>
+            </div>
+          </div>
+          <div class="pillar">
+            <div class="pillar-num">04</div>
+            <div>
+              <div class="pillar-title">Activation</div>
+              <p class="pillar-body">The story becomes strategy — informing how you show up, what you offer, how you market, and who you attract.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Editorial photo spanning the section width -->
+      <div class="approach-photo">
+        <img
+          src="https://images.squarespace-cdn.com/content/v1/675db1cc11683a20789145a9/abab559e-0a49-4238-8d06-4cf00b9d975f/Archetype_Marketo.jpg"
+          alt="Creator"
+          loading="lazy"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Photo Strip ───────────────────────────────────────────────────── -->
+  <div class="photo-strip">
+    <img
+      src="https://images.squarespace-cdn.com/content/v1/675db1cc11683a20789145a9/ad7f36ab-7303-4d19-9555-0d7091383f37/GAL_Verb_190603_163940.jpg"
+      alt="Cléa Hernández — at work"
+      loading="lazy"
+    />
+  </div>
+
+  <!-- ── Work With Me ──────────────────────────────────────────────────── -->
+  <section id="work-with-me">
+    <div class="container">
+      <p class="eyebrow">Three ways in</p>
+      <h2 class="section-h2">Work with Cléa</h2>
+      <p class="section-lead">Whether you're a founder finding your voice, a coach building your practice, or a mission-driven organization ready to tell the truth — there's a path for you.</p>
+
+      <div class="work-paths">
+
+        <!-- Path 1: 1:1 Coaching -->
+        <div class="path-card path-card-2col">
+          <div>
+            <p class="path-number">01 — 1:1 Coaching</p>
+            <h3 class="path-title">Jungian Narrative Coaching for Founders &amp; Creatives</h3>
+            <p class="path-body">This is the most personal path — a container for doing the real work. Especially for women in the meaning-making years who are exhausted by capitalist performance and ready to name their work as something else entirely. We excavate your stories, surface the internalized patterns keeping you small, and build language rooted in your lived experience and deepest convictions.</p>
+            <p class="path-body">Right for you if: you know your work wants to contribute to something larger, but you haven't yet found language for it that doesn't sound like everyone else.</p>
+            <ul class="path-detail-list">
+              <li>Bi-weekly 60-minute sessions</li>
+              <li>Narrative excavation &amp; brand voice development</li>
+              <li>Shadow work applied to brand story</li>
+              <li>Between-session reflection prompts &amp; writing support</li>
+            </ul>
+            <div class="path-cta">
+              <a href="mailto:clea@mythograph.co?subject=1:1 Coaching Inquiry" class="btn btn-navy">Book a discovery call</a>
+            </div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 14px;">
+            <!-- What shifts card -->
+            <div style="background: var(--off); border-radius: 16px; padding: 32px; display: flex; flex-direction: column; gap: 16px;">
+              <div style="font-family: var(--display); font-size: 13px; font-weight: 600; color: var(--lavender); letter-spacing: .06em; text-transform: uppercase;">What shifts</div>
+              <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px;">
+                <li style="font-size: 14px; font-weight: 300; color: var(--navy); padding-left: 20px; position: relative;">
+                  <span style="position: absolute; left: 0; color: var(--lavender);">✦</span>
+                  From performing for a system that doesn't serve you to <strong>building from your own narrative authority</strong>
+                </li>
+                <li style="font-size: 14px; font-weight: 300; color: var(--navy); padding-left: 20px; position: relative;">
+                  <span style="position: absolute; left: 0; color: var(--lavender);">✦</span>
+                  From scattered messaging to a <strong>coherent narrative field</strong>
+                </li>
+                <li style="font-size: 14px; font-weight: 300; color: var(--navy); padding-left: 20px; position: relative;">
+                  <span style="position: absolute; left: 0; color: var(--lavender);">✦</span>
+                  From internalized rules to <strong>work rooted in your convictions</strong>
+                </li>
+                <li style="font-size: 14px; font-weight: 300; color: var(--navy); padding-left: 20px; position: relative;">
+                  <span style="position: absolute; left: 0; color: var(--lavender);">✦</span>
+                  From "what do I even say?" to <strong>words that attract your people</strong>
+                </li>
+              </ul>
+            </div>
+            <!-- Messaging bridge photo -->
+            <div style="border-radius: 14px; overflow: hidden; height: 200px;">
+              <img
+                src="https://cdn.dribbble.com/userupload/22182829/file/original-fc3d604773c4ad6bf1b851df3c8b6b7e.jpg"
+                alt="Paving with intentional messages"
+                loading="lazy"
+                style="width: 100%; height: 100%; object-fit: cover; object-position: center 40%; display: block;"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- Path 2: Mythograph -->
+        <div class="path-card path-card-2col">
+          <div>
+            <p class="path-number">02 — For Organizations</p>
+            <h3 class="path-title">Mythograph Strategic Brand Storytelling</h3>
+            <p class="path-body">Mythograph is my strategic brand consultancy for mission-driven organizations who are ready to articulate what they stand for — and build the systems to say it consistently, to the right people, in the right way.</p>
+            <p class="path-body">Right for you if: you lead a purpose-driven company or nonprofit and your brand doesn't yet tell the full story of the transformation you create.</p>
+            <ul class="path-detail-list">
+              <li>Brand Oracle Interview &amp; Report</li>
+              <li>Strategic Brand Platform &amp; Narrative System</li>
+              <li>Visual &amp; Verbal Identity</li>
+              <li>Messaging strategy &amp; content architecture</li>
+              <li>Narrative websites (Squarespace, Carrd)</li>
+            </ul>
+            <div class="path-cta">
+              <a href="https://mythograph.co" target="_blank" rel="noopener" class="btn btn-navy">Visit Mythograph →</a>
+            </div>
+          </div>
+          <!-- Client work images -->
+          <div class="myto-grid">
+            <div class="myto-img">
+              <img src="https://images.squarespace-cdn.com/content/v1/675db1cc11683a20789145a9/1741749890617-0MBQU4473UORS5SVTLLE/gulfstream1.jpg" alt="Gulfstream Aerospace — Brand Narrative" loading="lazy" />
+            </div>
+            <div class="myto-img">
+              <img src="https://images.squarespace-cdn.com/content/v1/675db1cc11683a20789145a9/1740525866989-WM9MDGMZ2GB092PXKYRQ/SaveLife.jpg" alt="SaveLife Foundation — Brand Strategy" loading="lazy" />
+            </div>
+            <div class="myto-img">
+              <img src="https://images.squarespace-cdn.com/content/v1/675db1cc11683a20789145a9/750e2255-91f9-40bf-9f36-9126d2a73158/Marketo_communications_03.1.jpg" alt="Marketo — Communications Strategy" loading="lazy" />
+            </div>
+            <div class="myto-img">
+              <img src="https://images.squarespace-cdn.com/content/v1/675db1cc11683a20789145a9/1741749809844-ZOM3OAWPHXLJE9B1Y8X6/FFF1.jpg" alt="Four Friends Foundation" loading="lazy" />
+            </div>
+            <div class="myto-img">
+              <img src="https://images.squarespace-cdn.com/content/v1/675db1cc11683a20789145a9/d87ca02b-360e-41df-bbb9-caf8f0fa50a0/outreach-process-5_2x.png" alt="Strategy workshop" loading="lazy" />
+            </div>
+            <div class="myto-img">
+              <img src="https://images.squarespace-cdn.com/content/v1/675db1cc11683a20789145a9/1740517850540-RMNXPNFJ6WYORBHC3VGE/image+%286%29.png" alt="Strategy session" loading="lazy" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Path 3: Story Loom -->
+        <div class="path-card path-card-2col">
+          <div>
+            <p class="path-number">03 — Narrative Infrastructure</p>
+            <h3 class="path-title">Story Loom — Narrative OS for the Resistance</h3>
+            <p class="path-body">Story Loom is a narrative OS for women who are done building personal brands on extractive terms. It's for those ready to organize their lived stories, shadow work, and deepest convictions into resistance-minded work — and find the community of aligned builders doing the same.</p>
+            <p class="path-body">Right for you if: you're building something post-capitalist and need narrative infrastructure that actually matches your values. Not another funnel. A narrative field that attracts your people.</p>
+            <ul class="path-detail-list">
+              <li>Story journal for lived experience &amp; ideological fuel</li>
+              <li>Story Bank — your narrative field, not your content calendar</li>
+              <li>Conviction-to-transformation messaging you own</li>
+              <li>Anti-extractive positioning &amp; offer design</li>
+            </ul>
+            <div class="path-cta" style="display: flex; gap: 12px; flex-wrap: wrap;">
+              <a href="https://storyloom.app" target="_blank" rel="noopener" class="btn btn-lavender">Join the waitlist</a>
+              <a href="https://storyloom.app" target="_blank" rel="noopener" class="btn btn-outline">Learn more</a>
+            </div>
+          </div>
+          <!-- Story Loom UI preview -->
+          <div class="storyloom-preview">
+            <div class="storyloom-preview-header">
+              <div class="sl-dot sl-dot-1"></div>
+              <div class="sl-dot sl-dot-2"></div>
+              <div class="sl-dot sl-dot-3"></div>
+              <span class="storyloom-preview-name">Story Loom</span>
+            </div>
+            <div class="storyloom-preview-body">
+              <div class="sl-label">Your Story Bank</div>
+              <div class="sl-item sl-item-active">The wound that became my work</div>
+              <div class="sl-item sl-item-dim">Why I left the extractive economy</div>
+              <div class="sl-item sl-item-dim">My role in the resistance</div>
+              <div class="sl-label">Convictions → Transformation</div>
+              <div class="sl-item sl-item-dim">Golden Thread</div>
+              <div class="sl-item sl-item-dim">Core Belief</div>
+              <div class="sl-item sl-item-dim">Anti-extractive offer framing</div>
+              <div class="sl-label">Messaging</div>
+              <div class="sl-item sl-item-active">Narrative field — who I'm calling in</div>
+              <div class="sl-item sl-item-dim">Sales page — conviction-to-transformation</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── About ─────────────────────────────────────────────────────────── -->
+  <section id="about">
+    <div class="container">
+      <div class="about-inner">
+        <div class="about-photo-wrap">
+          <img
+            src="headshot2.png"
+            alt="Cléa Hernández"
+            style="object-position: center 15%;"
+          />
+        </div>
+        <div>
+          <p class="eyebrow">About</p>
+          <div class="divider"></div>
+          <h2 class="section-h2">I've spent 25 years finding the true story inside organizations — and the humans who lead them.</h2>
+          <p class="about-body" style="margin-top: 24px;">
+            I'm a <strong>Jungian Narrative Coach</strong>, brand strategist, copywriter, grantwriter, creative director, communications leader, journalist, and author. The thread through all of it: I find the true story, and I make it impossible to ignore.
+          </p>
+          <p class="about-body">
+            As <strong>Director of Communications at Focus Lab</strong>, I built the messaging and verbal identity programs that helped a small, Savannah-based agency compete with Madison Avenue. Using behavioral economics and story-based strategy, I'm known for narratives that drive mission progress and profit — simultaneously, not sequentially.
+          </p>
+          <p class="about-body">
+            I founded <strong>Mythograph</strong> to tell brand stories that heal, instead of spin and extract. I'm now building <strong>Story Loom</strong> as narrative infrastructure for resistance-minded founders — because the systems we use to tell our stories either replicate harm or help dismantle it.
+          </p>
+          <p class="about-body">
+            I work at the intersection of <strong>depth psychology, language strategy, and brand systems</strong> — because the most important stories are rarely the first ones people tell.
+          </p>
+          <div class="about-stats">
+            <div>
+              <div class="stat-num stat-num-accent">25+</div>
+              <div class="stat-label">Years of experience</div>
+            </div>
+            <div>
+              <div class="stat-num">100+</div>
+              <div class="stat-label">Brands shaped</div>
+            </div>
+            <div>
+              <div class="stat-num stat-num-accent">∞</div>
+              <div class="stat-label">Stories worth telling</div>
+            </div>
+          </div>
+          <div style="margin-top: 44px;">
+            <a href="mailto:clea@mythograph.co" class="btn btn-navy">Get in touch</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Testimonials ───────────────────────────────────────────────────── -->
+  <section id="testimonials">
+    <div class="container">
+      <p class="eyebrow">Kind words</p>
+      <h2 class="section-h2">What people say</h2>
+      <div class="quotes-grid">
+        <div class="quote-card">
+          <div class="quote-mark">"</div>
+          <p class="quote-text">Their ability to understand and articulate our mission and projects was truly impressive.</p>
+          <div class="quote-name">Anwesha Roy Choudhury</div>
+          <div class="quote-role">SaveLife Foundation</div>
+        </div>
+        <div class="quote-card">
+          <div class="quote-mark">"</div>
+          <p class="quote-text">They explore beyond copy and dive straight into the core, purpose, and ultimate goals of a brand.</p>
+          <div class="quote-name">Eric Mogil</div>
+          <div class="quote-role">CGO, Radar</div>
+        </div>
+        <div class="quote-card">
+          <div class="quote-mark">"</div>
+          <p class="quote-text">Cléa has an incredible gift for capturing a brand's voice in a way that feels both authentic and compelling.</p>
+          <div class="quote-name">Mark Thill</div>
+          <div class="quote-role">Founder, Thesis IT</div>
+        </div>
+        <div class="quote-card">
+          <div class="quote-mark">"</div>
+          <p class="quote-text">Cléa is one of the most talented copywriters I've ever worked with.</p>
+          <div class="quote-name">Joshua Krohn</div>
+          <div class="quote-role">Head of Design, Finch</div>
+        </div>
+        <div class="quote-card">
+          <div class="quote-mark">"</div>
+          <p class="quote-text">Cléa has been instrumental in elevating our clients' projects through strategic work.</p>
+          <div class="quote-name">Peter Deltondo</div>
+          <div class="quote-role">Co-Founder, Heyo</div>
+        </div>
+        <div class="quote-card" style="background: var(--navy); border-color: var(--navy); display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; gap: 16px; padding: 40px 32px;">
+          <div style="font-family: var(--display); font-size: 16px; font-weight: 600; color: #fff; line-height: 1.4;">Ready to find your true story?</div>
+          <div style="font-size: 13px; color: rgba(255,255,255,.5);">Start with a free 30-minute conversation.</div>
+          <a href="mailto:clea@mythograph.co" class="btn btn-lavender" style="margin-top: 8px;">Book a call →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Footer ─────────────────────────────────────────────────────────── -->
+  <footer>
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <div class="footer-brand-name">Cléa Hernández</div>
+          <div class="footer-brand-tag">Jungian Narrative Coach, brand strategist, and founder of Mythograph &amp; Story Loom.</div>
+        </div>
+        <div>
+          <div class="footer-col-head">Navigate</div>
+          <ul class="footer-link-list">
+            <li><a href="#work-with-me">Work With Me</a></li>
+            <li><a href="#approach">My Approach</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#testimonials">Kind Words</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-head">Connect</div>
+          <ul class="footer-link-list">
+            <li><a href="mailto:clea@mythograph.co">clea@mythograph.co</a></li>
+            <li><a href="https://mythograph.co" target="_blank" rel="noopener">Mythograph.co</a></li>
+            <li><a href="https://instagram.com/mythographics" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="https://linkedin.com/company/mythograph-agency" target="_blank" rel="noopener">LinkedIn</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2025 Cléa Hernández. All rights reserved.</span>
+        <span>Built with intention.</span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
