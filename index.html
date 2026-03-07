@@ -275,6 +275,27 @@
     }
     .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
 
+    /* ── Hero text glow (lit from beneath effect) ───────────────── */
+    .hero-h1 {
+      text-shadow:
+        0 0  3px rgba(255,255,255,1),
+        0 0 10px rgba(255,255,255,0.95),
+        0 0 24px rgba(255,255,255,0.85),
+        0 0 50px rgba(255,255,255,0.5);
+    }
+    .hero-kicker-text {
+      text-shadow:
+        0 0  4px rgba(255,255,255,1),
+        0 0 14px rgba(255,255,255,0.85),
+        0 0 28px rgba(255,255,255,0.5);
+    }
+    .hero-sub {
+      text-shadow:
+        0 0  4px rgba(255,255,255,1),
+        0 0 14px rgba(255,255,255,0.85),
+        0 0 30px rgba(255,255,255,0.5);
+    }
+
     /* Hero photo column */
     .hero-photo-wrap {
       position: relative;
