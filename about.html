@@ -174,6 +174,20 @@
       -webkit-text-fill-color: var(--indigo);
     }
 
+    /* Painting in story sidebar — natural proportions, no crop */
+    .sidebar-painting {
+      margin-top: 8px;
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+    .sidebar-painting img {
+      width: 100%;
+      height: auto;   /* full painting, zero cropping */
+      display: block;
+      filter: saturate(0.94);
+    }
+
     /* ════════════════════════════════════════════════════════════
        HAMBURGER + MOBILE MENU
     ════════════════════════════════════════════════════════════ */
@@ -634,13 +648,12 @@
       </div>
     </section>
 
-    <!-- ─── ART STRIP — painting ─── -->
-    <div class="mj-strip" role="img" aria-label="Abstract expressionist portrait of Cléa Hernández — figure seated on a green chair, painted in teal, yellow, and blue on a grey-blue ground">
+    <!-- ─── ART STRIP — Cléa with artwork ─── -->
+    <div class="mj-strip" role="img" aria-label="Cléa examines a large holographic sunset artwork — the practitioner at work with image and light">
       <img
-        src="clea_painting.jpg"
-        alt="Abstract expressionist oil painting of a seated figure — teal, yellow, and blue brushwork on a grey-blue ground. A portrait of Cléa Hernández."
+        src="mj_clea_artwork.png"
+        alt="A woman in a white blouse examines a large circular holographic sunset artwork over a rocky coastline — the practitioner at work, image-making, story as craft."
         loading="lazy"
-        style="object-position: center top;"
       />
     </div>
 
@@ -714,6 +727,14 @@
                 <li>Thinking about the Village Journey model</li>
               </ul>
             </div>
+
+            <figure class="sidebar-painting fade-in delay-2">
+              <img
+                src="clea_painting.jpg"
+                alt="Abstract expressionist portrait of Cléa Hernández — seated figure in teal, yellow, and blue brushwork on a grey-blue ground"
+                loading="lazy"
+              />
+            </figure>
 
           </div>
 
