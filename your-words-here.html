@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Words Here · Cléa Hernández</title>
+  <meta name="description" content="A founding circle for Story Loom. Six weeks of 1:1 Jungian Narrative Coaching + Story Loom app + Notion system + your finished brand and website. Founders' price: $2,700. Closes June 1." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,300;1,9..144,400;1,9..144,600;1,9..144,700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --white:      #FAFAF7;
+      --ink:        #1A1410;
+      --ink-muted:  #7A6D5E;
+      --terra:      #C05A3C;
+      --terra-pale: rgba(192,90,60,0.07);
+      --indigo:     #3A4F99;
+      --indigo-pale: rgba(58,79,153,0.07);
+      --indigo-pale:rgba(58,79,153,0.08);
+      --crimson:    #C7372B;
+      --crimson-pale: rgba(199,55,43,0.07);
+      --gold:       #C8A24A;
+      --gold-pale:  rgba(200,162,74,0.08);
+      --gold-soft:  rgba(200,162,74,0.15);
+      --mist:       #F2ECE4;
+      --border:     rgba(34,24,48,0.09);
+      --serif:      'Playfair Display', Georgia, serif;
+      --display:    'Fraunces', Georgia, serif;
+      --body:       'DM Sans', system-ui, -apple-system, sans-serif;
+      --max:        1160px;
+      --pad:        40px;
+      --radius:     4px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--body); background: var(--white);
+      color: var(--ink); line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+    body::after {
+      content: ''; position: fixed; inset: 0;
+      pointer-events: none; z-index: 9999; opacity: 0.030;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-size: 200px 200px;
+    }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; }
+    .container { max-width: var(--max); margin: 0 auto; padding: 0 var(--pad); }
+
+    /* ─── Typography ─── */
+    .eyebrow {
+      font-family: var(--body); font-size: 10px; font-weight: 500;
+      letter-spacing: .2em; text-transform: uppercase; color: var(--terra);
+    }
+    .section-h2 {
+      font-family: var(--serif);
+      font-size: clamp(30px, 4vw, 52px);
+      font-weight: 600;
+      line-height: 1.15; letter-spacing: -0.02em; color: var(--ink);
+    }
+
+    /* ─── Buttons ─── */
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-family: var(--body); font-size: 12px; font-weight: 500;
+      letter-spacing: .07em; text-transform: uppercase;
+      padding: 14px 28px; border-radius: var(--radius);
+      cursor: pointer; transition: opacity .18s, transform .15s;
+      border: none; line-height: 1;
+    }
+    .btn:hover { opacity: .82; transform: translateY(-1px); }
+    .btn--terra  { background: var(--terra); color: #fff; }
+    .btn--terra-o { background: transparent; color: var(--terra); border: 1.5px solid var(--terra); }
+    .btn--gold   { background: var(--gold); color: var(--ink); }
+    .btn--ghost  { background: rgba(250,250,247,.1); color: rgba(250,250,247,.85); border: 1px solid rgba(250,250,247,.2); }
+
+    /* ════════════════════════════════════════════════════════════
+       NAV
+    ════════════════════════════════════════════════════════════ */
+    .nav-wrap {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(250,250,247,0.94);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+    }
+    .nav { display: flex; align-items: center; justify-content: space-between; height: 68px; }
+    .nav-logo {
+      font-family: var(--serif); font-size: 22px; font-weight: 400; font-style: italic;
+      color: var(--terra); letter-spacing: .01em;
+    }
+    .nav-links { display: flex; align-items: center; gap: 24px; }
+    .nav-links a {
+      font-family: var(--body); font-size: 13px; font-weight: 400;
+      color: var(--ink); opacity: 0.68; transition: opacity .15s;
+    }
+    .nav-links a:hover, .nav-links a.active { opacity: 1; }
+    .nav-links .nav-cta {
+      opacity: 1; font-weight: 500; color: var(--terra);
+      padding: 7px 18px; border: 1.5px solid rgba(192,90,60,.45);
+      border-radius: 100px; transition: background .15s, color .15s;
+    }
+    .nav-links .nav-cta:hover { background: var(--terra); color: #fff; opacity: 1; }
+
+    /* ════════════════════════════════════════════════════════════
+       HERO — dark ink, billboard aesthetic
+    ════════════════════════════════════════════════════════════ */
+    .ywh-hero {
+      background: linear-gradient(
+        180deg,
+        #020815  0%,
+        #0A0730 18%,
+        #1C0848 35%,
+        #420060 52%,
+        #7A006E 65%,
+        #C40060 78%,
+        #EE1A6A 90%,
+        #FF6096 100%
+      );
+      padding: 80px 0 72px;
+      position: relative; overflow: hidden;
+    }
+    /* Teal/cyan top glow — synthwave sky */
+    .ywh-hero::before {
+      content: '';
+      position: absolute; top: -60px; left: 50%; transform: translateX(-50%);
+      width: 900px; height: 500px;
+      background: radial-gradient(ellipse at top center, rgba(0,225,220,0.16) 0%, transparent 65%);
+      pointer-events: none; z-index: 0;
+    }
+    /* Horizontal scanlines at base — retrowave grid */
+    .ywh-hero::after {
+      content: '';
+      position: absolute; bottom: 0; left: 0; right: 0; height: 42%;
+      background: repeating-linear-gradient(
+        transparent,
+        transparent 10px,
+        rgba(0,220,230,0.035) 10px,
+        rgba(0,220,230,0.035) 11px
+      );
+      pointer-events: none; z-index: 0;
+    }
+    .ywh-hero-inner {
+      max-width: 800px; margin: 0 auto;
+      text-align: center; position: relative; z-index: 1;
+    }
+
+    /* Billboard deadline banner */
+    .ywh-deadline {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 7px 18px;
+      background: rgba(255,45,122,0.10);
+      border: 1px solid rgba(255,45,122,0.32);
+      border-radius: 100px;
+      margin-bottom: 40px;
+    }
+    .ywh-deadline-dot {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: #FF2D7A; flex-shrink: 0;
+      box-shadow: 0 0 6px rgba(255,45,122,0.8);
+      animation: pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: .4; } }
+    .ywh-deadline-text {
+      font-size: 11px; font-weight: 500; letter-spacing: .1em; text-transform: uppercase;
+      color: rgba(255,100,160,0.90);
+    }
+
+    /* Billboard board mockup */
+    .ywh-billboard-wrap {
+      display: flex; flex-direction: column; align-items: center;
+      width: 100%; margin-bottom: 8px;
+    }
+    .ywh-billboard-board {
+      background: #EDE8DC;
+      width: 100%;
+      padding: 52px 56px 48px;
+      position: relative;
+      box-shadow:
+        0 0 0 3px rgba(200,162,74,0.38),
+        0 0 0 7px rgba(26,20,16,0.22),
+        0 40px 100px rgba(0,0,0,0.55),
+        0 8px 24px rgba(0,0,0,0.35);
+    }
+    /* Inner inset hairline */
+    .ywh-billboard-board::before {
+      content: '';
+      position: absolute; inset: 10px;
+      border: 1px solid rgba(26,20,16,0.1);
+      pointer-events: none;
+    }
+    /* Corner bolts */
+    .ywh-bolt {
+      position: absolute;
+      width: 12px; height: 12px; border-radius: 50%;
+      background: rgba(26,20,16,0.2);
+      box-shadow: inset 0 1px 2px rgba(0,0,0,0.4), 0 0 0 1.5px rgba(26,20,16,0.08);
+    }
+    .ywh-bolt--tl { top: 16px; left: 16px; }
+    .ywh-bolt--tr { top: 16px; right: 16px; }
+    .ywh-bolt--bl { bottom: 16px; left: 16px; }
+    .ywh-bolt--br { bottom: 16px; right: 16px; }
+    /* Structural legs */
+    .ywh-billboard-legs { display: flex; gap: clamp(100px, 20vw, 260px); }
+    .ywh-billboard-leg {
+      width: 10px; height: 44px;
+      background: rgba(220,200,255,0.18);
+      box-shadow: 0 0 8px rgba(0,220,230,0.18), 1px 0 0 rgba(220,200,255,0.06);
+    }
+
+    .ywh-hero-h1 {
+      font-family: var(--display);
+      font-size: clamp(48px, 8vw, 108px);
+      font-weight: 700;
+      font-style: normal;
+      line-height: 1.0; letter-spacing: -0.03em;
+      color: var(--ink);
+      margin-bottom: 20px;
+    }
+    .ywh-hero-h1 span {
+      display: block;
+      font-size: clamp(13px, 1.8vw, 20px);
+      font-style: normal;
+      font-weight: 400;
+      letter-spacing: 0.01em;
+      color: rgba(26,20,16,0.42);
+      margin-top: 12px;
+    }
+
+    .ywh-hero-sub {
+      font-size: 16px; font-weight: 300;
+      line-height: 1.82; color: rgba(250,250,247,0.45);
+      margin-bottom: 44px; max-width: 540px; margin-left: auto; margin-right: auto;
+    }
+
+    .ywh-hero-price {
+      display: inline-flex; align-items: center; gap: 20px;
+      padding: 18px 32px;
+      background: rgba(200,162,74,0.07);
+      border: 1px solid rgba(200,162,74,0.2);
+      border-radius: var(--radius);
+      margin-bottom: 36px;
+      flex-wrap: wrap; justify-content: center;
+    }
+    .ywh-price-label {
+      font-size: 10px; font-weight: 600; letter-spacing: .15em; text-transform: uppercase;
+      color: rgba(200,162,74,0.6);
+    }
+    .ywh-price-main {
+      font-family: var(--display); font-size: 38px; font-weight: 700;
+      color: rgba(200,162,74,0.92); line-height: 1; letter-spacing: -0.02em;
+    }
+    .ywh-price-later {
+      font-size: 12px; color: rgba(250,250,247,0.28); line-height: 1.5;
+      padding-left: 20px; border-left: 1px solid rgba(250,250,247,0.1);
+    }
+    .ywh-price-later strong { display: block; color: rgba(250,250,247,0.45); }
+
+    .ywh-hero-btns {
+      display: flex; align-items: center; justify-content: center;
+      gap: 12px; flex-wrap: wrap;
+    }
+
+    /* ════════════════════════════════════════════════════════════
+       MARIA POPOVA QUOTE
+    ════════════════════════════════════════════════════════════ */
+    .popova-section {
+      background: var(--indigo);
+      padding: 72px 0;
+      position: relative;
+    }
+    .popova-inner { max-width: 760px; margin: 0 auto; text-align: center; }
+    .popova-mark {
+      font-family: var(--serif); font-size: 80px; font-weight: 400;
+      color: rgba(200,162,74,0.25); line-height: 1;
+      margin-bottom: -24px; display: block;
+    }
+    .popova-quote {
+      font-family: var(--serif);
+      font-size: clamp(16px, 2.2vw, 22px);
+      font-weight: 400; font-style: italic;
+      line-height: 1.65; color: rgba(250,250,247,0.65);
+      margin-bottom: 28px;
+    }
+    .popova-quote em { font-style: normal; color: rgba(200,162,74,0.8); }
+    .popova-cite {
+      font-family: var(--body); font-size: 11px; font-weight: 500;
+      letter-spacing: .15em; text-transform: uppercase;
+      color: rgba(200,162,74,0.5);
+    }
+
+    /* ════════════════════════════════════════════════════════════
+       THE BILLBOARD CONCEPT
+    ════════════════════════════════════════════════════════════ */
+    .ywh-billboard-concept {
+      background: var(--mist); padding: 88px 0;
+    }
+    .ywh-bc-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+    .ywh-bc-text .eyebrow { margin-bottom: 20px; display: block; }
+    .ywh-bc-text .section-h2 { margin-bottom: 24px; }
+    .ywh-bc-text p { font-size: 16px; line-height: 1.82; color: var(--ink-muted); margin-bottom: 18px; }
+    .ywh-bc-text p strong { color: var(--ink); font-weight: 500; }
+    .ywh-bc-text p em { font-style: italic; color: var(--terra); }
+
+    .ywh-bc-card {
+      background: var(--white); padding: 36px 32px;
+      border-radius: var(--radius); border: 1px solid var(--border);
+    }
+    .ywh-bc-card-title {
+      font-family: var(--display); font-size: 13px; font-weight: 600;
+      letter-spacing: .08em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 20px;
+    }
+    .ywh-bc-card-list { display: flex; flex-direction: column; gap: 14px; }
+    .ywh-bc-item {
+      display: flex; gap: 12px; align-items: flex-start;
+      font-size: 14px; line-height: 1.65; color: var(--ink-muted);
+    }
+    .ywh-bc-item::before {
+      content: '→'; color: var(--gold);
+      font-size: 11px; flex-shrink: 0; margin-top: 2px;
+    }
+    .ywh-bc-item strong { color: var(--ink); font-weight: 500; }
+
+    /* June 1 transformation note */
+    .ywh-june1 {
+      margin-top: 28px; padding: 22px 24px;
+      background: rgba(192,90,60,0.06);
+      border: 1px solid rgba(192,90,60,0.15);
+      border-radius: var(--radius);
+    }
+    .ywh-june1 p {
+      font-size: 13px; line-height: 1.7; color: var(--ink-muted); margin: 0;
+    }
+    .ywh-june1 p strong { color: var(--terra); font-weight: 600; }
+
+    /* ════════════════════════════════════════════════════════════
+       WHAT YOU GET — 4 deliverables
+    ════════════════════════════════════════════════════════════ */
+    .ywh-includes { padding: 96px 0; }
+    .ywh-includes-header { text-align: center; max-width: 640px; margin: 0 auto 64px; }
+    .ywh-includes-header .eyebrow { margin-bottom: 16px; display: block; }
+    .ywh-includes-header .section-h2 { margin-bottom: 16px; }
+    .ywh-includes-header p { font-size: 16px; color: var(--ink-muted); line-height: 1.8; }
+
+    .includes-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .include-card {
+      padding: 36px 32px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--white);
+      position: relative; overflow: hidden;
+    }
+    .include-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    }
+    .include-card:nth-child(1)::before { background: var(--terra); }
+    .include-card:nth-child(2)::before { background: var(--crimson); }
+    .include-card:nth-child(3)::before { background: var(--terra); }
+    .include-card:nth-child(4)::before { background: var(--gold); }
+    .include-num {
+      font-family: var(--serif); font-size: 26px; font-weight: 700;
+      color: rgba(34,24,48,0.1); line-height: 1;
+      margin-bottom: 14px; letter-spacing: -0.02em;
+    }
+    .include-title {
+      font-family: var(--display); font-size: 17px; font-weight: 600;
+      color: var(--ink); margin-bottom: 10px; line-height: 1.2;
+    }
+    .include-body { font-size: 14px; line-height: 1.78; color: var(--ink-muted); }
+    .include-body strong { color: var(--ink); font-weight: 500; }
+
+    /* ════════════════════════════════════════════════════════════
+       SIX WEEK ARC
+    ════════════════════════════════════════════════════════════ */
+    .ywh-arc { background: var(--mist); padding: 88px 0; }
+    .ywh-arc-inner { max-width: 760px; margin: 0 auto; }
+    .ywh-arc-header { margin-bottom: 52px; }
+    .ywh-arc-header .eyebrow { margin-bottom: 16px; display: block; }
+    .ywh-arc-header .section-h2 { margin-bottom: 16px; }
+    .ywh-arc-header p { font-size: 16px; color: var(--ink-muted); line-height: 1.8; }
+
+    .arc-row {
+      display: grid; grid-template-columns: 60px 1fr;
+      gap: 24px; align-items: start;
+      padding: 24px 0; border-top: 1px solid var(--border);
+    }
+    .arc-row:last-child { border-bottom: 1px solid var(--border); }
+    .arc-week {
+      font-family: var(--display); font-size: 10px; font-weight: 600;
+      letter-spacing: .12em; text-transform: uppercase;
+      color: var(--terra); line-height: 1; padding-top: 4px;
+    }
+    .arc-title {
+      font-family: var(--display); font-size: 16px; font-weight: 600;
+      color: var(--ink); margin-bottom: 7px; line-height: 1.25;
+    }
+    .arc-body { font-size: 14px; line-height: 1.75; color: var(--ink-muted); }
+    .arc-body strong { color: var(--ink); font-weight: 500; }
+
+    /* ════════════════════════════════════════════════════════════
+       SOCIAL PROOF — Davana testimonials
+    ════════════════════════════════════════════════════════════ */
+    .ywh-proof { padding: 96px 0; }
+    .ywh-proof-header { text-align: center; max-width: 560px; margin: 0 auto 52px; }
+    .ywh-proof-header .eyebrow { margin-bottom: 12px; display: block; }
+    .ywh-proof-header p { font-size: 16px; color: var(--ink-muted); line-height: 1.8; }
+    .ywh-proof-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .proof-card {
+      padding: 32px 28px;
+      background: var(--mist);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      display: flex; flex-direction: column; gap: 20px;
+    }
+    .proof-quote-mark {
+      font-family: var(--serif); font-size: 44px; font-weight: 400;
+      color: rgba(200,162,74,0.35); line-height: 1;
+    }
+    .proof-text {
+      font-family: var(--serif); font-size: 16px; font-style: italic;
+      font-weight: 400; line-height: 1.65; color: var(--ink);
+      flex: 1;
+    }
+    .proof-cite {
+      font-family: var(--body); font-size: 11px; font-weight: 500;
+      letter-spacing: .1em; text-transform: uppercase;
+      color: var(--terra);
+    }
+
+    /* ════════════════════════════════════════════════════════════
+       WHO IT'S FOR
+    ════════════════════════════════════════════════════════════ */
+    .ywh-for { background: var(--mist); padding: 96px 0; }
+    .ywh-for-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+    .ywh-for-text .eyebrow { margin-bottom: 20px; display: block; }
+    .ywh-for-text .section-h2 { margin-bottom: 24px; }
+    .ywh-for-text p { font-size: 16px; line-height: 1.82; color: var(--ink-muted); margin-bottom: 18px; }
+    .ywh-for-text p strong { color: var(--ink); font-weight: 500; }
+    .ywh-for-list { display: flex; flex-direction: column; gap: 10px; }
+    .ywh-for-item {
+      display: flex; gap: 14px; align-items: flex-start;
+      padding: 16px 18px;
+      background: var(--white);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+    }
+    .ywh-for-mark {
+      font-family: var(--serif); font-size: 16px; font-style: italic;
+      color: var(--gold); line-height: 1; flex-shrink: 0; margin-top: 2px;
+    }
+    .ywh-for-item p { font-size: 14px; line-height: 1.65; color: var(--ink-muted); margin: 0; }
+    .ywh-for-item p strong { color: var(--ink); font-weight: 500; }
+
+    /* ════════════════════════════════════════════════════════════
+       PRICING — the founders' window
+    ════════════════════════════════════════════════════════════ */
+    .ywh-pricing { background: var(--ink); padding: 96px 0; }
+    .ywh-pricing-inner { max-width: 720px; margin: 0 auto; }
+    .ywh-pricing-eyebrow {
+      font-size: 10px; font-weight: 500; letter-spacing: .22em; text-transform: uppercase;
+      color: rgba(200,162,74,0.65); margin-bottom: 28px; display: block;
+    }
+    .ywh-pricing-h2 {
+      font-family: var(--serif);
+      font-size: clamp(28px, 3.8vw, 48px);
+      font-weight: 600; line-height: 1.2;
+      color: rgba(250,250,247,0.9); margin-bottom: 20px;
+    }
+    .ywh-pricing-lead {
+      font-size: 16px; font-weight: 300;
+      line-height: 1.82; color: rgba(250,250,247,0.42);
+      margin-bottom: 52px; max-width: 560px;
+    }
+
+    .pricing-box {
+      background: rgba(250,250,247,0.04);
+      border: 1px solid rgba(250,250,247,0.1);
+      border-radius: var(--radius);
+      padding: 48px;
+    }
+    .pricing-box-tag {
+      font-size: 10px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase;
+      color: rgba(200,162,74,0.65); margin-bottom: 18px; display: block;
+    }
+    .pricing-box-price {
+      font-family: var(--display);
+      font-size: clamp(56px, 7.5vw, 88px);
+      font-weight: 700; line-height: 1;
+      color: rgba(200,162,74,0.92);
+      letter-spacing: -0.03em; margin-bottom: 6px;
+    }
+    .pricing-box-later {
+      font-size: 13px; color: rgba(250,250,247,0.3); margin-bottom: 40px; line-height: 1.6;
+    }
+    .pricing-box-later span { text-decoration: line-through; text-decoration-color: rgba(250,250,247,0.12); }
+    .pricing-divider { height: 1px; background: rgba(250,250,247,0.08); margin: 36px 0; }
+    .pricing-includes-title {
+      font-size: 10px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase;
+      color: rgba(250,250,247,0.28); margin-bottom: 18px;
+    }
+    .pricing-list { display: flex; flex-direction: column; gap: 11px; margin-bottom: 36px; }
+    .pricing-list-item {
+      display: flex; gap: 12px; align-items: flex-start;
+      font-size: 14px; line-height: 1.6; color: rgba(250,250,247,0.5);
+    }
+    .pricing-list-item::before {
+      content: '→'; color: rgba(200,162,74,0.6);
+      font-size: 11px; flex-shrink: 0; margin-top: 2px;
+    }
+    .pricing-list-item strong { color: rgba(250,250,247,0.8); font-weight: 500; }
+    .pricing-note { font-size: 13px; line-height: 1.7; color: rgba(250,250,247,0.25); margin-top: 20px; }
+
+    /* The transformation promise */
+    .pricing-transform {
+      margin-top: 48px; padding: 28px 32px;
+      background: rgba(200,162,74,0.07);
+      border: 1px solid rgba(200,162,74,0.15);
+      border-radius: var(--radius);
+    }
+    .pricing-transform-title {
+      font-family: var(--display); font-size: 12px; font-weight: 600;
+      letter-spacing: .08em; text-transform: uppercase;
+      color: rgba(200,162,74,0.7); margin-bottom: 12px;
+    }
+    .pricing-transform p {
+      font-size: 14px; line-height: 1.75; color: rgba(250,250,247,0.42);
+    }
+    .pricing-transform p strong { color: rgba(200,162,74,0.8); font-weight: 500; }
+
+    /* ════════════════════════════════════════════════════════════
+       FINAL CTA
+    ════════════════════════════════════════════════════════════ */
+    .ywh-cta { padding: 88px 0; }
+    .ywh-cta-inner { text-align: center; max-width: 600px; margin: 0 auto; }
+    .ywh-cta-inner .eyebrow { margin-bottom: 24px; display: block; }
+    .ywh-cta-h2 {
+      font-family: var(--serif);
+      font-size: clamp(28px, 3.5vw, 46px);
+      font-weight: 600; line-height: 1.2;
+      color: var(--ink); margin-bottom: 20px;
+    }
+    .ywh-cta-h2 em { font-style: italic; color: var(--terra); }
+    .ywh-cta-body {
+      font-size: 16px; font-weight: 300;
+      line-height: 1.8; color: var(--ink-muted); margin-bottom: 36px;
+    }
+    .ywh-cta-btns { display: flex; align-items: center; justify-content: center; gap: 14px; flex-wrap: wrap; }
+
+    /* ════════════════════════════════════════════════════════════
+       FOOTER
+    ════════════════════════════════════════════════════════════ */
+    footer { background: var(--ink); color: rgba(250,250,247,.6); padding: 64px 0 36px; }
+    .footer-inner { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 64px; margin-bottom: 52px; }
+    .footer-logo {
+      font-family: var(--serif); font-size: 22px; font-weight: 400; font-style: italic;
+      color: rgba(250,250,247,.88); margin-bottom: 14px;
+    }
+    .footer-tagline { font-size: 14px; line-height: 1.7; color: rgba(250,250,247,.42); max-width: 280px; }
+    .footer-col-title { font-size: 10px; font-weight: 500; letter-spacing: .18em; text-transform: uppercase; color: rgba(250,250,247,.3); margin-bottom: 20px; }
+    .footer-links li { margin-bottom: 12px; }
+    .footer-links a { font-size: 14px; color: rgba(250,250,247,.55); transition: color .15s; }
+    .footer-links a:hover { color: rgba(250,250,247,.88); }
+    .footer-bottom {
+      display: flex; align-items: center; justify-content: space-between;
+      padding-top: 28px; border-top: 1px solid rgba(250,250,247,.08);
+      font-size: 12px; color: rgba(250,250,247,.28);
+    }
+
+    /* ─── Fade in ─── */
+    .fade-in { opacity: 0; transform: translateY(22px); transition: opacity .6s ease, transform .6s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+    .fade-in.delay-1 { transition-delay: .12s; }
+    .fade-in.delay-2 { transition-delay: .24s; }
+    .fade-in.delay-3 { transition-delay: .36s; }
+
+    /* ─── Responsive ─── */
+    @media (max-width: 980px) {
+      .ywh-bc-inner { grid-template-columns: 1fr; gap: 40px; }
+      .includes-grid { grid-template-columns: 1fr; }
+      .ywh-for-inner { grid-template-columns: 1fr; gap: 48px; }
+      .ywh-proof-grid { grid-template-columns: 1fr; }
+      .pricing-box { padding: 32px 24px; }
+      .footer-inner { grid-template-columns: 1fr 1fr; gap: 48px; }
+      .footer-col:first-child { grid-column: span 2; }
+    }
+    @media (max-width: 640px) {
+      :root { --pad: 24px; }
+      .nav-links a:not(.nav-cta) { display: none; }
+      .ywh-billboard-board { padding: 36px 28px 32px; }
+      .ywh-billboard-legs { gap: 80px; }
+      .ywh-hero-price { flex-direction: column; gap: 8px; text-align: center; }
+      .ywh-price-later { padding-left: 0; border-left: none; padding-top: 8px; border-top: 1px solid rgba(250,250,247,0.1); }
+      .ywh-hero-btns, .ywh-cta-btns { flex-direction: column; }
+      .footer-inner { grid-template-columns: 1fr; gap: 36px; }
+      .footer-col:first-child { grid-column: span 1; }
+    }
+    /* Midjourney editorial strips */
+    .mj-strip { height: 420px; overflow: hidden; }
+    .mj-strip img { width: 100%; height: 100%; object-fit: cover; object-position: center center; display: block; }
+    @media (max-width: 640px) { .mj-strip { height: 260px; } }
+    /* ─── Shape Window Dividers ─── */
+    .shape-break {
+      padding: 52px 0; display: flex; justify-content: center; align-items: flex-end; gap: 36px;
+      background: var(--white);
+    }
+    .shape-break--mist { background: var(--mist); }
+    .win { flex-shrink: 0; overflow: hidden; background-size: cover; background-position: center top; background-repeat: no-repeat; }
+    .win--arch      { width: 130px; height: 200px; border-radius: 65px 65px 8px 8px; }
+    .win--arch-sm   { width: 94px;  height: 148px; border-radius: 47px 47px 6px 6px; }
+    .win--arch-tall { width: 96px;  height: 210px; border-radius: 48px 48px 6px 6px; }
+    .win--circle    { width: 160px; height: 160px; border-radius: 50%; }
+    .win--oval      { width: 108px; height: 170px; border-radius: 54px; }
+    @media (max-width: 640px) {
+      .shape-break { gap: 14px; padding: 36px 16px; }
+      .win--arch { width: 76px; height: 120px; border-radius: 38px 38px 6px 6px; }
+      .win--arch-sm { width: 58px; height: 90px; border-radius: 29px 29px 4px 4px; }
+      .win--arch-tall { width: 60px; height: 124px; border-radius: 30px 30px 4px 4px; }
+      .win--circle { width: 96px; height: 96px; }
+      .win--oval { width: 66px; height: 104px; border-radius: 33px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <header class="nav-wrap">
+    <nav class="nav container">
+      <a href="index.html" class="nav-logo">Cléa Hernández</a>
+      <div class="nav-links">
+        <a href="story-loom.html">Story Loom</a>
+        <a href="jungian-coaching.html">Jungian Coaching</a>
+        <a href="about.html">About</a>
+        <a href="your-words-here.html" class="active" style="color: var(--terra); font-weight: 500;">Your Words Here</a>
+        <a href="work-with-me.html" class="nav-cta">Work With Me</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ─── HERO ─── -->
+    <section class="ywh-hero">
+      <div class="container">
+        <div class="ywh-hero-inner">
+
+          <!-- Deadline banner -->
+          <div class="ywh-deadline fade-in">
+            <div class="ywh-deadline-dot"></div>
+            <span class="ywh-deadline-text">Founding circle — closes June 1, 2026</span>
+          </div>
+
+          <!-- Billboard mockup + headline -->
+          <div class="ywh-billboard-wrap fade-in delay-1">
+            <div class="ywh-billboard-board">
+              <div class="ywh-bolt ywh-bolt--tl"></div>
+              <div class="ywh-bolt ywh-bolt--tr"></div>
+              <div class="ywh-bolt ywh-bolt--bl"></div>
+              <div class="ywh-bolt ywh-bolt--br"></div>
+              <h1 class="ywh-hero-h1">
+                Your Words Here.
+                <span>The &thinsp;<em>Your Words Here</em>&thinsp; Circle — founding cohort</span>
+              </h1>
+            </div>
+            <div class="ywh-billboard-legs">
+              <div class="ywh-billboard-leg"></div>
+              <div class="ywh-billboard-leg"></div>
+            </div>
+          </div>
+
+          <p class="ywh-hero-sub fade-in delay-2">
+            You know that blank billboard space on the highway? The white rectangle that says <em>YOUR WORDS HERE</em> — just waiting for something real to fill it? That's this page right now. And you could be one of the people who fills it.
+          </p>
+
+          <div class="ywh-hero-price fade-in delay-2">
+            <span class="ywh-price-label">Founders' price</span>
+            <span class="ywh-price-main">$2,700</span>
+            <span class="ywh-price-later">
+              <strong>→ $5,000 after June 1</strong>
+              when public pricing opens
+            </span>
+          </div>
+
+          <div class="ywh-hero-btns fade-in delay-3">
+            <a href="mailto:clea@mythograph.co?subject=Your%20Words%20Here%20Circle%20%E2%80%94%20I%27m%20interested" class="btn btn--terra">I'm ready — let's talk →</a>
+            <a href="#includes" class="btn btn--ghost">See what's inside ↓</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── MARIA POPOVA QUOTE ─── -->
+    <section class="popova-section">
+      <div class="container">
+        <div class="popova-inner fade-in">
+          <span class="popova-mark">"</span>
+          <p class="popova-quote">
+            All models of reality are drawn by an imagination filtered through our fears and our hopes in a proportion mediated by our conditioning, which is always the function of story. It is the stories we believe that shape what we become, shape what the world is. In an age when commercial media have become the great conditioning engine of society, selling models of reality because they are profitable and not because they are <em>true</em>, it matters all the more what stories we believe, and what we resist.
+          </p>
+          <cite class="popova-cite">— Maria Popova</cite>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── THE BILLBOARD CONCEPT ─── -->
+    <section class="ywh-billboard-concept">
+      <div class="container">
+        <div class="ywh-bc-inner">
+
+          <div class="ywh-bc-text fade-in">
+            <span class="eyebrow">What this is</span>
+            <h2 class="section-h2" style="margin-top: 16px; margin-bottom: 24px;">
+              A placeholder for the people<br>who haven't found their words yet.
+            </h2>
+            <p>
+              "Your words here" is what it says on a blank billboard — the space held open for something real to fill it. Right now, this page holds that space for the founders who come in early, do the real work, and walk out with words that are entirely their own.
+            </p>
+            <p>
+              This is a <strong>founding circle</strong> — a small group of people who work with Cléa directly over six weeks while Story Loom is still in active development. You help shape the platform. You get the founders' price. And at the end, <em>your words go here.</em>
+            </p>
+            <p>
+              After June 1, this pricing window closes — and the page transforms. Every person who completes The <em>Your Words Here</em> Circle gets their name, their brand, and their words on this page: a living gallery of the people who came in early and built something real.
+            </p>
+          </div>
+
+          <div class="fade-in delay-1">
+            <div class="ywh-bc-card">
+              <p class="ywh-bc-card-title">The exchange</p>
+              <div class="ywh-bc-card-list">
+                <div class="ywh-bc-item">You get the <strong>founders' price</strong> — $2,700 instead of $5,000</div>
+                <div class="ywh-bc-item">You get access to the <strong>Story Loom app and all future updates</strong></div>
+                <div class="ywh-bc-item">Your feedback <strong>directly shapes</strong> what Story Loom becomes</div>
+                <div class="ywh-bc-item">If you love the experience, you <strong>share a testimonial and refer one person</strong> from your community — that's it</div>
+              </div>
+            </div>
+
+            <div class="ywh-june1 fade-in delay-2">
+              <p>
+                <strong>After June 1:</strong> this page transforms into a client results page — real people, real brands, real words. The founding window closes, public pricing opens at $5,000, and the blank billboard fills in.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── ART STRIP — Midjourney ─── -->
+    <div class="mj-strip" role="img" aria-label="A woman writes on a whiteboard, a surrealist Ibiza seascape with red moon superimposed behind her">
+      <img
+        src="mj_writing_seascape.png"
+        alt="A woman writes on a whiteboard as a surrealist Ibiza landscape — teal sea, rocky coast, and a red moon — appears superimposed behind her. Writing as myth."
+        loading="lazy"
+      />
+    </div>
+
+    <!-- ─── WHAT YOU GET ─── -->
+    <section class="ywh-includes" id="includes">
+      <div class="container">
+        <div class="ywh-includes-header fade-in">
+          <span class="eyebrow">What you walk away with</span>
+          <h2 class="section-h2" style="margin-top: 16px; margin-bottom: 16px;">
+            Four things. One complete build.
+          </h2>
+          <p>This is not a workshop. It's a full build — and at the end, you have everything you need to show up as the person you're actually becoming.</p>
+        </div>
+
+        <div class="includes-grid">
+
+          <div class="include-card fade-in">
+            <p class="include-num">01</p>
+            <p class="include-title">Story Loom App + All Future Updates</p>
+            <p class="include-body">
+              Your own Story Loom workspace — the narrative OS we're building for people who are done building brands on extractive terms. <strong>You get the app now</strong>, and you get every update as it evolves. Your infrastructure grows with you. Your feedback from this circle helps shape what it becomes.
+            </p>
+          </div>
+
+          <div class="include-card fade-in delay-1">
+            <p class="include-num">02</p>
+            <p class="include-title">Story Loom in Notion</p>
+            <p class="include-body">
+              The Notion-based Story Loom system — your narrative infrastructure, ready to use immediately. <strong>Your Story Bank. Your Conviction-to-Transformation framework. Your narrative field</strong> — all scaffolded, configured, and handed to you on day one.
+            </p>
+          </div>
+
+          <div class="include-card fade-in">
+            <p class="include-num">03</p>
+            <p class="include-title">Six Weeks of 1:1 Coaching</p>
+            <p class="include-body">
+              Weekly sessions with Cléa — <strong>Jungian Narrative Coaching</strong> that goes beneath the surface. Shadow work. Active Imagination. Brand voice excavation. Custom guided meditations and between-session practices. Plus <strong>Voxer access</strong> throughout — speak your stories as they surface and Cléa will help you capture them in Story Loom.
+            </p>
+          </div>
+
+          <div class="include-card fade-in delay-1">
+            <p class="include-num">04</p>
+            <p class="include-title">Your Finished Brand &amp; Website</p>
+            <p class="include-body">
+              At the end of six weeks, you walk away with a <strong>complete brand voice, a messaging system that's entirely yours</strong>, and a website that reflects the person you actually are — not a performance of who you think you should be. The real you, on the page. Finally.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── SIX WEEK ARC ─── -->
+    <section class="ywh-arc">
+      <div class="container">
+        <div class="ywh-arc-inner">
+
+          <div class="ywh-arc-header fade-in">
+            <span class="eyebrow">How it unfolds</span>
+            <h2 class="section-h2" style="margin-top: 16px; margin-bottom: 16px;">
+              Six weeks. One thread.
+            </h2>
+            <p>We move through the WEAVE method — from raw narrative material to a brand and website that holds the full weight of who you are and what you're building.</p>
+          </div>
+
+          <div class="arc-row fade-in">
+            <div class="arc-week">Wk 1–2</div>
+            <div>
+              <p class="arc-title">Wander &amp; Excavate</p>
+              <p class="arc-body">We take honest inventory — origin stories, wounds, convictions, contradictions. Then we go deeper, past the polished version, into the narrative material that hasn't made it into your public work yet. <strong>Active Imagination practices. Shadow work. Custom guided meditations to surface what performance-based work always misses.</strong></p>
+            </div>
+          </div>
+
+          <div class="arc-row fade-in">
+            <div class="arc-week">Wk 3–4</div>
+            <div>
+              <p class="arc-title">Architect &amp; Voice</p>
+              <p class="arc-body">Raw material becomes structure. Your clear point of view, defined audience, set of convictions that organizes everything. Then we shape your brand voice: <strong>the language that sounds like you at your most clear and courageous.</strong> Between sessions, you speak your stories to Cléa via Voxer — she helps you capture them while they're alive.</p>
+            </div>
+          </div>
+
+          <div class="arc-row fade-in">
+            <div class="arc-week">Wk 5–6</div>
+            <div>
+              <p class="arc-title">Embody &amp; Build</p>
+              <p class="arc-body">We build the systems and the site. Your Story Loom workspace, fully configured. Your messaging platform, complete. And your website — written in your voice, organized around your convictions, <strong>handed to you at the end of week six.</strong></p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── ART STRIP — Midjourney ─── -->
+    <div class="mj-strip" role="img" aria-label="Two women look at text together as a circular portal opens to an Ibiza coastal scene with moon behind them">
+      <img
+        src="mj_writing_circle.png"
+        alt="Two women study text together, a circular portal behind them opening to a moonlit Ibiza seascape with palms — the writing circle, story work as shared practice."
+        loading="lazy"
+      />
+    </div>
+
+    <!-- ─── WHAT PAST CLIENTS SAY ─── -->
+    <section class="ywh-proof">
+      <div class="container">
+        <div class="ywh-proof-header fade-in">
+          <span class="eyebrow">What people say</span>
+          <p>Real results from real people who've worked with Cléa.</p>
+        </div>
+        <div class="ywh-proof-grid">
+
+          <div class="proof-card fade-in">
+            <p class="proof-quote-mark">"</p>
+            <p class="proof-text">Clea helped me find the focus and target audience I needed to get my business moving in the right direction.</p>
+            <cite class="proof-cite">— Davana</cite>
+          </div>
+
+          <div class="proof-card fade-in delay-1">
+            <p class="proof-quote-mark">"</p>
+            <p class="proof-text">Clea has a gift for seeing a client's potential, then guiding them to be their best self.</p>
+            <cite class="proof-cite">— Davana</cite>
+          </div>
+
+          <div class="proof-card fade-in delay-2">
+            <p class="proof-quote-mark">"</p>
+            <p class="proof-text">Clea helped me see my gaps and patterns, then guided me beyond the funk and into my true purpose.</p>
+            <cite class="proof-cite">— Davana</cite>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── WHO IT'S FOR ─── -->
+    <section class="ywh-for">
+      <div class="container">
+        <div class="ywh-for-inner">
+
+          <div class="ywh-for-text fade-in">
+            <span class="eyebrow">This circle is for you if</span>
+            <h2 class="section-h2" style="margin-top: 16px; margin-bottom: 24px;">
+              You know your work is more than your current words suggest.
+            </h2>
+            <p>
+              You've tried to write your own messaging. It came out generic, or borrowed, or just slightly off. You know the work is real. The language hasn't caught up yet.
+            </p>
+            <p>
+              This circle is for builders who want depth, not a template. Who are ready to go into the real material — and walk out the other side with something finished.
+            </p>
+            <a href="mailto:clea@mythograph.co?subject=Your%20Words%20Here%20Circle" class="btn btn--terra" style="margin-top: 12px;">Write to Cléa →</a>
+          </div>
+
+          <div class="ywh-for-list fade-in delay-1">
+            <div class="ywh-for-item">
+              <span class="ywh-for-mark">✦</span>
+              <p>You're a <strong>founder, coach, therapist, or creative</strong> whose work has a clear orientation — but the messaging doesn't yet hold it</p>
+            </div>
+            <div class="ywh-for-item">
+              <span class="ywh-for-mark">✦</span>
+              <p>You're building something with <strong>an ethical point of view</strong> and you want language that reflects it — not a funnel</p>
+            </div>
+            <div class="ywh-for-item">
+              <span class="ywh-for-mark">✦</span>
+              <p>You have <strong>lived experience that hasn't made it into your public work yet</strong> — and you sense it's exactly what's been missing</p>
+            </div>
+            <div class="ywh-for-item">
+              <span class="ywh-for-mark">✦</span>
+              <p>You're done with <strong>borrowed frameworks</strong> and ready to excavate your own</p>
+            </div>
+            <div class="ywh-for-item">
+              <span class="ywh-for-mark">✦</span>
+              <p>You want to work in an <strong>intimate container</strong> with someone who takes your story seriously</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── SHAPE WINDOW DIVIDER ─── -->
+    <div class="shape-break" aria-hidden="true">
+      <div class="win win--arch-tall"
+           style="background-image: url('mj_arch_canyon.png'); background-position: center 20%;"
+           title="Tall arch — woman with a floating portal revealing a canyon landscape"></div>
+      <div class="win win--circle"
+           style="background-image: url('mj_arch_dunes.png'); background-position: center 10%;"
+           title="Circle — silhouette on rolling dunes at golden-hour twilight"></div>
+      <div class="win win--arch-tall"
+           style="background-image: url('mj_arch_scholar.png'); background-position: center 25%;"
+           title="Tall arch — cloaked scholar with book, two planets, diagonal horizon"></div>
+    </div>
+
+    <!-- ─── ART STRIP — Midjourney ─── -->
+    <div class="mj-strip" role="img" aria-label="A pristine white pier extends into deep blue-teal water under a serene peach sun">
+      <img
+        src="mj_pier_sun.png"
+        alt="A minimal white pier extends into vast deep blue-teal water, a serene peach-orange sun low on the horizon — stepping forward, the clear path, invitation."
+        loading="lazy"
+      />
+    </div>
+
+    <!-- ─── PRICING ─── -->
+    <section class="ywh-pricing" id="pricing">
+      <div class="container">
+        <div class="ywh-pricing-inner">
+
+          <div class="fade-in">
+            <span class="ywh-pricing-eyebrow">The founders' window · Closes June 1</span>
+            <h2 class="ywh-pricing-h2">
+              This price exists because<br>you're helping build something.
+            </h2>
+            <p class="ywh-pricing-lead">
+              The <em>Your Words Here</em> Circle is the first cohort. A small group of builders who are willing to do deep work while Story Loom is still being shaped. Your experience and feedback become part of what makes the platform real for everyone who comes after.
+            </p>
+          </div>
+
+          <div class="pricing-box fade-in delay-1">
+            <span class="pricing-box-tag">Founders' price · Limited spots</span>
+            <p class="pricing-box-price">$2,700</p>
+            <p class="pricing-box-later">Full price after June 1: <span>$5,000</span></p>
+
+            <div class="pricing-divider"></div>
+
+            <p class="pricing-includes-title">Everything included</p>
+            <div class="pricing-list">
+              <div class="pricing-list-item"><strong>Story Loom app access</strong> + all future updates</div>
+              <div class="pricing-list-item"><strong>Story Loom in Notion</strong> — your narrative infrastructure, fully configured</div>
+              <div class="pricing-list-item"><strong>6 weekly 1:1 coaching sessions</strong> with Cléa (60 min each)</div>
+              <div class="pricing-list-item"><strong>Custom guided meditations</strong> + Active Imagination practices between sessions</div>
+              <div class="pricing-list-item"><strong>Unlimited Voxer access</strong> — speak your stories as they come, Cléa captures them in your Story Loom</div>
+              <div class="pricing-list-item"><strong>Your finished brand + website</strong> delivered at the end of Week 6</div>
+            </div>
+
+            <a href="mailto:clea@mythograph.co?subject=Your%20Words%20Here%20Circle%20%E2%80%94%20Ready%20to%20enroll" class="btn btn--gold" style="width: 100%; justify-content: center; font-size: 13px;">Enroll now — write to Cléa →</a>
+            <p class="pricing-note">Write directly to clea@mythograph.co. She'll be in touch within 24 hours to confirm a start date and intake conversation. Spots are limited and filled in the order they're received.</p>
+          </div>
+
+          <div class="pricing-transform fade-in delay-2">
+            <p class="pricing-transform-title">After June 1</p>
+            <p>
+              This page stops being a sales page. It becomes a <strong>gallery of results</strong> — the names, brands, and words of the people who came through this circle and built something real. The billboard fills in. The placeholder becomes a record of transformation.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── FINAL CTA ─── -->
+    <section class="ywh-cta">
+      <div class="container">
+        <div class="ywh-cta-inner fade-in">
+          <span class="eyebrow">The window is open</span>
+          <h2 class="ywh-cta-h2">
+            The placeholder is ready.<br>
+            <em>Your words go here.</em>
+          </h2>
+          <p class="ywh-cta-body">
+            Write to Cléa. Tell her what you're building and what feels like it's missing. The conversation costs nothing. The work changes everything.
+          </p>
+          <div class="ywh-cta-btns">
+            <a href="mailto:clea@mythograph.co?subject=Your%20Words%20Here%20Circle" class="btn btn--terra">Write to Cléa →</a>
+            <a href="jungian-coaching.html" class="btn btn--terra-o">Read about the coaching first</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-col">
+          <p class="footer-logo">Cléa Hernández</p>
+          <p class="footer-tagline">Jungian Narrative Coach, brand strategist, and founder of Mythograph &amp; Story Loom.</p>
+        </div>
+        <div class="footer-col">
+          <p class="footer-col-title">Navigate</p>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="story-loom.html">Story Loom</a></li>
+            <li><a href="jungian-coaching.html">Jungian Coaching</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="your-words-here.html">Your Words Here</a></li>
+            <li><a href="work-with-me.html">Work With Me</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <p class="footer-col-title">Connect</p>
+          <ul class="footer-links">
+            <li><a href="mailto:clea@mythograph.co">clea@mythograph.co</a></li>
+            <li><a href="https://mythograph.co" target="_blank" rel="noopener">Mythograph.co</a></li>
+            <li><a href="https://storyloom.app" target="_blank" rel="noopener">Story Loom</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Cléa Hernández. All rights reserved.</span>
+        <span>Built with intention.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>

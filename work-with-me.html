@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Work With Cléa Hernández — Jungian Narrative Coach &amp; Brand Strategist</title>
+  <meta name="description" content="Three pathways: 1:1 Jungian Coaching, Story Loom narrative OS, and Mythograph strategic brand consulting for organizations." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,300;1,9..144,400;1,9..144,600;1,9..144,700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --white:       #FAFAF7;
+      --ink:         #1A1410;
+      --ink-muted:   #7A6D5E;
+      --terra:       #C05A3C;
+      --terra-pale:  rgba(192,90,60,0.07);
+      --indigo:      #3A4F99;
+      --indigo-deep: #1E2D66;
+      --indigo-pale: rgba(58,79,153,0.07);
+      --crimson:      #C7372B;
+      --crimson-pale: rgba(199,55,43,0.07);
+      --fog:          #E4E1DC;
+      --gold:        #C8A24A;
+      --mist:        #F2ECE4;
+      --border:      rgba(34,24,48,0.09);
+      --serif:       'Playfair Display', Georgia, serif;
+      --display:     'Fraunces', Georgia, serif;
+      --body:        'DM Sans', system-ui, -apple-system, sans-serif;
+      --max:         1160px;
+      --pad:         40px;
+      --radius:      4px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--body); background: var(--white);
+      color: var(--ink); line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+    body::after {
+      content: ''; position: fixed; inset: 0;
+      pointer-events: none; z-index: 9999; opacity: 0.030;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-size: 200px 200px;
+    }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; }
+
+    .container { max-width: var(--max); margin: 0 auto; padding: 0 var(--pad); }
+
+    /* ─── Typography ─── */
+    .eyebrow {
+      font-family: var(--body); font-size: 10px; font-weight: 500;
+      letter-spacing: .2em; text-transform: uppercase; color: var(--terra);
+    }
+    .pill {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-family: var(--body); font-size: 10px; font-weight: 500;
+      letter-spacing: .12em; text-transform: uppercase;
+      padding: 5px 13px; border-radius: 100px;
+    }
+    .pill--terra  { border: 1.5px solid rgba(192,90,60,.35); color: var(--terra); background: var(--terra-pale); }
+    .pill--indigo { border: 1.5px solid rgba(58,79,153,.3); color: var(--indigo); background: var(--indigo-pale); }
+    .pill--crimson  { border: 1.5px solid rgba(199,55,43,.30); color: var(--crimson); background: var(--crimson-pale); }
+    .pill--ghost  { border: 1.5px solid rgba(250,250,247,.25); color: rgba(250,250,247,.7); background: rgba(250,250,247,.06); }
+
+    .section-h2 {
+      font-family: var(--serif);
+      font-size: clamp(30px, 4vw, 52px);
+      font-weight: 600;
+      line-height: 1.15; letter-spacing: -0.02em; color: var(--ink);
+    }
+    .section-lead {
+      font-size: 17px; font-weight: 300;
+      line-height: 1.8; color: var(--ink-muted); max-width: 600px;
+    }
+    .ornament {
+      display: flex; align-items: center; gap: 14px;
+      padding: 16px 0; color: var(--gold); font-size: 9px; opacity: 0.55;
+    }
+    .ornament::before, .ornament::after {
+      content: ''; flex: 1; max-width: 220px; height: 1px;
+      background: linear-gradient(to right, transparent, rgba(200,162,74,.35));
+    }
+    .ornament::after { background: linear-gradient(to left, transparent, rgba(200,162,74,.35)); }
+
+    /* ─── Buttons ─── */
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-family: var(--body); font-size: 12px; font-weight: 500;
+      letter-spacing: .07em; text-transform: uppercase;
+      padding: 14px 28px; border-radius: var(--radius);
+      cursor: pointer; transition: opacity .18s, transform .15s;
+      border: none; line-height: 1;
+    }
+    .btn:hover { opacity: .82; transform: translateY(-1px); }
+    .btn--terra   { background: var(--terra); color: #fff; }
+    .btn--terra-o { background: transparent; color: var(--terra); border: 1.5px solid var(--terra); }
+    .btn--indigo  { background: var(--indigo); color: #fff; }
+    .btn--gold    { background: var(--gold); color: var(--ink); }
+    .btn--gold-o  { background: transparent; color: var(--gold); border: 1.5px solid rgba(200,162,74,0.6); }
+    .btn--ghost   { background: rgba(250,250,247,.1); color: rgba(250,250,247,.85); border: 1px solid rgba(250,250,247,.2); }
+    .btn--ink     { background: var(--ink); color: var(--white); }
+
+    /* ════════════════════════════════════════════════════════════
+       NAV
+    ════════════════════════════════════════════════════════════ */
+    .nav-wrap {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(250,250,247,0.94);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+    }
+    .nav { display: flex; align-items: center; justify-content: space-between; height: 68px; }
+    .nav-logo {
+      font-family: var(--serif); font-size: 22px; font-weight: 400; font-style: italic;
+      color: var(--terra); letter-spacing: .01em;
+    }
+    .nav-links { display: flex; align-items: center; gap: 24px; }
+    .nav-links a {
+      font-family: var(--body); font-size: 13px; font-weight: 400;
+      color: var(--ink); opacity: 0.68; transition: opacity .15s;
+    }
+    .nav-links a:hover { opacity: 1; }
+    .nav-links a.active { opacity: 1; }
+    .nav-links .nav-cta {
+      opacity: 1; font-weight: 500; color: var(--terra);
+      padding: 7px 18px; border: 1.5px solid rgba(192,90,60,.45);
+      border-radius: 100px; transition: background .15s, color .15s;
+    }
+    .nav-links .nav-cta:hover { background: var(--terra); color: #fff; opacity: 1; }
+
+    /* ════════════════════════════════════════════════════════════
+       INTRO HERO — centered
+    ════════════════════════════════════════════════════════════ */
+    .wm-hero {
+      padding: 96px 0 80px;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+    }
+    .wm-hero .eyebrow { margin-bottom: 24px; display: block; }
+    .wm-hero-h1 {
+      font-family: var(--display);
+      font-size: clamp(44px, 6vw, 80px);
+      font-weight: 700;
+      line-height: 1.08; letter-spacing: -0.025em;
+      color: var(--ink); margin-bottom: 24px;
+    }
+    .wm-hero-body {
+      font-size: 18px; font-weight: 300;
+      line-height: 1.8; color: var(--ink-muted);
+      max-width: 580px; margin: 0 auto 40px;
+    }
+    .wm-hero-paths {
+      display: flex; align-items: center; justify-content: center;
+      gap: 12px; flex-wrap: wrap;
+    }
+    .path-anchor {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-family: var(--body); font-size: 12px; font-weight: 500;
+      letter-spacing: .07em; text-transform: uppercase;
+      padding: 12px 22px; border-radius: var(--radius);
+      border: 1.5px solid var(--border); color: var(--ink-muted);
+      transition: border-color .15s, color .15s;
+    }
+    .path-anchor:hover { border-color: var(--terra); color: var(--terra); }
+
+    /* ════════════════════════════════════════════════════════════
+       PATH SECTIONS — full detail cards
+    ════════════════════════════════════════════════════════════ */
+    .path-section { padding: 96px 0; }
+    .path-section + .path-section { padding-top: 0; }
+    .path-section:nth-child(even) { background: var(--mist); }
+
+    .path-inner {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start;
+    }
+
+    .path-header { margin-bottom: 28px; }
+    .path-header .pill { margin-bottom: 20px; }
+    .path-h2 {
+      font-family: var(--display);
+      font-size: clamp(26px, 3vw, 40px);
+      font-weight: 700; line-height: 1.15; color: var(--ink);
+      margin-bottom: 16px;
+    }
+    .path-subtitle {
+      font-family: var(--serif); font-size: 20px; font-style: italic;
+      color: var(--ink-muted); margin-bottom: 0;
+    }
+
+    .path-body {
+      font-size: 16px; line-height: 1.82; color: var(--ink-muted); margin-bottom: 20px;
+    }
+    .path-body strong { color: var(--ink); font-weight: 500; }
+    .path-body:last-of-type { margin-bottom: 32px; }
+
+    .path-includes-title {
+      font-family: var(--display); font-size: 12px; font-weight: 600;
+      letter-spacing: .1em; text-transform: uppercase;
+      color: var(--ink-muted); margin-bottom: 16px;
+    }
+    .path-list li {
+      font-size: 14px; line-height: 1.65; color: var(--ink-muted);
+      padding: 10px 0 10px 22px; border-top: 1px solid var(--border);
+      position: relative;
+    }
+    .path-list li::before {
+      content: '→'; position: absolute; left: 0;
+      font-size: 11px; top: 50%; transform: translateY(-50%);
+    }
+    .path-list--terra li::before  { color: var(--terra); }
+    .path-list--indigo li::before { color: var(--indigo); }
+    .path-list--crimson li::before { color: var(--crimson); }
+    .path-list--gold li::before   { color: rgba(200,162,74,0.75); }
+
+    .path-cta-box { margin-top: 36px; display: flex; gap: 12px; flex-wrap: wrap; }
+
+    /* Right column: details/context card */
+    .path-detail-card {
+      padding: 40px;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      background: var(--white);
+    }
+    .path-detail-card--indigo {
+      background: rgba(58,79,153,0.03);
+      border-color: rgba(58,79,153,0.12);
+    }
+    .path-detail-card--crimson {
+      background: rgba(199,55,43,0.03);
+      border-color: rgba(199,55,43,0.10);
+    }
+    .path-detail-card--terra {
+      background: rgba(192,90,60,0.03);
+      border-color: rgba(192,90,60,0.1);
+    }
+    .pdc-section { margin-bottom: 32px; }
+    .pdc-section:last-child { margin-bottom: 0; }
+    .pdc-title {
+      font-family: var(--display); font-size: 12px; font-weight: 600;
+      letter-spacing: .1em; text-transform: uppercase; margin-bottom: 12px;
+    }
+    .pdc-title--terra { color: var(--terra); }
+    .pdc-title--indigo { color: var(--indigo); }
+    .pdc-title--crimson  { color: var(--crimson); }
+    .pdc-body { font-size: 14px; line-height: 1.72; color: var(--ink-muted); }
+    .pdc-body strong { color: var(--ink); font-weight: 500; }
+
+    /* ════════════════════════════════════════════════════════════
+       START HERE — decision guide
+    ════════════════════════════════════════════════════════════ */
+    .start-here { padding: 96px 0; background: var(--mist); }
+    .start-here-header { text-align: center; max-width: 600px; margin: 0 auto 64px; }
+    .start-here-header .eyebrow { margin-bottom: 16px; display: block; }
+    .start-here-header .section-h2 { margin-bottom: 16px; }
+
+    .decision-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
+    }
+    .decision-card {
+      padding: 36px 30px;
+      background: var(--white);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      display: flex; flex-direction: column; gap: 16px;
+    }
+    .dc-eyebrow {
+      font-family: var(--body); font-size: 9px; font-weight: 600;
+      letter-spacing: .2em; text-transform: uppercase;
+    }
+    .dc-eyebrow--terra { color: var(--terra); }
+    .dc-eyebrow--indigo { color: var(--indigo); }
+    .dc-eyebrow--crimson  { color: var(--crimson); }
+    .dc-title {
+      font-family: var(--display); font-size: 18px; font-weight: 600;
+      color: var(--ink); line-height: 1.2;
+    }
+    .dc-trigger {
+      font-family: var(--serif); font-size: 15px; font-style: italic;
+      color: var(--ink); line-height: 1.55; flex: 1;
+    }
+    .dc-cta { margin-top: auto; }
+
+    /* ════════════════════════════════════════════════════════════
+       DISCOVERY CALL — contact section
+    ════════════════════════════════════════════════════════════ */
+    .discovery { background: var(--ink); padding: 88px 0; }
+    .discovery-inner { max-width: 680px; margin: 0 auto; text-align: center; }
+    .discovery-inner .eyebrow { color: rgba(200,162,74,0.75); margin-bottom: 28px; display: block; }
+    .discovery-h2 {
+      font-family: var(--serif);
+      font-size: clamp(32px, 4vw, 52px);
+      font-weight: 600;
+      line-height: 1.2; color: rgba(250,250,247,.9);
+      margin-bottom: 20px;
+    }
+    .discovery-body {
+      font-size: 16px; font-weight: 300;
+      line-height: 1.8; color: rgba(250,250,247,.45);
+      margin-bottom: 40px;
+    }
+    .discovery-btns { display: flex; align-items: center; justify-content: center; gap: 14px; flex-wrap: wrap; }
+
+    /* Contact info */
+    .contact-info {
+      margin-top: 52px; padding-top: 40px;
+      border-top: 1px solid rgba(250,250,247,.1);
+    }
+    .contact-info p {
+      font-size: 14px; color: rgba(250,250,247,.35); margin-bottom: 8px;
+    }
+    .contact-info a {
+      color: rgba(200,162,74,0.7); transition: color .15s;
+    }
+    .contact-info a:hover { color: rgba(200,162,74,1); }
+
+    /* ════════════════════════════════════════════════════════════
+       FOOTER
+    ════════════════════════════════════════════════════════════ */
+    footer { background: var(--ink); color: rgba(250,250,247,.6); padding: 64px 0 36px; }
+    .footer-inner { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 64px; margin-bottom: 52px; }
+    .footer-logo {
+      font-family: var(--serif); font-size: 22px; font-weight: 400; font-style: italic;
+      color: rgba(250,250,247,.88); margin-bottom: 14px;
+    }
+    .footer-tagline { font-size: 14px; line-height: 1.7; color: rgba(250,250,247,.42); max-width: 280px; }
+    .footer-col-title { font-size: 10px; font-weight: 500; letter-spacing: .18em; text-transform: uppercase; color: rgba(250,250,247,.3); margin-bottom: 20px; }
+    .footer-links li { margin-bottom: 12px; }
+    .footer-links a { font-size: 14px; color: rgba(250,250,247,.55); transition: color .15s; }
+    .footer-links a:hover { color: rgba(250,250,247,.88); }
+    .footer-bottom {
+      display: flex; align-items: center; justify-content: space-between;
+      padding-top: 28px; border-top: 1px solid rgba(250,250,247,.08);
+      font-size: 12px; color: rgba(250,250,247,.28);
+    }
+
+    /* ─── Fade in ─── */
+    .fade-in { opacity: 0; transform: translateY(22px); transition: opacity .6s ease, transform .6s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+    .fade-in.delay-1 { transition-delay: .12s; }
+    .fade-in.delay-2 { transition-delay: .24s; }
+    .fade-in.delay-3 { transition-delay: .36s; }
+
+    /* ─── Responsive ─── */
+    @media (max-width: 980px) {
+      .path-inner { grid-template-columns: 1fr; gap: 48px; }
+      .decision-grid { grid-template-columns: 1fr; }
+      .footer-inner { grid-template-columns: 1fr 1fr; gap: 48px; }
+      .footer-col:first-child { grid-column: span 2; }
+    }
+    @media (max-width: 640px) {
+      :root { --pad: 24px; }
+      .nav-links a:not(.nav-cta) { display: none; }
+      .wm-hero-paths { flex-direction: column; }
+      .path-cta-box { flex-direction: column; }
+      .discovery-btns { flex-direction: column; align-items: center; }
+      .footer-inner { grid-template-columns: 1fr; gap: 36px; }
+      .footer-col:first-child { grid-column: span 1; }
+    }
+    /* Midjourney editorial strip */
+    .mj-strip { height: 380px; overflow: hidden; }
+    .mj-strip img { width: 100%; height: 100%; object-fit: cover; object-position: center center; display: block; }
+    @media (max-width: 640px) { .mj-strip { height: 240px; } }
+    /* ─── Shape Window Dividers ─── */
+    .shape-break {
+      padding: 52px 0; display: flex; justify-content: center; align-items: flex-end; gap: 36px;
+      background: var(--white);
+    }
+    .shape-break--mist { background: var(--mist); }
+    .win { flex-shrink: 0; overflow: hidden; background-size: cover; background-position: center top; background-repeat: no-repeat; }
+    .win--arch      { width: 130px; height: 200px; border-radius: 65px 65px 8px 8px; }
+    .win--arch-sm   { width: 94px;  height: 148px; border-radius: 47px 47px 6px 6px; }
+    .win--arch-tall { width: 96px;  height: 210px; border-radius: 48px 48px 6px 6px; }
+    .win--circle    { width: 160px; height: 160px; border-radius: 50%; }
+    .win--oval      { width: 108px; height: 170px; border-radius: 54px; }
+    @media (max-width: 640px) {
+      .shape-break { gap: 14px; padding: 36px 16px; }
+      .win--arch { width: 76px; height: 120px; border-radius: 38px 38px 6px 6px; }
+      .win--arch-sm { width: 58px; height: 90px; border-radius: 29px 29px 4px 4px; }
+      .win--arch-tall { width: 60px; height: 124px; border-radius: 30px 30px 4px 4px; }
+      .win--circle { width: 96px; height: 96px; }
+      .win--oval { width: 66px; height: 104px; border-radius: 33px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <header class="nav-wrap">
+    <nav class="nav container">
+      <a href="index.html" class="nav-logo">Cléa Hernández</a>
+      <div class="nav-links">
+        <a href="story-loom.html">Story Loom</a>
+        <a href="jungian-coaching.html">Jungian Coaching</a>
+        <a href="about.html">About</a>
+        <a href="your-words-here.html" style="color: var(--terra); font-weight: 500;">Your Words Here</a>
+        <a href="work-with-me.html" class="nav-cta active">Work With Me</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ─── HERO ─── -->
+    <section class="wm-hero">
+      <div class="container">
+        <span class="eyebrow">Work With Cléa</span>
+        <h1 class="wm-hero-h1">
+          Three pathways.<br>
+          One thread.
+        </h1>
+        <p class="wm-hero-body">
+          Whether you're a founder finding your voice, a coach building your practice, or a mission-driven organization ready to tell the truth — there's a path for you.
+        </p>
+        <div class="wm-hero-paths">
+          <a href="#jungian" class="path-anchor">1:1 Jungian Coaching ↓</a>
+          <a href="#story-loom" class="path-anchor">Story Loom ↓</a>
+          <a href="#mythograph" class="path-anchor">Mythograph · Organizations ↓</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── PATH 01: Jungian Coaching ─── -->
+    <section class="path-section" id="jungian">
+      <div class="container">
+        <div class="path-inner">
+
+          <div class="fade-in">
+            <div class="path-header">
+              <span class="pill pill--crimson">01 &nbsp;·&nbsp; 1:1 Coaching</span>
+              <h2 class="path-h2" style="margin-top: 20px;">Jungian Narrative Coaching</h2>
+              <p class="path-subtitle">For Founders &amp; Creatives</p>
+            </div>
+
+            <p class="path-body">
+              The most personal path — a container for doing the real work. Especially for people in the meaning-making years who are exhausted by capitalist performance and ready to name their work as something else entirely.
+            </p>
+            <p class="path-body">
+              We excavate your stories, surface the internalized patterns keeping you small, and build language rooted in your lived experience and deepest convictions.
+            </p>
+            <p class="path-body">
+              <strong>Right for you if:</strong> you know your work wants to contribute to something larger, but you haven't yet found language for it that doesn't sound like everyone else.
+            </p>
+
+            <p class="path-includes-title">What's included</p>
+            <ul class="path-list path-list--crimson">
+              <li>Bi-weekly 60-minute sessions</li>
+              <li>Narrative excavation &amp; brand voice development</li>
+              <li>Shadow work applied to brand story</li>
+              <li>Active Imagination practices</li>
+              <li>Between-session reflection prompts &amp; writing support</li>
+              <li>Asynchronous written support between sessions</li>
+            </ul>
+
+            <div class="path-cta-box">
+              <a href="mailto:clea@mythograph.co" class="btn btn--gold">Book a discovery call →</a>
+              <a href="jungian-coaching.html" class="btn btn--terra-o">Learn more</a>
+            </div>
+          </div>
+
+          <div class="path-detail-card path-detail-card--crimson fade-in delay-1">
+            <div class="pdc-section">
+              <p class="pdc-title pdc-title--crimson">What shifts</p>
+              <ul style="list-style: none; display: flex; flex-direction: column; gap: 14px;">
+                <li style="font-size: 14px; line-height: 1.65; color: var(--ink-muted); padding-left: 18px; position: relative;">
+                  <span style="position: absolute; left: 0; color: var(--crimson);">→</span>
+                  From performing for a system that doesn't serve you to <strong style="color: var(--ink);">building from your own narrative authority</strong>
+                </li>
+                <li style="font-size: 14px; line-height: 1.65; color: var(--ink-muted); padding-left: 18px; position: relative;">
+                  <span style="position: absolute; left: 0; color: var(--crimson);">→</span>
+                  From scattered messaging to a <strong style="color: var(--ink);">coherent narrative field</strong>
+                </li>
+                <li style="font-size: 14px; line-height: 1.65; color: var(--ink-muted); padding-left: 18px; position: relative;">
+                  <span style="position: absolute; left: 0; color: var(--crimson);">→</span>
+                  From "what do I even say?" to <strong style="color: var(--ink);">words that attract your people</strong>
+                </li>
+              </ul>
+            </div>
+            <div class="pdc-section">
+              <p class="pdc-title pdc-title--crimson">How to start</p>
+              <p class="pdc-body">
+                Book a free 30-minute discovery call. We'll talk about where you are, what you're building, and whether this is the right container for the work. No commitment required.
+              </p>
+            </div>
+            <div class="pdc-section">
+              <p class="pdc-title pdc-title--crimson">Write to me</p>
+              <p class="pdc-body">
+                You can also write directly to <a href="mailto:clea@mythograph.co" style="color: var(--terra); text-decoration: underline; text-underline-offset: 2px;">clea@mythograph.co</a> — tell me about your work and what you're trying to find.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── PATH 02: Story Loom ─── -->
+    <section class="path-section" id="story-loom">
+      <div class="container">
+        <div class="path-inner">
+
+          <div class="fade-in">
+            <div class="path-header">
+              <span class="pill pill--indigo">02 &nbsp;·&nbsp; App &amp; Community</span>
+              <h2 class="path-h2" style="margin-top: 20px;">Story Loom</h2>
+              <p class="path-subtitle">Narrative OS for the Resistance</p>
+            </div>
+
+            <p class="path-body">
+              Story Loom is narrative infrastructure for people who are done building on extractive terms. It's for those ready to organize their lived stories, shadow work, and deepest convictions into resistance-minded work — and find the community of aligned builders doing the same.
+            </p>
+            <p class="path-body">
+              <strong>Right for you if:</strong> you're building something post-capitalist and need narrative infrastructure that actually matches your values. Not another funnel. A narrative field that attracts your people.
+            </p>
+
+            <p class="path-includes-title">What's inside</p>
+            <ul class="path-list path-list--indigo">
+              <li>Story Journal for lived experience &amp; ideological fuel</li>
+              <li>Story Bank — your narrative field, not your content calendar</li>
+              <li>Conviction-to-transformation messaging you own</li>
+              <li>Anti-extractive positioning &amp; offer design</li>
+              <li>Community of aligned resistance-minded builders</li>
+              <li>The WEAVE Method: Wander → Excavate → Architect → Voice → Embody</li>
+            </ul>
+
+            <div class="path-cta-box">
+              <a href="mailto:clea@mythograph.co" class="btn btn--gold">Book a discovery call →</a>
+              <a href="story-loom.html" class="btn btn--terra-o">Learn more</a>
+            </div>
+          </div>
+
+          <div class="path-detail-card path-detail-card--indigo fade-in delay-1">
+            <div class="pdc-section">
+              <p class="pdc-title pdc-title--indigo">The WEAVE Method</p>
+              <p class="pdc-body">
+                Story Loom is built on five phases — <strong>Wander, Excavate, Architect, Voice, Embody</strong> — each designed to move you from raw narrative material to a living brand practice.
+              </p>
+            </div>
+            <div class="pdc-section">
+              <p class="pdc-title pdc-title--indigo">The Active Imagination differentiator</p>
+              <p class="pdc-body">
+                The Excavate phase uses <strong>Jungian Active Imagination</strong> — Jung's method for entering into dialogue with the unconscious — to surface narrative material that performance-based brand work will always miss.
+              </p>
+            </div>
+            <div class="pdc-section">
+              <p class="pdc-title pdc-title--indigo">Currently</p>
+              <p class="pdc-body">
+                Story Loom is already part of the work. Book a discovery call to explore how the narrative infrastructure can support your specific journey.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── PATH 03: Mythograph ─── -->
+    <section class="path-section" id="mythograph" style="background: var(--ink);">
+      <div class="container">
+        <div class="path-inner">
+
+          <div class="fade-in">
+            <div class="path-header">
+              <span class="pill pill--ghost">03 &nbsp;·&nbsp; For Organizations</span>
+              <h2 class="path-h2" style="margin-top: 20px; color: rgba(250,250,247,.9);">Mythograph Strategic Brand Storytelling</h2>
+              <p class="path-subtitle" style="color: rgba(250,250,247,.45);">For Mission-Driven Organizations</p>
+            </div>
+
+            <p class="path-body" style="color: rgba(250,250,247,.5);">
+              Mythograph is my strategic brand consultancy for mission-driven organizations ready to articulate what they stand for — and build the systems to say it consistently, to the right people, in the right way.
+            </p>
+            <p class="path-body" style="color: rgba(250,250,247,.5);">
+              <strong style="color: rgba(250,250,247,.82);">Right for you if:</strong> you lead a purpose-driven company or nonprofit and your brand doesn't yet tell the full story of the transformation you create.
+            </p>
+
+            <p class="path-includes-title" style="color: rgba(250,250,247,.35);">What's included</p>
+            <ul class="path-list path-list--gold">
+              <li style="color: rgba(250,250,247,.5); border-top-color: rgba(250,250,247,.08);">Brand Oracle Interview &amp; Report</li>
+              <li style="color: rgba(250,250,247,.5); border-top-color: rgba(250,250,247,.08);">Strategic Brand Platform &amp; Narrative System</li>
+              <li style="color: rgba(250,250,247,.5); border-top-color: rgba(250,250,247,.08);">Visual &amp; Verbal Identity</li>
+              <li style="color: rgba(250,250,247,.5); border-top-color: rgba(250,250,247,.08);">Messaging strategy &amp; content architecture</li>
+              <li style="color: rgba(250,250,247,.5); border-top-color: rgba(250,250,247,.08);">Narrative websites</li>
+            </ul>
+
+            <div class="path-cta-box">
+              <a href="https://mythograph.co" target="_blank" rel="noopener" class="btn btn--ghost">Visit Mythograph →</a>
+              <a href="mailto:clea@mythograph.co" class="btn btn--terra">Inquire directly</a>
+            </div>
+          </div>
+
+          <div class="path-detail-card fade-in delay-1" style="background: rgba(250,250,247,.04); border-color: rgba(250,250,247,.1);">
+            <div class="pdc-section">
+              <p class="pdc-title" style="color: rgba(200,162,74,0.7);">The Mythograph approach</p>
+              <p class="pdc-body" style="color: rgba(250,250,247,.45);">
+                Mythograph brings the same Jungian narrative depth that drives my coaching practice to organizational brand strategy. We go beneath the mission statement to find the story the organization is actually living — and build systems that make that story impossible to ignore.
+              </p>
+            </div>
+            <div class="pdc-section">
+              <p class="pdc-title" style="color: rgba(200,162,74,0.7);">Who it's for</p>
+              <p class="pdc-body" style="color: rgba(250,250,247,.45);">
+                <strong style="color: rgba(250,250,247,.7);">Nonprofits</strong> with complex missions that aren't communicating their full impact. <strong style="color: rgba(250,250,247,.7);">Purpose-driven companies</strong> whose brand hasn't kept up with their values. <strong style="color: rgba(250,250,247,.7);">Social enterprises</strong> building something post-extractive and needing language to match.
+              </p>
+            </div>
+            <div class="pdc-section">
+              <p class="pdc-title" style="color: rgba(200,162,74,0.7);">To inquire</p>
+              <p class="pdc-body" style="color: rgba(250,250,247,.45);">
+                Visit <a href="https://mythograph.co" target="_blank" rel="noopener" style="color: rgba(200,162,74,0.7); text-decoration: underline; text-underline-offset: 2px;">mythograph.co</a> or write to <a href="mailto:clea@mythograph.co" style="color: rgba(200,162,74,0.7); text-decoration: underline; text-underline-offset: 2px;">clea@mythograph.co</a>.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── START HERE decision guide ─── -->
+    <section class="start-here">
+      <div class="container">
+
+        <div class="start-here-header fade-in">
+          <span class="eyebrow">Not sure where to start?</span>
+          <h2 class="section-h2" style="margin-top: 16px; margin-bottom: 16px;">Find your path.</h2>
+          <p class="section-lead" style="margin: 0 auto;">Three questions. One answer.</p>
+        </div>
+
+        <div class="decision-grid">
+          <div class="decision-card fade-in">
+            <p class="dc-eyebrow dc-eyebrow--crimson">For individuals</p>
+            <p class="dc-title">You want to do the deep, personal work.</p>
+            <p class="dc-trigger">
+              "I need someone to hold the container while I figure out what I'm actually building — and why."
+            </p>
+            <div class="dc-cta">
+              <a href="mailto:clea@mythograph.co" class="btn btn--gold" style="font-size: 11px; padding: 12px 20px;">Book a discovery call →</a>
+            </div>
+          </div>
+
+          <div class="decision-card fade-in delay-1">
+            <p class="dc-eyebrow dc-eyebrow--indigo">For builders</p>
+            <p class="dc-title">You want infrastructure and community.</p>
+            <p class="dc-trigger">
+              "I need tools and a community of people building the same kind of work — resistance-minded, values-aligned, post-extractive."
+            </p>
+            <div class="dc-cta">
+              <a href="https://storyloom.app" target="_blank" rel="noopener" class="btn btn--gold" style="font-size: 11px; padding: 12px 20px;">Join Story Loom →</a>
+            </div>
+          </div>
+
+          <div class="decision-card fade-in delay-2">
+            <p class="dc-eyebrow dc-eyebrow--terra">For organizations</p>
+            <p class="dc-title">You need strategic brand systems.</p>
+            <p class="dc-trigger">
+              "We're a mission-driven organization and our brand doesn't yet tell the full story of what we do in the world."
+            </p>
+            <div class="dc-cta">
+              <a href="https://mythograph.co" target="_blank" rel="noopener" class="btn btn--terra" style="font-size: 11px; padding: 12px 20px;">Visit Mythograph →</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ─── SHAPE WINDOW DIVIDER ─── -->
+    <div class="shape-break shape-break--mist" aria-hidden="true">
+      <div class="win win--arch"
+           style="background-image: url('mj_arch_desert.png'); background-position: center 35%;"
+           title="Arch — woman in desert, glowing cube portal in the distance"></div>
+      <div class="win win--oval"
+           style="background-image: url('mj_circle_esvedra.png'); background-position: center center;"
+           title="Oval — Es Vedra island, dramatic Ibiza cloudscape"></div>
+      <div class="win win--arch"
+           style="background-image: url('mj_arch_threshold.png'); background-position: center 15%;"
+           title="Arch — figure entering a monolith at golden sunset"></div>
+    </div>
+
+    <!-- ─── ART STRIP — Midjourney ─── -->
+    <div class="mj-strip" role="img" aria-label="Two figures walking together toward a glowing threshold of light in a surrealist dreamscape">
+      <img
+        src="mj_workwithme_threshold.png"
+        alt="Two silhouetted figures walk side by side toward a massive golden portal of light in a dreamlike surrealist landscape — collaborative, hopeful, threshold."
+        loading="lazy"
+      />
+    </div>
+
+    <!-- ─── DISCOVERY CALL CTA ─── -->
+    <section class="discovery">
+      <div class="container">
+        <div class="discovery-inner fade-in">
+          <span class="eyebrow">Start here</span>
+          <h2 class="discovery-h2">
+            Ready to find<br>your true story?
+          </h2>
+          <p class="discovery-body">
+            Start with a free 30-minute conversation. We'll talk about where you are, what you're building, and where the work wants to go.
+          </p>
+          <div class="discovery-btns">
+            <a href="mailto:clea@mythograph.co" class="btn btn--terra">Book a discovery call →</a>
+            <a href="about.html" class="btn btn--ghost">Meet Cléa first</a>
+          </div>
+
+          <div class="contact-info">
+            <p>Prefer to write first? Reach me at <a href="mailto:clea@mythograph.co">clea@mythograph.co</a></p>
+            <p>Or visit <a href="https://mythograph.co" target="_blank" rel="noopener">mythograph.co</a> for organizational work.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-col">
+          <p class="footer-logo">Cléa Hernández</p>
+          <p class="footer-tagline">Jungian Narrative Coach, brand strategist, and founder of Mythograph &amp; Story Loom.</p>
+        </div>
+        <div class="footer-col">
+          <p class="footer-col-title">Navigate</p>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="story-loom.html">Story Loom</a></li>
+            <li><a href="jungian-coaching.html">Jungian Coaching</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="your-words-here.html">Your Words Here</a></li>
+            <li><a href="work-with-me.html">Work With Me</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <p class="footer-col-title">Connect</p>
+          <ul class="footer-links">
+            <li><a href="mailto:clea@mythograph.co">clea@mythograph.co</a></li>
+            <li><a href="https://mythograph.co" target="_blank" rel="noopener">Mythograph.co</a></li>
+            <li><a href="https://storyloom.app" target="_blank" rel="noopener">Story Loom</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Cléa Hernández. All rights reserved.</span>
+        <span>Built with intention.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Story Loom — Narrative OS for the Resistance · Cléa Hernández</title>
+  <meta name="description" content="Story Loom is a narrative operating system for people building resistance-minded work. Organize your lived stories, shadow work, and convictions into a brand that doesn't extract." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,300;1,9..144,400;1,9..144,600;1,9..144,700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ════════════════════════════════════════════════════════════
+       VARIABLES (shared with index.html)
+    ════════════════════════════════════════════════════════════ */
+    :root {
+      --white:      #FAFAF7;
+      --ink:        #1A1410;
+      --ink-muted:  #7A6D5E;
+      --terra:      #C05A3C;
+      --terra-pale: rgba(192,90,60,0.07);
+      --indigo:     #3A4F99;
+      --indigo-pale: rgba(58,79,153,0.07);
+      --indigo-pale:rgba(58, 79, 153, 0.08);
+      --indigo-deep:#1E2D66;
+      --gold:       #C8A24A;
+      --sage:       #7A9E7E;
+      --mist:       #F2ECE4;
+      --border:     rgba(34, 24, 48, 0.09);
+      --serif:      'Playfair Display', Georgia, serif;
+      --display:    'Fraunces', Georgia, serif;
+      --body:       'DM Sans', system-ui, -apple-system, sans-serif;
+      --max:        1160px;
+      --pad:        40px;
+      --radius:     4px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--body);
+      background: var(--white);
+      color: var(--ink);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+    body::after {
+      content: ''; position: fixed; inset: 0;
+      pointer-events: none; z-index: 9999; opacity: 0.030;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-size: 200px 200px;
+    }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; }
+
+    .container { max-width: var(--max); margin: 0 auto; padding: 0 var(--pad); }
+
+    /* ─── Shared typography ─── */
+    .eyebrow {
+      font-family: var(--body); font-size: 10px; font-weight: 500;
+      letter-spacing: .2em; text-transform: uppercase; color: var(--indigo);
+    }
+    .pill {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-family: var(--body); font-size: 10px; font-weight: 500;
+      letter-spacing: .12em; text-transform: uppercase;
+      padding: 5px 13px; border-radius: 100px;
+      border: 1.5px solid rgba(58, 79, 153, .3);
+      color: var(--indigo); background: var(--indigo-pale);
+    }
+    .pill--ghost {
+      border-color: rgba(250,250,247,.25);
+      color: rgba(250,250,247,.7);
+      background: rgba(250,250,247,.06);
+    }
+    .pill--terra {
+      border-color: rgba(192,90,60,.3);
+      color: var(--terra);
+      background: var(--terra-pale);
+    }
+    .section-h2 {
+      font-family: var(--serif);
+      font-size: clamp(30px, 4vw, 52px);
+      font-weight: 600;
+      line-height: 1.15; letter-spacing: -0.02em; color: var(--ink);
+    }
+    .section-lead {
+      font-size: 17px; font-weight: 300;
+      line-height: 1.8; color: var(--ink-muted); max-width: 600px;
+    }
+    .ornament {
+      display: flex; align-items: center; gap: 14px;
+      padding: 16px 0; color: var(--gold); font-size: 9px; opacity: 0.55;
+    }
+    .ornament::before, .ornament::after {
+      content: ''; flex: 1; max-width: 220px; height: 1px;
+      background: linear-gradient(to right, transparent, rgba(200,162,74,.35));
+    }
+    .ornament::after { background: linear-gradient(to left, transparent, rgba(200,162,74,.35)); }
+
+    /* ─── Buttons ─── */
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-family: var(--body); font-size: 12px; font-weight: 500;
+      letter-spacing: .07em; text-transform: uppercase;
+      padding: 14px 28px; border-radius: var(--radius);
+      cursor: pointer; transition: opacity .18s, transform .15s;
+      border: none; line-height: 1;
+    }
+    .btn:hover { opacity: .82; transform: translateY(-1px); }
+    .btn--indigo { background: var(--indigo); color: #fff; }
+    .btn--terra  { background: var(--terra); color: #fff; }
+    .btn--gold   { background: var(--gold); color: var(--ink); }
+    .btn--gold-o { background: transparent; color: var(--gold); border: 1.5px solid rgba(200,162,74,0.6); }
+    .btn--terra-o { background: transparent; color: var(--terra); border: 1.5px solid var(--terra); }
+    .btn--ghost  { background: rgba(250,250,247,.1); color: rgba(250,250,247,.85); border: 1px solid rgba(250,250,247,.2); }
+    .btn--indigo-o { background: transparent; color: var(--indigo); border: 1.5px solid var(--indigo); }
+
+    /* ════════════════════════════════════════════════════════════
+       NAV
+    ════════════════════════════════════════════════════════════ */
+    .nav-wrap {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(250, 250, 247, 0.94);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+    }
+    .nav { display: flex; align-items: center; justify-content: space-between; height: 68px; }
+    .nav-logo {
+      font-family: var(--serif); font-size: 22px; font-weight: 400; font-style: italic;
+      color: var(--terra); letter-spacing: .01em;
+    }
+    .nav-links { display: flex; align-items: center; gap: 24px; }
+    .nav-links a {
+      font-family: var(--body); font-size: 13px; font-weight: 400;
+      color: var(--ink); opacity: 0.68; transition: opacity .15s;
+    }
+    .nav-links a:hover, .nav-links a.active { opacity: 1; }
+    .nav-links .nav-cta {
+      opacity: 1; font-weight: 500; color: var(--terra);
+      padding: 7px 18px; border: 1.5px solid rgba(192,90,60,.45);
+      border-radius: 100px; transition: background .15s, color .15s;
+    }
+    .nav-links .nav-cta:hover { background: var(--terra); color: #fff; opacity: 1; }
+
+    /* ════════════════════════════════════════════════════════════
+       PAGE HERO — dark indigo field
+    ════════════════════════════════════════════════════════════ */
+    .sl-hero {
+      background: var(--indigo-deep);
+      padding: 96px 0 80px;
+      position: relative; overflow: hidden;
+    }
+    /* Subtle radial glow behind hero text */
+    .sl-hero::before {
+      content: '';
+      position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+      width: 800px; height: 600px;
+      background: radial-gradient(ellipse at top, rgba(200,162,74,0.08) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    .sl-hero-inner {
+      display: grid; grid-template-columns: 1fr 420px; gap: 80px; align-items: center;
+      position: relative; z-index: 1;
+    }
+    .sl-hero-pill { margin-bottom: 28px; }
+    .sl-hero-h1 {
+      font-family: var(--display);
+      font-size: clamp(44px, 6vw, 80px);
+      font-weight: 700;
+      line-height: 1.05; letter-spacing: -0.025em;
+      color: #F5F0E9; margin-bottom: 24px;
+    }
+    .sl-hero-h1 span { color: rgba(200,162,74,0.9); }
+    .sl-hero-body {
+      font-size: 17px; font-weight: 300;
+      line-height: 1.8; color: rgba(245,240,233,0.6);
+      margin-bottom: 40px; max-width: 480px;
+    }
+    .sl-hero-btns { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+
+    /* Hero aside — loom thread ornament */
+    .sl-hero-ornament { display: flex; align-items: center; justify-content: center; }
+
+    /* ════════════════════════════════════════════════════════════
+       INTRO — what is Story Loom
+    ════════════════════════════════════════════════════════════ */
+    .sl-intro { padding: 88px 0; }
+    .sl-intro-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+    .sl-intro-text .eyebrow { margin-bottom: 20px; }
+    .sl-intro-text .section-h2 { margin-bottom: 24px; }
+    .sl-intro-text p { font-size: 16px; line-height: 1.82; color: var(--ink-muted); margin-bottom: 18px; }
+    .sl-intro-text p strong { color: var(--ink); font-weight: 500; }
+    .sl-intro-text p:last-of-type { margin-bottom: 32px; }
+
+    /* Right column feature callout */
+    .sl-callout {
+      background: var(--indigo-pale);
+      border: 1px solid rgba(58,79,153,.15);
+      border-radius: var(--radius);
+      padding: 40px;
+    }
+    .sl-callout-title {
+      font-family: var(--display); font-size: 16px; font-weight: 600;
+      color: var(--indigo); margin-bottom: 20px;
+    }
+    .sl-callout-list li {
+      font-size: 15px; line-height: 1.7; color: var(--ink-muted);
+      padding: 10px 0 10px 22px; border-top: 1px solid rgba(58,79,153,.1);
+      position: relative;
+    }
+    .sl-callout-list li::before {
+      content: '→'; position: absolute; left: 0;
+      color: var(--indigo); font-size: 11px; top: 50%; transform: translateY(-50%);
+    }
+
+    /* ════════════════════════════════════════════════════════════
+       WEAVE FRAMEWORK
+    ════════════════════════════════════════════════════════════ */
+    .weave { background: var(--mist); padding: 96px 0; }
+    .weave-header { text-align: center; max-width: 640px; margin: 0 auto 72px; }
+    .weave-header .eyebrow { margin-bottom: 16px; display: block; }
+    .weave-header .section-h2 { margin-bottom: 16px; }
+    .weave-header p { font-size: 16px; color: var(--ink-muted); line-height: 1.8; }
+
+    /* The 5-phase vertical timeline */
+    .weave-phases { max-width: 720px; margin: 0 auto; }
+    .weave-phase {
+      display: grid; grid-template-columns: 80px 1fr;
+      gap: 32px; align-items: start;
+      padding: 40px 0;
+      border-bottom: 1px solid var(--border);
+      position: relative;
+    }
+    .weave-phase:first-child { border-top: 1px solid var(--border); }
+
+    .weave-phase-letter {
+      font-family: var(--display);
+      font-size: 72px; font-weight: 700;
+      line-height: 0.85; color: var(--indigo); opacity: 0.35;
+      position: relative; top: -4px;
+    }
+    .weave-phase-label {
+      font-family: var(--body); font-size: 9px; font-weight: 600;
+      letter-spacing: .22em; text-transform: uppercase; color: var(--indigo);
+      margin-bottom: 10px; display: block;
+    }
+    .weave-phase-name {
+      font-family: var(--display); font-size: clamp(20px, 2.5vw, 26px);
+      font-weight: 600; color: var(--ink); margin-bottom: 14px; line-height: 1.2;
+    }
+    .weave-phase-body {
+      font-size: 15px; line-height: 1.8; color: var(--ink-muted);
+    }
+    .weave-phase-body strong { color: var(--ink); font-weight: 500; }
+
+    /* Active Imagination highlight badge */
+    .ai-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      margin-top: 16px;
+      padding: 8px 16px;
+      background: rgba(58,79,153,.08);
+      border: 1px solid rgba(58,79,153,.18);
+      border-radius: var(--radius);
+      font-size: 13px; color: var(--indigo); font-weight: 400;
+    }
+    .ai-badge span { font-style: italic; font-family: var(--serif); font-size: 15px; }
+
+    /* ════════════════════════════════════════════════════════════
+       ACTIVE IMAGINATION — The Differentiator
+    ════════════════════════════════════════════════════════════ */
+    .ai-section {
+      background: var(--indigo-deep); padding: 96px 0;
+      position: relative; overflow: hidden;
+    }
+    .ai-section::before {
+      content: '';
+      position: absolute; bottom: -100px; right: -100px;
+      width: 500px; height: 500px;
+      background: radial-gradient(ellipse at center, rgba(200,162,74,0.07) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .ai-inner { max-width: 800px; margin: 0 auto; text-align: center; position: relative; z-index: 1; }
+    .ai-inner .eyebrow { color: rgba(200,162,74,0.8); margin-bottom: 28px; display: block; }
+    .ai-quote {
+      font-family: var(--serif);
+      font-size: clamp(26px, 3.2vw, 44px);
+      font-weight: 300; font-style: italic;
+      line-height: 1.35; color: #F5F0E9;
+      margin-bottom: 32px;
+    }
+    .ai-body {
+      font-size: 16px; font-weight: 300;
+      line-height: 1.85; color: rgba(245,240,233,0.55);
+      margin-bottom: 16px; max-width: 640px; margin-left: auto; margin-right: auto;
+    }
+    .ai-body strong { color: rgba(245,240,233,0.82); font-weight: 400; }
+    .ai-attr {
+      font-size: 11px; letter-spacing: .14em; text-transform: uppercase;
+      color: rgba(245,240,233,0.38); margin-bottom: 24px; display: block;
+    }
+
+    /* ════════════════════════════════════════════════════════════
+       WHO IT'S FOR
+    ════════════════════════════════════════════════════════════ */
+    .for-whom { padding: 96px 0; }
+    .for-whom-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+    .for-whom-text .eyebrow { margin-bottom: 20px; }
+    .for-whom-text .section-h2 { margin-bottom: 28px; }
+
+    .for-whom-cards { display: flex; flex-direction: column; gap: 16px; }
+    .for-card {
+      padding: 24px 28px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      border-left: 3px solid var(--indigo);
+    }
+    .for-card-head {
+      font-family: var(--display); font-size: 14px; font-weight: 600;
+      color: var(--ink); margin-bottom: 8px;
+    }
+    .for-card-body { font-size: 14px; line-height: 1.72; color: var(--ink-muted); }
+
+    /* ════════════════════════════════════════════════════════════
+       CTA BAND
+    ════════════════════════════════════════════════════════════ */
+    .sl-cta { background: var(--terra); padding: 80px 0; }
+    .sl-cta-inner { text-align: center; max-width: 620px; margin: 0 auto; }
+    .sl-cta-h2 {
+      font-family: var(--serif);
+      font-size: clamp(32px, 4vw, 52px);
+      font-weight: 600;
+      line-height: 1.2; color: #FFF6F2;
+      margin-bottom: 16px;
+    }
+    .sl-cta-body {
+      font-size: 16px; font-weight: 300;
+      line-height: 1.8; color: rgba(255,246,242,0.65);
+      margin-bottom: 36px;
+    }
+    .sl-cta-btns { display: flex; align-items: center; justify-content: center; gap: 14px; flex-wrap: wrap; }
+
+    /* ════════════════════════════════════════════════════════════
+       FOOTER
+    ════════════════════════════════════════════════════════════ */
+    footer {
+      background: var(--ink); color: rgba(250,250,247,.6);
+      padding: 64px 0 36px;
+    }
+    .footer-inner {
+      display: grid; grid-template-columns: 2fr 1fr 1fr;
+      gap: 64px; margin-bottom: 52px;
+    }
+    .footer-logo {
+      font-family: var(--serif); font-size: 22px;
+      font-weight: 400; font-style: italic;
+      color: rgba(250,250,247,.88); margin-bottom: 14px;
+    }
+    .footer-tagline { font-size: 14px; line-height: 1.7; color: rgba(250,250,247,.42); max-width: 280px; }
+    .footer-col-title {
+      font-size: 10px; font-weight: 500; letter-spacing: .18em;
+      text-transform: uppercase; color: rgba(250,250,247,.3); margin-bottom: 20px;
+    }
+    .footer-links li { margin-bottom: 12px; }
+    .footer-links a { font-size: 14px; color: rgba(250,250,247,.55); transition: color .15s; }
+    .footer-links a:hover { color: rgba(250,250,247,.88); }
+    .footer-bottom {
+      display: flex; align-items: center; justify-content: space-between;
+      padding-top: 28px; border-top: 1px solid rgba(250,250,247,.08);
+      font-size: 12px; color: rgba(250,250,247,.28);
+    }
+
+    /* ─── App mockup ─── */
+    .sl-mockup-wrap { display: flex; align-items: center; justify-content: center; }
+    .sl-mockup {
+      background: #131D3F; border-radius: 10px; overflow: hidden;
+      border: 1px solid rgba(200,162,74,0.22);
+      box-shadow: 0 40px 100px rgba(10,14,40,0.65), 0 8px 24px rgba(10,14,40,0.4);
+      width: 100%; max-width: 380px;
+    }
+    .sl-mockup-header {
+      background: #0C1428; padding: 11px 16px;
+      display: flex; align-items: center; gap: 8px;
+      border-bottom: 1px solid rgba(200,162,74,0.1);
+    }
+    .sl-dot { width: 11px; height: 11px; border-radius: 50%; flex-shrink: 0; }
+    .sl-dot-1 { background: #FF5F57; }
+    .sl-dot-2 { background: #FFBD2E; }
+    .sl-dot-3 { background: #28C840; }
+    .sl-mockup-name {
+      font-family: var(--display); font-size: 12px; font-weight: 500;
+      color: rgba(200,162,74,0.65); margin-left: 6px; letter-spacing: 0.04em;
+    }
+    .sl-mockup-body { padding: 22px 20px; }
+    .sl-mock-label {
+      font-family: var(--body); font-size: 8px; font-weight: 600;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: rgba(200,162,74,0.5); margin: 18px 0 8px; display: block;
+    }
+    .sl-mock-label:first-child { margin-top: 0; }
+    .sl-mock-item {
+      padding: 7px 11px; border-radius: 3px;
+      font-size: 12px; line-height: 1.5; color: rgba(245,240,233,0.42);
+      margin-bottom: 2px;
+    }
+    .sl-mock-item--active {
+      background: rgba(58,79,153,0.28); color: rgba(245,240,233,0.88);
+      border-left: 2px solid rgba(58,79,153,0.75);
+    }
+    .sl-mock-item--dim { color: rgba(245,240,233,0.28); }
+    /* Atmospheric art strip */
+    .sl-art-strip { height: 340px; overflow: hidden; }
+    .sl-art-strip img {
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: center 35%;
+      filter: saturate(0.75) sepia(0.1); display: block;
+    }
+
+    /* ─── Thrutopia quote ─── */
+    .sl-thru-quote {
+      border-left: 2px solid rgba(200,162,74,0.35);
+      padding: 14px 0 14px 22px;
+      margin: 0 0 32px;
+    }
+    .sl-thru-quote p {
+      font-family: var(--serif); font-size: 15px; font-style: italic;
+      color: var(--ink-muted); line-height: 1.65; margin-bottom: 8px;
+    }
+    .sl-thru-quote cite {
+      font-size: 10px; letter-spacing: .14em; text-transform: uppercase;
+      color: var(--gold); opacity: 0.72; font-style: normal;
+    }
+
+    /* ════════════════════════════════════════════════════════════
+       ASYNC + VOXER SUPPORT — The human layer
+    ════════════════════════════════════════════════════════════ */
+    .sl-support { padding: 96px 0; }
+    .sl-support-header { text-align: center; max-width: 640px; margin: 0 auto 64px; }
+    .sl-support-header .eyebrow { margin-bottom: 16px; display: block; }
+    .sl-support-header .section-h2 { margin-bottom: 16px; }
+    .sl-support-header p { font-size: 16px; color: var(--ink-muted); line-height: 1.8; }
+    .sl-support-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
+    }
+    .sl-support-card {
+      padding: 36px 30px;
+      border: 1px solid var(--border);
+      border-top: 3px solid var(--gold);
+      border-radius: var(--radius);
+    }
+    .sl-support-num {
+      font-family: var(--serif); font-size: 32px; font-weight: 700;
+      color: rgba(200,162,74,0.35); line-height: 1; margin-bottom: 16px;
+    }
+    .sl-support-title {
+      font-family: var(--display); font-size: 16px; font-weight: 600;
+      color: var(--ink); margin-bottom: 12px; line-height: 1.2;
+    }
+    .sl-support-body { font-size: 14px; line-height: 1.78; color: var(--ink-muted); }
+    .sl-support-body strong { color: var(--ink); font-weight: 500; }
+
+    /* ─── Fade in ─── */
+    .fade-in { opacity: 0; transform: translateY(22px); transition: opacity .6s ease, transform .6s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+    .fade-in.delay-1 { transition-delay: .12s; }
+    .fade-in.delay-2 { transition-delay: .24s; }
+
+    /* ─── Responsive ─── */
+    @media (max-width: 980px) {
+      .sl-hero-inner { grid-template-columns: 1fr; gap: 48px; }
+      .sl-hero-ornament { display: none; }
+      .sl-intro-inner { grid-template-columns: 1fr; gap: 48px; }
+      .for-whom-inner { grid-template-columns: 1fr; gap: 48px; }
+      .footer-inner { grid-template-columns: 1fr 1fr; gap: 48px; }
+      .footer-col:first-child { grid-column: span 2; }
+    }
+    @media (max-width: 640px) {
+      :root { --pad: 24px; }
+      .nav-links a:not(.nav-cta) { display: none; }
+      .sl-hero-btns { flex-direction: column; align-items: flex-start; }
+      .weave-phase { grid-template-columns: 52px 1fr; gap: 20px; }
+      .weave-phase-letter { font-size: 52px; }
+      .sl-cta-btns { flex-direction: column; align-items: center; }
+      .sl-support-grid { grid-template-columns: 1fr; }
+      .footer-inner { grid-template-columns: 1fr; gap: 36px; }
+      .footer-col:first-child { grid-column: span 1; }
+    }
+
+    /* Archetype card photo break */
+    .sl-archetype-break { height: 420px; overflow: hidden; }
+    .sl-archetype-break img { width: 100%; height: 100%; object-fit: cover; object-position: center center; display: block; }
+    @media (max-width: 640px) { .sl-archetype-break { height: 280px; } }
+
+    /* ════════════════════════════════════════════════════════════
+       NEWSLETTER BAND
+    ════════════════════════════════════════════════════════════ */
+    .nl-band { background: var(--mist); padding: 72px 0; border-top: 1px solid var(--border); }
+    .nl-inner { max-width: 520px; margin: 0 auto; text-align: center; }
+    .nl-eyebrow-tag { font-family: var(--body); font-size: 10px; font-weight: 500; letter-spacing: .2em; text-transform: uppercase; color: var(--terra); margin-bottom: 16px; display: block; }
+    .nl-heading { font-family: var(--serif); font-size: clamp(22px, 2.8vw, 34px); font-weight: 600; color: var(--ink); margin-bottom: 12px; line-height: 1.2; }
+    .nl-body { font-size: 15px; color: var(--ink-muted); line-height: 1.72; margin-bottom: 32px; }
+    .nl-form { display: flex; gap: 10px; max-width: 440px; margin: 0 auto 12px; }
+    .nl-input { flex: 1; padding: 13px 18px; font-family: var(--body); font-size: 14px; border: 1.5px solid var(--border); border-radius: var(--radius); background: var(--white); color: var(--ink); outline: none; transition: border-color .15s; }
+    .nl-input:focus { border-color: var(--terra); }
+    .nl-input::placeholder { color: var(--ink-muted); opacity: 0.6; }
+    .nl-submit { padding: 13px 24px; background: var(--terra); color: #fff; font-family: var(--body); font-size: 12px; font-weight: 500; letter-spacing: .07em; text-transform: uppercase; border: none; border-radius: var(--radius); cursor: pointer; transition: opacity .15s, transform .15s; white-space: nowrap; }
+    .nl-submit:hover { opacity: .82; transform: translateY(-1px); }
+    .nl-note { font-size: 11px; color: var(--ink-muted); opacity: 0.5; }
+    @media (max-width: 520px) { .nl-form { flex-direction: column; } }
+    /* Midjourney poster break — portrait Uro poster, contained with warm background */
+    .mj-poster-break { background: #F5EDE0; display: flex; justify-content: center; padding: 56px 20px; }
+    .mj-poster-break img { width: 100%; max-width: 460px; height: auto; display: block; }
+    @media (max-width: 640px) { .mj-poster-break { padding: 40px 16px; } }
+
+    /* ─── Shape Window Dividers ─── */
+    .shape-break {
+      padding: 52px 0;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      gap: 36px;
+      background: var(--white);
+    }
+    .shape-break--mist { background: var(--mist); }
+    .win {
+      flex-shrink: 0;
+      overflow: hidden;
+      background-size: cover;
+      background-position: center top;
+      background-repeat: no-repeat;
+    }
+    .win--arch      { width: 130px; height: 200px; border-radius: 65px 65px 8px 8px; }
+    .win--arch-sm   { width: 94px;  height: 148px; border-radius: 47px 47px 6px 6px; }
+    .win--arch-tall { width: 96px;  height: 210px; border-radius: 48px 48px 6px 6px; }
+    .win--circle    { width: 160px; height: 160px; border-radius: 50%; }
+    .win--oval      { width: 108px; height: 170px; border-radius: 54px; }
+    @media (max-width: 640px) {
+      .shape-break   { gap: 14px; padding: 36px 16px; }
+      .win--arch     { width: 76px;  height: 120px; border-radius: 38px 38px 6px 6px; }
+      .win--arch-sm  { width: 58px;  height: 90px;  border-radius: 29px 29px 4px 4px; }
+      .win--arch-tall{ width: 60px;  height: 124px; border-radius: 30px 30px 4px 4px; }
+      .win--circle   { width: 96px;  height: 96px; }
+      .win--oval     { width: 66px;  height: 104px; border-radius: 33px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <header class="nav-wrap">
+    <nav class="nav container">
+      <a href="index.html" class="nav-logo">Cléa Hernández</a>
+      <div class="nav-links">
+        <a href="story-loom.html" class="active">Story Loom</a>
+        <a href="jungian-coaching.html">Jungian Coaching</a>
+        <a href="about.html">About</a>
+        <a href="your-words-here.html" style="color: var(--terra); font-weight: 500;">Your Words Here</a>
+        <a href="work-with-me.html" class="nav-cta">Work With Me</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ─── HERO ─── -->
+    <section class="sl-hero">
+      <div class="container sl-hero-inner">
+
+        <!-- Text -->
+        <div class="sl-hero-text">
+          <span class="pill sl-hero-pill">Story Loom &nbsp;✦&nbsp; Narrative OS</span>
+
+          <h1 class="sl-hero-h1">
+            A narrative OS<br>
+            for the <span>resistance.</span>
+          </h1>
+
+          <p class="sl-hero-body">
+            Story Loom is narrative infrastructure for people who are done building on extractive terms. Organize your lived stories, shadow work, and deepest convictions into work that regenerates — and find the community of aligned builders doing the same.
+          </p>
+
+          <div class="sl-hero-btns">
+            <a href="work-with-me.html" class="btn btn--terra">Work with me →</a>
+            <a href="#weave" class="btn btn--ghost">See how it works ↓</a>
+          </div>
+        </div>
+
+        <!-- App UI Mockup -->
+        <div class="sl-hero-ornament sl-mockup-wrap" aria-hidden="true">
+          <div class="sl-mockup fade-in delay-1">
+            <div class="sl-mockup-header">
+              <div class="sl-dot sl-dot-1"></div>
+              <div class="sl-dot sl-dot-2"></div>
+              <div class="sl-dot sl-dot-3"></div>
+              <span class="sl-mockup-name">Story Loom</span>
+            </div>
+            <div class="sl-mockup-body">
+              <span class="sl-mock-label">Your Story Bank</span>
+              <div class="sl-mock-item sl-mock-item--active">The wound that became my work</div>
+              <div class="sl-mock-item sl-mock-item--dim">Why I left the extractive economy</div>
+              <div class="sl-mock-item sl-mock-item--dim">My role in the resistance</div>
+              <span class="sl-mock-label">Convictions → Transformation</span>
+              <div class="sl-mock-item sl-mock-item--dim">Golden Thread</div>
+              <div class="sl-mock-item sl-mock-item--active">Core Belief</div>
+              <div class="sl-mock-item sl-mock-item--dim">Anti-extractive offer framing</div>
+              <span class="sl-mock-label">Messaging</span>
+              <div class="sl-mock-item">Narrative field — who I'm calling in</div>
+              <div class="sl-mock-item sl-mock-item--dim">Sales page — conviction-to-transformation</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ─── INTRO ─── -->
+    <section class="sl-intro">
+      <div class="container">
+        <div class="sl-intro-inner">
+
+          <div class="sl-intro-text fade-in">
+            <p class="eyebrow">What it is</p>
+            <h2 class="section-h2" style="margin-top: 16px; margin-bottom: 24px;">
+              Not another content tool.<br>A narrative field.
+            </h2>
+            <p>
+              Most platforms are designed to extract — your attention, your content, your labor — in service of an algorithm. <strong>Story Loom is built on the opposite premise</strong>: that your lived experience is the raw material, your convictions are the infrastructure, and your community is the point.
+            </p>
+            <p>
+              It's an operating system for the whole arc of narrative work: excavating what you've lived, shaping it into language, building systems around it, and putting it into relationship with other people building from the same orientation.
+            </p>
+            <a href="work-with-me.html" class="btn btn--gold">Begin the work →</a>
+          </div>
+
+          <div class="sl-callout fade-in delay-1">
+            <p class="sl-callout-title">What's inside Story Loom</p>
+            <ul class="sl-callout-list">
+              <li><strong>Story Journal</strong> — a private space for lived experience &amp; ideological fuel</li>
+              <li><strong>Story Bank</strong> — your narrative field, not your content calendar</li>
+              <li><strong>Conviction-to-Transformation messaging</strong> you own and can build on</li>
+              <li><strong>Anti-extractive positioning</strong> &amp; offer design</li>
+              <li><strong>Community</strong> of aligned builders doing resistance-minded work</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── SHAPE WINDOW DIVIDER ─── -->
+    <div class="shape-break shape-break--mist" aria-hidden="true">
+      <div class="win win--arch-sm"
+           style="background-image: url('clea_typewriterbeach.jpg'); background-position: center 38%;"
+           title="Arch window — a vintage typewriter at the ocean's edge, language meeting the sea"></div>
+      <div class="win win--arch-tall"
+           style="background-image: url('mj_arch_gate.png'); background-position: center top;"
+           title="Tall arch window — terracotta gate structure in the desert"></div>
+      <div class="win win--oval"
+           style="background-image: url('mj_circle_window.png'); background-position: center center;"
+           title="Oval window — cloud framed in a terracotta architecture opening"></div>
+      <div class="win win--arch-sm"
+           style="background-image: url('mj_arch_canyon.png'); background-position: center 25%;"
+           title="Arch window — woman with a floating portal revealing a canyon"></div>
+    </div>
+
+    <!-- ─── WEAVE FRAMEWORK ─── -->
+    <section class="weave" id="weave">
+      <div class="container">
+
+        <div class="weave-header fade-in">
+          <span class="eyebrow">The Framework</span>
+          <h2 class="section-h2" style="margin-top: 16px; margin-bottom: 16px;">The WEAVE Method</h2>
+          <p>Five phases. One continuous arc. Built on Jungian Active Imagination, depth psychology, and 25 years of narrative strategy work.</p>
+        </div>
+
+        <div class="weave-phases">
+
+          <div class="weave-phase fade-in">
+            <div class="weave-phase-letter">W</div>
+            <div>
+              <span class="weave-phase-label">Phase One</span>
+              <p class="weave-phase-name">Wander</p>
+              <p class="weave-phase-body">
+                Before we build anything, we get lost on purpose. <strong>Wander is the exploratory phase</strong> — taking stock of everything you carry: your origin stories, your wounds, your values, your work, your contradictions. No editing. No shaping. Just honest inventory.
+              </p>
+            </div>
+          </div>
+
+          <div class="weave-phase fade-in">
+            <div class="weave-phase-letter">E</div>
+            <div>
+              <span class="weave-phase-label">Phase Two</span>
+              <p class="weave-phase-name">Excavate</p>
+              <p class="weave-phase-body">
+                This is the Jungian core of Story Loom. <strong>Excavate goes beneath the surface narrative</strong> — past the versions of your story you've rehearsed, to the material that hasn't been spoken yet. We use <strong>Active Imagination</strong> — Jung's method for dialoguing directly with unconscious content — to surface what the polished version has been leaving out.
+              </p>
+              <div class="ai-badge">
+                ✦ <span>Active Imagination</span> — Jung's method, applied to brand story
+              </div>
+            </div>
+          </div>
+
+          <div class="weave-phase fade-in">
+            <div class="weave-phase-letter">A</div>
+            <div>
+              <span class="weave-phase-label">Phase Three</span>
+              <p class="weave-phase-name">Architect</p>
+              <p class="weave-phase-body">
+                Now we build. <strong>Architect is where the raw material becomes structure</strong> — a narrative system with a clear point of view, a defined who-it's-for, a set of convictions that organize everything, and language that sounds like you at your most clear and courageous.
+              </p>
+            </div>
+          </div>
+
+          <div class="weave-phase fade-in">
+            <div class="weave-phase-letter">V</div>
+            <div>
+              <span class="weave-phase-label">Phase Four</span>
+              <p class="weave-phase-name">Voice</p>
+              <p class="weave-phase-body">
+                <strong>Voice is where you learn to speak the new story</strong> — not perform it. This phase develops your distinct brand voice and trains it across the contexts where you actually show up: writing, speaking, pitching, publishing, in community. Your voice is not a tone of voice guide. It's a practice.
+              </p>
+            </div>
+          </div>
+
+          <div class="weave-phase fade-in">
+            <div class="weave-phase-letter">E</div>
+            <div>
+              <span class="weave-phase-label">Phase Five</span>
+              <p class="weave-phase-name">Embody</p>
+              <p class="weave-phase-body">
+                <strong>The story doesn't live in a document — it lives in you.</strong> Embody is the integration phase: building systems that make the story automatic, aligning your offers and operations with it, and entering into relationship with a community building from the same orientation. The work compounds. The story becomes the life.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── ART STRIP ─── -->
+    <div class="sl-art-strip" role="img" aria-label="Surrealist editorial — a vast teal moon with golden threads trailing to dark water">
+      <img
+        src="mj_storyloom_moon.png"
+        alt="A luminous teal moon hangs above still water, golden threads trailing downward like a loom — the unconscious, night navigation, stories surfacing from depth."
+        loading="lazy"
+      />
+    </div>
+
+    <!-- ─── ACTIVE IMAGINATION — The Differentiator ─── -->
+    <section class="ai-section">
+      <div class="container">
+        <div class="ai-inner fade-in">
+          <span class="eyebrow">The Differentiator</span>
+          <blockquote class="ai-quote">
+            "Until you make the unconscious conscious,<br>it will direct your life and you will call it fate."
+          </blockquote>
+          <span class="ai-attr">— Carl Jung</span>
+          <p class="ai-body">
+            <strong>Most brand strategy asks you to perform clarity you don't yet have.</strong> Active Imagination — Jung's method for entering into dialogue with the unconscious — inverts this. Instead of starting with what you want to say, you start with what's actually there: the images, voices, figures, and narratives that your conscious mind hasn't yet been able to articulate.
+          </p>
+          <p class="ai-body">
+            In Story Loom, Active Imagination practices are woven into the Excavate phase and returned to throughout. They are not meditation. They are not journaling. They are a disciplined method for <strong>retrieving narrative material that performance-based brand work will always miss</strong>.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── ASYNC + VOXER SUPPORT ─── -->
+    <section class="sl-support">
+      <div class="container">
+
+        <div class="sl-support-header fade-in">
+          <span class="eyebrow">The Human Layer</span>
+          <h2 class="section-h2" style="margin-top: 16px; margin-bottom: 16px;">
+            The story doesn't wait<br>for your next session.
+          </h2>
+          <p>Narrative work happens when it happens — in the middle of the night, on a walk, when something finally cracks open. Story Loom is built for how excavation actually moves: with always-on access to the practices and the person guiding your work.</p>
+        </div>
+
+        <div class="sl-support-grid">
+
+          <div class="sl-support-card fade-in">
+            <p class="sl-support-num">01</p>
+            <p class="sl-support-title">Unlimited Voxer Access</p>
+            <p class="sl-support-body">
+              When a story surfaces — <strong>speak it to me.</strong> Send a voice note any time and I'll receive it, help you capture it, and shape it into material for your Story Loom. Your best material doesn't always arrive at a scheduled hour. Now it doesn't have to wait.
+            </p>
+          </div>
+
+          <div class="sl-support-card fade-in delay-1">
+            <p class="sl-support-num">02</p>
+            <p class="sl-support-title">Custom Guided Meditations</p>
+            <p class="sl-support-body">
+              Each narrative phase comes with <strong>custom guided meditations</strong> built specifically for the work we're doing together — designed to help you drop below the performing mind and into the material that actually lives there, waiting to be named.
+            </p>
+          </div>
+
+          <div class="sl-support-card fade-in delay-2">
+            <p class="sl-support-num">03</p>
+            <p class="sl-support-title">Active Imagination Exercises</p>
+            <p class="sl-support-body">
+              Between sessions you'll have access to <strong>guided Active Imagination exercises</strong> — Jung's own method for entering into dialogue with unconscious material, surfacing the narrative content that talking alone can't reach. Not meditation. Not journaling. Something older and stranger.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── ART STRIP — Midjourney poster ─── -->
+    <div class="mj-poster-break" role="img" aria-label="Yves Uro surrealist poster — a figure at a terracotta pyramid releases a golden thread into the night sky">
+      <img
+        src="mj_pyramid_thread.png"
+        alt="A surrealist Ibiza-style poster: a figure stands at a terracotta pyramid and releases a luminous golden narrative thread into a deep blue starry sky."
+        loading="lazy"
+      />
+    </div>
+
+    <!-- ─── WHO IT'S FOR ─── -->
+    <section class="for-whom">
+      <div class="container">
+        <div class="for-whom-inner">
+
+          <div class="for-whom-text fade-in">
+            <p class="eyebrow">Who it's for</p>
+            <h2 class="section-h2" style="margin-top: 16px; margin-bottom: 20px;">
+              For the builders who know the current model isn't working.
+            </h2>
+            <p class="section-lead" style="margin-bottom: 28px;">
+              Story Loom is for people building at the intersection of purpose and post-capitalist values — who need narrative infrastructure that matches their ethics.
+            </p>
+            <blockquote class="sl-thru-quote">
+              <p>"Thrutopias are stories of how we get through — not to some imagined utopia, but through the crisis, to something liveable, something worth having."</p>
+              <cite>— Manda Scott</cite>
+            </blockquote>
+            <a href="work-with-me.html" class="btn btn--gold">Begin the work →</a>
+          </div>
+
+          <div class="for-whom-cards fade-in delay-1">
+            <div class="for-card">
+              <p class="for-card-head">You're building something post-capitalist</p>
+              <p class="for-card-body">Your work has a clear ethical orientation — and you need brand infrastructure that doesn't undermine it.</p>
+            </div>
+            <div class="for-card">
+              <p class="for-card-head">You're exhausted by performing clarity</p>
+              <p class="for-card-body">You've tried other frameworks. They felt like wearing someone else's story. You want to excavate your own.</p>
+            </div>
+            <div class="for-card">
+              <p class="for-card-head">You have lived experience you haven't fully used</p>
+              <p class="for-card-body">Your story is the most powerful thing you have. You just haven't yet found the infrastructure to organize it.</p>
+            </div>
+            <div class="for-card">
+              <p class="for-card-head">You want community, not an audience</p>
+              <p class="for-card-body">You're looking for aligned builders — not followers. Relationship over reach. Resonance over virality.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── ART BREAK — Midjourney ─── -->
+    <section class="sl-archetype-break">
+      <img
+        src="mj_storyloom_archetype.png"
+        alt="A hand holds a luminous glowing orb against a vibrant pink and teal surrealist sky — the archetypal creator card, Ibiza poster aesthetic"
+        loading="lazy"
+      />
+    </section>
+
+    <!-- ─── NEWSLETTER ─── -->
+    <!-- Replace action="#" with your ConvertKit/Mailchimp embed action URL -->
+    <section class="nl-band">
+      <div class="container">
+        <div class="nl-inner fade-in">
+          <span class="nl-eyebrow-tag">Stay connected</span>
+          <h2 class="nl-heading">The thread continues<br>in your inbox.</h2>
+          <p class="nl-body">Reflections on narrative, depth psychology, and building resistance-minded work. Occasional and intentional — not a feed.</p>
+          <form class="nl-form" action="#" method="POST">
+            <input class="nl-input" type="email" name="email" placeholder="Your email address" required />
+            <button class="nl-submit" type="submit">Subscribe →</button>
+          </form>
+          <p class="nl-note">No algorithms. No automation sequences. Just letters worth reading.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── TYPEWRITER PAPERCRAFT — editorial strip ─── -->
+    <div class="sl-art-strip" style="height: 400px;" role="img" aria-label="A papercraft typewriter — the writer's tool, made playful and tangible">
+      <img
+        src="clea_typewriter_papercraft.png"
+        alt="A sky-blue papercraft typewriter with golden keys — whimsical, handmade, the act of writing made visible and joyful."
+        loading="lazy"
+        style="object-position: center center; filter: saturate(0.95);"
+      />
+    </div>
+
+    <!-- ─── CTA BAND ─── -->
+    <section class="sl-cta">
+      <div class="container">
+        <div class="sl-cta-inner fade-in">
+          <h2 class="sl-cta-h2">
+            The story you've been afraid to tell<br>
+            is usually the one that changes everything.
+          </h2>
+          <p class="sl-cta-body">
+            Story Loom is woven into the coaching work — you don't need to wait. Start with a free discovery call and bring your narrative into a container built to hold it.
+          </p>
+          <div class="sl-cta-btns">
+            <a href="work-with-me.html" class="btn btn--ghost" style="background: rgba(255,255,255,.15); color: #fff; border-color: rgba(255,255,255,.3);">Begin the work →</a>
+            <a href="mailto:clea@mythograph.co" class="btn btn--ghost" style="color: rgba(255,246,242,.65);">Write to Cléa</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-col">
+          <p class="footer-logo">Cléa Hernández</p>
+          <p class="footer-tagline">Jungian Narrative Coach, brand strategist, and founder of Mythograph &amp; Story Loom.</p>
+        </div>
+        <div class="footer-col">
+          <p class="footer-col-title">Navigate</p>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="story-loom.html">Story Loom</a></li>
+            <li><a href="jungian-coaching.html">Jungian Coaching</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="your-words-here.html">Your Words Here</a></li>
+            <li><a href="work-with-me.html">Work With Me</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <p class="footer-col-title">Connect</p>
+          <ul class="footer-links">
+            <li><a href="mailto:clea@mythograph.co">clea@mythograph.co</a></li>
+            <li><a href="https://mythograph.co" target="_blank" rel="noopener">Mythograph.co</a></li>
+            <li><a href="https://storyloom.app" target="_blank" rel="noopener">Story Loom</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Cléa Hernández. All rights reserved.</span>
+        <span>Built with intention.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
