@@ -592,6 +592,8 @@
     @media (max-width: 640px) {
       :root { --pad: 24px; }
       .nav-links a:not(.nav-cta) { display: none; }
+      .nav-links .nav-cta { display: none; }
+      .nav-hamburger { display: flex; }
       .ywh-billboard-board { padding: 36px 28px 32px; }
       .ywh-billboard-legs { gap: 80px; }
       .ywh-hero-price { flex-direction: column; gap: 8px; text-align: center; }
@@ -624,6 +626,71 @@
       .win--circle { width: 96px; height: 96px; }
       .win--oval { width: 66px; height: 104px; border-radius: 33px; }
     }
+  
+    /* ════════════════════════════════════════════════════════════
+       HAMBURGER + MOBILE MENU
+    ════════════════════════════════════════════════════════════ */
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      width: 36px; height: 36px;
+      background: none; border: none;
+      cursor: pointer; padding: 4px;
+      flex-shrink: 0;
+    }
+    .nav-hamburger span {
+      display: block;
+      width: 22px; height: 1.5px;
+      background: var(--terra);
+      border-radius: 2px;
+      transition: transform .25s, opacity .2s;
+      transform-origin: center;
+    }
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+    .mobile-menu {
+      display: none;
+      position: fixed; inset: 0; z-index: 98;
+      background: var(--white);
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 80px 40px 60px;
+      gap: 0;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      font-family: var(--display);
+      font-size: clamp(28px, 8vw, 40px);
+      font-weight: 300;
+      color: var(--ink);
+      padding: 18px 0;
+      text-align: center;
+      width: 100%;
+      border-bottom: 1px solid var(--border);
+      transition: color .15s;
+      letter-spacing: -.01em;
+    }
+    .mobile-menu a:last-child { border-bottom: none; }
+    .mobile-menu a:hover, .mobile-menu a:active { color: var(--terra); }
+    .mobile-menu .mobile-ywh { color: var(--terra); }
+    .mobile-menu .mobile-cta {
+      margin-top: 32px;
+      font-family: var(--body);
+      font-size: 14px; font-weight: 500;
+      color: #fff; background: var(--terra);
+      padding: 14px 36px;
+      border-radius: 100px;
+      border-bottom: none;
+      width: auto;
+      transition: opacity .15s;
+    }
+    .mobile-menu .mobile-cta:hover { opacity: .85; color: #fff; }
+
   </style>
 </head>
 
@@ -640,8 +707,18 @@
         <a href="your-words-here.html" class="active" style="color: var(--terra); font-weight: 500;">Your Words Here</a>
         <a href="work-with-me.html" class="nav-cta">Work With Me</a>
       </div>
+      <button class="nav-hamburger" id="navHamburger" aria-label="Open navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </nav>
   </header>
+  <nav class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <a href="story-loom.html">Story Loom</a>
+    <a href="jungian-coaching.html">Jungian Coaching</a>
+    <a href="about.html">About</a>
+    <a href="your-words-here.html" class="mobile-ywh">Your Words Here</a>
+    <a href="work-with-me.html" class="mobile-cta">Work With Me</a>
+  </nav>
 
   <main>
 
