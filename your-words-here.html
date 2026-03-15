@@ -580,53 +580,7 @@
     .fade-in.delay-3 { transition-delay: .36s; }
 
     /* ─── Responsive ─── */
-    @media (max-width: 980px) {
-      .ywh-bc-inner { grid-template-columns: 1fr; gap: 40px; }
-      .includes-grid { grid-template-columns: 1fr; }
-      .ywh-for-inner { grid-template-columns: 1fr; gap: 48px; }
-      .ywh-proof-grid { grid-template-columns: 1fr; }
-      .pricing-box { padding: 32px 24px; }
-      .footer-inner { grid-template-columns: 1fr 1fr; gap: 48px; }
-      .footer-col:first-child { grid-column: span 2; }
-    }
-    @media (max-width: 640px) {
-      :root { --pad: 24px; }
-      .nav-links a:not(.nav-cta) { display: none; }
-      .nav-links .nav-cta { display: none; }
-      .nav-hamburger { display: flex; }
-      .ywh-billboard-board { padding: 36px 28px 32px; }
-      .ywh-billboard-legs { gap: 80px; }
-      .ywh-hero-price { flex-direction: column; gap: 8px; text-align: center; }
-      .ywh-price-later { padding-left: 0; border-left: none; padding-top: 8px; border-top: 1px solid rgba(250,250,247,0.1); }
-      .ywh-hero-btns, .ywh-cta-btns { flex-direction: column; }
-      .footer-inner { grid-template-columns: 1fr; gap: 36px; }
-      .footer-col:first-child { grid-column: span 1; }
-    }
-    /* Midjourney editorial strips */
-    .mj-strip { height: 420px; overflow: hidden; }
-    .mj-strip img { width: 100%; height: 100%; object-fit: cover; object-position: center center; display: block; }
-    @media (max-width: 640px) { .mj-strip { height: 260px; } }
-    /* ─── Shape Window Dividers ─── */
-    .shape-break {
-      padding: 52px 0; display: flex; justify-content: center; align-items: flex-end; gap: 36px;
-      background: var(--white);
-    }
-    .shape-break--mist { background: var(--mist); }
-    .win { flex-shrink: 0; overflow: hidden; background-size: cover; background-position: center top; background-repeat: no-repeat; }
-    .win--arch      { width: 130px; height: 200px; border-radius: 65px 65px 8px 8px; }
-    .win--arch-sm   { width: 94px;  height: 148px; border-radius: 47px 47px 6px 6px; }
-    .win--arch-tall { width: 96px;  height: 210px; border-radius: 48px 48px 6px 6px; }
-    .win--circle    { width: 160px; height: 160px; border-radius: 50%; }
-    .win--oval      { width: 108px; height: 170px; border-radius: 54px; }
-    @media (max-width: 640px) {
-      .shape-break { gap: 14px; padding: 36px 16px; }
-      .win--arch { width: 76px; height: 120px; border-radius: 38px 38px 6px 6px; }
-      .win--arch-sm { width: 58px; height: 90px; border-radius: 29px 29px 4px 4px; }
-      .win--arch-tall { width: 60px; height: 124px; border-radius: 30px 30px 4px 4px; }
-      .win--circle { width: 96px; height: 96px; }
-      .win--oval { width: 66px; height: 104px; border-radius: 33px; }
-    }
-  
+
     /* ════════════════════════════════════════════════════════════
        HAMBURGER + MOBILE MENU
     ════════════════════════════════════════════════════════════ */
@@ -691,6 +645,53 @@
     }
     .mobile-menu .mobile-cta:hover { opacity: .85; color: #fff; }
 
+    @media (max-width: 980px) {
+      .ywh-bc-inner { grid-template-columns: 1fr; gap: 40px; }
+      .includes-grid { grid-template-columns: 1fr; }
+      .ywh-for-inner { grid-template-columns: 1fr; gap: 48px; }
+      .ywh-proof-grid { grid-template-columns: 1fr; }
+      .pricing-box { padding: 32px 24px; }
+      .footer-inner { grid-template-columns: 1fr 1fr; gap: 48px; }
+      .footer-col:first-child { grid-column: span 2; }
+    }
+    @media (max-width: 640px) {
+      :root { --pad: 24px; }
+      .nav-links a:not(.nav-cta) { display: none; }
+      .nav-links .nav-cta { display: none; }
+      .nav-hamburger { display: flex; }
+      .ywh-billboard-board { padding: 36px 28px 32px; }
+      .ywh-billboard-legs { gap: 80px; }
+      .ywh-hero-price { flex-direction: column; gap: 8px; text-align: center; }
+      .ywh-price-later { padding-left: 0; border-left: none; padding-top: 8px; border-top: 1px solid rgba(250,250,247,0.1); }
+      .ywh-hero-btns, .ywh-cta-btns { flex-direction: column; }
+      .footer-inner { grid-template-columns: 1fr; gap: 36px; }
+      .footer-col:first-child { grid-column: span 1; }
+    }
+    /* Midjourney editorial strips */
+    .mj-strip { height: 420px; overflow: hidden; }
+    .mj-strip img { width: 100%; height: 100%; object-fit: cover; object-position: center center; display: block; }
+    @media (max-width: 640px) { .mj-strip { height: 260px; } }
+    /* ─── Shape Window Dividers ─── */
+    .shape-break {
+      padding: 52px 0; display: flex; justify-content: center; align-items: flex-end; gap: 36px;
+      background: var(--white);
+    }
+    .shape-break--mist { background: var(--mist); }
+    .win { flex-shrink: 0; overflow: hidden; background-size: cover; background-position: center top; background-repeat: no-repeat; }
+    .win--arch      { width: 130px; height: 200px; border-radius: 65px 65px 8px 8px; }
+    .win--arch-sm   { width: 94px;  height: 148px; border-radius: 47px 47px 6px 6px; }
+    .win--arch-tall { width: 96px;  height: 210px; border-radius: 48px 48px 6px 6px; }
+    .win--circle    { width: 160px; height: 160px; border-radius: 50%; }
+    .win--oval      { width: 108px; height: 170px; border-radius: 54px; }
+    @media (max-width: 640px) {
+      .shape-break { gap: 14px; padding: 36px 16px; }
+      .win--arch { width: 76px; height: 120px; border-radius: 38px 38px 6px 6px; }
+      .win--arch-sm { width: 58px; height: 90px; border-radius: 29px 29px 4px 4px; }
+      .win--arch-tall { width: 60px; height: 124px; border-radius: 30px 30px 4px 4px; }
+      .win--circle { width: 96px; height: 96px; }
+      .win--oval { width: 66px; height: 104px; border-radius: 33px; }
+    }
+  
   </style>
 </head>
 
