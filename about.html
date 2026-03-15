@@ -8,7 +8,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,300;1,9..144,400;1,9..144,600;1,9..144,700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&display=swap" rel="stylesheet" />
 
   <style>
     :root {
@@ -134,68 +134,44 @@
     .about-hero-left { }
     .about-hero-left .about-hero-h1 { margin-bottom: 28px; }
 
-    /* ─── Shaped photo collage (below headline, left column) ─── */
-    .shaped-gallery {
-      display: flex;
-      align-items: flex-end;
-      gap: 12px;
+    /* ═══════════════════════════════════════════════════════════
+       WORD WITCH — photo-clipped display type
+    ════════════════════════════════════════════════════════════ */
+    .word-witch-display {
       margin-top: 28px;
-    }
-    .sg-photo {
-      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 2px;
+      /* prevent any overflow on small viewports */
       overflow: hidden;
     }
-    .sg-photo img {
-      width: 100%; height: 100%;
-      object-fit: cover;
-      display: block;
-      filter: saturate(0.88) sepia(0.06);
-      border: 1px solid rgba(200,162,74,0.18);
+    .ww-row {
+      display: flex;
+      align-items: baseline;
+      gap: 0;
     }
-    /* Diptych left — headshot, arch curving UP */
-    .sg-photo--headshot {
-      width: 108px; height: 190px;
-      border-radius: 54px 54px 7px 7px;
+    .ww-letter {
+      font-family: var(--display);
+      font-size: clamp(72px, 19.5vw, 148px);
+      font-weight: 900;
+      font-variation-settings: 'opsz' 9, 'wonk' 1;
+      line-height: 0.92;
+      letter-spacing: -0.035em;
+      display: inline-block;
+      background-image: var(--bg, none);
+      background-size: cover;
+      background-position: var(--bp, center 20%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      -webkit-text-fill-color: transparent;
+      user-select: none;
     }
-    .sg-photo--headshot img { object-position: center 5%; }
-    /* Diptych right — owl, arch curving DOWN (mirror) */
-    .sg-photo--owl {
-      width: 108px; height: 190px;
-      border-radius: 7px 7px 54px 54px;
-    }
-    .sg-photo--owl img { object-position: center 20%; }
-    /* Selfie — arch */
-    .sg-photo--selfie {
-      width: 66px; height: 106px;
-      border-radius: 33px 33px 5px 5px;
-    }
-    .sg-photo--selfie img { object-position: center 18%; }
-    /* Mirror sphere — oval */
-    .sg-photo--mirror {
-      width: 62px; height: 96px;
-      border-radius: 31px;
-    }
-    .sg-photo--mirror img { object-position: 35% center; }
-    /* Dinner — arch, left-anchored to show Cléa */
-    .sg-photo--dinner {
-      width: 66px; height: 114px;
-      border-radius: 33px 33px 5px 5px;
-    }
-    .sg-photo--dinner img { object-position: left 22%; }
-    /* Whiteboard — tall arch */
-    .sg-photo--whiteboard {
-      width: 62px; height: 132px;
-      border-radius: 31px 31px 5px 5px;
-    }
-    .sg-photo--whiteboard img { object-position: center 30%; }
-    /* Painting — LARGEST element, grand arch finale */
-    .sg-photo--painting {
-      width: 142px; height: 220px;
-      border-radius: 71px 71px 9px 9px;
-    }
-    .sg-photo--painting img {
-      object-position: center center;
-      filter: saturate(0.92) sepia(0.04);
+    /* Indigo fallback for any letter without a photo */
+    .ww-letter--indigo {
+      background-image: none;
+      -webkit-text-fill-color: var(--indigo);
     }
 
     /* ════════════════════════════════════════════════════════════
@@ -263,7 +239,7 @@
     .mobile-menu .mobile-cta:hover { opacity: .85; color: #fff; }
 
     @media (max-width: 800px) {
-      .shaped-gallery { overflow-x: auto; padding-bottom: 8px; }
+      .ww-letter { font-size: clamp(68px, 19vw, 148px); }
     }
 
     /* Hero text */
@@ -607,28 +583,20 @@
             and make it impossible to ignore.
           </h1>
 
-          <!-- Shaped photo collage — right below the headline -->
-          <div class="shaped-gallery">
-            <div class="sg-photo sg-photo--headshot">
-              <img src="headshot2.png" alt="Cléa Hernández" />
+          <!-- WORD WITCH — photo-clipped display type -->
+          <div class="word-witch-display" aria-label="Word Witch">
+            <div class="ww-row">
+              <span class="ww-letter" style="--bg: url('headshot2.png');      --bp: center 12%;">W</span>
+              <span class="ww-letter" style="--bg: url('clea_gallery_2.png'); --bp: center 25%;">O</span>
+              <span class="ww-letter" style="--bg: url('clea_gallery_1.jpg'); --bp: center 15%;">R</span>
+              <span class="ww-letter" style="--bg: url('clea_gallery_3.jpg'); --bp: 35% center;">D</span>
             </div>
-            <div class="sg-photo sg-photo--owl">
-              <img src="clea_gallery_2.png" alt="Cléa with a screech owl at a wildlife sanctuary" loading="lazy" />
-            </div>
-            <div class="sg-photo sg-photo--selfie">
-              <img src="clea_gallery_1.jpg" alt="Cléa Hernández" loading="lazy" />
-            </div>
-            <div class="sg-photo sg-photo--mirror">
-              <img src="clea_gallery_3.jpg" alt="Cléa reflected in a mirror sphere against the city skyline" loading="lazy" />
-            </div>
-            <div class="sg-photo sg-photo--dinner">
-              <img src="clea_gallery_4.png" alt="Cléa with a friend at dinner" loading="lazy" />
-            </div>
-            <div class="sg-photo sg-photo--whiteboard">
-              <img src="Clea_Whiteboard.png" alt="Cléa at a whiteboard, mid-thought" loading="lazy" />
-            </div>
-            <div class="sg-photo sg-photo--painting">
-              <img src="clea_painting.jpg" alt="Abstract expressionist portrait of Cléa Hernández" loading="lazy" />
+            <div class="ww-row">
+              <span class="ww-letter" style="--bg: url('clea_gallery_4.png'); --bp: left 22%;">W</span>
+              <span class="ww-letter" style="--bg: url('headshot.JPG');        --bp: center 8%;">I</span>
+              <span class="ww-letter" style="--bg: url('Clea_Whiteboard.png'); --bp: center 30%;">T</span>
+              <span class="ww-letter" style="--bg: url('clea_outreach.png');   --bp: center 20%;">C</span>
+              <span class="ww-letter" style="--bg: url('clea_painting.jpg');   --bp: center center;">H</span>
             </div>
           </div>
         </div>
