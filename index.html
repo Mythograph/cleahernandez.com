@@ -382,60 +382,83 @@
     }
 
     /* ════════════════════════════════════════════════════════════
-       PATHWAYS
+       OFFER SECTIONS
     ════════════════════════════════════════════════════════════ */
-    .paths { padding: 80px 0 96px; }
-    .paths-header { max-width: 680px; margin-bottom: 56px; }
-    .paths-header .eyebrow { margin-bottom: 16px; }
-    .paths-header .section-h2 { margin-bottom: 16px; }
+    .offers { padding: 40px 0 96px; }
+    .offers-header { max-width: 680px; margin-bottom: 80px; }
+    .offers-header .section-h2 { margin-bottom: 12px; }
 
-    .paths-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+    .offer-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 88px;
+      align-items: center;
+      padding: 80px 0;
+      border-bottom: 1px solid var(--border);
     }
+    .offer-row:last-child { border-bottom: none; padding-bottom: 0; }
+    .offer-row--flip .offer-img { order: -1; }
 
-    /* Individual path card */
-    .path-card {
-      background: var(--white);
-      border: 1px solid var(--border);
+    /* Offset image treatment */
+    .offer-img { position: relative; }
+    .offer-img-frame {
       border-radius: var(--radius);
       overflow: hidden;
-      display: flex; flex-direction: column;
+      position: relative; z-index: 1;
     }
-    .path-card-band { height: 4px; flex-shrink: 0; }
-    .path-card-band--indigo  { background: var(--indigo); }
-    .path-card-band--crimson { background: var(--crimson); }
-    .path-card-band--gold    { background: var(--gold); }
+    .offer-img-frame img {
+      width: 100%; height: 460px;
+      object-fit: cover; display: block;
+      filter: saturate(0.90);
+    }
+    /* Ghost border offset behind the image */
+    .offer-img::before {
+      content: '';
+      position: absolute;
+      inset: 20px -20px -20px 20px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      z-index: 0;
+    }
+    .offer-row--flip .offer-img::before {
+      inset: 20px 20px -20px -20px;
+    }
 
-    .path-card-body { padding: 40px 44px 44px; display: flex; flex-direction: column; flex: 1; }
-    .path-card-pill { margin-bottom: 28px; }
+    /* Label — line + uppercase text */
+    .offer-label {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 22px;
+    }
+    .offer-label::before {
+      content: '';
+      width: 36px; height: 2px;
+      background: currentColor;
+      border-radius: 2px;
+      flex-shrink: 0;
+    }
+    .offer-label--indigo  { color: var(--indigo); }
+    .offer-label--crimson { color: var(--crimson); }
+    .offer-label--gold    { color: #8a6c24; }
 
-    .path-card-h3 {
+    .offer-h3 {
       font-family: var(--display);
-      font-size: clamp(22px, 2.2vw, 30px);
-      font-weight: 600; line-height: 1.2;
-      color: var(--ink); margin-bottom: 16px;
+      font-size: clamp(28px, 3.2vw, 44px);
+      font-weight: 600;
+      line-height: 1.15; letter-spacing: -0.025em;
+      color: var(--ink); margin-bottom: 20px;
     }
-
-    .path-card-text {
-      font-size: 15px; line-height: 1.78;
-      color: var(--ink-muted); margin-bottom: 20px;
-    }
-
-    .path-card-list { margin-bottom: 36px; }
-    .path-card-list li {
-      font-size: 14px; line-height: 1.6;
+    .offer-body {
+      font-size: clamp(16px, 1.4vw, 18px);
+      line-height: 1.82;
       color: var(--ink-muted);
-      padding: 9px 0 9px 22px;
-      border-top: 1px solid var(--border);
-      position: relative;
+      margin-bottom: 36px;
     }
-    .path-card-list li::before {
-      content: '→'; position: absolute; left: 0;
-      color: var(--terra); font-size: 11px;
-      top: 50%; transform: translateY(-50%);
-    }
-
-    .path-card-footer { margin-top: auto; display: flex; gap: 12px; flex-wrap: wrap; }
 
     /* Mythograph for orgs — subdued strip */
     .mythograph-strip {
@@ -743,14 +766,16 @@
     .mobile-menu .mobile-cta:hover { opacity: .85; color: #fff; }
 
     @media (max-width: 980px) {
-      .paths-grid { grid-template-columns: 1fr 1fr; }
+      .offer-row { grid-template-columns: 1fr; gap: 48px; padding: 56px 0; }
+      .offer-row--flip .offer-img { order: 0; }
+      .offer-img::before, .offer-row--flip .offer-img::before { display: none; }
+      .offer-img-frame img { height: 300px; }
       .hero-inner { grid-template-columns: 1fr; gap: 48px; }
       .hero-visual { order: -1; }
       .hero-photo-frame { width: 100%; max-width: 420px; height: 280px; }
       .hero-astro { width: 360px; height: 360px; }
       .hero-body { max-width: none; }
 
-      .paths-grid { grid-template-columns: 1fr; }
       .invitation-inner { max-width: none; }
       .mythograph-inner { flex-direction: column; gap: 32px; }
       .cw-grid { grid-template-columns: 1fr 1fr; }
@@ -1127,68 +1152,67 @@
     </section>
 
     <!-- ═══════════════════════════════════════════════════════════════
-         PATHWAYS
+         OFFER SECTIONS
     ═══════════════════════════════════════════════════════════════ -->
-    <section class="paths">
+    <section class="offers">
       <div class="container">
 
-        <div class="paths-header fade-in">
-          <h2 class="section-h2" style="margin-bottom: 16px;">
-            Three ways in.
-          </h2>
-          <p class="section-lead">
-            All of them begin with the real story.
-          </p>
+        <div class="offers-header fade-in">
+          <h2 class="section-h2">Three ways in.</h2>
+          <p class="section-lead">All of them begin with the real story.</p>
         </div>
 
-        <div class="paths-grid">
-
-          <!-- Card 1: Story Loom -->
-          <div class="path-card fade-in">
-            <div class="path-card-band path-card-band--indigo"></div>
-            <div class="path-card-body">
-              <span class="pill pill--indigo path-card-pill">Story Loom · Narrative OS</span>
-              <h3 class="path-card-h3">My signature 1:1 program for building your unique brand with embodied authority.</h3>
-              <p class="path-card-text">
-                Excavate your lived stories, build the narrative infrastructure for your work, and emerge with a brand that's actually yours. No borrowed frameworks. No platform fees.
-              </p>
-              <div class="path-card-footer">
-                <a href="story-loom.html" class="btn btn--indigo">Learn more →</a>
-              </div>
+        <!-- ── Story Loom ── -->
+        <div class="offer-row fade-in">
+          <div class="offer-text">
+            <p class="offer-label offer-label--indigo">Story Loom · Narrative OS</p>
+            <h3 class="offer-h3">My signature 1:1 program for building your unique brand with embodied authority.</h3>
+            <p class="offer-body">
+              Excavate your lived stories, build the narrative infrastructure for your work, and emerge with a brand that's actually yours. No borrowed frameworks. No platform fees.
+            </p>
+            <a href="story-loom.html" class="btn btn--indigo">Learn more →</a>
+          </div>
+          <div class="offer-img">
+            <div class="offer-img-frame">
+              <img src="mj_arch_threshold.png" alt="A solitary figure approaches a luminous threshold at dusk — terracotta desert, deep indigo sky" loading="lazy" />
             </div>
           </div>
-
-          <!-- Card 2: Jungian Coaching -->
-          <div class="path-card fade-in delay-1">
-            <div class="path-card-band path-card-band--crimson"></div>
-            <div class="path-card-body">
-              <span class="pill pill--crimson path-card-pill">1:1 Coaching · Ongoing</span>
-              <h3 class="path-card-h3">The sustained container.</h3>
-              <p class="path-card-text">
-                For those who are ready to get deep. This is Jungian-informed work that shifts how you understand yourself within the collective and your psyche's calling. Dreamwork, active imagination, creative experiments, and more.
-              </p>
-              <div class="path-card-footer">
-                <a href="jungian-coaching.html" class="btn btn--crimson">Book a discovery call</a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Card 3: VIP Day -->
-          <div class="path-card fade-in delay-2">
-            <div class="path-card-band path-card-band--gold"></div>
-            <div class="path-card-body">
-              <span class="pill pill--gold path-card-pill">The VIP Day · One Day Intensive</span>
-              <h3 class="path-card-h3">Your signature story ecosystem, done in a day.</h3>
-              <p class="path-card-text">
-                A complete story bank — excavated, shaped, and delivered — without a multi-week container.
-              </p>
-              <div class="path-card-footer">
-                <a href="vip-day.html" class="btn btn--gold-o">See how it works →</a>
-              </div>
-            </div>
-          </div>
-
         </div>
+
+        <!-- ── Jungian Coaching ── -->
+        <div class="offer-row offer-row--flip fade-in">
+          <div class="offer-text">
+            <p class="offer-label offer-label--crimson">1:1 Coaching · Ongoing</p>
+            <h3 class="offer-h3">The sustained container.</h3>
+            <p class="offer-body">
+              For those who are ready to get deep. This is Jungian-informed work that shifts how you understand yourself within the collective and your psyche's calling. Dreamwork, active imagination, creative experiments, and more.
+            </p>
+            <a href="jungian-coaching.html" class="btn btn--crimson">Book a discovery call</a>
+          </div>
+          <div class="offer-img">
+            <div class="offer-img-frame">
+              <img src="mj_arch_varo_corridor.png" alt="Remedios Varo style — a labyrinthine corridor of arched alcoves glowing amber, a lone figure deep inside" loading="lazy" />
+            </div>
+          </div>
+        </div>
+
+        <!-- ── VIP Day ── -->
+        <div class="offer-row fade-in">
+          <div class="offer-text">
+            <p class="offer-label offer-label--gold">The VIP Day · One Day Intensive</p>
+            <h3 class="offer-h3">Your signature story ecosystem, done in a day.</h3>
+            <p class="offer-body">
+              A complete story bank — excavated, shaped, and delivered — without a multi-week container.
+            </p>
+            <a href="vip-day.html" class="btn btn--gold-o">See how it works →</a>
+          </div>
+          <div class="offer-img">
+            <div class="offer-img-frame">
+              <img src="mj_arch_desert.png" alt="A woman stands at the edge of terracotta dunes, a glowing portal in the distance" loading="lazy" />
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
 
