@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Where to Begin · Cléa Hernández</title>
+  <meta name="description" content="Not everyone arrives at this work from the same place. Find the right entry point — from the Golden Thread Session to Story Loom to Jungian Coaching." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,300;1,9..144,400;1,9..144,600;1,9..144,700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --white:       #FAFAF7;
+      --ink:         #1A1410;
+      --ink-muted:   #7A6D5E;
+      --terra:       #C05A3C;
+      --terra-pale:  rgba(192,90,60,0.07);
+      --indigo:      #3A4F99;
+      --indigo-pale: rgba(58,79,153,0.08);
+      --indigo-deep: #1E2D66;
+      --crimson:     #C7372B;
+      --crimson-pale:rgba(199,55,43,0.07);
+      --gold:        #C8A24A;
+      --fog:         #E4E1DC;
+      --mist:        #F2ECE4;
+      --border:      rgba(34,24,48,0.09);
+      --serif:       'Playfair Display', Georgia, serif;
+      --display:     'Fraunces', Georgia, serif;
+      --body:        'DM Sans', system-ui, -apple-system, sans-serif;
+      --max:         1160px;
+      --pad:         40px;
+      --radius:      4px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--body); background: var(--white);
+      color: var(--ink); line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+    body::after {
+      content: ''; position: fixed; inset: 0;
+      pointer-events: none; z-index: 9999; opacity: 0.030;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-size: 200px 200px;
+    }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; }
+
+    .container { max-width: var(--max); margin: 0 auto; padding: 0 var(--pad); }
+
+    /* ─── Typography ─── */
+    .eyebrow {
+      font-family: var(--body); font-size: 10px; font-weight: 500;
+      letter-spacing: .2em; text-transform: uppercase; color: var(--terra);
+    }
+    .pill {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-family: var(--body); font-size: 10px; font-weight: 500;
+      letter-spacing: .12em; text-transform: uppercase;
+      padding: 5px 13px; border-radius: 100px;
+    }
+    .pill--gold {
+      border: 1.5px solid rgba(200,162,74,.35);
+      color: var(--gold); background: rgba(200,162,74,0.07);
+    }
+    .pill--indigo {
+      border: 1.5px solid rgba(58,79,153,.30);
+      color: var(--indigo); background: var(--indigo-pale);
+    }
+    .pill--terra {
+      border: 1.5px solid rgba(192,90,60,.30);
+      color: var(--terra); background: var(--terra-pale);
+    }
+    .pill--crimson {
+      border: 1.5px solid rgba(199,55,43,.30);
+      color: var(--crimson); background: var(--crimson-pale);
+    }
+
+    /* ─── Buttons ─── */
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-family: var(--body); font-size: 12px; font-weight: 500;
+      letter-spacing: .07em; text-transform: uppercase;
+      padding: 14px 28px; border-radius: var(--radius);
+      cursor: pointer; transition: opacity .18s, transform .15s;
+      border: none; line-height: 1;
+    }
+    .btn:hover { opacity: .82; transform: translateY(-1px); }
+    .btn--terra    { background: var(--terra); color: #fff; }
+    .btn--indigo   { background: var(--indigo); color: #fff; }
+    .btn--gold     { background: var(--gold); color: var(--ink); }
+    .btn--crimson  { background: var(--crimson); color: #fff; }
+    .btn--ghost-ink { background: transparent; color: var(--ink); border: 1.5px solid var(--border); }
+    .btn--ghost    { background: rgba(250,250,247,.1); color: rgba(250,250,247,.85); border: 1px solid rgba(250,250,247,.2); }
+
+    /* ════════════════════════════════════════════════════════════
+       NAV
+    ════════════════════════════════════════════════════════════ */
+    .nav-wrap {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(250,250,247,0.94);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+    }
+    .nav { display: flex; align-items: center; justify-content: space-between; height: 68px; }
+    .nav-logo {
+      font-family: var(--serif); font-size: 22px; font-weight: 400; font-style: italic;
+      color: var(--terra); letter-spacing: .01em;
+    }
+    .nav-links { display: flex; align-items: center; gap: 24px; }
+    .nav-links a {
+      font-family: var(--body); font-size: 13px; font-weight: 400;
+      color: var(--ink); opacity: 0.68; transition: opacity .15s;
+    }
+    .nav-links a:hover, .nav-links a.active { opacity: 1; }
+    .nav-links .nav-cta {
+      opacity: 1; font-weight: 500; color: var(--terra);
+      padding: 7px 18px; border: 1.5px solid rgba(192,90,60,.45);
+      border-radius: 100px; transition: background .15s, color .15s;
+    }
+    .nav-links .nav-cta:hover { background: var(--terra); color: #fff; opacity: 1; }
+    .nav-hamburger {
+      display: none; flex-direction: column; justify-content: center;
+      gap: 5px; width: 36px; height: 36px;
+      background: none; border: none; cursor: pointer; padding: 4px; flex-shrink: 0;
+    }
+    .nav-hamburger span {
+      display: block; width: 22px; height: 1.5px;
+      background: var(--terra); border-radius: 2px;
+      transition: transform .25s, opacity .2s; transform-origin: center;
+    }
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+    .mobile-menu {
+      display: none; position: fixed; inset: 0; z-index: 98;
+      background: var(--white); flex-direction: column;
+      justify-content: center; align-items: center;
+      padding: 80px 40px 60px; gap: 0;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      font-family: var(--display); font-size: clamp(28px, 8vw, 40px); font-weight: 300;
+      color: var(--ink); padding: 18px 0; text-align: center; width: 100%;
+      border-bottom: 1px solid var(--border); transition: color .15s; letter-spacing: -.01em;
+    }
+    .mobile-menu a:last-child { border-bottom: none; }
+    .mobile-menu a:hover, .mobile-menu a:active { color: var(--terra); }
+    .mobile-menu .mobile-cta {
+      margin-top: 32px; font-family: var(--body); font-size: 14px; font-weight: 500;
+      color: #fff; background: var(--terra); padding: 14px 36px;
+      border-radius: 100px; border-bottom: none; width: auto; transition: opacity .15s;
+    }
+    .mobile-menu .mobile-cta:hover { opacity: .85; color: #fff; }
+
+    /* ════════════════════════════════════════════════════════════
+       PAGE HEADER
+    ════════════════════════════════════════════════════════════ */
+    .start-hero {
+      padding: 80px 0 64px;
+      border-bottom: 1px solid var(--border);
+    }
+    .start-hero-inner { max-width: 680px; }
+    .start-hero-eyebrow { margin-bottom: 24px; display: block; }
+    .start-hero-h1 {
+      font-family: var(--display);
+      font-size: clamp(38px, 5vw, 64px);
+      font-weight: 700; line-height: 1.08;
+      letter-spacing: -0.025em; color: var(--ink);
+      margin-bottom: 24px;
+    }
+    .start-hero-body {
+      font-size: clamp(16px, 1.6vw, 18px); font-weight: 300;
+      line-height: 1.82; color: var(--ink-muted); max-width: 580px;
+    }
+
+    /* ════════════════════════════════════════════════════════════
+       ENTRIES
+    ════════════════════════════════════════════════════════════ */
+    .entries { padding: 0 0 96px; }
+
+    .entry {
+      padding: 64px 0;
+      border-bottom: 1px solid var(--border);
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+    .entry:last-of-type { border-bottom: none; }
+
+    .entry-meta { padding-top: 4px; }
+    .entry-meta .pill { margin-bottom: 16px; }
+    .entry-price {
+      font-family: var(--serif); font-size: 28px; font-weight: 700;
+      color: var(--ink); letter-spacing: -0.02em; line-height: 1;
+      margin-bottom: 6px; margin-top: 20px;
+    }
+    .entry-price-note {
+      font-size: 12px; color: var(--ink-muted); line-height: 1.5;
+    }
+
+    .entry-content {}
+    .entry-when {
+      font-family: var(--body); font-size: 11px; font-weight: 500;
+      letter-spacing: .14em; text-transform: uppercase;
+      color: var(--ink-muted); margin-bottom: 12px; display: block;
+    }
+    .entry-h2 {
+      font-family: var(--serif);
+      font-size: clamp(26px, 3vw, 38px);
+      font-weight: 600; line-height: 1.15; letter-spacing: -0.02em;
+      color: var(--ink); margin-bottom: 20px;
+    }
+    .entry-body {
+      font-size: 16px; line-height: 1.82; color: var(--ink-muted);
+      margin-bottom: 16px; max-width: 560px;
+    }
+    .entry-body strong { color: var(--ink); font-weight: 500; }
+    .entry-body em { font-style: italic; }
+
+    .entry-leaves {
+      margin: 24px 0; display: flex; flex-direction: column; gap: 8px;
+    }
+    .entry-leaves-title {
+      font-size: 11px; font-weight: 500; letter-spacing: .12em;
+      text-transform: uppercase; color: var(--ink-muted); margin-bottom: 4px;
+    }
+    .entry-leaf {
+      display: flex; align-items: flex-start; gap: 10px;
+      font-size: 14px; line-height: 1.6; color: var(--ink-muted);
+    }
+    .entry-leaf-mark { flex-shrink: 0; font-size: 12px; margin-top: 2px; }
+
+    /* ════════════════════════════════════════════════════════════
+       CLOSING LINE
+    ════════════════════════════════════════════════════════════ */
+    .start-close {
+      background: var(--fog);
+      padding: 80px 0;
+      text-align: center;
+    }
+    .start-close-inner { max-width: 560px; margin: 0 auto; }
+    .start-close-quote {
+      font-family: var(--serif);
+      font-size: clamp(22px, 2.8vw, 34px);
+      font-weight: 400; font-style: italic;
+      line-height: 1.45; color: var(--ink);
+    }
+
+    /* ════════════════════════════════════════════════════════════
+       FOOTER
+    ════════════════════════════════════════════════════════════ */
+    footer { background: var(--ink); color: rgba(250,250,247,.6); padding: 64px 0 36px; }
+    .footer-inner { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 64px; margin-bottom: 52px; }
+    .footer-logo {
+      font-family: var(--serif); font-size: 22px; font-weight: 400; font-style: italic;
+      color: rgba(250,250,247,.88); margin-bottom: 14px;
+    }
+    .footer-tagline { font-size: 14px; line-height: 1.7; color: rgba(250,250,247,.42); max-width: 280px; }
+    .footer-col-title {
+      font-size: 10px; font-weight: 500; letter-spacing: .18em;
+      text-transform: uppercase; color: rgba(250,250,247,.3); margin-bottom: 20px;
+    }
+    .footer-links li { margin-bottom: 12px; }
+    .footer-links a { font-size: 14px; color: rgba(250,250,247,.55); transition: color .15s; }
+    .footer-links a:hover { color: rgba(250,250,247,.88); }
+    .footer-bottom {
+      display: flex; align-items: center; justify-content: space-between;
+      padding-top: 28px; border-top: 1px solid rgba(250,250,247,.08);
+      font-size: 12px; color: rgba(250,250,247,.28);
+    }
+
+    /* ─── Fade in ─── */
+    .fade-in { opacity: 0; transform: translateY(22px); transition: opacity .6s ease, transform .6s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+    .fade-in.delay-1 { transition-delay: .12s; }
+    .fade-in.delay-2 { transition-delay: .24s; }
+
+    /* ─── Responsive ─── */
+    @media (max-width: 760px) {
+      .entry { grid-template-columns: 1fr; gap: 24px; }
+      .entry-meta { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
+      .entry-price { margin-top: 0; }
+      .footer-inner { grid-template-columns: 1fr 1fr; gap: 48px; }
+      .footer-col:first-child { grid-column: span 2; }
+    }
+    @media (max-width: 640px) {
+      :root { --pad: 24px; }
+      .nav-links a:not(.nav-cta) { display: none; }
+      .nav-links .nav-cta { display: none; }
+      .nav-hamburger { display: flex; }
+      .footer-inner { grid-template-columns: 1fr; gap: 36px; }
+      .footer-col:first-child { grid-column: span 1; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <header class="nav-wrap">
+    <nav class="nav container">
+      <a href="index.html" class="nav-logo">Cléa Hernández</a>
+      <div class="nav-links">
+        <a href="story-loom.html">Story Loom</a>
+        <a href="jungian-coaching.html">Jungian Coaching</a>
+        <a href="vip-day.html">VIP Day</a>
+        <a href="about.html">About</a>
+        <a href="work-with-me.html" class="nav-cta">Work With Me</a>
+      </div>
+      <button class="nav-hamburger" id="navHamburger" aria-label="Open navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+  <nav class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <a href="story-loom.html">Story Loom</a>
+    <a href="jungian-coaching.html">Jungian Coaching</a>
+    <a href="vip-day.html">VIP Day</a>
+    <a href="about.html">About</a>
+    <a href="work-with-me.html" class="mobile-cta">Work With Me</a>
+  </nav>
+
+  <main>
+
+    <!-- ─── PAGE HEADER ─── -->
+    <section class="start-hero">
+      <div class="container">
+        <div class="start-hero-inner fade-in">
+          <span class="eyebrow start-hero-eyebrow">Where to Begin</span>
+          <h1 class="start-hero-h1">The right place to start<br>depends on where you are.</h1>
+          <p class="start-hero-body">
+            Not everyone arrives at this work from the same place. Some people have been building for years and the language still hasn't caught up to the depth of what they're doing. Some are at a genuine threshold — something is ending, something is forming, and they need a container to think it through. Some just want to start the conversation and see what's there.
+            <br><br>
+            All of those are good places to start. Here's how to find yours.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── ENTRIES ─── -->
+    <section class="entries">
+      <div class="container">
+
+        <!-- Entry 1: Golden Thread Session -->
+        <div class="entry fade-in">
+          <div class="entry-meta">
+            <span class="pill pill--gold">Start Here</span>
+            <p class="entry-price">$200</p>
+            <p class="entry-price-note">Applies toward the VIP Day or Story Loom if you continue.</p>
+          </div>
+          <div class="entry-content">
+            <span class="entry-when">When it's yours</span>
+            <h2 class="entry-h2">The Golden Thread Session</h2>
+            <p class="entry-body">
+              You sense there's a coherent story running through your work — a through-line that connects what you've done, what you believe, and what you're building. But you haven't found the language for it yet. You want to see what's there before committing to a longer container.
+            </p>
+            <p class="entry-body">
+              <strong>A single 60-minute conversation.</strong> We find the narrative golden thread running through your lived experience, your values, and your work. Your stories, your images, sometimes your dreams — whatever is alive in you — become the raw material. One client's brand emerged from a dream. That's not unusual here. It's the method.
+            </p>
+            <div class="entry-leaves">
+              <p class="entry-leaves-title">What you leave with</p>
+              <div class="entry-leaf">
+                <span class="entry-leaf-mark" style="color: var(--gold);">✦</span>
+                A Golden Thread Manifesto: your founding image, core beliefs, and brand pillars named in language that's actually yours
+              </div>
+              <div class="entry-leaf">
+                <span class="entry-leaf-mark" style="color: var(--gold);">✦</span>
+                The narrative thread identified and made visible — the sentence that sits under everything you're building
+              </div>
+              <div class="entry-leaf">
+                <span class="entry-leaf-mark" style="color: var(--gold);">✦</span>
+                3–5 story frameworks drawn from your lived experience
+              </div>
+              <div class="entry-leaf">
+                <span class="entry-leaf-mark" style="color: var(--gold);">✦</span>
+                A clear sense of which path calls you next
+              </div>
+            </div>
+            <a href="mailto:clea@mythograph.co?subject=Golden Thread Session" class="btn btn--gold">Book a Golden Thread Session →</a>
+          </div>
+        </div>
+
+        <!-- Entry 2: VIP Day -->
+        <div class="entry fade-in">
+          <div class="entry-meta">
+            <span class="pill pill--indigo">The Intensive</span>
+            <p class="entry-price">$1,800</p>
+            <p class="entry-price-note">Full story bank delivered within 10 days.</p>
+          </div>
+          <div class="entry-content">
+            <span class="entry-when">When it's yours</span>
+            <h2 class="entry-h2">The VIP Day</h2>
+            <p class="entry-body">
+              You know you're ready. You don't want a six-week container — you want the real work done in concentrated form. You've been carrying these stories and you need someone to help you excavate, shape, and deliver them.
+            </p>
+            <p class="entry-body">
+              <strong>One focused day in three phases.</strong> You leave with a complete story bank — up to ten ghostwritten narratives delivered within ten days. The full picture, done.
+            </p>
+            <a href="vip-day.html" class="btn btn--indigo">See how the VIP Day works →</a>
+          </div>
+        </div>
+
+        <!-- Entry 3: Story Loom -->
+        <div class="entry fade-in">
+          <div class="entry-meta">
+            <span class="pill pill--indigo">The Program</span>
+            <p class="entry-price" style="font-size: 22px;">From $1,997</p>
+            <p class="entry-price-note">Founder's Circle price — increases July 1.</p>
+          </div>
+          <div class="entry-content">
+            <span class="entry-when">When it's yours</span>
+            <h2 class="entry-h2">Story Loom</h2>
+            <p class="entry-body">
+              You're ready for the full build. Six weeks, close work, everything from narrative excavation to finished brand strategy and messaging architecture. You want to emerge with something you can live in and build from for years — not a document you file away.
+            </p>
+            <p class="entry-body">
+              <strong>The flagship.</strong> The complete Mythograph methodology in a private container — Jungian-informed depth work, the WEAVE method, Active Imagination practices, and between-session support. Two tiers: narrative strategy, or the full build with visual identity and website.
+            </p>
+            <a href="story-loom.html" class="btn btn--indigo">Get in at the founder's price →</a>
+          </div>
+        </div>
+
+        <!-- Entry 4: Jungian Coaching -->
+        <div class="entry fade-in">
+          <div class="entry-meta">
+            <span class="pill pill--terra">Ongoing Container</span>
+          </div>
+          <div class="entry-content">
+            <span class="entry-when">When it's yours</span>
+            <h2 class="entry-h2">Jungian Narrative Coaching</h2>
+            <p class="entry-body">
+              What you need isn't a brand sprint. It's a sustained container for the deeper work — the shadow patterns that show up in how you talk about your work, the stories you've been avoiding, the parts of your history that haven't yet become useful. You want depth, not deliverables.
+            </p>
+            <p class="entry-body">
+              Bi-weekly 60-minute sessions in an ongoing container. <strong>Jungian depth psychology applied to the practice of building meaningful work.</strong> Not therapy — strategy that goes all the way down.
+            </p>
+            <a href="jungian-coaching.html" class="btn btn--terra">Book a discovery call →</a>
+          </div>
+        </div>
+
+        <!-- Entry 5: Not sure yet -->
+        <div class="entry fade-in">
+          <div class="entry-meta">
+            <span class="pill pill--terra">No Commitment</span>
+          </div>
+          <div class="entry-content">
+            <span class="entry-when">When it's yours</span>
+            <h2 class="entry-h2">Not sure yet?</h2>
+            <p class="entry-body">
+              You feel the resonance but you're not sure which offer fits your season. Or you want to talk before you commit to anything.
+            </p>
+            <p class="entry-body">
+              Write to me directly. Tell me what you're building and what feels like it's missing. I'll read it and tell you honestly where I think you are in the arc — and what, if anything, makes sense as a next step.
+            </p>
+            <a href="mailto:clea@mythograph.co" class="btn btn--ghost-ink">Write to Cléa →</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ─── CLOSING LINE ─── -->
+    <div class="start-close fade-in">
+      <div class="start-close-inner">
+        <p class="start-close-quote">
+          "Every path eventually leads to the same place: language for what you're actually doing, and the confidence to say it out loud."
+        </p>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-col">
+          <p class="footer-logo">Cléa Hernández</p>
+          <p class="footer-tagline">Jungian Narrative Coach, brand strategist, and founder of Mythograph &amp; Story Loom.</p>
+        </div>
+        <div class="footer-col">
+          <p class="footer-col-title">Navigate</p>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="story-loom.html">Story Loom</a></li>
+            <li><a href="jungian-coaching.html">Jungian Coaching</a></li>
+            <li><a href="vip-day.html">VIP Day</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="work-with-me.html">Work With Me</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <p class="footer-col-title">Connect</p>
+          <ul class="footer-links">
+            <li><a href="mailto:clea@mythograph.co">clea@mythograph.co</a></li>
+            <li><a href="https://mythograph.co" target="_blank" rel="noopener">Mythograph.co</a></li>
+            <li><a href="https://storyloom.app" target="_blank" rel="noopener">Story Loom</a></li>
+            <li><a href="https://substack.com/@mythograph" target="_blank" rel="noopener">Substack</a></li>
+            <li><a href="https://www.linkedin.com/in/clea-hernandez/" target="_blank" rel="noopener">LinkedIn</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Cléa Hernández. All rights reserved.</span>
+        <span>Built with intention.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
+  <script>
+    (function() {
+      var btn = document.getElementById('navHamburger');
+      var menu = document.getElementById('mobileMenu');
+      if (!btn || !menu) return;
+      btn.addEventListener('click', function() {
+        var open = btn.classList.toggle('open');
+        menu.classList.toggle('open', open);
+        btn.setAttribute('aria-expanded', String(open));
+        menu.setAttribute('aria-hidden', String(!open));
+        document.body.style.overflow = open ? 'hidden' : '';
+      });
+      menu.querySelectorAll('a').forEach(function(a) {
+        a.addEventListener('click', function() {
+          btn.classList.remove('open');
+          menu.classList.remove('open');
+          btn.setAttribute('aria-expanded', 'false');
+          menu.setAttribute('aria-hidden', 'true');
+          document.body.style.overflow = '';
+        });
+      });
+    })();
+  </script>
+
+</body>
+</html>
