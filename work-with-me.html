@@ -67,6 +67,7 @@
     .pill--terra  { border: 1.5px solid rgba(192,90,60,.35); color: var(--terra); background: var(--terra-pale); }
     .pill--indigo { border: 1.5px solid rgba(58,79,153,.3); color: var(--indigo); background: var(--indigo-pale); }
     .pill--crimson  { border: 1.5px solid rgba(199,55,43,.30); color: var(--crimson); background: var(--crimson-pale); }
+    .pill--gold   { border: 1.5px solid rgba(200,162,74,.35); color: var(--gold); background: rgba(200,162,74,0.07); }
     .pill--ghost  { border: 1.5px solid rgba(250,250,247,.25); color: rgba(250,250,247,.7); background: rgba(250,250,247,.06); }
 
     .section-h2 {
@@ -240,6 +241,10 @@
       background: rgba(192,90,60,0.03);
       border-color: rgba(192,90,60,0.1);
     }
+    .path-detail-card--gold {
+      background: rgba(200,162,74,0.03);
+      border-color: rgba(200,162,74,0.12);
+    }
     .pdc-section { margin-bottom: 32px; }
     .pdc-section:last-child { margin-bottom: 0; }
     .pdc-title {
@@ -249,8 +254,28 @@
     .pdc-title--terra { color: var(--terra); }
     .pdc-title--indigo { color: var(--indigo); }
     .pdc-title--crimson  { color: var(--crimson); }
+    .pdc-title--gold { color: var(--gold); }
     .pdc-body { font-size: 14px; line-height: 1.72; color: var(--ink-muted); }
     .pdc-body strong { color: var(--ink); font-weight: 500; }
+
+    /* ════════════════════════════════════════════════════════════
+       MYTHOGRAPH FOOTNOTE
+    ════════════════════════════════════════════════════════════ */
+    .mythograph-footnote {
+      padding: 28px 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      background: var(--white);
+      text-align: center;
+    }
+    .mythograph-footnote p {
+      font-size: 14px; color: var(--ink-muted); line-height: 1.7;
+    }
+    .mythograph-footnote a {
+      color: var(--terra); text-decoration: underline; text-underline-offset: 2px;
+      transition: opacity .15s;
+    }
+    .mythograph-footnote a:hover { opacity: .75; }
 
     /* ════════════════════════════════════════════════════════════
        START HERE — decision guide
@@ -467,8 +492,8 @@
       <div class="nav-links">
         <a href="story-loom.html">Story Loom</a>
         <a href="jungian-coaching.html">Jungian Coaching</a>
+        <a href="vip-day.html">VIP Day</a>
         <a href="about.html">About</a>
-        <a href="your-words-here.html" style="color: var(--terra); font-weight: 500;">Your Words Here</a>
         <a href="work-with-me.html" class="nav-cta active">Work With Me</a>
       </div>
       <button class="nav-hamburger" id="navHamburger" aria-label="Open navigation" aria-expanded="false">
@@ -479,8 +504,8 @@
   <nav class="mobile-menu" id="mobileMenu" aria-hidden="true">
     <a href="story-loom.html">Story Loom</a>
     <a href="jungian-coaching.html">Jungian Coaching</a>
+    <a href="vip-day.html">VIP Day</a>
     <a href="about.html">About</a>
-    <a href="your-words-here.html" class="mobile-ywh">Your Words Here</a>
     <a href="work-with-me.html" class="mobile-cta">Work With Me</a>
   </nav>
 
@@ -490,87 +515,57 @@
     <section class="wm-hero">
       <div class="container">
         <span class="eyebrow">Work With Cléa</span>
-        <h1 class="wm-hero-h1">
-          Three pathways.<br>
-          One thread.
-        </h1>
+        <h1 class="wm-hero-h1">Ready to get deep?</h1>
         <p class="wm-hero-body">
-          Whether you're a founder finding your voice, a coach building your practice, or a mission-driven organization ready to tell the truth — there's a path for you.
+          You. Me. The dream you had last night about your soul's calling. An active imagination exercise where we meet all the forgotten versions of you. A messaging workshop where we map your convictions along your career journey. Let's do this.
         </p>
-        <div class="wm-hero-paths">
-          <a href="#jungian" class="path-anchor">1:1 Jungian Coaching ↓</a>
-          <a href="#story-loom" class="path-anchor">Story Loom ↓</a>
-          <a href="#mythograph" class="path-anchor">Mythograph · Organizations ↓</a>
-        </div>
       </div>
     </section>
 
-    <!-- ─── PATH 01: Jungian Coaching ─── -->
-    <section class="path-section" id="jungian">
+    <!-- ─── OFFER 01: THE GOLDEN THREAD SESSION ─── -->
+    <section class="path-section" id="golden-thread">
       <div class="container">
         <div class="path-inner">
 
           <div class="fade-in">
             <div class="path-header">
-              <span class="pill pill--crimson">01 &nbsp;·&nbsp; 1:1 Coaching</span>
-              <h2 class="path-h2" style="margin-top: 20px;">Jungian Narrative Coaching</h2>
-              <p class="path-subtitle">For Founders &amp; Creatives</p>
+              <span class="pill pill--terra">01 &nbsp;·&nbsp; THE ENTRY POINT</span>
+              <h2 class="path-h2" style="margin-top: 20px;">Not sure where to start? Start here.</h2>
             </div>
 
             <p class="path-body">
-              The most personal path — a container for doing the real work. Especially for people in the meaning-making years who are exhausted by capitalist performance and ready to name their work as something else entirely.
-            </p>
-            <p class="path-body">
-              We excavate your stories, surface the internalized patterns keeping you small, and build language rooted in your lived experience and deepest convictions.
-            </p>
-            <p class="path-body">
-              <strong>Right for you if:</strong> you know your work wants to contribute to something larger, but you haven't yet found language for it that doesn't sound like everyone else.
+              The Golden Thread Session is a 60-minute conversation designed to find the coherent conviction running through your stories. You'll leave with a written summary of your narrative golden thread — the throughline connecting your lived experience, your values, and your work. Something you can start building from right away.
             </p>
 
-            <p class="path-includes-title">What's included</p>
-            <ul class="path-list path-list--crimson">
-              <li>Bi-weekly 60-minute sessions</li>
-              <li>Narrative excavation &amp; brand voice development</li>
-              <li>Shadow work applied to brand story</li>
-              <li>Active Imagination practices</li>
-              <li>Between-session reflection prompts &amp; writing support</li>
-              <li>Asynchronous written support between sessions</li>
+            <p class="path-includes-title">What you leave with</p>
+            <ul class="path-list path-list--terra">
+              <li>A written Golden Thread narrative (your core story, distilled)</li>
+              <li>3–5 story frameworks identified from your experience</li>
+              <li>A clear sense of which direction calls you next</li>
             </ul>
 
             <div class="path-cta-box">
-              <a href="mailto:clea@mythograph.co" class="btn btn--gold">Book a discovery call →</a>
-              <a href="jungian-coaching.html" class="btn btn--terra-o">Learn more</a>
+              <a href="mailto:clea@mythograph.co?subject=Golden Thread Session" class="btn btn--terra">Book a Golden Thread Session →</a>
             </div>
           </div>
 
-          <div class="path-detail-card path-detail-card--crimson fade-in delay-1">
+          <div class="path-detail-card path-detail-card--terra fade-in delay-1">
             <div class="pdc-section">
-              <p class="pdc-title pdc-title--crimson">What shifts</p>
-              <ul style="list-style: none; display: flex; flex-direction: column; gap: 14px;">
-                <li style="font-size: 14px; line-height: 1.65; color: var(--ink-muted); padding-left: 18px; position: relative;">
-                  <span style="position: absolute; left: 0; color: var(--crimson);">→</span>
-                  From performing for a system that doesn't serve you to <strong style="color: var(--ink);">building from your own narrative authority</strong>
-                </li>
-                <li style="font-size: 14px; line-height: 1.65; color: var(--ink-muted); padding-left: 18px; position: relative;">
-                  <span style="position: absolute; left: 0; color: var(--crimson);">→</span>
-                  From scattered messaging to a <strong style="color: var(--ink);">coherent narrative field</strong>
-                </li>
-                <li style="font-size: 14px; line-height: 1.65; color: var(--ink-muted); padding-left: 18px; position: relative;">
-                  <span style="position: absolute; left: 0; color: var(--crimson);">→</span>
-                  From "what do I even say?" to <strong style="color: var(--ink);">words that attract your people</strong>
-                </li>
-              </ul>
-            </div>
-            <div class="pdc-section">
-              <p class="pdc-title pdc-title--crimson">How to start</p>
+              <p class="pdc-title pdc-title--terra">Investment</p>
               <p class="pdc-body">
-                Book a free 30-minute discovery call. We'll talk about where you are, what you're building, and whether this is the right container for the work. No commitment required.
+                <strong>$200</strong> · Your investment applies toward the VIP Day or the full Story Loom program if you continue.
               </p>
             </div>
             <div class="pdc-section">
-              <p class="pdc-title pdc-title--crimson">Write to me</p>
+              <p class="pdc-title pdc-title--terra">What this is</p>
               <p class="pdc-body">
-                You can also write directly to <a href="mailto:clea@mythograph.co" style="color: var(--terra); text-decoration: underline; text-underline-offset: 2px;">clea@mythograph.co</a> — tell me about your work and what you're trying to find.
+                A single focused session for the person who knows something is there but hasn't found the thread yet. No prep required. You bring your stories; we find the throughline together.
+              </p>
+            </div>
+            <div class="pdc-section">
+              <p class="pdc-title pdc-title--terra">Ready?</p>
+              <p class="pdc-body">
+                Write to <a href="mailto:clea@mythograph.co?subject=Golden Thread Session" style="color: var(--terra); text-decoration: underline; text-underline-offset: 2px;">clea@mythograph.co</a> with the subject line "Golden Thread Session" and we'll get you on the calendar.
               </p>
             </div>
           </div>
@@ -579,58 +574,113 @@
       </div>
     </section>
 
-    <!-- ─── PATH 02: Story Loom ─── -->
+    <!-- ─── OFFER 02: THE VIP DAY ─── -->
+    <section class="path-section" id="vip-day">
+      <div class="container">
+        <div class="path-inner">
+
+          <div class="fade-in">
+            <div class="path-header">
+              <span class="pill pill--gold">02 &nbsp;·&nbsp; THE INTENSIVE</span>
+              <h2 class="path-h2" style="margin-top: 20px;">One day. Your complete story bank.</h2>
+            </div>
+
+            <p class="path-body">
+              For the person who knows they're ready — who doesn't want a six-week container, but wants the real work done. In one focused day, we excavate your past, claim your present, and draft the stories you've been carrying. Your story bank arrives within ten days. Up to ten ghostwritten narratives, ready to use.
+            </p>
+
+            <p class="path-body">
+              <strong>Full story bank delivered within 10 days.</strong>
+            </p>
+
+            <div class="path-cta-box">
+              <a href="vip-day.html" class="btn btn--terra">See how it works →</a>
+            </div>
+          </div>
+
+          <div class="path-detail-card path-detail-card--gold fade-in delay-1">
+            <div class="pdc-section">
+              <p class="pdc-title pdc-title--gold">Investment</p>
+              <p class="pdc-body">
+                <strong>$1,800</strong>
+              </p>
+            </div>
+            <div class="pdc-section">
+              <p class="pdc-title pdc-title--gold">What you get</p>
+              <p class="pdc-body">
+                One focused intensive day together — deep excavation, active drafting — followed by up to ten polished, ghostwritten narratives delivered within ten days. Your story bank, complete and ready to use.
+              </p>
+            </div>
+            <div class="pdc-section">
+              <p class="pdc-title pdc-title--gold">Best for</p>
+              <p class="pdc-body">
+                The founder or creative who has clarity on their vision and needs concentrated, done-for-you output — not a long program, but a single powerful day of transformation.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── OFFER 03: STORY LOOM ─── -->
     <section class="path-section" id="story-loom">
       <div class="container">
         <div class="path-inner">
 
           <div class="fade-in">
             <div class="path-header">
-              <span class="pill pill--indigo">02 &nbsp;·&nbsp; App &amp; Community</span>
-              <h2 class="path-h2" style="margin-top: 20px;">Story Loom</h2>
-              <p class="path-subtitle">Narrative OS for the Resistance</p>
+              <span class="pill pill--indigo">03 &nbsp;·&nbsp; THE PROGRAM &nbsp;·&nbsp; FOUNDER'S CIRCLE OPEN</span>
+              <h2 class="path-h2" style="margin-top: 20px;">Six weeks co-creating your stories, strategy, messaging, and brand.</h2>
             </div>
 
             <p class="path-body">
-              Story Loom is narrative infrastructure for people who are done building on extractive terms. It's for those ready to organize their lived stories, shadow work, and deepest convictions into resistance-minded work — and find the community of aligned builders doing the same.
-            </p>
-            <p class="path-body">
-              <strong>Right for you if:</strong> you're building something post-capitalist and need narrative infrastructure that actually matches your values. Not another funnel. A narrative field that attracts your people.
+              Story Loom is the full container. Six weeks of close, hands-on work where we excavate what's actually there, build your narrative infrastructure, and shape a resonant brand strategy from Jungian-informed exercises, coaxed from your inner world and grounded in your lived experience. You emerge with a finished brand strategy and messaging architecture you can live in and build from for years.
             </p>
 
-            <p class="path-includes-title">What's inside</p>
+            <p class="path-includes-title">What's included</p>
             <ul class="path-list path-list--indigo">
-              <li>Story Journal for lived experience &amp; ideological fuel</li>
-              <li>Story Bank — your narrative field, not your content calendar</li>
-              <li>Conviction-to-transformation messaging you own</li>
-              <li>Anti-extractive positioning &amp; offer design</li>
-              <li>Community of aligned resistance-minded builders</li>
-              <li>The WEAVE Method: Wander → Excavate → Architect → Voice → Embody</li>
+              <li>6 weeks of 1:1 sessions (weekly 60 min)</li>
+              <li>Between-session prompts + asynchronous support via Voxer</li>
+              <li>Active Imagination exercises and other Jungian methodologies</li>
+              <li>Narrative excavation using the WEAVE Method</li>
+              <li>Complete brand strategy + messaging framework + story bank + voice patterns in Notion, Google Sheets, or the Story Loom app</li>
+              <li>Launch plan</li>
             </ul>
 
+            <p class="path-body" style="margin-top: 24px;">
+              <strong>Story Loom Full Build adds:</strong> basic visual brand identity (color, type, image guidance) + self-hosted website built and launched on Netlify. No monthly platform fees — ever.
+            </p>
+
+            <p class="path-body">
+              <strong>This is the beta round.</strong> I'm working closely with a small founding group to build the case studies and refine the methodology. Which means you get deeply hands-on, done-for-you work with a certified brand architect at a done-with-you price. It won't be structured this way after July 1.
+            </p>
+
             <div class="path-cta-box">
-              <a href="mailto:clea@mythograph.co" class="btn btn--gold">Book a discovery call →</a>
+              <a href="mailto:clea@mythograph.co?subject=Story Loom Founder's Circle" class="btn btn--terra">Get in at the founder's price →</a>
               <a href="story-loom.html" class="btn btn--terra-o">Learn more</a>
             </div>
           </div>
 
           <div class="path-detail-card path-detail-card--indigo fade-in delay-1">
             <div class="pdc-section">
+              <p class="pdc-title pdc-title--indigo">Investment</p>
+              <p class="pdc-body">
+                <strong>Founder's Circle: $1,997</strong><br>
+                Full Build: $4,400<br>
+                Price increases July 1.
+              </p>
+            </div>
+            <div class="pdc-section">
               <p class="pdc-title pdc-title--indigo">The WEAVE Method</p>
               <p class="pdc-body">
-                Story Loom is built on five phases — <strong>Wander, Excavate, Architect, Voice, Embody</strong> — each designed to move you from raw narrative material to a living brand practice.
+                Story Loom is built on five phases — <strong>Wander, Excavate, Architect, Voice, Embody</strong> — each designed to move you from raw narrative material to a living brand strategy.
               </p>
             </div>
             <div class="pdc-section">
-              <p class="pdc-title pdc-title--indigo">The Active Imagination differentiator</p>
+              <p class="pdc-title pdc-title--indigo">Founder's Circle</p>
               <p class="pdc-body">
-                The Excavate phase uses <strong>Jungian Active Imagination</strong> — Jung's method for entering into dialogue with the unconscious — to surface narrative material that performance-based brand work will always miss.
-              </p>
-            </div>
-            <div class="pdc-section">
-              <p class="pdc-title pdc-title--indigo">Currently</p>
-              <p class="pdc-body">
-                Story Loom is already part of the work. Book a discovery call to explore how the narrative infrastructure can support your specific journey.
+                A small group. Deeply hands-on. Done-for-you work at a done-with-you price. If you're ready to do the real work before July 1, this is your window.
               </p>
             </div>
           </div>
@@ -639,62 +689,59 @@
       </div>
     </section>
 
-    <!-- ─── PATH 03: Mythograph ─── -->
-    <section class="path-section" id="mythograph" style="background: var(--ink);">
+    <!-- ─── OFFER 04: JUNGIAN NARRATIVE COACHING ─── -->
+    <section class="path-section" id="jungian">
       <div class="container">
         <div class="path-inner">
 
           <div class="fade-in">
             <div class="path-header">
-              <span class="pill pill--ghost">03 &nbsp;·&nbsp; For Organizations</span>
-              <h2 class="path-h2" style="margin-top: 20px; color: rgba(250,250,247,.9);">Mythograph Strategic Brand Storytelling</h2>
-              <p class="path-subtitle" style="color: rgba(250,250,247,.45);">For Mission-Driven Organizations</p>
+              <span class="pill pill--crimson">04 &nbsp;·&nbsp; THE ONGOING CONTAINER</span>
+              <h2 class="path-h2" style="margin-top: 20px;">The inner work that becomes your work in the world.</h2>
             </div>
 
-            <p class="path-body" style="color: rgba(250,250,247,.5);">
-              Mythograph is my strategic brand consultancy for mission-driven organizations ready to articulate what they stand for — and build the systems to say it consistently, to the right people, in the right way.
+            <p class="path-body">
+              Jungian Narrative Coaching is for the founder who wants a creative, generative space to do the deeper work that makes everything else more coherent: understanding the shadow patterns that show up in how you talk about your work, excavating the stories you've been avoiding, integrating the parts of your history that haven't yet become useful.
             </p>
-            <p class="path-body" style="color: rgba(250,250,247,.5);">
-              <strong style="color: rgba(250,250,247,.82);">Right for you if:</strong> you lead a purpose-driven company or nonprofit and your brand doesn't yet tell the full story of the transformation you create.
+            <p class="path-body">
+              This is not therapy. It's not brand coaching in the conventional sense. It's the intersection of depth psychology and narrative strategy, held in a space designed for people who believe surface answers aren't enough. Bi-weekly 60-minute sessions, offered in 5-session packages.
             </p>
-
-            <p class="path-includes-title" style="color: rgba(250,250,247,.35);">What's included</p>
-            <ul class="path-list path-list--gold">
-              <li style="color: rgba(250,250,247,.5); border-top-color: rgba(250,250,247,.08);">Brand Oracle Interview &amp; Report</li>
-              <li style="color: rgba(250,250,247,.5); border-top-color: rgba(250,250,247,.08);">Strategic Brand Platform &amp; Narrative System</li>
-              <li style="color: rgba(250,250,247,.5); border-top-color: rgba(250,250,247,.08);">Visual &amp; Verbal Identity</li>
-              <li style="color: rgba(250,250,247,.5); border-top-color: rgba(250,250,247,.08);">Messaging strategy &amp; content architecture</li>
-              <li style="color: rgba(250,250,247,.5); border-top-color: rgba(250,250,247,.08);">Narrative websites</li>
-            </ul>
 
             <div class="path-cta-box">
-              <a href="https://mythograph.co" target="_blank" rel="noopener" class="btn btn--ghost">Visit Mythograph →</a>
-              <a href="mailto:clea@mythograph.co" class="btn btn--terra">Inquire directly</a>
+              <a href="mailto:clea@mythograph.co" class="btn btn--terra">Book a discovery call →</a>
+              <a href="jungian-coaching.html" class="btn btn--terra-o">Learn more</a>
             </div>
           </div>
 
-          <div class="path-detail-card fade-in delay-1" style="background: rgba(250,250,247,.04); border-color: rgba(250,250,247,.1);">
+          <div class="path-detail-card path-detail-card--crimson fade-in delay-1">
             <div class="pdc-section">
-              <p class="pdc-title" style="color: rgba(200,162,74,0.7);">The Mythograph approach</p>
-              <p class="pdc-body" style="color: rgba(250,250,247,.45);">
-                Mythograph brings the same Jungian narrative depth that drives my coaching practice to organizational brand strategy. We go beneath the mission statement to find the story the organization is actually living — and build systems that make that story impossible to ignore.
+              <p class="pdc-title pdc-title--crimson">What this is</p>
+              <p class="pdc-body">
+                A sustained container at the intersection of depth psychology and narrative strategy. Not therapy. Not conventional brand coaching. The space between — where the real work lives.
               </p>
             </div>
             <div class="pdc-section">
-              <p class="pdc-title" style="color: rgba(200,162,74,0.7);">Who it's for</p>
-              <p class="pdc-body" style="color: rgba(250,250,247,.45);">
-                <strong style="color: rgba(250,250,247,.7);">Nonprofits</strong> with complex missions that aren't communicating their full impact. <strong style="color: rgba(250,250,247,.7);">Purpose-driven companies</strong> whose brand hasn't kept up with their values. <strong style="color: rgba(250,250,247,.7);">Social enterprises</strong> building something post-extractive and needing language to match.
+              <p class="pdc-title pdc-title--crimson">Structure</p>
+              <p class="pdc-body">
+                Bi-weekly 60-minute sessions, offered in 5-session packages. We go at the pace the material demands.
               </p>
             </div>
             <div class="pdc-section">
-              <p class="pdc-title" style="color: rgba(200,162,74,0.7);">To inquire</p>
-              <p class="pdc-body" style="color: rgba(250,250,247,.45);">
-                Visit <a href="https://mythograph.co" target="_blank" rel="noopener" style="color: rgba(200,162,74,0.7); text-decoration: underline; text-underline-offset: 2px;">mythograph.co</a> or write to <a href="mailto:clea@mythograph.co" style="color: rgba(200,162,74,0.7); text-decoration: underline; text-underline-offset: 2px;">clea@mythograph.co</a>.
+              <p class="pdc-title pdc-title--crimson">How to start</p>
+              <p class="pdc-body">
+                Write to <a href="mailto:clea@mythograph.co" style="color: var(--terra); text-decoration: underline; text-underline-offset: 2px;">clea@mythograph.co</a> and tell me about what you're working through. We'll set up a discovery call to see if this is the right fit.
               </p>
             </div>
           </div>
 
         </div>
+      </div>
+    </section>
+
+    <!-- ─── MYTHOGRAPH FOOTNOTE ─── -->
+    <section class="mythograph-footnote">
+      <div class="container">
+        <p>Working with an organization? <a href="https://mythograph.co" target="_blank" rel="noopener">Visit Mythograph for team-based creative direction →</a></p>
       </div>
     </section>
 
@@ -705,40 +752,33 @@
         <div class="start-here-header fade-in">
           <span class="eyebrow">Not sure where to start?</span>
           <h2 class="section-h2" style="margin-top: 16px; margin-bottom: 16px;">Find your path.</h2>
-          <p class="section-lead" style="margin: 0 auto;">Three questions. One answer.</p>
         </div>
 
         <div class="decision-grid">
           <div class="decision-card fade-in">
-            <p class="dc-eyebrow dc-eyebrow--crimson">For individuals</p>
-            <p class="dc-title">You want to do the deep, personal work.</p>
             <p class="dc-trigger">
-              "I need someone to hold the container while I figure out what I'm actually building — and why."
+              You have a story but no language for it yet, and you're not ready to commit to a full program.
             </p>
             <div class="dc-cta">
-              <a href="mailto:clea@mythograph.co" class="btn btn--gold" style="font-size: 11px; padding: 12px 20px;">Book a discovery call →</a>
+              <a href="mailto:clea@mythograph.co?subject=Golden Thread Session" class="btn btn--terra" style="font-size: 11px; padding: 12px 20px;">Start with a Golden Thread Session →</a>
             </div>
           </div>
 
           <div class="decision-card fade-in delay-1">
-            <p class="dc-eyebrow dc-eyebrow--indigo">For builders</p>
-            <p class="dc-title">You want infrastructure and community.</p>
             <p class="dc-trigger">
-              "I need tools and a community of people building the same kind of work — resistance-minded, values-aligned, post-extractive."
+              You have a vision and a plan. You just need someone to help you articulate it.
             </p>
             <div class="dc-cta">
-              <a href="https://storyloom.app" target="_blank" rel="noopener" class="btn btn--gold" style="font-size: 11px; padding: 12px 20px;">Join Story Loom →</a>
+              <a href="vip-day.html" class="btn btn--terra" style="font-size: 11px; padding: 12px 20px;">The VIP Day or Story Loom is your jam →</a>
             </div>
           </div>
 
           <div class="decision-card fade-in delay-2">
-            <p class="dc-eyebrow dc-eyebrow--terra">For organizations</p>
-            <p class="dc-title">You need strategic brand systems.</p>
             <p class="dc-trigger">
-              "We're a mission-driven organization and our brand doesn't yet tell the full story of what we do in the world."
+              What you need is depth — a sustained container for the work beneath the work.
             </p>
             <div class="dc-cta">
-              <a href="https://mythograph.co" target="_blank" rel="noopener" class="btn btn--terra" style="font-size: 11px; padding: 12px 20px;">Visit Mythograph →</a>
+              <a href="mailto:clea@mythograph.co" class="btn btn--terra" style="font-size: 11px; padding: 12px 20px;">Jungian Narrative Coaching →</a>
             </div>
           </div>
         </div>
@@ -746,47 +786,13 @@
       </div>
     </section>
 
-    <!-- ─── SHAPE WINDOW DIVIDER ─── -->
-    <div class="shape-break shape-break--mist" aria-hidden="true">
-      <div class="win win--arch"
-           style="background-image: url('mj_arch_desert.png'); background-position: center 35%;"
-           title="Arch — woman in desert, glowing cube portal in the distance"></div>
-      <div class="win win--oval"
-           style="background-image: url('mj_circle_esvedra.png'); background-position: center center;"
-           title="Oval — Es Vedra island, dramatic Ibiza cloudscape"></div>
-      <div class="win win--arch"
-           style="background-image: url('mj_arch_threshold.png'); background-position: center 15%;"
-           title="Arch — figure entering a monolith at golden sunset"></div>
-    </div>
-
-    <!-- ─── ART STRIP — Midjourney ─── -->
-    <div class="mj-strip" role="img" aria-label="Two figures walking together toward a glowing threshold of light in a surrealist dreamscape">
-      <img
-        src="mj_workwithme_threshold.png"
-        alt="Two silhouetted figures walk side by side toward a massive golden portal of light in a dreamlike surrealist landscape — collaborative, hopeful, threshold."
-        loading="lazy"
-      />
-    </div>
-
     <!-- ─── DISCOVERY CALL CTA ─── -->
     <section class="discovery">
       <div class="container">
         <div class="discovery-inner fade-in">
-          <span class="eyebrow">Start here</span>
-          <h2 class="discovery-h2">
-            Ready to find<br>your true story?
-          </h2>
-          <p class="discovery-body">
-            Start with a free 30-minute conversation. We'll talk about where you are, what you're building, and where the work wants to go.
-          </p>
+          <h2 class="discovery-h2">Ready to find your narrative?</h2>
           <div class="discovery-btns">
             <a href="mailto:clea@mythograph.co" class="btn btn--terra">Book a discovery call →</a>
-            <a href="about.html" class="btn btn--ghost">Meet Cléa first</a>
-          </div>
-
-          <div class="contact-info">
-            <p>Prefer to write first? Reach me at <a href="mailto:clea@mythograph.co">clea@mythograph.co</a></p>
-            <p>Or visit <a href="https://mythograph.co" target="_blank" rel="noopener">mythograph.co</a> for organizational work.</p>
           </div>
         </div>
       </div>
@@ -808,8 +814,8 @@
             <li><a href="index.html">Home</a></li>
             <li><a href="story-loom.html">Story Loom</a></li>
             <li><a href="jungian-coaching.html">Jungian Coaching</a></li>
+            <li><a href="vip-day.html">VIP Day</a></li>
             <li><a href="about.html">About</a></li>
-            <li><a href="your-words-here.html">Your Words Here</a></li>
             <li><a href="work-with-me.html">Work With Me</a></li>
           </ul>
         </div>
@@ -818,7 +824,8 @@
           <ul class="footer-links">
             <li><a href="mailto:clea@mythograph.co">clea@mythograph.co</a></li>
             <li><a href="https://mythograph.co" target="_blank" rel="noopener">Mythograph.co</a></li>
-            <li><a href="https://storyloom.app" target="_blank" rel="noopener">Story Loom</a></li>
+            <li><a href="https://substack.com/@mythograph" target="_blank" rel="noopener">Substack</a></li>
+            <li><a href="https://www.linkedin.com/in/clea-hernandez/" target="_blank" rel="noopener">LinkedIn</a></li>
           </ul>
         </div>
       </div>

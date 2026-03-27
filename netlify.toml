@@ -1,6 +1,17 @@
 [build]
   publish = "."
 
+# Redirects
+[[redirects]]
+  from = "/your-words-here"
+  to = "/story-loom"
+  status = 301
+
+[[redirects]]
+  from = "/your-words-here.html"
+  to = "/story-loom.html"
+  status = 301
+
 # Cache images and assets aggressively
 [[headers]]
   for = "/*.png"
