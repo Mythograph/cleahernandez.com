@@ -173,6 +173,10 @@
       background-image: none;
       -webkit-text-fill-color: var(--indigo);
     }
+    /* About page: 5-letter single-row display — scale down to fit */
+    .about-hero .word-witch-display .ww-letter {
+      font-size: clamp(28px, 14vw, 140px);
+    }
 
     /* Painting in story sidebar — natural proportions, no crop */
     .sidebar-painting {
@@ -597,8 +601,6 @@
             <div class="ww-row">
               <span class="ww-letter" style="--bg: url('headshot2.png');      --bp: center 12%;">A</span>
               <span class="ww-letter" style="--bg: url('clea_gallery_2.png'); --bp: center 25%;">B</span>
-            </div>
-            <div class="ww-row">
               <span class="ww-letter" style="--bg: url('clea_gallery_1.jpg'); --bp: center 15%;">O</span>
               <span class="ww-letter" style="--bg: url('clea_gallery_3.jpg'); --bp: 35% center;">U</span>
               <span class="ww-letter" style="--bg: url('clea_gallery_4.png'); --bp: left 22%;">T</span>
@@ -846,7 +848,7 @@
           <!-- Image card — 6th slot for visual balance -->
           <div class="world-card" style="padding: 0; overflow: hidden;">
             <img
-              src="IMG_2631.jpg"
+              src="doodle.jpg"
               alt="A hand-drawn doodle illustration from a creative exercise"
               style="width: 100%; height: auto; display: block;"
             />
