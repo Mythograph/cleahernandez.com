@@ -838,14 +838,17 @@
 
     /* Photo strip — full width editorial band */
     .photo-strip {
-      overflow: hidden; height: 580px; position: relative;
+      overflow: hidden; height: 420px; position: relative;
     }
     .photo-strip img {
       width: 100%; height: 100%;
-      object-fit: cover; object-position: center center;
+      object-fit: cover; object-position: center 30%;
       filter: saturate(0.82) sepia(0.06);
       display: block;
     }
+    /* These must come AFTER the main rule so they properly override it */
+    @media (max-width: 980px) { .photo-strip { height: 340px; } }
+    @media (max-width: 640px) { .photo-strip { height: 200px; } }
 
     /* NEWSLETTER BAND */
     .nl-band { background: var(--mist); padding: 72px 0; border-top: 1px solid var(--border); }
@@ -1138,10 +1141,11 @@
     </div>
 
     <!-- Editorial photo strip: Cléa at the whiteboard -->
-    <div class="photo-strip" aria-hidden="false">
+    <div class="photo-strip" style="height: auto;" aria-hidden="false">
       <img
         src="Clea_Whiteboard.png"
         alt="Cléa Hernández — strategy session at the whiteboard"
+        style="height: auto; object-fit: unset; object-position: unset;"
         loading="lazy"
       />
     </div>
