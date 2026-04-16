@@ -80,8 +80,8 @@
     /* Small all-caps eyebrow label */
     .eyebrow {
       font-family: var(--body);
-      font-size: 10px; font-weight: 500;
-      letter-spacing: .2em; text-transform: uppercase;
+      font-size: 13px; font-weight: 500;
+      letter-spacing: .15em; text-transform: uppercase;
       color: var(--terra);
     }
 
@@ -483,10 +483,10 @@
 
     /* Mythograph footnote — one-liner */
     .mythograph-footnote {
-      padding: 28px 0;
+      padding: 44px 0;
       border-top: 1px solid var(--border);
       text-align: center;
-      font-size: 13px; color: var(--ink-muted);
+      font-size: 17px; font-weight: 500; color: var(--ink-muted);
     }
     .mythograph-footnote a {
       color: var(--terra); text-decoration: underline;
@@ -853,7 +853,7 @@
     /* NEWSLETTER BAND */
     .nl-band { background: var(--mist); padding: 72px 0; border-top: 1px solid var(--border); }
     .nl-inner { max-width: 520px; margin: 0 auto; text-align: center; }
-    .nl-eyebrow-tag { font-family: var(--body); font-size: 10px; font-weight: 500; letter-spacing: .2em; text-transform: uppercase; color: var(--terra); margin-bottom: 16px; display: block; }
+    .nl-eyebrow-tag { font-family: var(--body); font-size: 13px; font-weight: 500; letter-spacing: .15em; text-transform: uppercase; color: var(--terra); margin-bottom: 16px; display: block; }
     .nl-heading { font-family: var(--serif); font-size: clamp(22px, 2.8vw, 34px); font-weight: 600; color: var(--ink); margin-bottom: 12px; line-height: 1.2; }
     .nl-body { font-size: 15px; color: var(--ink-muted); line-height: 1.72; margin-bottom: 32px; }
     .nl-form { display: flex; gap: 10px; max-width: 440px; margin: 0 auto 12px; }
@@ -864,6 +864,222 @@
     .nl-submit:hover { opacity: .82; transform: translateY(-1px); }
     .nl-note { font-size: 11px; color: var(--ink-muted); opacity: 0.5; }
     @media (max-width: 520px) { .nl-form { flex-direction: column; } }
+
+    /* ════════════════════════════════════════════════════════════
+       WHAT STORY LOOM IS
+    ════════════════════════════════════════════════════════════ */
+    .sl-what { padding: 80px 0; }
+    .sl-what-inner { max-width: 720px; margin: 0 auto; }
+    .sl-lead {
+      font-size: clamp(17px, 1.8vw, 20px); font-weight: 400;
+      line-height: 1.82; color: var(--ink-muted); margin-bottom: 8px;
+    }
+    .sl-features { list-style: none; padding: 0; margin: 24px 0 0; display: grid; gap: 12px; }
+    .sl-features li {
+      padding: 16px 20px;
+      background: var(--mist);
+      border-left: 2px solid var(--indigo);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      font-size: 16px; line-height: 1.72; color: var(--ink-muted);
+    }
+    .sl-features li strong { color: var(--ink); font-weight: 500; }
+
+    /* ════════════════════════════════════════════════════════════
+       WHAT YOU LEAVE WITH
+    ════════════════════════════════════════════════════════════ */
+    .deliverables { padding: 80px 0; background: var(--mist); }
+    .deliverables-inner { max-width: 760px; margin: 0 auto; }
+    .receipt { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 36px 0 48px; }
+    .receipt-item {
+      padding: 24px 22px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+    }
+    .receipt-num {
+      font-family: var(--serif); font-size: 32px; font-weight: 700;
+      color: rgba(200,162,74,0.4); line-height: 1; margin-bottom: 12px;
+    }
+    .receipt-text { font-size: 15px; line-height: 1.65; color: var(--ink-muted); }
+    .receipt-text strong { color: var(--ink); font-weight: 500; }
+    .deliverables-list { display: grid; gap: 10px; }
+    .dl-item {
+      display: grid; grid-template-columns: 180px 1fr; gap: 16px; align-items: flex-start;
+      padding: 18px 20px;
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: var(--radius);
+    }
+    .dl-label {
+      font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase;
+      color: var(--indigo); padding-top: 2px;
+    }
+    .dl-desc { font-size: 15px; line-height: 1.65; color: var(--ink-muted); }
+
+    /* ════════════════════════════════════════════════════════════
+       WHAT SHIFTS
+    ════════════════════════════════════════════════════════════ */
+    .transforms { padding: 80px 0; }
+    .transforms-inner { max-width: 680px; margin: 0 auto; }
+    .transform-pair {
+      display: grid; grid-template-columns: 1fr auto 1fr; gap: 20px; align-items: center;
+      padding: 28px 0; border-bottom: 1px solid var(--border);
+    }
+    .transform-pair:last-child { border-bottom: none; }
+    .tl-label {
+      font-size: 10px; font-weight: 600; letter-spacing: .15em; text-transform: uppercase;
+      color: var(--ink-muted); opacity: 0.6; margin-bottom: 8px;
+    }
+    .transform-from {
+      font-family: var(--serif); font-size: clamp(15px, 1.5vw, 18px);
+      font-weight: 500; color: var(--ink-muted); line-height: 1.4;
+    }
+    .transform-to {
+      font-family: var(--serif); font-size: clamp(15px, 1.5vw, 18px);
+      font-weight: 600; color: var(--ink); line-height: 1.4;
+    }
+    .transform-arrow { font-size: 18px; color: var(--terra); opacity: 0.7; flex-shrink: 0; }
+
+    /* ════════════════════════════════════════════════════════════
+       WHO IT'S FOR
+    ════════════════════════════════════════════════════════════ */
+    .who-for { padding: 80px 0; background: var(--mist); }
+    .who-for-inner { max-width: 680px; margin: 0 auto; }
+    .who-for-body { font-size: clamp(16px, 1.5vw, 18px); line-height: 1.82; color: var(--ink-muted); margin-bottom: 20px; }
+    .who-for-body:last-child { margin-bottom: 0; }
+    .who-for-body strong { color: var(--ink); font-weight: 500; }
+
+    /* ════════════════════════════════════════════════════════════
+       HOW IT WORKS
+    ════════════════════════════════════════════════════════════ */
+    .how-works { padding: 80px 0; }
+    .how-works-inner { max-width: 760px; margin: 0 auto; }
+    .how-steps { display: grid; gap: 12px; margin: 32px 0 48px; }
+    .how-step {
+      display: grid; grid-template-columns: 10px 1fr; gap: 20px; align-items: flex-start;
+      padding: 22px 24px; background: var(--mist); border-radius: var(--radius);
+    }
+    .how-step-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--terra); margin-top: 6px; flex-shrink: 0;
+    }
+    .how-step-text { font-size: 16px; line-height: 1.72; color: var(--ink-muted); }
+    .how-step-text strong { color: var(--ink); font-weight: 500; }
+    .how-flow-title {
+      font-family: var(--serif); font-size: clamp(20px, 2.2vw, 28px);
+      font-weight: 600; color: var(--ink); margin-bottom: 24px;
+    }
+    .flow-list { display: grid; gap: 12px; }
+    .flow-item {
+      display: grid; grid-template-columns: 160px 1fr; gap: 20px;
+      padding: 20px 24px; border: 1px solid var(--border); border-radius: var(--radius);
+    }
+    .flow-label {
+      font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase;
+      color: var(--indigo); padding-top: 2px;
+    }
+    .flow-desc { font-size: 15px; line-height: 1.65; color: var(--ink-muted); }
+
+    /* ════════════════════════════════════════════════════════════
+       TWO WAYS TO WORK
+    ════════════════════════════════════════════════════════════ */
+    .two-ways { padding: 80px 0; background: var(--mist); }
+    .two-ways-inner { max-width: 900px; margin: 0 auto; }
+    .two-ways-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 44px; }
+    .way-card {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 40px 36px;
+    }
+    .way-card--featured { border-color: var(--indigo); box-shadow: 0 0 0 1px var(--indigo); }
+    .way-num {
+      font-family: var(--body); font-size: 11px; font-weight: 600;
+      letter-spacing: .12em; text-transform: uppercase;
+      color: var(--indigo); margin-bottom: 16px; display: block;
+    }
+    .way-title {
+      font-family: var(--display); font-size: clamp(22px, 2.4vw, 30px);
+      font-weight: 600; color: var(--ink); margin-bottom: 16px; line-height: 1.2;
+    }
+    .way-body { font-size: 15px; line-height: 1.72; color: var(--ink-muted); margin-bottom: 20px; }
+    .way-includes-list {
+      list-style: none; padding: 0; margin: 20px 0 24px; display: grid; gap: 10px;
+      border-top: 1px solid var(--border); padding-top: 20px;
+    }
+    .way-includes-list li {
+      font-size: 14px; line-height: 1.6; color: var(--ink-muted);
+      padding-left: 18px; position: relative;
+    }
+    .way-includes-list li::before { content: '+'; position: absolute; left: 0; color: var(--indigo); font-weight: 600; }
+    .way-timeline {
+      font-size: 12px; font-weight: 500; letter-spacing: .08em; text-transform: uppercase;
+      color: var(--ink-muted); opacity: 0.7; margin-bottom: 24px;
+    }
+
+    /* ════════════════════════════════════════════════════════════
+       PRICING
+    ════════════════════════════════════════════════════════════ */
+    .pricing-section { padding: 80px 0; }
+    .pricing-inner { max-width: 680px; margin: 0 auto; }
+    .pricing-intro { font-size: clamp(16px, 1.5vw, 18px); line-height: 1.82; color: var(--ink-muted); margin-bottom: 12px; }
+    .pricing-note { font-size: 14px; font-weight: 500; color: var(--terra); margin-bottom: 44px; }
+    .pricing-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .pricing-card {
+      background: var(--mist); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 36px 32px;
+    }
+    .pc-title {
+      font-family: var(--display); font-size: clamp(18px, 2vw, 24px);
+      font-weight: 600; color: var(--ink); margin-bottom: 6px;
+    }
+    .pc-price {
+      font-family: var(--serif); font-size: clamp(36px, 4vw, 52px);
+      font-weight: 700; color: var(--indigo); letter-spacing: -0.02em;
+      line-height: 1; margin-bottom: 12px;
+    }
+    .pc-desc { font-size: 14px; line-height: 1.65; color: var(--ink-muted); }
+
+    /* ════════════════════════════════════════════════════════════
+       NOT SURE / NOT FOR YOU / CLOSING
+    ════════════════════════════════════════════════════════════ */
+    .not-sure { padding: 64px 0; background: var(--mist); border-top: 1px solid var(--border); }
+    .not-sure-inner { max-width: 600px; margin: 0 auto; text-align: center; }
+    .not-sure-body { font-size: clamp(16px, 1.5vw, 18px); line-height: 1.8; color: var(--ink-muted); margin-bottom: 28px; }
+    .not-sure-body strong { color: var(--ink); font-weight: 500; }
+
+    .not-for { padding: 64px 0; }
+    .not-for-inner { max-width: 600px; margin: 0 auto; }
+    .not-for-list { list-style: none; padding: 0; margin-top: 24px; display: grid; gap: 16px; }
+    .not-for-list li {
+      font-size: 16px; line-height: 1.7; color: var(--ink-muted);
+      padding-left: 24px; position: relative;
+    }
+    .not-for-list li::before { content: '—'; position: absolute; left: 0; color: var(--ink-muted); }
+
+    .closing { padding: 96px 0; background: var(--ink); }
+    .closing-inner { max-width: 680px; margin: 0 auto; text-align: center; }
+    .closing-h2 {
+      font-family: var(--serif); font-size: clamp(28px, 3.5vw, 48px);
+      font-weight: 600; line-height: 1.2; letter-spacing: -0.02em;
+      color: rgba(250,250,247,0.92); margin-bottom: 40px;
+    }
+    .closing-btns { display: flex; align-items: center; justify-content: center; gap: 14px; flex-wrap: wrap; }
+
+    /* ════════════════════════════════════════════════════════════
+       RESPONSIVE — NEW SECTIONS
+    ════════════════════════════════════════════════════════════ */
+    @media (max-width: 980px) {
+      .receipt { grid-template-columns: 1fr; }
+      .two-ways-grid { grid-template-columns: 1fr; }
+      .pricing-cards { grid-template-columns: 1fr; }
+      .dl-item { grid-template-columns: 1fr; gap: 6px; }
+      .flow-item { grid-template-columns: 1fr; gap: 8px; }
+    }
+    @media (max-width: 640px) {
+      .transform-pair { grid-template-columns: 1fr; gap: 8px; }
+      .transform-arrow { display: none; }
+      .way-card { padding: 28px 24px; }
+      .how-step { grid-template-columns: 1fr; }
+      .how-step-dot { display: none; }
+    }
 
     /* ─── Shape Window Dividers ─── */
     .shape-break {
@@ -905,9 +1121,7 @@
         <span style="display: block; font-family: var(--body); font-size: 10px; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-muted); font-style: normal; opacity: 0.65; margin-top: 2px;">Mythograph Strategic Storytelling</span>
       </a>
       <div class="nav-links">
-        <a href="story-loom.html">Story Loom</a>
         <a href="jungian-coaching.html">Jungian Coaching</a>
-        <a href="vip-day.html">VIP Day</a>
         <a href="about.html">About</a>
         <a href="work-with-me.html" class="nav-cta">Work With Me</a>
       </div>
@@ -917,9 +1131,7 @@
     </nav>
   </header>
   <nav class="mobile-menu" id="mobileMenu" aria-hidden="true">
-    <a href="story-loom.html">Story Loom</a>
     <a href="jungian-coaching.html">Jungian Coaching</a>
-    <a href="vip-day.html">VIP Day</a>
     <a href="about.html">About</a>
     <a href="work-with-me.html" class="mobile-cta">Work With Me</a>
   </nav>
@@ -934,21 +1146,24 @@
 
         <!-- Text column -->
         <div class="hero-text">
-          <p class="eyebrow hero-eyebrow fade-in">Jungian Narrative Coach &amp; Brand Strategist</p>
+          <p class="eyebrow hero-eyebrow fade-in">Strategic Branding Meets Jungian Narrative Work</p>
 
           <h1 class="hero-h1 fade-in delay-1">
-            Tell the stories<br>
-            you want to<br>
-            <span class="accent">live in.</span>
+            Tell the Stories<br>
+            You Want to<br>
+            <span class="accent">Live In.</span>
           </h1>
 
           <p class="hero-body fade-in delay-2">
-            Most entrepreneurs are still building on a scarcity story they inherited. You're building something that matters: a practice, a body of work, a way of being in the world shaped by what you believe is possible. Your work deserves a narrative that's genuine and expansive.
+            Most entrepreneurs are still building on a scarcity story they inherited. If you're building something that matters — a practice, a body of work, a way of being in the world shaped by what you believe is possible — your work deserves a narrative field that's genuine and expansive.
+          </p>
+          <p class="hero-body fade-in delay-2" style="margin-top: -16px;">
+            I build narrative operating systems for founders and experts who are done performing for the attention economy. Express your value with clarity, without flattening your truth into a persona.
           </p>
 
           <div class="hero-btns fade-in delay-3">
-            <a href="work-with-me.html" class="btn btn--terra">Find your path →</a>
-            <a href="about.html" class="btn btn--ghost">About Clea</a>
+            <a href="mailto:clea@mythograph.co" class="btn btn--terra">Apply for Story Loom →</a>
+            <a href="mailto:clea@mythograph.co" class="btn btn--ghost">Book a Golden Thread Session →</a>
           </div>
         </div>
 
@@ -1038,19 +1253,13 @@
         <div class="problem-inner fade-in">
           <h2 class="problem-h2">Something is definitely shifting.</h2>
           <p class="problem-body">
-            The paradigm we've all been using to build a business, find our audience, and earn trust is not holding anymore.
-          </p>
-          <p class="problem-body">
             Like so many entrepreneurs I know, I left the corporate world because I felt I had something different to offer. Instead, I found myself in a catch-22 as a strategist trying to build my own brand: I realized the strategic tools available to entrepreneurs were built for the game that's eating us alive. <em>Extract attention. Perform expertise. Optimize the funnel for endless growth.</em>
           </p>
           <p class="problem-body">
-            We can feel how that's failing us. It's failing our integrity, the communities we're here to serve, and the planet we all share.
+            At best, the language doesn't quite fit. At worst, it degrades our integrity and trust, the communities we're here to serve, and the planet we all share.
           </p>
           <p class="problem-body">
-            At best, the language doesn't quite fit. At worst, it's the same AI slop we roll our eyes at whenever we open an email. The frameworks feel borrowed, and the way you're supposed to market yourself — <em>perform, extract, optimize</em> — feels like a quiet betrayal of the thing you're actually trying to do.
-          </p>
-          <p class="problem-body">
-            Right now, we need stories from people with vision who aren't selling us the same old paradigm of rugged individualism and careless growth and power-over dynamics.
+            Right now, we need stories from people with vision who aren't selling the status quo.
           </p>
           <p class="problem-body">
             <strong>You need to tell <em>your</em> stories, and we need to hear them.</strong>
@@ -1158,103 +1367,238 @@
         <div class="invitation-inner fade-in">
           <h2 class="invitation-eyebrow" style="font-family: var(--serif); font-size: clamp(28px, 3.5vw, 48px); font-weight: 600; line-height: 1.15; letter-spacing: -0.02em; color: var(--ink); margin-bottom: 28px;">This is what I do.</h2>
           <p class="invitation-body">
-            I work at the intersection of Jungian depth psychology and brand strategy to help people excavate their truth, find the language for it, and build a livelihood with regenerative impact. One that earns its place in a better world instead of jostling desperately for recognition in the old one.
+            I work at the intersection of Jungian depth psychology and brand strategy to help people excavate their truth, find language for it, and build a livelihood with regenerative impact.
           </p>
         </div>
       </div>
     </section>
 
     <!-- ═══════════════════════════════════════════════════════════════
-         NEXT STEP CTA
+         WHAT STORY LOOM IS
     ═══════════════════════════════════════════════════════════════ -->
-    <section class="offers">
+    <section class="sl-what">
       <div class="container">
-        <div class="offers-header fade-in" style="text-align: center; max-width: 640px; margin: 0 auto;">
-          <h2 class="section-h2">Not sure where to start? Let's find your next step.</h2>
-          <p class="section-lead" style="margin-top: 20px; max-width: 100%;">Get a recommendation based on the right next step for what you're building.</p>
-          <div style="margin-top: 36px;">
-            <a href="/start" class="btn btn--terra">Tell me more… →</a>
+        <div class="sl-what-inner fade-in">
+          <p class="eyebrow" style="margin-bottom: 20px;">Story Loom</p>
+          <h2 class="section-h2" style="margin-bottom: 28px;">A relational brand-build.</h2>
+          <p class="sl-lead">
+            Story Loom is a 1:1 container where we uncover the living intelligence inside your work, then architect it into a narrative system that can hold:
+          </p>
+          <ul class="sl-features">
+            <li>the truth of what you do <strong>(without flattening it)</strong></li>
+            <li>the specificity of who it's for <strong>(without niche panic)</strong></li>
+            <li>the emotional and ethical spine of your point of view <strong>(without posturing)</strong></li>
+            <li>the language you can actually use <strong>(without sounding like anyone else)</strong></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         WHAT YOU LEAVE WITH
+    ═══════════════════════════════════════════════════════════════ -->
+    <section class="deliverables">
+      <div class="container">
+        <div class="deliverables-inner fade-in">
+          <p class="eyebrow" style="margin-bottom: 20px;">What You Leave With</p>
+          <h2 class="section-h2" style="margin-bottom: 12px;">A complete Narrative OS.</h2>
+          <p class="sl-lead">In 6 weeks, you leave with everything you need to run your story across your website, offers, and content.</p>
+
+          <div class="receipt">
+            <div class="receipt-item">
+              <div class="receipt-num">1</div>
+              <p class="receipt-text">A <strong>message set you can ship</strong> (positioning, differentiation, objections)</p>
+            </div>
+            <div class="receipt-item">
+              <div class="receipt-num">2</div>
+              <p class="receipt-text">A <strong>story bank you can draw from</strong> and add to for the rest of your life</p>
+            </div>
+            <div class="receipt-item">
+              <div class="receipt-num">3</div>
+              <p class="receipt-text"><strong>Drafted copy</strong> for one real asset you can publish</p>
+            </div>
+          </div>
+
+          <div class="deliverables-list">
+            <div class="dl-item">
+              <span class="dl-label">Golden Thread Manifesto</span>
+              <p class="dl-desc">The throughline that ties your story, your work, and your promise into one coherent signal.</p>
+            </div>
+            <div class="dl-item">
+              <span class="dl-label">Story Bank</span>
+              <p class="dl-desc">Your core scenes, turning points, proofs, and origin moments — captured so you can reliably draw from, add to, and evolve them.</p>
+            </div>
+            <div class="dl-item">
+              <span class="dl-label">Convictions + POV</span>
+              <p class="dl-desc">The beliefs you're actually willing to stand behind, and language that makes them legible.</p>
+            </div>
+            <div class="dl-item">
+              <span class="dl-label">Messaging Architecture</span>
+              <p class="dl-desc">A map of how your work is understood — offers, pillars, differentiators, objections, outcomes.</p>
+            </div>
+            <div class="dl-item">
+              <span class="dl-label">Voice System</span>
+              <p class="dl-desc">Repeatable patterns and boundaries that keep you sounding like <em>you</em> across contexts.</p>
+            </div>
+            <div class="dl-item">
+              <span class="dl-label">Applied Draft(s)</span>
+              <p class="dl-desc">We use the system on at least one core asset (sales page, key email, offer messaging, or equivalent) so you leave with language you can publish.</p>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- ═══════════════════════════════════════════════════════════════
-         MYTHOGRAPH FOOTNOTE
+         WHAT SHIFTS
     ═══════════════════════════════════════════════════════════════ -->
-    <div class="container">
-      <aside class="mythograph-footnote">
-        Working with an organization? <a href="https://mythograph.co" target="_blank" rel="noopener">Visit Mythograph →</a>
-      </aside>
-    </div>
+    <section class="transforms">
+      <div class="container">
+        <div class="transforms-inner fade-in">
+          <p class="eyebrow" style="margin-bottom: 20px;">What Shifts</p>
+          <h2 class="section-h2" style="margin-bottom: 44px;">The transformation at the center of this work.</h2>
 
-    <!-- Editorial art strip — Midjourney -->
-    <div class="photo-strip" aria-hidden="false">
-      <img
-        src="mj_homepage_editorial.png"
-        alt="Surrealist editorial image — a woman channels golden threads of narrative light, mid-century Ibiza poster aesthetic"
-        loading="lazy"
-      />
-    </div>
+          <div class="transform-pair">
+            <div>
+              <p class="tl-label">From</p>
+              <p class="transform-from">Performing for a system that doesn't serve you</p>
+            </div>
+            <div class="transform-arrow">→</div>
+            <div>
+              <p class="tl-label">To</p>
+              <p class="transform-to">Building from your own narrative authority</p>
+            </div>
+          </div>
+
+          <div class="transform-pair">
+            <div>
+              <p class="tl-label">From</p>
+              <p class="transform-from">Scattered messaging and borrowed frameworks</p>
+            </div>
+            <div class="transform-arrow">→</div>
+            <div>
+              <p class="tl-label">To</p>
+              <p class="transform-to">A coherent narrative field that's entirely yours</p>
+            </div>
+          </div>
+
+          <div class="transform-pair">
+            <div>
+              <p class="tl-label">From</p>
+              <p class="transform-from">Internalized rules about who gets to say what</p>
+            </div>
+            <div class="transform-arrow">→</div>
+            <div>
+              <p class="tl-label">To</p>
+              <p class="transform-to">Work rooted in your convictions and purpose</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- ═══════════════════════════════════════════════════════════════
-         APPROACH / PHILOSOPHY
+         WHO IT'S FOR
     ═══════════════════════════════════════════════════════════════ -->
-    <section class="philosophy">
+    <section class="who-for">
       <div class="container">
-        <div class="philosophy-inner fade-in">
-          <span class="eyebrow">The Jungian approach</span>
-
-          <!-- Alchemical eye ornament — SVG -->
-          <div style="margin-bottom: 40px;" aria-hidden="true">
-            <svg width="60" height="30" viewBox="0 0 60 30" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin: 0 auto;">
-              <path d="M2 15 C12 4,22 0,30 0 C38 0,48 4,58 15 C48 26,38 30,30 30 C22 30,12 26,2 15Z" stroke="#C8A24A" stroke-width="0.75" fill="none" opacity="0.4"/>
-              <circle cx="30" cy="15" r="8" stroke="#C8A24A" stroke-width="0.6" fill="none" opacity="0.3"/>
-              <circle cx="30" cy="15" r="4" fill="rgba(200,162,74,0.15)"/>
-              <circle cx="32" cy="13" r="1" fill="rgba(200,162,74,0.45)"/>
-              <line x1="0" y1="15" x2="22" y2="15" stroke="rgba(200,162,74,0.22)" stroke-width="0.5"/>
-              <line x1="38" y1="15" x2="60" y2="15" stroke="rgba(200,162,74,0.22)" stroke-width="0.5"/>
-            </svg>
-          </div>
-
-          <blockquote class="philosophy-quote">
-            "The brand is not what you say it is.<br>It's what they say it is."
-          </blockquote>
-          <p class="philosophy-attr">— Marty Neumeier, <em>The Brand Gap</em></p>
-
-          <p style="font-size: 16px; line-height: 1.82; color: var(--ink-muted); margin-bottom: 16px;">
-            Jungian narrative coaching goes beneath the surface — past the polished pitch deck, the performance of success, and the internalized rules of a system you didn't design — to find the story that's already there, waiting to organize your life and your work.
+        <div class="who-for-inner fade-in">
+          <p class="eyebrow" style="margin-bottom: 20px;">Who It's For</p>
+          <h2 class="section-h2" style="margin-bottom: 32px;">Founders, coaches, creators, and practitioners.</h2>
+          <p class="who-for-body">
+            Story Loom is for founders, coaches, creators, and practitioners whose stories and messaging still feel scattered, invisible, or not quite like them.
           </p>
-          <p class="philosophy-attr" style="margin-bottom: 0;"></p>
+          <p class="who-for-body">
+            It's especially for <strong>conscious and spirit-led business owners</strong>, and for <strong>speakers, academics, or researchers stepping into thought leadership</strong> — who've done enough inner work to know this isn't just a surface problem, and who want language that can hold both their depth and their rigor.
+          </p>
         </div>
+      </div>
+    </section>
 
-        <div class="pillars-grid fade-in" style="margin-top: 72px;">
-          <div class="pillar">
-            <span class="pillar-num">01</span>
-            <div>
-              <p class="pillar-title">Excavation</p>
-              <p class="pillar-text">We go deep — into origin stories, shadow patterns, wounds, and wisdom — to find the narrative that's been there all along.</p>
+    <!-- ═══════════════════════════════════════════════════════════════
+         HOW IT WORKS
+    ═══════════════════════════════════════════════════════════════ -->
+    <section class="how-works">
+      <div class="container">
+        <div class="how-works-inner fade-in">
+          <p class="eyebrow" style="margin-bottom: 20px;">How It Works</p>
+          <h2 class="section-h2" style="margin-bottom: 36px;">Signal, not slogans.</h2>
+
+          <div class="how-steps">
+            <div class="how-step">
+              <div class="how-step-dot"></div>
+              <p class="how-step-text"><strong>We start with signal, not slogans.</strong> We listen for what's true, what's repeated, what's avoided, and what's trying to emerge.</p>
+            </div>
+            <div class="how-step">
+              <div class="how-step-dot"></div>
+              <p class="how-step-text"><strong>We excavate story and psyche.</strong> This is where the real differentiators and emotional fidelity live.</p>
+            </div>
+            <div class="how-step">
+              <div class="how-step-dot"></div>
+              <p class="how-step-text"><strong>We architect the system.</strong> We translate what we find into structures you can use: frameworks, maps, language sets, and decision rules.</p>
+            </div>
+            <div class="how-step">
+              <div class="how-step-dot"></div>
+              <p class="how-step-text"><strong>We apply it in real contexts.</strong> Live pages, key emails, offer messaging, or content — so the system becomes embodied, not theoretical.</p>
             </div>
           </div>
-          <div class="pillar">
-            <span class="pillar-num">02</span>
-            <div>
-              <p class="pillar-title">Articulation</p>
-              <p class="pillar-text">We shape the raw material into language that resonates — a brand voice that sounds like you at your most clear and courageous.</p>
+
+          <p style="font-size: 16px; line-height: 1.8; color: var(--ink-muted); margin-bottom: 48px;">This is collaborative, iterative work. You won't leave with "a doc." You'll leave with a narrative operating system you can confidently use and evolve on your own.</p>
+
+          <h3 class="how-flow-title">A typical flow (Story Loom = 6 weeks)</h3>
+          <div class="flow-list">
+            <div class="flow-item">
+              <span class="flow-label">Coaching Sessions</span>
+              <p class="flow-desc">Weekly 60-minute sessions focused on the "shadow" material that blocks clean visibility — <em>Who do you think you are?</em> authority discomfort, symbols, ancestral messages, the parts that don't want to be seen. I synthesize what emerges into a <strong>Golden Thread Report</strong>.</p>
+            </div>
+            <div class="flow-item">
+              <span class="flow-label">Creative Exercises</span>
+              <p class="flow-desc">During and between sessions, simple prompts and practices (Active Imagination, dreamwork cues, narrative reflection) to keep the signal moving and surface language we can build from.</p>
+            </div>
+            <div class="flow-item">
+              <span class="flow-label">Async Support</span>
+              <p class="flow-desc">Voxer/email Mon–Thu, responses within 24–48 business hours for questions, voice-note processing, and quick calibration between sessions.</p>
+            </div>
+            <div class="flow-item">
+              <span class="flow-label">Weeks 4–6: Build</span>
+              <p class="flow-desc">We gather your signature stories, conviction points, and lived proof — then translate them into clear aligned messaging and apply the system to your real-world assets.</p>
             </div>
           </div>
-          <div class="pillar">
-            <span class="pillar-num">03</span>
-            <div>
-              <p class="pillar-title">Integration</p>
-              <p class="pillar-text">We build systems so the story lives in your work — not just a document, but a practice that compounds over time.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         TWO WAYS TO WORK TOGETHER
+    ═══════════════════════════════════════════════════════════════ -->
+    <section class="two-ways">
+      <div class="container">
+        <div class="two-ways-inner fade-in">
+          <p class="eyebrow" style="margin-bottom: 20px;">Two Ways to Work Together</p>
+          <h2 class="section-h2">Find the right container for where you are.</h2>
+
+          <div class="two-ways-grid">
+            <div class="way-card way-card--featured">
+              <span class="way-num">01 / Story Loom</span>
+              <h3 class="way-title">Narrative OS Build</h3>
+              <p class="way-body">We work deeply together in coaching sessions to map your journey and truths, then co-create your brand strategy and language: Golden Thread, story bank, convictions, messaging architecture, and a voice system you can embody confidently.</p>
+              <p class="way-timeline">6 weeks · $3,600</p>
+              <a href="mailto:clea@mythograph.co" class="btn btn--indigo">Apply for Story Loom →</a>
             </div>
-          </div>
-          <div class="pillar">
-            <span class="pillar-num">04</span>
-            <div>
-              <p class="pillar-title">Activation</p>
-              <p class="pillar-text">The story becomes strategy — informing how you show up, what you offer, how you market, and who you attract.</p>
+
+            <div class="way-card">
+              <span class="way-num">02 / Full Build</span>
+              <h3 class="way-title">Brand + Website</h3>
+              <p class="way-body">For the people who want the full thing built, launched, and live. Includes everything in Story Loom, plus:</p>
+              <ul class="way-includes-list">
+                <li>A basic visual brand identity (color, type, mark)</li>
+                <li>A self-hosted website built and launched</li>
+                <li>A simple live website (typically 3–5 pages)</li>
+                <li>A gentle "launch" post that invites without performing</li>
+                <li>An aligned marketing plan for what comes next</li>
+              </ul>
+              <p class="way-timeline">8 weeks · $6,750</p>
+              <a href="mailto:clea@mythograph.co" class="btn btn--ink">Apply for Full Build →</a>
             </div>
           </div>
         </div>
@@ -1264,84 +1608,18 @@
     <!-- ─── SHAPE WINDOW DIVIDER ─── -->
     <div class="shape-break" aria-hidden="true">
       <div class="win win--arch-sm"
-           style="background-image: url('mj_arch_desert.png'); background-position: center 30%;"
-           title="Arch window — woman in terra dunes, a glowing cube portal in the distance"></div>
+           style="background-image: url('mj_arch_desert.png'); background-position: center 30%;"></div>
       <div class="win win--arch"
-           style="background-image: url('mj_arch_threshold.png'); background-position: center 20%;"
-           title="Arch window — figure at the entrance of a vast monolith at sunset"></div>
+           style="background-image: url('mj_arch_threshold.png'); background-position: center 20%;"></div>
       <div class="win win--arch-sm"
-           style="background-image: url('mj_arch_dunes.png'); background-position: center 15%;"
-           title="Arch window — silhouette standing on rolling dunes at golden hour"></div>
+           style="background-image: url('mj_arch_dunes.png'); background-position: center 15%;"></div>
     </div>
 
-    <!-- ═══════════════════════════════════════════════════════════════
-         ABOUT
-    ═══════════════════════════════════════════════════════════════ -->
-    <section class="about">
-      <div class="container">
-
-        <div class="ornament" aria-hidden="true">✦ ✧ ✦</div>
-
-        <div class="about-inner">
-
-          <!-- Photo column -->
-          <div class="about-photo-wrap fade-in">
-            <img
-              src="headshot2.png"
-              alt="Cléa Hernández"
-            />
-            <!-- Small botanical ornament — olive branch SVG -->
-            <svg class="about-botanical" width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <path d="M10 90 Q30 70 50 50 Q70 30 90 10" stroke="#C8A24A" stroke-width="0.7" opacity="0.4"/>
-              <ellipse cx="32" cy="68" rx="7" ry="4" transform="rotate(-45 32 68)" stroke="#C8A24A" stroke-width="0.6" fill="rgba(200,162,74,0.1)" opacity="0.6"/>
-              <ellipse cx="50" cy="50" rx="7" ry="4" transform="rotate(-45 50 50)" stroke="#C8A24A" stroke-width="0.6" fill="rgba(200,162,74,0.1)" opacity="0.6"/>
-              <ellipse cx="68" cy="32" rx="7" ry="4" transform="rotate(-45 68 32)" stroke="#C8A24A" stroke-width="0.6" fill="rgba(200,162,74,0.1)" opacity="0.6"/>
-            </svg>
-          </div>
-
-          <!-- Text column -->
-          <div class="about-text fade-in delay-1">
-            <p class="eyebrow">About Cléa</p>
-            <h2 class="section-h2" style="margin: 16px 0 28px;">
-              I've spent 25 years finding the true story inside organizations — and the humans who lead them.
-            </h2>
-            <p class="about-body">
-              I'm a <strong>Jungian Narrative Coach</strong>, brand strategist, copywriter, grantwriter, creative director, communications leader, journalist, and author. The thread through all of it: I find the true story, and I make it impossible to ignore.
-            </p>
-            <p class="about-body">
-              I founded <strong>Mythograph</strong> to tell brand stories that heal, instead of spin and extract. I'm now building <strong>Story Loom</strong> as narrative infrastructure for resistance-minded founders — because the systems we use to tell our stories either replicate harm or help dismantle it.
-            </p>
-            <p class="about-body">
-              I work at the intersection of <strong>depth psychology, language strategy, and brand systems</strong> — because the most important stories are rarely the first ones people tell.
-            </p>
-
-            <div class="about-stats">
-              <div class="stat">
-                <div class="stat-num stat-num--terra">25+</div>
-                <div class="stat-label">Years of experience</div>
-              </div>
-              <div class="stat">
-                <div class="stat-num stat-num--indigo">100+</div>
-                <div class="stat-label">Brands shaped</div>
-              </div>
-              <div class="stat">
-                <div class="stat-num stat-num--terra">∞</div>
-                <div class="stat-label">Stories worth telling</div>
-              </div>
-            </div>
-
-            <a href="about.html" class="btn btn--terra">Full story →</a>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- Editorial art strip — Midjourney -->
+    <!-- Editorial art strip -->
     <div class="photo-strip" aria-hidden="false">
       <img
-        src="mj_ibiza_tropical.png"
-        alt="A lush Ibiza scene — palm trees, white Mediterranean architecture, and a vast orange sun over turquoise water"
+        src="mj_homepage_editorial.png"
+        alt="Surrealist editorial image — a woman channels golden threads of narrative light, mid-century Ibiza poster aesthetic"
         loading="lazy"
       />
     </div>
@@ -1361,40 +1639,39 @@
 
           <div class="quote-card fade-in">
             <span class="quote-mark">"</span>
-            <p class="quote-text">Their ability to understand and articulate our mission and projects was truly impressive.</p>
+            <p class="quote-text">I'm absolutely astounded by your exquisite Story Loom offering and every extra mile you've traveled on this project. The deep listening and energetic attunement you've brought — you've interpreted my vision in a way I never could have.</p>
+            <p class="quote-name">Deb F.</p>
+            <p class="quote-role">Jungian Coach, Red Suitcase</p>
+          </div>
+
+          <div class="quote-card fade-in delay-1">
+            <span class="quote-mark">"</span>
+            <p class="quote-text">Clea is one of the special ones. She explores beyond copy and dives straight into the core, purpose, and ultimate goals of the people behind the brand.</p>
+            <p class="quote-name">Eric M.</p>
+            <p class="quote-role">CGO, Radar</p>
+          </div>
+
+          <div class="quote-card fade-in delay-2">
+            <span class="quote-mark">"</span>
+            <p class="quote-text">Working with Cléa was an exceptional experience. Her ability to understand and articulate our mission was truly impressive. Her work has not only elevated our brand but helped explain our work in simple terms.</p>
             <p class="quote-name">Anwesha Roy Choudhury</p>
             <p class="quote-role">SaveLife Foundation</p>
           </div>
 
           <div class="quote-card fade-in delay-1">
             <span class="quote-mark">"</span>
-            <p class="quote-text">They explore beyond copy and dive straight into the core, purpose, and ultimate goals of a brand.</p>
-            <p class="quote-name">Eric Mogil</p>
-            <p class="quote-role">CGO, Radar</p>
-          </div>
-
-          <div class="quote-card fade-in delay-2">
-            <span class="quote-mark">"</span>
-            <p class="quote-text">Cléa has an incredible gift for capturing a brand's voice in a way that feels both authentic and compelling.</p>
-            <p class="quote-name">Mark Thill</p>
-            <p class="quote-role">Founder, Thesis IT</p>
-          </div>
-
-          <div class="quote-card fade-in delay-1">
-            <span class="quote-mark">"</span>
             <p class="quote-text">Cléa is one of the most talented copywriters I've ever worked with.</p>
-            <p class="quote-name">Joshua Krohn</p>
+            <p class="quote-name">Joshua K.</p>
             <p class="quote-role">Head of Design, Finch</p>
           </div>
 
           <div class="quote-card fade-in delay-2">
             <span class="quote-mark">"</span>
-            <p class="quote-text">Cléa has been instrumental in elevating our clients' projects through strategic work.</p>
-            <p class="quote-name">Peter Deltondo</p>
-            <p class="quote-role">Co-Founder, Heyo</p>
+            <p class="quote-text">Cléa has an incredible gift for capturing a brand's voice in a way that feels both authentic and compelling.</p>
+            <p class="quote-name">Mark T.</p>
+            <p class="quote-role">Founder, Thesis IT</p>
           </div>
 
-          <!-- CTA card -->
           <div class="quote-card fade-in delay-3" style="background: var(--mist); display: flex; flex-direction: column; justify-content: center; align-items: flex-start; gap: 16px;">
             <p style="font-family: var(--serif); font-size: 17px; font-style: italic; color: var(--ink); line-height: 1.6;">
               Ready to find<br>your true story?
@@ -1406,12 +1683,91 @@
           </div>
 
         </div>
+      </div>
+    </section>
 
+    <!-- ═══════════════════════════════════════════════════════════════
+         PRICING
+    ═══════════════════════════════════════════════════════════════ -->
+    <section class="pricing-section">
+      <div class="container">
+        <div class="pricing-inner fade-in">
+          <p class="eyebrow" style="margin-bottom: 20px;">Pricing</p>
+          <h2 class="section-h2" style="margin-bottom: 24px;">Beta / founding round.</h2>
+          <p class="pricing-intro">Right now, Story Loom is in a beta / founding round. That means you're getting done-with-you depth work + high-touch implementation at a price point that won't be available once the process is fully standardized.</p>
+          <p class="pricing-note">Founding pricing available through July 2026.</p>
+
+          <div class="pricing-cards">
+            <div class="pricing-card">
+              <p class="pc-title">Story Loom</p>
+              <p style="font-size: 13px; color: var(--ink-muted); margin-bottom: 16px;">Narrative OS Build · 6 weeks</p>
+              <p class="pc-price">$3,600</p>
+              <p class="pc-desc">Golden Thread, story bank, convictions, messaging architecture, voice system, and applied draft(s).</p>
+              <div style="margin-top: 28px;">
+                <a href="mailto:clea@mythograph.co" class="btn btn--indigo">Apply →</a>
+              </div>
+            </div>
+            <div class="pricing-card">
+              <p class="pc-title">Full Build</p>
+              <p style="font-size: 13px; color: var(--ink-muted); margin-bottom: 16px;">Brand + Website · 8 weeks</p>
+              <p class="pc-price">$6,750</p>
+              <p class="pc-desc">Everything in Story Loom, plus a visual brand identity and self-hosted website built and launched.</p>
+              <div style="margin-top: 28px;">
+                <a href="mailto:clea@mythograph.co" class="btn btn--ink">Apply →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         NOT SURE
+    ═══════════════════════════════════════════════════════════════ -->
+    <section class="not-sure">
+      <div class="container">
+        <div class="not-sure-inner fade-in">
+          <p class="eyebrow" style="margin-bottom: 20px;">Not sure if you're ready?</p>
+          <p class="not-sure-body">
+            If you want to begin with a single session, start with the <strong>Golden Thread Session</strong> ($200). If you decide to move into Story Loom from there, it's credited back to you.
+          </p>
+          <a href="mailto:clea@mythograph.co" class="btn btn--terra">Book a Golden Thread Session →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         NOT FOR YOU
+    ═══════════════════════════════════════════════════════════════ -->
+    <section class="not-for">
+      <div class="container">
+        <div class="not-for-inner fade-in">
+          <p class="eyebrow" style="margin-bottom: 20px;">Not for you if…</p>
+          <ul class="not-for-list">
+            <li>You want plug-and-play templates, AI-generated positioning, or "content hacks."</li>
+            <li>You're looking for a quick rebrand without touching the deeper story underneath your work.</li>
+            <li>You don't have an hour a week to commit to narrative coaching sessions, reviews, and creative exercises.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         CLOSING CTA
+    ═══════════════════════════════════════════════════════════════ -->
+    <section class="closing">
+      <div class="container">
+        <div class="closing-inner fade-in">
+          <h2 class="closing-h2">The story you've kept half-hidden is usually the one that changes everything.</h2>
+          <div class="closing-btns">
+            <a href="mailto:clea@mythograph.co" class="btn btn--terra">Apply for Story Loom →</a>
+            <a href="mailto:clea@mythograph.co" class="btn btn--ghost">Book a Golden Thread Session →</a>
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- ─── NEWSLETTER ─── -->
-    <!-- Replace action="#" with your ConvertKit/Mailchimp embed action URL -->
     <section class="nl-band">
       <div class="container">
         <div class="nl-inner fade-in">
@@ -1426,6 +1782,15 @@
         </div>
       </div>
     </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         MYTHOGRAPH FOOTNOTE
+    ═══════════════════════════════════════════════════════════════ -->
+    <div class="container">
+      <aside class="mythograph-footnote">
+        Working with an organization? <a href="https://mythograph.co" target="_blank" rel="noopener">Visit Mythograph →</a>
+      </aside>
+    </div>
 
   </main>
 
@@ -1448,9 +1813,7 @@
         <div class="footer-col">
           <p class="footer-col-title">Navigate</p>
           <ul class="footer-links">
-            <li><a href="story-loom.html">Story Loom</a></li>
             <li><a href="jungian-coaching.html">Jungian Coaching</a></li>
-            <li><a href="vip-day.html">VIP Day</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="work-with-me.html">Work With Me</a></li>
           </ul>
