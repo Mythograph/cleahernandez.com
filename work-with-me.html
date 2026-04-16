@@ -24,6 +24,7 @@
       --crimson-pale: rgba(199,55,43,0.07);
       --fog:          #E4E1DC;
       --gold:        #C8A24A;
+      --sage:        #7A9E7E;
       --mist:        #F2ECE4;
       --border:      rgba(34,24,48,0.09);
       --serif:       'Playfair Display', Georgia, serif;
@@ -388,6 +389,104 @@
     .fade-in.delay-2 { transition-delay: .24s; }
     .fade-in.delay-3 { transition-delay: .36s; }
 
+    /* ════════════════════════════════════════════════════════════
+       OFFER ACCORDION
+    ════════════════════════════════════════════════════════════ */
+    .offer-list-section { padding: 64px 0 80px; }
+    .offer-list { max-width: 880px; margin: 0 auto; }
+
+    .offer-accordion { border-top: 1px solid var(--border); }
+    .offer-accordion:last-child { border-bottom: 1px solid var(--border); }
+
+    .oa-summary {
+      display: grid;
+      grid-template-columns: 36px 1fr 28px;
+      gap: 16px; align-items: center;
+      padding: 28px 0;
+      cursor: pointer; list-style: none; user-select: none;
+    }
+    .oa-summary::-webkit-details-marker { display: none; }
+    .oa-summary:hover .oa-text { color: var(--terra); }
+
+    .oa-num {
+      font-family: var(--body); font-size: 11px; font-weight: 600;
+      letter-spacing: .12em; color: var(--ink-muted); opacity: 0.45; padding-top: 2px;
+    }
+    .oa-text {
+      font-family: var(--serif);
+      font-size: clamp(17px, 1.8vw, 21px);
+      font-style: italic; font-weight: 500;
+      color: var(--ink); line-height: 1.38; transition: color .15s;
+    }
+    .oa-icon {
+      font-size: 22px; font-weight: 300; color: var(--terra);
+      line-height: 1; text-align: center; transition: transform .22s;
+    }
+    .offer-accordion[open] .oa-icon { transform: rotate(45deg); }
+    .offer-accordion[open] .oa-summary .oa-text { color: var(--terra); }
+
+    .oa-panel {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 56px; padding: 0 0 52px 52px;
+    }
+
+    .oa-label {
+      font-family: var(--body); font-size: 11px; font-weight: 600;
+      letter-spacing: .14em; text-transform: uppercase;
+      color: var(--terra); margin-bottom: 14px; display: block;
+    }
+    .oa-label--crimson { color: var(--crimson); }
+    .oa-label--sage    { color: var(--sage); }
+    .oa-label--indigo  { color: var(--indigo); }
+    .oa-label--gold    { color: var(--gold); }
+
+    .oa-h2 {
+      font-family: var(--display);
+      font-size: clamp(24px, 2.8vw, 36px);
+      font-weight: 700; line-height: 1.08; color: var(--ink); margin-bottom: 20px;
+    }
+    .oa-body {
+      font-size: 16px; line-height: 1.82; color: var(--ink-muted); margin-bottom: 14px;
+    }
+    .oa-body strong { color: var(--ink); font-weight: 500; }
+    .oa-invest {
+      font-family: var(--serif); font-size: clamp(32px, 3.5vw, 48px);
+      font-weight: 700; color: var(--ink); letter-spacing: -0.02em;
+      line-height: 1; margin: 22px 0;
+    }
+    .oa-invest-text {
+      font-size: clamp(15px, 1.6vw, 18px); font-weight: 400;
+      line-height: 1.6; color: var(--ink-muted); margin: 16px 0 22px;
+    }
+    .oa-invest-text strong { color: var(--ink); font-weight: 500; }
+    .oa-btns { display: flex; flex-direction: column; gap: 10px; align-items: flex-start; margin-top: 8px; }
+
+    .oa-side-card {
+      padding: 30px 28px; border-radius: var(--radius);
+      border: 1px solid var(--border); background: var(--mist);
+      align-self: start;
+    }
+    .oa-side-section { margin-bottom: 24px; }
+    .oa-side-section:last-child { margin-bottom: 0; }
+    .oa-side-title {
+      font-family: var(--body); font-size: 11px; font-weight: 600;
+      letter-spacing: .12em; text-transform: uppercase;
+      color: var(--ink-muted); margin-bottom: 10px;
+    }
+    .oa-side-body { font-size: 14px; line-height: 1.72; color: var(--ink-muted); }
+    .oa-side-body strong { color: var(--ink); font-weight: 500; }
+    .oa-side-list { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 10px; margin-top: 10px; }
+    .oa-side-list li {
+      font-size: 14px; line-height: 1.65; color: var(--ink-muted);
+      padding-left: 18px; position: relative;
+    }
+    .oa-side-list li::before { content: '→'; position: absolute; left: 0; color: var(--terra); font-size: 11px; }
+
+    @media (max-width: 768px) {
+      .oa-panel { grid-template-columns: 1fr; gap: 28px; padding: 0 0 40px 0; }
+      .oa-summary { grid-template-columns: 28px 1fr 22px; padding: 22px 0; }
+    }
+
     /* ─── Responsive ─── */
 
     /* ════════════════════════════════════════════════════════════
@@ -533,266 +632,172 @@
           Find your narrative advantage.
         </h1>
         <p class="wm-hero-body">
-          Choose the container that clearly articulates the power of your work, without flattening your truth into a persona.
+          See which container is right for where you are now. If you're still not sure, just book time and let's chat!
         </p>
-        <p class="wm-hero-body">
-          If you want clarity first, start with the Golden Thread Session. If you're ready to build the full Narrative OS, let's get right down to work in Story Loom.
-        </p>
-        <div class="wm-hero-paths">
-          <a href="mailto:clea@mythograph.co" class="btn btn--terra">Book a Golden Thread Session →</a>
-          <a href="mailto:clea@mythograph.co" class="btn btn--terra-o">Book a 15-minute Fit Call →</a>
+        <div class="wm-hero-paths" style="flex-direction: column; align-items: center; gap: 18px;">
+          <a href="mailto:clea@mythograph.co" class="btn btn--terra">Book a 15-minute Fit Call →</a>
+          <p style="font-size: 14px; color: var(--ink-muted);">Working with an organization? <a href="https://mythograph.co" target="_blank" rel="noopener" style="color: var(--terra); text-decoration: underline; text-underline-offset: 3px;">Visit Mythograph →</a></p>
         </div>
       </div>
     </section>
 
-    <!-- ─── OFFER 01: Golden Thread Session ─── -->
-    <section class="path-section" id="golden-thread">
+    <!-- ─── OFFER ACCORDION ─── -->
+    <section class="offer-list-section">
       <div class="container">
-        <div class="path-inner">
+        <div class="offer-list">
 
-          <div class="fade-in">
-            <div class="path-header">
-              <span class="pill pill--terra">01 &nbsp;·&nbsp; The Entry Point</span>
-              <h2 class="path-h2" style="margin-top: 20px;">Golden Thread Session</h2>
-              <p class="path-subtitle">60 minutes · $200</p>
+          <!-- 01 Golden Thread Session -->
+          <details class="offer-accordion" id="golden-thread">
+            <summary class="oa-summary">
+              <span class="oa-num">01</span>
+              <span class="oa-text">I want clarity before I commit. What's the smallest first step?</span>
+              <span class="oa-icon">+</span>
+            </summary>
+            <div class="oa-panel">
+              <div class="oa-main">
+                <span class="oa-label">The Entry Point</span>
+                <h2 class="oa-h2">Golden Thread Session</h2>
+                <p class="oa-body">A single 60-minute conversation to find the narrative golden thread running through your lived experience and your work, and name the next step.</p>
+                <p class="oa-body"><strong>Best if:</strong> you want clarity before committing to anything bigger.</p>
+                <div class="oa-invest">$200</div>
+                <div class="oa-btns">
+                  <a href="mailto:clea@mythograph.co" class="btn btn--terra">Book a Golden Thread Session →</a>
+                </div>
+              </div>
+              <div class="oa-side-card">
+                <div class="oa-side-section">
+                  <p class="oa-side-title">Story Loom credit</p>
+                  <p class="oa-side-body">If you join Story Loom after your Golden Thread Session, the $200 is credited towards the program price.</p>
+                </div>
+              </div>
             </div>
+          </details>
 
-            <p class="path-body">
-              A single 60-minute conversation to find the narrative golden thread running through your lived experience and your work, and name the next step.
-            </p>
-            <p class="path-body">
-              <strong>Best if:</strong> you want clarity before committing to anything bigger.
-            </p>
+          <!-- 02 Jungian Coaching -->
+          <details class="offer-accordion" id="jungian-coaching">
+            <summary class="oa-summary">
+              <span class="oa-num">02</span>
+              <span class="oa-text">I want sustained depth work. What if the work beneath the work is the main thing right now?</span>
+              <span class="oa-icon">+</span>
+            </summary>
+            <div class="oa-panel">
+              <div class="oa-main">
+                <span class="oa-label oa-label--crimson">The Readiness Path</span>
+                <h2 class="oa-h2">Jungian Coaching</h2>
+                <p class="oa-body">A Jungian-informed coaching container for the work beneath the work: the patterns, fears, grief, identity shifts, and shadow material that often need attention before your next public chapter can land.</p>
+                <p class="oa-body">This is the best fit when the primary work right now is <em>inner orientation and capacity</em>, not deliverables.</p>
+                <div class="oa-invest-text">A single session for <strong>$100</strong>, or a 6-session arc for <strong>$500</strong></div>
+                <div class="oa-btns">
+                  <a href="mailto:clea@mythograph.co" class="btn btn--terra-o">Book a 15-minute Fit Call →</a>
+                </div>
+              </div>
+              <div class="oa-side-card">
+                <div class="oa-side-section">
+                  <p class="oa-side-title">Accessibility note</p>
+                  <p class="oa-side-body">This is intentionally priced as a low-access option. If you're able to invest at a higher level (and want the full story → message → content build), Story Loom is the flagship container.</p>
+                </div>
+              </div>
+            </div>
+          </details>
 
-            <div class="path-cta-box">
-              <a href="mailto:clea@mythograph.co" class="btn btn--terra">Book a Golden Thread Session →</a>
+          <!-- 03 Human Design Reading -->
+          <details class="offer-accordion" id="human-design">
+            <summary class="oa-summary">
+              <span class="oa-num">03</span>
+              <span class="oa-text">I want an energetic mirror. How am I designed to make decisions and build my rhythm?</span>
+              <span class="oa-icon">+</span>
+            </summary>
+            <div class="oa-panel">
+              <div class="oa-main">
+                <span class="oa-label oa-label--sage">The Mirror</span>
+                <h2 class="oa-h2">Human Design Reading</h2>
+                <p class="oa-body">A Human Design reading that helps you understand how your energy is designed to operate — so you can make decisions, build rhythms, and communicate in a way that feels natural and lands with impact.</p>
+                <p class="oa-body">Choose either a <strong>Zoom reading</strong> (live) or a <strong>Video reading</strong> (delivered).</p>
+                <div class="oa-invest">$175</div>
+                <div class="oa-btns">
+                  <a href="mailto:clea@mythograph.co" class="btn btn--terra">Book a Human Design Reading →</a>
+                </div>
+              </div>
+              <div class="oa-side-card">
+                <div class="oa-side-section">
+                  <p class="oa-side-title">Credentials</p>
+                  <ul class="oa-side-list">
+                    <li>Certified Human Design reader for <strong>all energy types</strong> through The Manifestor Community</li>
+                    <li>As a <strong>Manifestor</strong>, I'm especially fluent in the lived experience of Manifestors — and the specific ways the world misunderstands us</li>
+                  </ul>
+                </div>
+              </div>
             </div>
-          </div>
+          </details>
 
-          <div class="path-detail-card path-detail-card--terra fade-in delay-1">
-            <div class="pdc-section">
-              <p class="pdc-title pdc-title--terra">What happens</p>
-              <p class="pdc-body">
-                We meet for one focused 60-minute conversation. I listen for the through-line — the core narrative thread that connects your lived experience to your work's purpose. You leave with language, clarity, and a named next step.
-              </p>
+          <!-- 04 Story Loom -->
+          <details class="offer-accordion" id="story-loom">
+            <summary class="oa-summary">
+              <span class="oa-num">04</span>
+              <span class="oa-text">I'm ready for the full build. Can we create my narrative operating system together?</span>
+              <span class="oa-icon">+</span>
+            </summary>
+            <div class="oa-panel">
+              <div class="oa-main">
+                <span class="oa-label oa-label--indigo">The Signature Program</span>
+                <h2 class="oa-h2">Story Loom</h2>
+                <p class="oa-body">Story Loom is the premium 1:1 program where we co-create your narrative operating system: stories, strategy, messaging, and voice, built using Jungian depth work from your lived stories.</p>
+                <p class="oa-body"><strong>Golden Thread is included inside Story Loom.</strong></p>
+                <div class="oa-btns">
+                  <a href="mailto:clea@mythograph.co" class="btn btn--indigo">Apply for Story Loom →</a>
+                  <a href="mailto:clea@mythograph.co" class="btn btn--terra-o">Book a 15-minute Fit Call →</a>
+                </div>
+              </div>
+              <div class="oa-side-card">
+                <div class="oa-side-section">
+                  <p class="oa-side-title">What's built</p>
+                  <ul class="oa-side-list">
+                    <li>Golden Thread Manifesto</li>
+                    <li>Story bank + signature scenes</li>
+                    <li>Convictions &amp; POV</li>
+                    <li>Messaging architecture</li>
+                    <li>Voice system</li>
+                    <li>Applied draft(s) for real assets</li>
+                  </ul>
+                </div>
+              </div>
             </div>
-            <div class="pdc-section">
-              <p class="pdc-title pdc-title--terra">Investment</p>
-              <p class="pdc-body"><strong>$200</strong></p>
+          </details>
+
+          <!-- 05 VIP Day -->
+          <details class="offer-accordion" id="vip-day">
+            <summary class="oa-summary">
+              <span class="oa-num">05</span>
+              <span class="oa-text">I want my stories ready fast. What's the intensive option?</span>
+              <span class="oa-icon">+</span>
+            </summary>
+            <div class="oa-panel">
+              <div class="oa-main">
+                <span class="oa-label oa-label--gold">The Intensive</span>
+                <h2 class="oa-h2">VIP Day</h2>
+                <p class="oa-body">One focused day to excavate and shape the stories you've been carrying, resulting in a complete story bank (up to 10 publish- or presentation-ready stories) delivered shortly after.</p>
+                <div class="oa-invest">$2,800</div>
+                <div class="oa-btns">
+                  <a href="mailto:clea@mythograph.co" class="btn btn--gold">Inquire about the VIP Day →</a>
+                </div>
+              </div>
+              <div class="oa-side-card">
+                <div class="oa-side-section">
+                  <p class="oa-side-title">What you receive</p>
+                  <ul class="oa-side-list">
+                    <li>A full day of focused narrative excavation</li>
+                    <li>Story bank of up to 10 publish- or presentation-ready stories</li>
+                    <li>Delivered shortly after the session</li>
+                  </ul>
+                </div>
+              </div>
             </div>
-            <div class="pdc-section">
-              <p class="pdc-title pdc-title--terra">Story Loom credit</p>
-              <p class="pdc-body">
-                If you join Story Loom after your Golden Thread Session, the $200 is credited toward the program price.
-              </p>
-            </div>
-          </div>
+          </details>
 
         </div>
       </div>
     </section>
 
-    <!-- ─── OFFER 02: Jungian Coaching ─── -->
-    <section class="path-section" id="jungian-coaching">
-      <div class="container">
-        <div class="path-inner">
-
-          <div class="fade-in">
-            <div class="path-header">
-              <span class="pill pill--crimson">02 &nbsp;·&nbsp; The Readiness Path</span>
-              <h2 class="path-h2" style="margin-top: 20px;">Jungian Coaching</h2>
-              <p class="path-subtitle">6 sessions · $500</p>
-            </div>
-
-            <p class="path-body">
-              A Jungian-informed coaching container for the work beneath the work: the patterns, fears, grief, identity shifts, and shadow material that often need attention before your next public chapter can land.
-            </p>
-            <p class="path-body">
-              This is the best fit when the primary work right now is <em>inner orientation and capacity</em>, not deliverables.
-            </p>
-
-            <div class="path-cta-box">
-              <a href="mailto:clea@mythograph.co" class="btn btn--gold">Book a 15-minute Fit Call →</a>
-              <a href="jungian-coaching.html" class="btn btn--terra-o">Learn more</a>
-            </div>
-          </div>
-
-          <div class="path-detail-card path-detail-card--crimson fade-in delay-1">
-            <div class="pdc-section">
-              <p class="pdc-title pdc-title--crimson">What shifts</p>
-              <ul style="list-style: none; display: flex; flex-direction: column; gap: 14px;">
-                <li style="font-size: 14px; line-height: 1.65; color: var(--ink-muted); padding-left: 18px; position: relative;">
-                  <span style="position: absolute; left: 0; color: var(--crimson);">→</span>
-                  From performing for a system that doesn't serve you to <strong style="color: var(--ink);">building from your own narrative authority</strong>
-                </li>
-                <li style="font-size: 14px; line-height: 1.65; color: var(--ink-muted); padding-left: 18px; position: relative;">
-                  <span style="position: absolute; left: 0; color: var(--crimson);">→</span>
-                  From scattered messaging to a <strong style="color: var(--ink);">coherent narrative field</strong>
-                </li>
-                <li style="font-size: 14px; line-height: 1.65; color: var(--ink-muted); padding-left: 18px; position: relative;">
-                  <span style="position: absolute; left: 0; color: var(--crimson);">→</span>
-                  From "what do I even say?" to <strong style="color: var(--ink);">words that attract your people</strong>
-                </li>
-              </ul>
-            </div>
-            <div class="pdc-section">
-              <p class="pdc-title pdc-title--crimson">Package</p>
-              <p class="pdc-body">
-                <strong>6 sessions for $500.</strong> Sessions are 60 minutes each, bi-weekly.
-              </p>
-            </div>
-            <div class="pdc-section">
-              <p class="pdc-title pdc-title--crimson">How to start</p>
-              <p class="pdc-body">
-                Book a free 15-minute fit call. We'll talk about where you are and whether this container is the right fit.
-              </p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ─── OFFER 03: Story Loom ─── -->
-    <section class="path-section" id="story-loom">
-      <div class="container">
-        <div class="path-inner">
-
-          <div class="fade-in">
-            <div class="path-header">
-              <span class="pill pill--indigo">03 &nbsp;·&nbsp; The Flagship</span>
-              <h2 class="path-h2" style="margin-top: 20px;">Story Loom</h2>
-              <p class="path-subtitle">Premium 1:1 Narrative OS Program</p>
-            </div>
-
-            <p class="path-body">
-              Story Loom is the premium 1:1 program where we co-create your narrative operating system: stories, strategy, messaging, and voice, built from depth, not performance.
-            </p>
-            <p class="path-body">
-              <strong>Golden Thread is included inside Story Loom.</strong> If you've already done your Golden Thread Session, the fee is credited toward your program investment.
-            </p>
-
-            <div class="path-cta-box">
-              <a href="index.html" class="btn btn--indigo">Explore Story Loom →</a>
-              <a href="mailto:clea@mythograph.co" class="btn btn--terra-o">Book a 15-minute Fit Call →</a>
-            </div>
-          </div>
-
-          <div class="path-detail-card path-detail-card--indigo fade-in delay-1">
-            <div class="pdc-section">
-              <p class="pdc-title pdc-title--indigo">What's included</p>
-              <ul style="list-style: none; display: flex; flex-direction: column; gap: 14px;">
-                <li style="font-size: 14px; line-height: 1.65; color: var(--ink-muted); padding-left: 18px; position: relative;">
-                  <span style="position: absolute; left: 0; color: var(--indigo);">→</span>
-                  Golden Thread Session (included)
-                </li>
-                <li style="font-size: 14px; line-height: 1.65; color: var(--ink-muted); padding-left: 18px; position: relative;">
-                  <span style="position: absolute; left: 0; color: var(--indigo);">→</span>
-                  Narrative excavation &amp; story architecture
-                </li>
-                <li style="font-size: 14px; line-height: 1.65; color: var(--ink-muted); padding-left: 18px; position: relative;">
-                  <span style="position: absolute; left: 0; color: var(--indigo);">→</span>
-                  Brand messaging &amp; voice development
-                </li>
-                <li style="font-size: 14px; line-height: 1.65; color: var(--ink-muted); padding-left: 18px; position: relative;">
-                  <span style="position: absolute; left: 0; color: var(--indigo);">→</span>
-                  Jungian shadow work applied to brand story
-                </li>
-                <li style="font-size: 14px; line-height: 1.65; color: var(--ink-muted); padding-left: 18px; position: relative;">
-                  <span style="position: absolute; left: 0; color: var(--indigo);">→</span>
-                  Asynchronous support between sessions
-                </li>
-              </ul>
-            </div>
-            <div class="pdc-section">
-              <p class="pdc-title pdc-title--indigo">The WEAVE Method</p>
-              <p class="pdc-body">
-                Built on five phases — <strong>Wander, Excavate, Architect, Voice, Embody</strong> — each designed to move you from raw narrative material to a living brand practice.
-              </p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ─── OFFER 04: VIP Day ─── -->
-    <section class="path-section" id="vip-day">
-      <div class="container">
-        <div class="path-inner">
-
-          <div class="fade-in">
-            <div class="path-header">
-              <span class="pill pill--gold">04 &nbsp;·&nbsp; The Intensive</span>
-              <h2 class="path-h2" style="margin-top: 20px;">VIP Day</h2>
-              <p class="path-subtitle">One Day · $1,800</p>
-            </div>
-
-            <p class="path-body">
-              One focused day to excavate and shape the stories you've been carrying, resulting in a complete story bank (up to 10 publish- or presentation-ready stories) delivered shortly after.
-            </p>
-            <p class="path-body">
-              <strong>Best if:</strong> you want your own polished stories in one concentrated day.
-            </p>
-
-            <div class="path-cta-box">
-              <a href="mailto:clea@mythograph.co" class="btn btn--gold">Inquire about the VIP Day →</a>
-            </div>
-          </div>
-
-          <div class="path-detail-card path-detail-card--gold fade-in delay-1">
-            <div class="pdc-section">
-              <p class="pdc-title pdc-title--gold">What you receive</p>
-              <ul style="list-style: none; display: flex; flex-direction: column; gap: 14px;">
-                <li style="font-size: 14px; line-height: 1.65; color: var(--ink-muted); padding-left: 18px; position: relative;">
-                  <span style="position: absolute; left: 0; color: var(--gold);">→</span>
-                  A full day of focused narrative excavation
-                </li>
-                <li style="font-size: 14px; line-height: 1.65; color: var(--ink-muted); padding-left: 18px; position: relative;">
-                  <span style="position: absolute; left: 0; color: var(--gold);">→</span>
-                  Story bank of up to 10 publish- or presentation-ready stories
-                </li>
-                <li style="font-size: 14px; line-height: 1.65; color: var(--ink-muted); padding-left: 18px; position: relative;">
-                  <span style="position: absolute; left: 0; color: var(--gold);">→</span>
-                  Delivered shortly after the session
-                </li>
-              </ul>
-            </div>
-            <div class="pdc-section">
-              <p class="pdc-title pdc-title--gold">Investment</p>
-              <p class="pdc-body"><strong>$1,800</strong></p>
-            </div>
-            <div class="pdc-section">
-              <p class="pdc-title pdc-title--gold">To inquire</p>
-              <p class="pdc-body">
-                Write to <a href="mailto:clea@mythograph.co" style="color: var(--terra); text-decoration: underline; text-underline-offset: 2px;">clea@mythograph.co</a> with a little about your work and what you're hoping to excavate.
-              </p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ─── NOT SURE WHERE YOU FIT? ─── -->
-    <section class="start-here">
-      <div class="container">
-
-        <div class="start-here-header fade-in">
-          <span class="eyebrow">Not sure where you fit?</span>
-          <h2 class="section-h2" style="margin-top: 16px; margin-bottom: 24px;">Find your path.</h2>
-        </div>
-
-        <ul class="fit-guide fade-in delay-1">
-          <li>If you want clarity and a precise next step: <strong>Golden Thread</strong>.</li>
-          <li>If you already know you want support but aren't sure which container: <strong>Fit Call</strong>.</li>
-          <li>If you want sustained depth work before building: <strong>Jungian Coaching (6 sessions)</strong>.</li>
-          <li>If you're ready for the full narrative OS: <strong>Story Loom</strong>.</li>
-          <li>If you want your own polished stories in one concentrated day: <strong>VIP Day</strong>.</li>
-        </ul>
-
-      </div>
-    </section>
 
     <!-- ─── SHAPE WINDOW DIVIDER ─── -->
     <div class="shape-break shape-break--mist" aria-hidden="true">
