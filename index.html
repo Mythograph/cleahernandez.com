@@ -868,10 +868,32 @@
     /* ════════════════════════════════════════════════════════════
        WHAT STORY LOOM IS
     ════════════════════════════════════════════════════════════ */
-    .sl-what { padding: 80px 0; }
-    .sl-what-inner { max-width: 720px; margin: 0 auto; }
+    .sl-what { padding: 96px 0; }
+    .sl-what-inner {
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      gap: 72px;
+      align-items: center;
+    }
+    .sl-program-name {
+      font-family: var(--display);
+      font-size: clamp(48px, 7vw, 96px);
+      font-weight: 700;
+      line-height: 0.95;
+      letter-spacing: -0.03em;
+      color: var(--ink);
+      margin: 16px 0 20px;
+    }
+    .sl-subhead {
+      font-family: var(--serif);
+      font-size: clamp(18px, 2vw, 24px);
+      font-weight: 400;
+      font-style: italic;
+      color: var(--ink-muted);
+      margin-bottom: 28px;
+    }
     .sl-lead {
-      font-size: clamp(17px, 1.8vw, 20px); font-weight: 400;
+      font-size: clamp(16px, 1.5vw, 18px); font-weight: 400;
       line-height: 1.82; color: var(--ink-muted); margin-bottom: 8px;
     }
     .sl-features { list-style: none; padding: 0; margin: 24px 0 0; display: grid; gap: 12px; }
@@ -883,6 +905,16 @@
       font-size: 16px; line-height: 1.72; color: var(--ink-muted);
     }
     .sl-features li strong { color: var(--ink); font-weight: 500; }
+    .sl-what-img {
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      border-radius: 2px;
+    }
+    @media (max-width: 860px) {
+      .sl-what-inner { grid-template-columns: 1fr; }
+      .sl-what-img { aspect-ratio: 16 / 9; }
+    }
 
     /* ════════════════════════════════════════════════════════════
        WHAT YOU LEAVE WITH
@@ -947,6 +979,29 @@
     .who-for-body { font-size: clamp(16px, 1.5vw, 18px); line-height: 1.82; color: var(--ink-muted); margin-bottom: 20px; }
     .who-for-body:last-child { margin-bottom: 0; }
     .who-for-body strong { color: var(--ink); font-weight: 500; }
+
+    /* ════════════════════════════════════════════════════════════
+       RIGHT FOR YOU IF
+    ════════════════════════════════════════════════════════════ */
+    .rfyi-section { padding: 80px 0; }
+    .rfyi-inner { max-width: 720px; margin: 0 auto; }
+    .rfyi-list { list-style: none; padding: 0; margin-top: 28px; display: grid; gap: 10px; }
+    .rfyi-list li {
+      padding: 14px 20px 14px 44px;
+      position: relative;
+      font-size: clamp(15px, 1.4vw, 17px);
+      line-height: 1.75;
+      color: var(--ink-muted);
+      background: var(--mist);
+      border-left: 3px solid var(--terra);
+      border-radius: 0 var(--radius) var(--radius) 0;
+    }
+    .rfyi-list li::before {
+      content: '✦';
+      position: absolute; left: 16px; top: 14px;
+      color: var(--terra); font-size: 11px;
+    }
+    .rfyi-list li strong { color: var(--ink); font-weight: 500; }
 
     /* ════════════════════════════════════════════════════════════
        HOW IT WORKS
@@ -1151,14 +1206,14 @@
           <h1 class="hero-h1 fade-in delay-1">
             Tell the Stories<br>
             You Want to<br>
-            <span class="accent">Live In.</span>
+            <span class="accent">Live In</span>
           </h1>
 
           <p class="hero-body fade-in delay-2">
             Most entrepreneurs are still building on a scarcity story they inherited. If you're building something that matters — a practice, a body of work, a way of being in the world shaped by what you believe is possible — your work deserves a narrative field that's genuine and expansive.
           </p>
           <p class="hero-body fade-in delay-2" style="margin-top: -16px;">
-            I build narrative operating systems for founders and experts who are done performing for the attention economy. Express your value with clarity, without flattening your truth into a persona.
+            I build brands for founders, creatives, coaches, practitioners, and experts who are done performing for the attention economy. So you can express your value with clarity, without flattening your truth into a persona.
           </p>
 
           <div class="hero-btns fade-in delay-3">
@@ -1379,17 +1434,26 @@
     <section class="sl-what">
       <div class="container">
         <div class="sl-what-inner fade-in">
-          <p class="eyebrow" style="margin-bottom: 20px;">Story Loom</p>
-          <h2 class="section-h2" style="margin-bottom: 28px;">A relational brand-build.</h2>
-          <p class="sl-lead">
-            Story Loom is a 1:1 container where we uncover the living intelligence inside your work, then architect it into a narrative system that can hold:
-          </p>
-          <ul class="sl-features">
-            <li>the truth of what you do <strong>(without flattening it)</strong></li>
-            <li>the specificity of who it's for <strong>(without niche panic)</strong></li>
-            <li>the emotional and ethical spine of your point of view <strong>(without posturing)</strong></li>
-            <li>the language you can actually use <strong>(without sounding like anyone else)</strong></li>
-          </ul>
+          <div class="sl-what-text">
+            <span class="pill pill--indigo">The Signature Program</span>
+            <h2 class="sl-program-name">Story Loom</h2>
+            <p class="sl-subhead">A co-creative brand build.</p>
+            <p class="sl-lead">
+              Story Loom is a co-creative brand build, where we uncover the stories and messages that are most alive for you, then architect them into a narrative ecosystem that can hold:
+            </p>
+            <ul class="sl-features">
+              <li>the truth of what you do <strong>(without flattening it)</strong></li>
+              <li>the specificity of who it's for <strong>(without niche panic)</strong></li>
+              <li>the emotional and ethical spine of your point of view <strong>(without posturing)</strong></li>
+              <li>the language you can actually use <strong>(without sounding like anyone else)</strong></li>
+            </ul>
+          </div>
+          <img
+            class="sl-what-img"
+            src="mj_storyloom_archetype.png"
+            alt="Surrealist narrative archetype image — golden threads of story emerging from deep interior work"
+            loading="lazy"
+          />
         </div>
       </div>
     </section>
@@ -1516,6 +1580,24 @@
     </section>
 
     <!-- ═══════════════════════════════════════════════════════════════
+         RIGHT FOR YOU IF
+    ═══════════════════════════════════════════════════════════════ -->
+    <section class="rfyi-section">
+      <div class="container">
+        <div class="rfyi-inner fade-in">
+          <p class="eyebrow" style="margin-bottom: 20px;">Right for you if</p>
+          <ul class="rfyi-list">
+            <li>You're a <strong>founder, coach, therapist, or creative</strong> who needs a brand voice as nuanced as your actual thinking</li>
+            <li>You're in the <strong>meaning-making years</strong> — exhausted by performing for a system you no longer want to replicate</li>
+            <li>You have <strong>lived experience</strong> that hasn't fully made it into your public work — and you sense it should</li>
+            <li>You want to build work that <strong>contributes to something larger</strong> — and need the narrative infrastructure to say that clearly</li>
+            <li>You're done with <strong>borrowed frameworks</strong> that never quite fit — you want to excavate your own</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════
          HOW IT WORKS
     ═══════════════════════════════════════════════════════════════ -->
     <section class="how-works">
@@ -1527,7 +1609,7 @@
           <div class="how-steps">
             <div class="how-step">
               <div class="how-step-dot"></div>
-              <p class="how-step-text"><strong>We start with signal, not slogans.</strong> We listen for what's true, what's repeated, what's avoided, and what's trying to emerge.</p>
+              <p class="how-step-text"><strong>We start with what wants to be witnessed.</strong> We listen for what's true, what's repeated, what's avoided, and what's trying to emerge.</p>
             </div>
             <div class="how-step">
               <div class="how-step-dot"></div>
@@ -1557,7 +1639,7 @@
             </div>
             <div class="flow-item">
               <span class="flow-label">Async Support</span>
-              <p class="flow-desc">Voxer/email Mon–Thu, responses within 24–48 business hours for questions, voice-note processing, and quick calibration between sessions.</p>
+              <p class="flow-desc">Voxer/email Mon–Fri, responses within 24–48 business hours for questions, voice-note processing, and quick calibration between sessions.</p>
             </div>
             <div class="flow-item">
               <span class="flow-label">Weeks 4–6: Build</span>
@@ -1582,7 +1664,6 @@
               <span class="way-num">01 / Story Loom</span>
               <h3 class="way-title">Narrative OS Build</h3>
               <p class="way-body">We work deeply together in coaching sessions to map your journey and truths, then co-create your brand strategy and language: Golden Thread, story bank, convictions, messaging architecture, and a voice system you can embody confidently.</p>
-              <p class="way-timeline">6 weeks · $3,600</p>
               <a href="mailto:clea@mythograph.co" class="btn btn--indigo">Apply for Story Loom →</a>
             </div>
 
@@ -1597,7 +1678,6 @@
                 <li>A gentle "launch" post that invites without performing</li>
                 <li>An aligned marketing plan for what comes next</li>
               </ul>
-              <p class="way-timeline">8 weeks · $6,750</p>
               <a href="mailto:clea@mythograph.co" class="btn btn--ink">Apply for Full Build →</a>
             </div>
           </div>
@@ -1694,7 +1774,7 @@
         <div class="pricing-inner fade-in">
           <p class="eyebrow" style="margin-bottom: 20px;">Pricing</p>
           <h2 class="section-h2" style="margin-bottom: 24px;">Beta / founding round.</h2>
-          <p class="pricing-intro">Right now, Story Loom is in a beta / founding round. That means you're getting done-with-you depth work + high-touch implementation at a price point that won't be available once the process is fully standardized.</p>
+          <p class="pricing-intro">Right now, Story Loom is in a beta / founding round. You've probably taken the courses, filled in the frameworks, and tried to "tell your story" and still felt like you couldn't quite land it. This is different. For this founding round, you're getting the benefit of done-for-you depth at a done-with-you price, while I build the case studies and refine the work into a self-paced course and cohort-based program that won't be so hands-on.</p>
           <p class="pricing-note">Founding pricing available through July 2026.</p>
 
           <div class="pricing-cards">
