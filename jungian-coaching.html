@@ -54,8 +54,8 @@
 
     /* ─── Typography ─── */
     .eyebrow {
-      font-family: var(--body); font-size: 10px; font-weight: 500;
-      letter-spacing: .2em; text-transform: uppercase; color: var(--crimson);
+      font-family: var(--body); font-size: 13px; font-weight: 500;
+      letter-spacing: .12em; text-transform: uppercase; color: var(--crimson);
     }
     .pill {
       display: inline-flex; align-items: center; gap: 6px;
@@ -482,12 +482,20 @@
       border-radius: 0 var(--radius) var(--radius) 0;
     }
 
-    /* Modality pills */
-    .modality-list { list-style: none; padding: 0; margin-top: 20px; display: flex; flex-wrap: wrap; gap: 10px; }
+    /* Modality list — vertical */
+    .modality-list { list-style: none; padding: 0; margin: 20px 0; display: grid; gap: 8px; }
     .modality-list li {
-      font-size: 13px; font-weight: 500; color: var(--crimson);
-      padding: 8px 18px; border: 1.5px solid rgba(199,55,43,.3);
-      border-radius: 100px; background: var(--crimson-pale);
+      font-size: 16px; line-height: 1.6; color: var(--ink-muted);
+      padding: 10px 16px 10px 40px;
+      background: var(--fog);
+      border-left: 3px solid var(--crimson);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      position: relative;
+    }
+    .modality-list li::before {
+      content: '—';
+      position: absolute; left: 14px;
+      color: var(--crimson); font-size: 13px;
     }
 
     /* ════════════════════════════════════════════════════════════
@@ -638,10 +646,9 @@
     <nav class="nav container">
       <a href="index.html" class="nav-logo">Cléa Hernández</a>
       <div class="nav-links">
-        <a href="story-loom.html">Story Loom</a>
+        <a href="index.html">Story Loom</a>
         <a href="jungian-coaching.html" class="active">Jungian Coaching</a>
         <a href="about.html">About</a>
-        <a href="your-words-here.html" style="color: var(--terra); font-weight: 500;">Your Words Here</a>
         <a href="work-with-me.html" class="nav-cta">Work With Me</a>
       </div>
       <button class="nav-hamburger" id="navHamburger" aria-label="Open navigation" aria-expanded="false">
@@ -650,10 +657,9 @@
     </nav>
   </header>
   <nav class="mobile-menu" id="mobileMenu" aria-hidden="true">
-    <a href="story-loom.html">Story Loom</a>
+    <a href="index.html">Story Loom</a>
     <a href="jungian-coaching.html">Jungian Coaching</a>
     <a href="about.html">About</a>
-    <a href="your-words-here.html" class="mobile-ywh">Your Words Here</a>
     <a href="work-with-me.html" class="mobile-cta">Work With Me</a>
   </nav>
 
@@ -724,25 +730,6 @@
       </div>
     </section>
 
-    <!-- ─── WHAT IT IS ─── -->
-    <section class="jc-body-section">
-      <div class="container">
-        <div class="jc-body-inner fade-in">
-          <p class="eyebrow">What it is</p>
-          <p class="jc-p">
-            Jungian coaching is depth psychology applied to the practice of living. It draws on Carl Jung's framework of the psyche — the shadow, the Self, the archetypes, Active Imagination — to help you understand the stories that are actually running your life, not just the ones you tell consciously.
-          </p>
-          <p class="jc-p">
-            We do this in the context of your actual life and work. A threshold season. A creative block. A career that no longer fits the person you've become. A quiet sense that something old is falling away and you don't yet have language for what's coming.
-          </p>
-          <p class="jc-p">
-            This can be its own path of self-discovery. It can also become the inner ground that makes your next outer chapter — including brand and visibility work — land cleanly.
-          </p>
-          <p class="jc-note">Not therapy. This is coaching, not clinical treatment. I'm not a licensed therapist. If you're in crisis or need clinical support, please reach out to a mental health professional.</p>
-        </div>
-      </div>
-    </section>
-
     <!-- ─── THE METHOD ─── -->
     <section class="jc-method">
       <div class="container">
@@ -767,11 +754,15 @@
           <p class="jc-method-attr">— Carl Jung</p>
 
           <p class="method-body">
-            Jungian psychology gives us a map of the psyche that most brand work never consults. <strong>Carl Jung's insight was that the unconscious is not a dumping ground for what we don't want to know — it's a generative field</strong> of narrative material, symbolic imagery, and unlived possibility.
+            Jungian coaching is a reflective, depth-oriented conversation that helps you understand what's really happening beneath the surface of a problem. Carl Jung's insight was that <strong>the unconscious is not a dumping ground for what we don't want to know</strong>, but is instead a generative field of narrative material, symbolic imagery, and unlived possibility.
           </p>
           <p class="method-body">
-            Jungian Narrative Coaching applies this insight to the practice of building a business or creative practice. We work with shadow — the parts of your story you've been taught to hide. We work with <strong>Active Imagination</strong> — Jung's method for entering into dialogue with unconscious content. We work with the archetypal patterns that organize how you understand your role and your work. And we translate everything we find into language — into a brand voice, a narrative system, a set of convictions you can actually build from.
+            Instead of focusing on goals and fixes, we pay attention to patterns that repeat, the feelings that arrive, and the images and metaphors your psyche uses to communicate — including dreams, if you bring them to a session.
           </p>
+          <p class="method-body">
+            The aim is not "self-improvement" or optimization. It's not driven by goals, which are constructs of our ego. It's <strong>individuation</strong>: tapping into what is beneath the surface to become more whole, more honest, and more aligned with the life that wants to live through you.
+          </p>
+          <p class="jc-note"><strong>This is also not therapy, nor is it crisis support.</strong> It's a peer-to-peer relationship, where I ask lots of questions, invite you down paths, and notice what comes up, so you can more easily reflect and map your own inner landscape.</p>
         </div>
       </div>
     </section>
@@ -794,13 +785,14 @@
       <div class="container">
         <div class="jc-body-inner fade-in">
           <p class="eyebrow">What it's for</p>
+          <p class="jc-p" style="margin-top: 16px;">This container supports you when you want:</p>
           <ul class="jc-for-list">
-            <li>A threshold season — a change of career, relationship, identity, or life chapter</li>
-            <li>A creative block that doesn't respond to productivity advice</li>
-            <li>Burnout that has a psychological or narrative root</li>
-            <li>The sense that your work has outgrown its current story</li>
-            <li>Grief, transition, or the slow work of becoming someone new</li>
-            <li>Inner prep for brand or visibility work that needs a truer foundation</li>
+            <li>More self-trust and autonomy in decision-making</li>
+            <li>Relief from repeating internal loops (without bypassing what they protect)</li>
+            <li>A deeper relationship with your own inner authority</li>
+            <li>Language for what you know but can't quite articulate yet</li>
+            <li>A way to metabolize a transition without rushing to "solve" it</li>
+            <li>Grounded next steps that match who you're becoming</li>
           </ul>
         </div>
       </div>
@@ -821,17 +813,18 @@
         <div class="jc-body-inner fade-in">
           <p class="eyebrow">How I practice</p>
           <p class="jc-p">
-            My approach is Jungian at its core — I work with dreams, imagery, Active Imagination, and the symbolic dimension of everyday experience. I'm also trained in several adjacent modalities that I weave in when they serve the work.
+            My approach is Jungian at its core, but I'm also trained in several adjacent modalities that I weave in when they serve the work. I treat psyche-language as real language, and I work with it directly.
           </p>
-          <div class="modality-list">
-            <span class="modality-pill">Reiki</span>
-            <span class="modality-pill">Human Design</span>
-            <span class="modality-pill">EFT (tapping)</span>
-            <span class="modality-pill">Western astrology</span>
-          </div>
           <p class="jc-p">
-            None of these are required or imposed. They're tools I reach for when the work calls for a different kind of map.
+            Alongside dreamwork and shadow work, I use <strong>creative writing, active imagination, and other creative exercises</strong> to help you communicate with hidden parts of yourself and reframe outdated stories.
           </p>
+          <p class="jc-p">Depending on what serves you, sessions can draw from archetypal and somatic modalities, including:</p>
+          <ul class="modality-list">
+            <li>Reiki</li>
+            <li>Human Design</li>
+            <li>EFT (tapping)</li>
+            <li>Western astrology</li>
+          </ul>
         </div>
       </div>
     </section>
@@ -843,29 +836,32 @@
           <p class="eyebrow">Investment</p>
           <div class="jc-pricing-grid">
             <div class="jc-price-card jc-price-card--featured">
-              <p class="jc-price-card-title">Coaching Package</p>
+              <p class="jc-price-card-title">The Package</p>
+              <p class="jc-price-card-sub" style="margin-top: 8px; margin-bottom: 20px; font-size: 17px; line-height: 1.5; color: var(--ink); font-style: italic;">6 sessions to build your inner foundation, each an hour long.</p>
               <p class="jc-price-amount">$500</p>
               <p class="jc-price-card-sub">6 sessions · 60 min each</p>
+              <p class="jc-best-for" style="margin-top: 20px; margin-bottom: 8px;">Best for:</p>
               <ul class="jc-price-card-list">
-                <li>Bi-weekly sessions over 3 months</li>
-                <li>Between-session reflection prompts</li>
-                <li>Async support Mon–Fri</li>
+                <li>You're in a transition (ending/beginning)</li>
+                <li>You're ready to meet the patterns underneath your personal mythology</li>
+                <li>You want a steadier nervous system while you make real-life choices</li>
+                <li>You want depth work that helps you reconnect with your inner authority</li>
               </ul>
-              <a href="mailto:clea@mythograph.co" class="btn btn--crimson">Book a Fit Call →</a>
-              <p class="jc-best-for">Best for sustained inner work</p>
             </div>
             <div class="jc-price-card">
-              <p class="jc-price-card-title">Single Session</p>
+              <p class="jc-price-card-title">Single Sessions</p>
+              <p class="jc-price-card-sub" style="margin-top: 8px; margin-bottom: 20px; font-size: 16px; line-height: 1.6; color: var(--ink-muted);">If you want to try this work without committing to a package, you can book a one-off session.</p>
               <p class="jc-price-amount">$100</p>
-              <p class="jc-price-card-sub">60 min · one session</p>
+              <p class="jc-price-card-sub">1 session · 60 min</p>
+              <p class="jc-best-for" style="margin-top: 20px; margin-bottom: 8px;">Best for:</p>
               <ul class="jc-price-card-list">
-                <li>Focused depth conversation</li>
-                <li>Good for a specific question or crossroads</li>
-                <li>No ongoing commitment required</li>
+                <li>You have a specific question, dream, or decision-point you want to explore</li>
+                <li>You want a felt sense of what it's like to work together before choosing a longer container</li>
               </ul>
-              <a href="mailto:clea@mythograph.co" class="btn btn--ghost">Book a Session →</a>
-              <p class="jc-best-for">Best for a single threshold moment</p>
             </div>
+          </div>
+          <div style="text-align: center; margin-top: 40px;">
+            <a href="mailto:clea@mythograph.co" class="btn btn--crimson">Book a 15-minute Fit Call →</a>
           </div>
         </div>
       </div>
@@ -901,23 +897,23 @@
 
         <div class="proof-grid">
           <div class="proof-card fade-in">
-            <p class="proof-text">"Clea helped me find the focus and target audience I needed to get my business moving in the right direction."</p>
+            <p class="proof-text">"Clea is a natural coach. Her high level of empathy and connection is felt during every session."</p>
             <cite class="proof-cite">— Davana P.</cite>
           </div>
           <div class="proof-card fade-in delay-1">
-            <p class="proof-text">"Working with Clea felt like finally being seen. She has a gift for holding space while also gently pushing you toward clarity."</p>
+            <p class="proof-text">"I uncovered so much in the visualization practice… and was able to get into my body more with the practice versus just talking it out."</p>
             <cite class="proof-cite">— Brandi B.</cite>
           </div>
           <div class="proof-card fade-in delay-2">
-            <p class="proof-text">"I came in with a fog and left with a lantern. Clea helped me name things I'd been circling for years."</p>
+            <p class="proof-text">"Cléa skillfully draws upon her professional expertise and lived experiences to create a beautifully warm, non-judgmental, and compassionate space… guiding clients into deeper conversations that invite greater levels of self-awareness."</p>
             <cite class="proof-cite">— Deb F.</cite>
           </div>
           <div class="proof-card fade-in">
-            <p class="proof-text">"The depth of inquiry Clea brings to each session is unlike anything I've experienced in coaching."</p>
+            <p class="proof-text">"Clea's approach cultivates mutual respect and trust… enabling a genuine bond to be formed through authentic vulnerability."</p>
             <cite class="proof-cite">— Kurt B.</cite>
           </div>
           <div class="proof-card fade-in delay-1">
-            <p class="proof-text">"Clea has a rare ability to hold complexity and still help you arrive somewhere solid."</p>
+            <p class="proof-text">"One of her distinctive strengths is her relationship with difficult emotions — she welcomes anger as information… This is a real gift, and a relatively rare one."</p>
             <cite class="proof-cite">— Aimi C.</cite>
           </div>
         </div>
@@ -929,13 +925,14 @@
     <section class="jc-bridge">
       <div class="container">
         <div class="jc-bridge-inner fade-in">
-          <span class="eyebrow">Where it leads</span>
+          <span class="eyebrow">If you love this and you own a business…</span>
           <p class="jc-bridge-p">
-            Jungian coaching is often where the outer work begins to make sense. Once you've done the inner excavation — once you know the stories that have been running you and you have language for what you actually believe — the brand work, the visibility work, the Story Loom process, becomes something you can inhabit fully.
+            Sometimes coaching reveals that what's emerging is also a clearer public voice, a stronger livelihood narrative, or a desire to build a body of work that has structure.
           </p>
           <p class="jc-bridge-p">
-            If you feel called toward that next layer, <a href="index.html">Story Loom</a> is the narrative brand system that picks up where the coaching leaves off.
+            If that happens, we can treat coaching as the <strong>readiness layer</strong> that prepares you for Story Loom or other Mythograph brand services — without forcing that outcome.
           </p>
+          <a href="index.html" class="btn btn--crimson-o" style="margin-top: 8px; display: inline-flex;">Explore Story Loom →</a>
         </div>
       </div>
     </section>
@@ -963,7 +960,7 @@
         <div class="jc-cta-inner fade-in">
           <h2 class="jc-cta-h2">Let's meet.</h2>
           <p class="jc-cta-body">
-            A 15-minute fit call is the easiest first step. We'll talk about where you are and whether this work is right for you — no pressure, no pitch.
+            Start with a 15-minute Fit Call, and we'll decide together whether Jungian coaching is the right container and what pace would be most supportive.
           </p>
           <a href="mailto:clea@mythograph.co" class="btn btn--gold">Book a 15-minute Fit Call →</a>
         </div>
@@ -984,7 +981,7 @@
           <p class="footer-col-title">Navigate</p>
           <ul class="footer-links">
             <li><a href="index.html">Home</a></li>
-            <li><a href="story-loom.html">Story Loom</a></li>
+            <li><a href="index.html">Story Loom</a></li>
             <li><a href="jungian-coaching.html">Jungian Coaching</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="your-words-here.html">Your Words Here</a></li>
