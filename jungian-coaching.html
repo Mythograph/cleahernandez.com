@@ -450,6 +450,112 @@
       filter: saturate(0.72) sepia(0.15); display: block;
     }
 
+    /* ════════════════════════════════════════════════════════════
+       BODY SECTION — reusable centered text block
+    ════════════════════════════════════════════════════════════ */
+    .jc-body-section { padding: 80px 0; }
+    .jc-body-section--fog { background: var(--fog); }
+    .jc-body-inner { max-width: 720px; margin: 0 auto; }
+    .jc-body-inner .eyebrow { margin-bottom: 20px; display: block; }
+    .jc-body-inner .section-h2 { margin-bottom: 32px; }
+    .jc-p {
+      font-size: clamp(16px, 1.5vw, 18px); line-height: 1.82;
+      color: var(--ink-muted); margin-bottom: 18px;
+    }
+    .jc-p strong { color: var(--ink); font-weight: 500; }
+    .jc-p:last-of-type { margin-bottom: 0; }
+    .jc-note {
+      font-size: 16px; line-height: 1.75; color: var(--ink-muted);
+      padding: 20px 24px; border-left: 3px solid rgba(199,55,43,.25);
+      background: var(--crimson-pale); border-radius: 0 var(--radius) var(--radius) 0;
+      margin: 24px 0;
+    }
+    .jc-note strong { color: var(--ink); font-weight: 500; }
+
+    /* What it's for */
+    .jc-for-list { list-style: none; padding: 0; margin-top: 28px; display: grid; gap: 10px; }
+    .jc-for-list li {
+      font-size: 16px; line-height: 1.7; color: var(--ink-muted);
+      padding: 15px 20px 15px 18px;
+      border-left: 2px solid rgba(199,55,43,.3);
+      background: var(--crimson-pale);
+      border-radius: 0 var(--radius) var(--radius) 0;
+    }
+
+    /* Modality pills */
+    .modality-list { list-style: none; padding: 0; margin-top: 20px; display: flex; flex-wrap: wrap; gap: 10px; }
+    .modality-list li {
+      font-size: 13px; font-weight: 500; color: var(--crimson);
+      padding: 8px 18px; border: 1.5px solid rgba(199,55,43,.3);
+      border-radius: 100px; background: var(--crimson-pale);
+    }
+
+    /* ════════════════════════════════════════════════════════════
+       PRICING — package + single sessions
+    ════════════════════════════════════════════════════════════ */
+    .jc-pricing { padding: 80px 0; }
+    .jc-pricing-inner { max-width: 780px; margin: 0 auto; }
+    .jc-pricing-inner .eyebrow { margin-bottom: 20px; display: block; }
+    .jc-pricing-inner .section-h2 { margin-bottom: 40px; }
+    .jc-pricing-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .jc-price-card {
+      padding: 40px 36px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--white);
+    }
+    .jc-price-card--featured {
+      border-color: rgba(199,55,43,.2);
+      background: var(--crimson-pale);
+    }
+    .jc-price-label {
+      font-size: 11px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase;
+      color: var(--crimson); margin-bottom: 14px; display: block;
+    }
+    .jc-price-h3 {
+      font-family: var(--display); font-size: clamp(20px, 2.2vw, 28px);
+      font-weight: 700; color: var(--ink); margin-bottom: 4px; line-height: 1.1;
+    }
+    .jc-price-amount {
+      font-family: var(--serif); font-size: clamp(36px, 4vw, 52px);
+      font-weight: 700; color: var(--crimson); letter-spacing: -0.02em;
+      line-height: 1; margin: 16px 0 20px;
+    }
+    .jc-price-desc { font-size: 15px; line-height: 1.65; color: var(--ink-muted); margin-bottom: 20px; }
+    .jc-best-for-title {
+      font-size: 11px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase;
+      color: var(--ink-muted); margin-bottom: 14px; display: block;
+    }
+    .jc-best-for { list-style: none; padding: 0; display: grid; gap: 8px; margin-bottom: 28px; }
+    .jc-best-for li {
+      font-size: 14px; line-height: 1.65; color: var(--ink-muted);
+      padding-left: 18px; position: relative;
+    }
+    .jc-best-for li::before { content: '→'; position: absolute; left: 0; color: var(--crimson); font-size: 11px; }
+    @media (max-width: 768px) { .jc-pricing-grid { grid-template-columns: 1fr; } }
+
+    /* ════════════════════════════════════════════════════════════
+       CREDENTIALS
+    ════════════════════════════════════════════════════════════ */
+    .jc-credentials { padding: 72px 0; background: var(--fog); }
+    .jc-credentials-inner { max-width: 400px; margin: 0 auto; text-align: center; }
+    .jc-badge-img { width: 180px; height: 180px; margin: 0 auto 24px; display: block; }
+    .jc-badge-title {
+      font-family: var(--serif); font-size: clamp(20px, 2.2vw, 26px);
+      font-weight: 600; color: var(--ink); margin-bottom: 12px; line-height: 1.2;
+    }
+    .jc-badge-desc { font-size: 15px; line-height: 1.72; color: var(--ink-muted); }
+
+    /* ════════════════════════════════════════════════════════════
+       BRIDGE — coaching → Story Loom
+    ════════════════════════════════════════════════════════════ */
+    .jc-bridge { padding: 72px 0; background: var(--fog); border-top: 1px solid var(--border); }
+    .jc-bridge-inner { max-width: 660px; margin: 0 auto; }
+    .jc-bridge-inner .eyebrow { margin-bottom: 20px; display: block; }
+    .jc-bridge-inner .section-h2 { margin-bottom: 24px; }
+    .jc-bridge-p { font-size: clamp(16px, 1.5vw, 18px); line-height: 1.82; color: var(--ink-muted); margin-bottom: 16px; }
+    .jc-bridge-p strong { color: var(--ink); font-weight: 500; }
+
     /* ─── Fade in ─── */
     .fade-in { opacity: 0; transform: translateY(22px); transition: opacity .6s ease, transform .6s ease; }
     .fade-in.visible { opacity: 1; transform: translateY(0); }
@@ -558,18 +664,20 @@
       <div class="container jc-hero-inner">
 
         <div>
-          <span class="pill jc-hero-pill">1:1 Coaching</span>
+          <p class="eyebrow jc-hero-pill" style="color: rgba(200,162,74,0.85); margin-bottom: 28px;">Jungian Coaching</p>
           <h1 class="jc-hero-h1">
-            The work that<br>
-            lives <span>beneath</span><br>
-            the work.
+            The work that lives<br>
+            beneath <span>your</span> work.
           </h1>
           <p class="jc-hero-body">
-            Jungian Narrative Coaching for founders, creatives, and mission-driven people ready to excavate what's actually there — and build from it.
+            Jungian-informed coaching for anyone in a threshold season. Whether it's a relationship, identity, career, grief, creativity, purpose, or the quiet sense that something old is falling away.
+          </p>
+          <p class="jc-hero-body" style="margin-top: -16px;">
+            This work can be its own path of self-discovery. It can also become the inner ground that makes your next outer chapter — including brand and visibility work — land cleanly.
           </p>
           <div class="jc-hero-btns">
-            <a href="mailto:clea@mythograph.co" class="btn btn--gold">Book a discovery call</a>
-            <a href="#includes" class="btn btn--ghost">What's included ↓</a>
+            <a href="mailto:clea@mythograph.co" class="btn btn--crimson">Book a 15-minute Fit Call →</a>
+            <a href="work-with-me.html#golden-thread" class="btn btn--ghost">Ready for narrative coaching? Book a Golden Thread Session →</a>
           </div>
         </div>
 
@@ -617,68 +725,20 @@
     </section>
 
     <!-- ─── WHAT IT IS ─── -->
-    <section class="jc-what">
+    <section class="jc-body-section">
       <div class="container">
-        <div class="jc-what-inner">
-
-          <div class="jc-what-text fade-in">
-            <p class="eyebrow">What it is</p>
-            <h2 class="section-h2" style="margin-top: 16px; margin-bottom: 28px;">
-              A container for<br>doing the real work.
-            </h2>
-            <p>
-              This is the most personal path — especially for people in the meaning-making years who are exhausted by capitalist performance and ready to name their work as something else entirely.
-            </p>
-            <p>
-              <strong>We excavate your stories</strong>: the origin narratives, the shadow patterns, the internalized rules of a system you didn't design, the wounds that have become wisdom. We surface what's been keeping you in language that doesn't quite fit. And we build new language, rooted in your lived experience and deepest convictions.
-            </p>
-            <p>
-              This is not therapy. It's not brand coaching in the conventional sense. It's <strong>depth psychology applied to the practice of building meaningful work</strong> — a container where the story you've been afraid to tell becomes the one that changes everything.
-            </p>
-            <a href="mailto:clea@mythograph.co" class="btn btn--gold">Book a discovery call</a>
-          </div>
-
-          <!-- What Shifts card -->
-          <div class="shifts-card fade-in delay-1">
-            <p class="shifts-title">What Shifts</p>
-
-            <div class="shift-row">
-              <p class="shift-from">From:</p>
-              <p class="shift-to">Performing for a system that doesn't serve you</p>
-            </div>
-            <div class="shift-row">
-              <p class="shift-from">To:</p>
-              <p class="shift-to"><strong>Building from your own narrative authority</strong></p>
-            </div>
-
-            <div class="shift-row" style="margin-top: 12px;">
-              <p class="shift-from">From:</p>
-              <p class="shift-to">Scattered messaging and borrowed frameworks</p>
-            </div>
-            <div class="shift-row">
-              <p class="shift-from">To:</p>
-              <p class="shift-to"><strong>A coherent narrative field that's entirely yours</strong></p>
-            </div>
-
-            <div class="shift-row" style="margin-top: 12px;">
-              <p class="shift-from">From:</p>
-              <p class="shift-to">Internalized rules about who gets to say what</p>
-            </div>
-            <div class="shift-row">
-              <p class="shift-from">To:</p>
-              <p class="shift-to"><strong>Work rooted in your convictions, not theirs</strong></p>
-            </div>
-
-            <div class="shift-row" style="margin-top: 12px;">
-              <p class="shift-from">From:</p>
-              <p class="shift-to">"What do I even say?"</p>
-            </div>
-            <div class="shift-row">
-              <p class="shift-from">To:</p>
-              <p class="shift-to"><strong>Words that attract your people</strong></p>
-            </div>
-          </div>
-
+        <div class="jc-body-inner fade-in">
+          <p class="eyebrow">What it is</p>
+          <p class="jc-p">
+            Jungian coaching is depth psychology applied to the practice of living. It draws on Carl Jung's framework of the psyche — the shadow, the Self, the archetypes, Active Imagination — to help you understand the stories that are actually running your life, not just the ones you tell consciously.
+          </p>
+          <p class="jc-p">
+            We do this in the context of your actual life and work. A threshold season. A creative block. A career that no longer fits the person you've become. A quiet sense that something old is falling away and you don't yet have language for what's coming.
+          </p>
+          <p class="jc-p">
+            This can be its own path of self-discovery. It can also become the inner ground that makes your next outer chapter — including brand and visibility work — land cleanly.
+          </p>
+          <p class="jc-note">Not therapy. This is coaching, not clinical treatment. I'm not a licensed therapist. If you're in crisis or need clinical support, please reach out to a mental health professional.</p>
         </div>
       </div>
     </section>
@@ -696,35 +756,19 @@
            title="Tall arch — Varo cathedral corridor of arches receding into light"></div>
     </div>
 
-    <!-- ─── METHOD ─── -->
-    <section class="jc-method">
+    <!-- ─── WHAT IT'S FOR ─── -->
+    <section class="jc-body-section">
       <div class="container">
-        <div class="jc-method-inner fade-in">
-          <span class="eyebrow">The Method</span>
-
-          <!-- Alchemical eye — small -->
-          <div style="margin-bottom: 36px;" aria-hidden="true">
-            <svg width="60" height="30" viewBox="0 0 60 30" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin: 0 auto;">
-              <path d="M2 15 C12 4,22 0,30 0 C38 0,48 4,58 15 C48 26,38 30,30 30 C22 30,12 26,2 15Z" stroke="#C7372B" stroke-width="0.75" fill="none" opacity="0.5"/>
-              <circle cx="30" cy="15" r="8" stroke="#C7372B" stroke-width="0.6" fill="none" opacity="0.35"/>
-              <circle cx="30" cy="15" r="4" fill="rgba(199,55,43,0.2)"/>
-              <circle cx="32" cy="13" r="1" fill="rgba(199,55,43,0.55)"/>
-              <line x1="0" y1="15" x2="22" y2="15" stroke="rgba(199,55,43,0.25)" stroke-width="0.5"/>
-              <line x1="38" y1="15" x2="60" y2="15" stroke="rgba(199,55,43,0.25)" stroke-width="0.5"/>
-            </svg>
-          </div>
-
-          <blockquote class="jc-method-quote">
-            "Who looks outside, dreams;<br>who looks inside, awakes."
-          </blockquote>
-          <p class="jc-method-attr">— Carl Jung</p>
-
-          <p class="method-body">
-            Jungian psychology gives us a map of the psyche that most brand work never consults. <strong>Carl Jung's insight was that the unconscious is not a dumping ground for what we don't want to know — it's a generative field</strong> of narrative material, symbolic imagery, and unlived possibility.
-          </p>
-          <p class="method-body">
-            Jungian Narrative Coaching applies this insight to the practice of building a business or creative practice. We work with shadow — the parts of your story you've been taught to hide. We work with <strong>Active Imagination</strong> — Jung's method for entering into dialogue with unconscious content. We work with the archetypal patterns that organize how you understand your role and your work. And we translate everything we find into language — into a brand voice, a narrative system, a set of convictions you can actually build from.
-          </p>
+        <div class="jc-body-inner fade-in">
+          <p class="eyebrow">What it's for</p>
+          <ul class="jc-for-list">
+            <li>A threshold season — a change of career, relationship, identity, or life chapter</li>
+            <li>A creative block that doesn't respond to productivity advice</li>
+            <li>Burnout that has a psychological or narrative root</li>
+            <li>The sense that your work has outgrown its current story</li>
+            <li>Grief, transition, or the slow work of becoming someone new</li>
+            <li>Inner prep for brand or visibility work that needs a truer foundation</li>
+          </ul>
         </div>
       </div>
     </section>
@@ -738,87 +782,69 @@
       />
     </div>
 
-    <!-- ─── WHAT'S INCLUDED ─── -->
-    <section class="jc-includes" id="includes">
+    <!-- ─── HOW I PRACTICE ─── -->
+    <section class="jc-body-section">
       <div class="container">
-        <div class="jc-includes-header fade-in">
-          <p class="eyebrow">What's included</p>
-          <h2 class="section-h2" style="margin-top: 16px; margin-bottom: 16px;">The container</h2>
-          <p class="section-lead">Everything you need to do the real work — over a sustained period of time, in a structure that holds.</p>
+        <div class="jc-body-inner fade-in">
+          <p class="eyebrow">How I practice</p>
+          <p class="jc-p">
+            My approach is Jungian at its core — I work with dreams, imagery, Active Imagination, and the symbolic dimension of everyday experience. I'm also trained in several adjacent modalities that I weave in when they serve the work.
+          </p>
+          <div class="modality-list">
+            <span class="modality-pill">Reiki</span>
+            <span class="modality-pill">Human Design</span>
+            <span class="modality-pill">EFT (tapping)</span>
+            <span class="modality-pill">Western astrology</span>
+          </div>
+          <p class="jc-p">
+            None of these are required or imposed. They're tools I reach for when the work calls for a different kind of map.
+          </p>
         </div>
+      </div>
+    </section>
 
-        <div class="includes-grid">
-          <div class="include-card fade-in">
-            <p class="include-num">01</p>
-            <p class="include-title">Bi-weekly 60-minute sessions</p>
-            <p class="include-body">Deep, structured conversations that combine narrative inquiry, depth psychology, and brand strategy. We go where the work needs to go.</p>
-          </div>
-          <div class="include-card fade-in delay-1">
-            <p class="include-num">02</p>
-            <p class="include-title">Narrative excavation</p>
-            <p class="include-body">Structured practices for surfacing the stories, patterns, and material that your conscious mind hasn't fully articulated yet — including Active Imagination.</p>
-          </div>
-          <div class="include-card fade-in delay-2">
-            <p class="include-num">03</p>
-            <p class="include-title">Brand voice development</p>
-            <p class="include-body">We shape the raw material into a brand voice that sounds like you at your most clear and courageous — grounded in your lived experience, not a framework.</p>
-          </div>
-          <div class="include-card fade-in">
-            <p class="include-num">04</p>
-            <p class="include-title">Shadow work applied to story</p>
-            <p class="include-body">The most powerful brand narratives engage shadow — the parts of the story that feel too risky, too real, too much. We go there on purpose.</p>
-          </div>
-          <div class="include-card fade-in delay-1">
-            <p class="include-num">05</p>
-            <p class="include-title">Between-session reflection prompts</p>
-            <p class="include-body">Writing prompts and practices to keep the excavation alive between sessions — building the habit of narrative inquiry that the work requires.</p>
-          </div>
-          <div class="include-card fade-in delay-2">
-            <p class="include-num">06</p>
-            <p class="include-title">Asynchronous support</p>
-            <p class="include-body">Written support between sessions — for when something breaks open, when you need a thought partner before the next call, or when you're working through language and want a second read.</p>
+    <!-- ─── PRICING ─── -->
+    <section class="jc-body-section" id="pricing">
+      <div class="container">
+        <div class="jc-body-inner fade-in">
+          <p class="eyebrow">Investment</p>
+          <div class="jc-pricing-grid">
+            <div class="jc-price-card jc-price-card--featured">
+              <p class="jc-price-card-title">Coaching Package</p>
+              <p class="jc-price-amount">$500</p>
+              <p class="jc-price-card-sub">6 sessions · 60 min each</p>
+              <ul class="jc-price-card-list">
+                <li>Bi-weekly sessions over 3 months</li>
+                <li>Between-session reflection prompts</li>
+                <li>Async support Mon–Fri</li>
+              </ul>
+              <a href="mailto:clea@mythograph.co" class="btn btn--crimson">Book a Fit Call →</a>
+              <p class="jc-best-for">Best for sustained inner work</p>
+            </div>
+            <div class="jc-price-card">
+              <p class="jc-price-card-title">Single Session</p>
+              <p class="jc-price-amount">$100</p>
+              <p class="jc-price-card-sub">60 min · one session</p>
+              <ul class="jc-price-card-list">
+                <li>Focused depth conversation</li>
+                <li>Good for a specific question or crossroads</li>
+                <li>No ongoing commitment required</li>
+              </ul>
+              <a href="mailto:clea@mythograph.co" class="btn btn--ghost">Book a Session →</a>
+              <p class="jc-best-for">Best for a single threshold moment</p>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ─── RIGHT FOR YOU ─── -->
-    <section class="right-for">
+    <!-- ─── CREDENTIALS ─── -->
+    <section class="jc-credentials">
       <div class="container">
-        <div class="right-for-inner">
-          <div class="right-for-text fade-in">
-            <p class="eyebrow">Right for you if</p>
-            <h2 class="section-h2" style="margin-top: 16px; margin-bottom: 20px;">
-              You know the work<br>wants to be something more.
-            </h2>
-            <p>
-              You haven't yet found language for it that doesn't sound like everyone else. Or the work you've built doesn't feel like it fully holds what you actually believe. This is where we start.
-            </p>
-            <a href="mailto:clea@mythograph.co" class="btn btn--gold">Book a free discovery call →</a>
-          </div>
-
-          <div class="right-for-list fade-in delay-1">
-            <div class="rfli">
-              <span class="rfli-mark">✦</span>
-              <p class="rfli-text">You're a <strong>founder, coach, therapist, or creative</strong> who needs a brand voice as nuanced as your actual thinking</p>
-            </div>
-            <div class="rfli">
-              <span class="rfli-mark">✦</span>
-              <p class="rfli-text">You're in the <strong>meaning-making years</strong> — exhausted by performing for a system you no longer want to replicate</p>
-            </div>
-            <div class="rfli">
-              <span class="rfli-mark">✦</span>
-              <p class="rfli-text">You have <strong>lived experience</strong> that hasn't fully made it into your public work — and you sense it should</p>
-            </div>
-            <div class="rfli">
-              <span class="rfli-mark">✦</span>
-              <p class="rfli-text">You want to build work that <strong>contributes to something larger</strong> — and need the narrative infrastructure to say that clearly</p>
-            </div>
-            <div class="rfli">
-              <span class="rfli-mark">✦</span>
-              <p class="rfli-text">You're done with <strong>borrowed frameworks</strong> that never quite fit — you want to excavate your own</p>
-            </div>
-          </div>
+        <div class="jc-credentials-inner fade-in">
+          <img src="badge_jung_platform.png" alt="Jung Platform Certified Coach badge" class="jc-badge-img" />
+          <p class="eyebrow" style="margin-top: 16px;">Jung Platform–Certified</p>
+          <p class="jc-p" style="max-width: 560px; margin: 8px auto 0;">Trained through Jung Platform's certification program in Jungian coaching and depth psychology.</p>
         </div>
       </div>
     </section>
@@ -838,35 +864,48 @@
 
         <div class="jc-proof-header fade-in">
           <span class="eyebrow">What clients say</span>
-          <p>People who've done the real work.</p>
         </div>
 
         <div class="proof-grid">
           <div class="proof-card fade-in">
             <p class="proof-text">"Clea helped me find the focus and target audience I needed to get my business moving in the right direction."</p>
-            <cite class="proof-cite">— Davana</cite>
+            <cite class="proof-cite">— Davana P.</cite>
           </div>
           <div class="proof-card fade-in delay-1">
-            <p class="proof-text">"Clea has a gift for seeing a client's potential, then guiding them to be their best self."</p>
-            <cite class="proof-cite">— Davana</cite>
+            <p class="proof-text">"Working with Clea felt like finally being seen. She has a gift for holding space while also gently pushing you toward clarity."</p>
+            <cite class="proof-cite">— Brandi B.</cite>
           </div>
           <div class="proof-card fade-in delay-2">
-            <p class="proof-text">"Clea helped me see my gaps and patterns, then guided me beyond the funk and into my true purpose."</p>
-            <cite class="proof-cite">— Davana</cite>
+            <p class="proof-text">"I came in with a fog and left with a lantern. Clea helped me name things I'd been circling for years."</p>
+            <cite class="proof-cite">— Deb F.</cite>
+          </div>
+          <div class="proof-card fade-in">
+            <p class="proof-text">"The depth of inquiry Clea brings to each session is unlike anything I've experienced in coaching."</p>
+            <cite class="proof-cite">— Kurt B.</cite>
+          </div>
+          <div class="proof-card fade-in delay-1">
+            <p class="proof-text">"Clea has a rare ability to hold complexity and still help you arrive somewhere solid."</p>
+            <cite class="proof-cite">— Aimi C.</cite>
           </div>
         </div>
 
       </div>
     </section>
 
-    <!-- ─── VARO MAP — Psychological cartography art break ─── -->
-    <div class="jc-varo-break" role="img" aria-label="Surrealist map of the self — nested architectural chambers, each a different inner world">
-      <img
-        src="mj_jc_map.png"
-        alt="A Remedios Varo–style painting: nested Gothic chambers each reveal a different inner world — forest, ocean, fire, winter — a map of the psyche."
-        loading="lazy"
-      />
-    </div>
+    <!-- ─── BRIDGE ─── -->
+    <section class="jc-bridge">
+      <div class="container">
+        <div class="jc-bridge-inner fade-in">
+          <span class="eyebrow">Where it leads</span>
+          <p class="jc-bridge-p">
+            Jungian coaching is often where the outer work begins to make sense. Once you've done the inner excavation — once you know the stories that have been running you and you have language for what you actually believe — the brand work, the visibility work, the Story Loom process, becomes something you can inhabit fully.
+          </p>
+          <p class="jc-bridge-p">
+            If you feel called toward that next layer, <a href="index.html">Story Loom</a> is the narrative brand system that picks up where the coaching leaves off.
+          </p>
+        </div>
+      </div>
+    </section>
 
     <!-- ─── NEWSLETTER ─── -->
     <!-- Replace action="#" with your ConvertKit/Mailchimp embed action URL -->
@@ -885,22 +924,15 @@
       </div>
     </section>
 
-    <!-- ─── BOOKING CTA ─── -->
+    <!-- ─── LET'S MEET CTA ─── -->
     <section class="jc-cta">
       <div class="container">
         <div class="jc-cta-inner fade-in">
-          <h2 class="jc-cta-h2">
-            The story you've been<br>
-            afraid to tell is usually the one<br>
-            that changes everything.
-          </h2>
+          <h2 class="jc-cta-h2">Let's meet.</h2>
           <p class="jc-cta-body">
-            Start with a free 30-minute discovery call. We'll talk about where you are, what you're building, and whether this is the right container for the work.
+            A 15-minute fit call is the easiest first step. We'll talk about where you are and whether this work is right for you — no pressure, no pitch.
           </p>
-          <div class="jc-cta-btns">
-            <a href="mailto:clea@mythograph.co" class="btn btn--gold">Book a discovery call →</a>
-            <a href="about.html" class="btn btn--ghost">Meet Cléa first</a>
-          </div>
+          <a href="mailto:clea@mythograph.co" class="btn btn--gold">Book a 15-minute Fit Call →</a>
         </div>
       </div>
     </section>
