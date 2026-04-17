@@ -939,33 +939,35 @@
     /* ════════════════════════════════════════════════════════════
        WHAT YOU LEAVE WITH
     ════════════════════════════════════════════════════════════ */
+    /* ════════════════════════════════════════════════════════════
+       WHAT YOU LEAVE WITH — deliverable blocks
+    ════════════════════════════════════════════════════════════ */
     .deliverables { padding: 80px 0; background: var(--mist); }
     .deliverables-inner { max-width: 760px; margin: 0 auto; }
-    .receipt { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 36px 0 48px; }
-    .receipt-item {
-      padding: 24px 22px;
+    .deliverable-blocks { display: grid; gap: 20px; margin-top: 32px; }
+    .deliverable-block {
+      padding: 28px 32px;
       background: var(--white);
       border: 1px solid var(--border);
-      border-radius: var(--radius);
+      border-left: 3px solid var(--indigo);
+      border-radius: 0 var(--radius) var(--radius) 0;
     }
-    .receipt-num {
-      font-family: var(--serif); font-size: 32px; font-weight: 700;
-      color: rgba(200,162,74,0.4); line-height: 1; margin-bottom: 12px;
+    .deliverable-block-num {
+      font-family: var(--serif); font-size: 28px; font-weight: 700;
+      color: rgba(58,79,153,0.2); line-height: 1; margin-bottom: 10px;
     }
-    .receipt-text { font-size: 15px; line-height: 1.65; color: var(--ink-muted); }
-    .receipt-text strong { color: var(--ink); font-weight: 500; }
-    .deliverables-list { display: grid; gap: 10px; }
-    .dl-item {
-      display: grid; grid-template-columns: 180px 1fr; gap: 16px; align-items: flex-start;
-      padding: 18px 20px;
-      background: var(--white); border: 1px solid var(--border);
-      border-radius: var(--radius);
+    .deliverable-block-title {
+      font-size: 16px; font-weight: 600; color: var(--ink); margin-bottom: 16px;
     }
-    .dl-label {
-      font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase;
-      color: var(--indigo); padding-top: 2px;
+    .deliverable-sub-list { list-style: none; padding: 0; display: grid; gap: 10px; }
+    .deliverable-sub-list li {
+      font-size: 15px; line-height: 1.72; color: var(--ink-muted);
+      padding-left: 20px; position: relative;
     }
-    .dl-desc { font-size: 15px; line-height: 1.65; color: var(--ink-muted); }
+    .deliverable-sub-list li::before {
+      content: '—'; position: absolute; left: 0; color: var(--indigo); font-size: 12px; top: 3px;
+    }
+    .deliverable-sub-list li strong { color: var(--ink); font-weight: 500; }
 
     /* ════════════════════════════════════════════════════════════
        WHAT SHIFTS
@@ -1388,7 +1390,7 @@
             <h2 class="sl-program-name">Story Loom</h2>
             <p class="sl-subhead">A co-creative brand build.</p>
             <p class="sl-lead">
-              Story Loom is a co-creative brand build, where we uncover the stories and messages that are most alive for you, then architect them into a narrative ecosystem that can hold:
+              Story Loom is a 1:1 program where we uncover the stories and messages that are most alive for you, then architect them into a narrative ecosystem that can hold:
             </p>
             <ul class="sl-features">
               <li>the truth of what you do <strong>(without flattening it)</strong></li>
@@ -1415,47 +1417,33 @@
         <div class="deliverables-inner fade-in">
           <p class="eyebrow" style="margin-bottom: 20px;">What You Leave With</p>
           <h2 class="section-h2" style="margin-bottom: 12px;">A complete Narrative OS.</h2>
-          <p class="sl-lead">In 6 weeks, you leave with everything you need to run your story across your website, offers, and content.</p>
+          <p class="sl-lead">In 6 weeks, you leave with a <strong>usable narrative + messaging system</strong> and a repeatable way to express it in the world.</p>
 
-          <div class="receipt">
-            <div class="receipt-item">
-              <div class="receipt-num">1</div>
-              <p class="receipt-text">A <strong>message set you can ship</strong> (positioning, differentiation, objections)</p>
+          <div class="deliverable-blocks">
+            <div class="deliverable-block">
+              <div class="deliverable-block-num">1</div>
+              <p class="deliverable-block-title">A message set you can ship</p>
+              <ul class="deliverable-sub-list">
+                <li><strong>Convictions + POV:</strong> the beliefs you're actually willing to stand behind, translated into language people can feel and repeat.</li>
+                <li><strong>Messaging architecture:</strong> an ecosystem of how your work is best understood by your audience (value, offers, pillars, differentiators, objections, outcomes).</li>
+              </ul>
             </div>
-            <div class="receipt-item">
-              <div class="receipt-num">2</div>
-              <p class="receipt-text">A <strong>story bank you can draw from</strong> and add to for the rest of your life</p>
+            <div class="deliverable-block">
+              <div class="deliverable-block-num">2</div>
+              <p class="deliverable-block-title">A signature story bank you can draw from for years</p>
+              <ul class="deliverable-sub-list">
+                <li><strong>Golden Thread Manifesto:</strong> the through-line that ties your story, your work, and your promise into one coherent signal.</li>
+                <li><strong>Story Bank:</strong> your core beliefs, turning points, proofs, and origin moments, captured in a way you can reliably draw from, add to, and evolve.</li>
+              </ul>
             </div>
-            <div class="receipt-item">
-              <div class="receipt-num">3</div>
-              <p class="receipt-text"><strong>Drafted copy</strong> for one real asset you can publish</p>
-            </div>
-          </div>
-
-          <div class="deliverables-list">
-            <div class="dl-item">
-              <span class="dl-label">Golden Thread Manifesto</span>
-              <p class="dl-desc">The throughline that ties your story, your work, and your promise into one coherent signal.</p>
-            </div>
-            <div class="dl-item">
-              <span class="dl-label">Story Bank</span>
-              <p class="dl-desc">Your core scenes, turning points, proofs, and origin moments — captured so you can reliably draw from, add to, and evolve them.</p>
-            </div>
-            <div class="dl-item">
-              <span class="dl-label">Convictions + POV</span>
-              <p class="dl-desc">The beliefs you're actually willing to stand behind, and language that makes them legible.</p>
-            </div>
-            <div class="dl-item">
-              <span class="dl-label">Messaging Architecture</span>
-              <p class="dl-desc">A map of how your work is understood — offers, pillars, differentiators, objections, outcomes.</p>
-            </div>
-            <div class="dl-item">
-              <span class="dl-label">Voice System</span>
-              <p class="dl-desc">Repeatable patterns and boundaries that keep you sounding like <em>you</em> across contexts.</p>
-            </div>
-            <div class="dl-item">
-              <span class="dl-label">Applied Draft(s)</span>
-              <p class="dl-desc">We use the system on at least one core asset (sales page, key email, offer messaging, or equivalent) so you leave with language you can publish.</p>
+            <div class="deliverable-block">
+              <div class="deliverable-block-num">3</div>
+              <p class="deliverable-block-title">A content generation system rooted in your living brand ecosystem</p>
+              <ul class="deliverable-sub-list">
+                <li><strong>The Story Loom system:</strong> makes it easy to weave your stories + messages reliably into intentional content.</li>
+                <li><strong>Voice definition:</strong> repeatable patterns and boundaries that keep you sounding like <em>you</em> across contexts.</li>
+                <li><strong>Applied draft(s):</strong> we apply the system to at least one real asset so you leave with language you can publish (sales page, key email, offer page, etc.).</li>
+              </ul>
             </div>
           </div>
         </div>
@@ -1511,32 +1499,14 @@
     </section>
 
     <!-- ═══════════════════════════════════════════════════════════════
-         WHO IT'S FOR
-    ═══════════════════════════════════════════════════════════════ -->
-    <section class="who-for">
-      <div class="container">
-        <div class="who-for-inner fade-in">
-          <p class="eyebrow" style="margin-bottom: 20px;">Who It's For</p>
-          <h2 class="section-h2" style="margin-bottom: 32px;">Founders, coaches, creators, and practitioners.</h2>
-          <p class="who-for-body">
-            Story Loom is for founders, coaches, creators, and practitioners whose stories and messaging still feel scattered, invisible, or not quite like them.
-          </p>
-          <p class="who-for-body">
-            It's especially for <strong>conscious and spirit-led business owners</strong>, and for <strong>speakers, academics, or researchers stepping into thought leadership</strong> — who've done enough inner work to know this isn't just a surface problem, and who want language that can hold both their depth and their rigor.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══════════════════════════════════════════════════════════════
          RIGHT FOR YOU IF
     ═══════════════════════════════════════════════════════════════ -->
     <section class="rfyi-section">
       <div class="container">
         <div class="rfyi-inner fade-in">
           <p class="eyebrow" style="margin-bottom: 20px;">Right for you if</p>
+          <h2 class="section-h2" style="margin-bottom: 28px;">You're a founder, practitioner, creative, speaker, or expert who needs a clear brand as nuanced as your actual thinking.</h2>
           <ul class="rfyi-list">
-            <li>You're a <strong>founder, coach, therapist, or creative</strong> who needs a brand voice as nuanced as your actual thinking</li>
             <li>You're in the <strong>meaning-making years</strong> — exhausted by performing for a system you no longer want to replicate</li>
             <li>You have <strong>lived experience</strong> that hasn't fully made it into your public work — and you sense it should</li>
             <li>You want to build work that <strong>contributes to something larger</strong> — and need the narrative infrastructure to say that clearly</li>
