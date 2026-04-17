@@ -635,7 +635,7 @@
           See which container is right for where you are now. If you're still not sure, just book time and let's chat!
         </p>
         <div class="wm-hero-paths" style="flex-direction: column; align-items: center; gap: 18px;">
-          <a href="mailto:clea@mythograph.co" class="btn btn--terra">Book a 15-minute Fit Call →</a>
+          <a href="#" class="btn btn--terra" data-cal-link="clea-hernandez/fit-call" data-cal-namespace="fit-call" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'>Book a 15-minute Fit Call →</a>
           <p style="font-size: 14px; color: var(--ink-muted);">Working with an organization? <a href="https://mythograph.co" target="_blank" rel="noopener" style="color: var(--terra); text-decoration: underline; text-underline-offset: 3px;">Visit Mythograph →</a></p>
         </div>
       </div>
@@ -661,7 +661,7 @@
                 <p class="oa-body"><strong>Best if:</strong> you want clarity before committing to anything bigger.</p>
                 <div class="oa-invest">$200</div>
                 <div class="oa-btns">
-                  <a href="mailto:clea@mythograph.co" class="btn btn--terra">Book a Golden Thread Session →</a>
+                  <a href="#" class="btn btn--terra" data-cal-link="clea-hernandez/golden-thread-session" data-cal-namespace="golden-thread-session" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'>Book a Golden Thread Session →</a>
                 </div>
               </div>
               <div class="oa-side-card">
@@ -688,7 +688,7 @@
                 <p class="oa-body">This is the best fit when the primary work right now is <em>inner orientation and capacity</em>, not deliverables.</p>
                 <div class="oa-invest-text">A single session for <strong>$100</strong>, or a 6-session arc for <strong>$500</strong></div>
                 <div class="oa-btns">
-                  <a href="mailto:clea@mythograph.co" class="btn btn--terra-o">Book a 15-minute Fit Call →</a>
+                  <a href="#" class="btn btn--terra-o" data-cal-link="clea-hernandez/fit-call" data-cal-namespace="fit-call" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'>Book a 15-minute Fit Call →</a>
                 </div>
               </div>
               <div class="oa-side-card">
@@ -744,8 +744,8 @@
                 <p class="oa-body">Story Loom is the premium 1:1 program where we co-create your narrative operating system: stories, strategy, messaging, and voice, built using Jungian depth work from your lived stories.</p>
                 <p class="oa-body"><strong>Golden Thread is included inside Story Loom.</strong></p>
                 <div class="oa-btns">
-                  <a href="mailto:clea@mythograph.co" class="btn btn--indigo">Apply for Story Loom →</a>
-                  <a href="mailto:clea@mythograph.co" class="btn btn--terra-o">Book a 15-minute Fit Call →</a>
+                  <a href="#" class="btn btn--indigo" onclick="openModal('modal-sl');return false;">Apply for Story Loom →</a>
+                  <a href="#" class="btn btn--terra-o" data-cal-link="clea-hernandez/fit-call" data-cal-namespace="fit-call" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'>Book a 15-minute Fit Call →</a>
                 </div>
               </div>
               <div class="oa-side-card">
@@ -840,8 +840,8 @@
             Start with a Golden Thread Session or a free 15-minute fit call. We'll find the right container for the work.
           </p>
           <div class="discovery-btns">
-            <a href="mailto:clea@mythograph.co" class="btn btn--terra">Book a Golden Thread Session →</a>
-            <a href="mailto:clea@mythograph.co" class="btn btn--ghost">Book a 15-minute Fit Call</a>
+            <a href="#" class="btn btn--terra" data-cal-link="clea-hernandez/golden-thread-session" data-cal-namespace="golden-thread-session" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'>Book a Golden Thread Session →</a>
+            <a href="#" class="btn btn--ghost" data-cal-link="clea-hernandez/fit-call" data-cal-namespace="fit-call" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'>Book a 15-minute Fit Call →</a>
           </div>
 
           <div class="contact-info">
@@ -917,6 +917,39 @@
         });
       });
     })();
+  </script>
+
+  <!-- Form modals -->
+  <style>
+    .form-modal { display:none; position:fixed; inset:0; z-index:9000; background:rgba(26,20,16,.88); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); align-items:center; justify-content:center; padding:24px; }
+    .form-modal.open { display:flex; }
+    .form-modal-inner { position:relative; width:min(820px,100%); background:#fafaf7; border-radius:4px; overflow:hidden; }
+    .form-modal-close { position:absolute; top:12px; right:14px; z-index:1; background:none; border:none; cursor:pointer; font-size:22px; color:#7a6d5e; line-height:1; }
+    .form-modal iframe { display:block; width:100%; height:620px; border:none; }
+  </style>
+  <div class="form-modal" id="modal-sl" role="dialog" aria-modal="true">
+    <div class="form-modal-inner">
+      <button class="form-modal-close" aria-label="Close">✕</button>
+      <iframe src="https://funky-wolfberry-3b2.notion.site/ebd//245b10e912a080d79f6be41ca8504c8d" allowfullscreen></iframe>
+    </div>
+  </div>
+  <script>
+    function openModal(id) { document.getElementById(id).classList.add('open'); document.body.style.overflow='hidden'; }
+    function closeModal(id) { document.getElementById(id).classList.remove('open'); document.body.style.overflow=''; }
+    document.querySelectorAll('.form-modal').forEach(function(m) {
+      m.querySelector('.form-modal-close').addEventListener('click', function() { closeModal(m.id); });
+      m.addEventListener('click', function(e) { if (e.target===m) closeModal(m.id); });
+    });
+    document.addEventListener('keydown', function(e) { if (e.key==='Escape') document.querySelectorAll('.form-modal.open').forEach(function(m){closeModal(m.id);}); });
+  </script>
+
+  <!-- Cal.com element-click embed -->
+  <script type="text/javascript">
+    (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+    Cal("init", "fit-call", {origin:"https://app.cal.com"});
+    Cal.ns["fit-call"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+    Cal("init", "golden-thread-session", {origin:"https://app.cal.com"});
+    Cal.ns["golden-thread-session"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
   </script>
 </body>
 </html>

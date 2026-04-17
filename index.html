@@ -305,36 +305,56 @@
     }
 
     /* ════════════════════════════════════════════════════════════
-       CONVICTION STRIP / MARQUEE
+       BRANDS BAR
     ════════════════════════════════════════════════════════════ */
-    .marquee-section {
-      background: var(--terra);
-      padding: 18px 0;
-      overflow: hidden;
+    .brands-bar { background: var(--ink); padding: 22px 0; }
+    .brands-bar-inner {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      align-items: center;
+      gap: 40px;
     }
-    .marquee-wrap { display: flex; overflow: hidden; }
-    .marquee-track {
-      display: flex; gap: 0;
-      animation: marquee-roll 65s linear infinite;
-      white-space: nowrap; flex-shrink: 0;
+    .brands-label {
+      font-family: var(--body); font-size: 11px; font-weight: 500;
+      letter-spacing: .18em; text-transform: uppercase;
+      color: rgba(250,248,240,.38); white-space: nowrap;
     }
-    .marquee-item {
-      display: inline-flex; align-items: center; gap: 28px;
-      padding: 0 24px;
-      font-family: var(--body);
-      font-size: 11px; font-weight: 500; font-style: normal;
-      letter-spacing: .12em; text-transform: uppercase;
-      color: rgba(255, 248, 240, 0.82);
-      flex-shrink: 0;
+    .brands-names {
+      display: flex; align-items: center; justify-content: space-between;
+      transition: opacity .4s ease;
     }
-    .marquee-sep {
-      color: rgba(255, 248, 240, 0.35);
-      font-size: 7px; flex-shrink: 0;
+    .brand-name {
+      font-family: var(--body); font-size: 11px; font-weight: 500;
+      letter-spacing: .14em; text-transform: uppercase;
+      color: rgba(250,248,240,.72);
     }
-    @keyframes marquee-roll {
-      from { transform: translateX(0); }
-      to   { transform: translateX(-50%); }
+    .brand-name:nth-child(3n+1) { color: var(--terra); }
+    .brand-name:nth-child(3n+2) { color: var(--gold); }
+    @media (max-width: 768px) {
+      .brands-bar-inner { grid-template-columns: 1fr; gap: 14px; }
+      .brands-names { flex-wrap: wrap; gap: 10px; justify-content: flex-start; }
     }
+
+    /* ════════════════════════════════════════════════════════════
+       FORM MODALS
+    ════════════════════════════════════════════════════════════ */
+    .form-modal {
+      display: none; position: fixed; inset: 0; z-index: 9000;
+      background: rgba(26,20,16,.88);
+      backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+      align-items: center; justify-content: center; padding: 24px;
+    }
+    .form-modal.open { display: flex; }
+    .form-modal-inner {
+      position: relative; width: min(820px, 100%);
+      background: var(--white); border-radius: 4px; overflow: hidden;
+    }
+    .form-modal-close {
+      position: absolute; top: 12px; right: 14px; z-index: 1;
+      background: none; border: none; cursor: pointer;
+      font-size: 22px; color: var(--ink-muted); line-height: 1;
+    }
+    .form-modal iframe { display: block; width: 100%; height: 620px; border: none; }
 
     /* ════════════════════════════════════════════════════════════
        PROBLEM SECTION
@@ -1217,8 +1237,8 @@
           </p>
 
           <div class="hero-btns fade-in delay-3">
-            <a href="mailto:clea@mythograph.co" class="btn btn--terra">Apply for Story Loom →</a>
-            <a href="mailto:clea@mythograph.co" class="btn btn--ghost">Book a Golden Thread Session →</a>
+            <a href="#" class="btn btn--terra" onclick="openModal('modal-sl');return false;">Apply for Story Loom →</a>
+            <a href="#" class="btn btn--ghost" data-cal-link="clea-hernandez/golden-thread-session" data-cal-namespace="golden-thread-session" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'>Book a Golden Thread Session →</a>
           </div>
         </div>
 
@@ -1324,83 +1344,12 @@
     </section>
 
     <!-- ═══════════════════════════════════════════════════════════════
-         CLIENT MARQUEE
+         BRANDS BAR
     ═══════════════════════════════════════════════════════════════ -->
-    <div class="marquee-section" aria-label="Selected clients and collaborators">
-      <div class="marquee-wrap">
-        <!-- Track is duplicated so the animation loops seamlessly -->
-        <div class="marquee-track">
-          <!-- Set A -->
-          <span class="marquee-item">Liquid Death <span class="marquee-sep">✦</span></span>
-          <span class="marquee-item">Gulfstream Aerospace <span class="marquee-sep">✦</span></span>
-          <span class="marquee-item">Braze <span class="marquee-sep">✦</span></span>
-          <span class="marquee-item">Marketo <span class="marquee-sep">✦</span></span>
-          <span class="marquee-item">Babylist <span class="marquee-sep">✦</span></span>
-          <span class="marquee-item">Focus Lab <span class="marquee-sep">✦</span></span>
-          <span class="marquee-item">SaveLife Foundation <span class="marquee-sep">✦</span></span>
-          <span class="marquee-item">Outreach <span class="marquee-sep">✦</span></span>
-          <span class="marquee-item">Heyo <span class="marquee-sep">✦</span></span>
-          <span class="marquee-item">Elevate Cities <span class="marquee-sep">✦</span></span>
-          <span class="marquee-item">Miami WaterKeeper <span class="marquee-sep">✦</span></span>
-          <span class="marquee-item">Geomi <span class="marquee-sep">✦</span></span>
-          <span class="marquee-item">E.M. Perry Group <span class="marquee-sep">✦</span></span>
-          <span class="marquee-item">Versus <span class="marquee-sep">✦</span></span>
-          <span class="marquee-item">Sunrail Strategies <span class="marquee-sep">✦</span></span>
-          <span class="marquee-item">Brand by Boudica <span class="marquee-sep">✦</span></span>
-          <span class="marquee-item">Tillster <span class="marquee-sep">✦</span></span>
-          <span class="marquee-item">Concierge AI <span class="marquee-sep">✦</span></span>
-          <span class="marquee-item">Bare Metal Project <span class="marquee-sep">✦</span></span>
-          <span class="marquee-item">The Lab School of Washington <span class="marquee-sep">✦</span></span>
-          <span class="marquee-item">Brilliant Cities <span class="marquee-sep">✦</span></span>
-          <span class="marquee-item">Sprimont Health <span class="marquee-sep">✦</span></span>
-          <span class="marquee-item">Rocket Learning <span class="marquee-sep">✦</span></span>
-          <span class="marquee-item">Gravitee <span class="marquee-sep">✦</span></span>
-          <span class="marquee-item">FreeFrom <span class="marquee-sep">✦</span></span>
-          <span class="marquee-item">Vibe <span class="marquee-sep">✦</span></span>
-          <span class="marquee-item">Oriel <span class="marquee-sep">✦</span></span>
-          <span class="marquee-item">Thrum <span class="marquee-sep">✦</span></span>
-          <span class="marquee-item">LG Nova <span class="marquee-sep">✦</span></span>
-          <span class="marquee-item">Paytouch <span class="marquee-sep">✦</span></span>
-          <span class="marquee-item">Pry Financials <span class="marquee-sep">✦</span></span>
-          <span class="marquee-item">Eventrise <span class="marquee-sep">✦</span></span>
-          <span class="marquee-item">Four Friends Foundation <span class="marquee-sep">✦</span></span>
-          <span class="marquee-item">The Robot Agency <span class="marquee-sep">✦</span></span>
-          <!-- Set B — duplicate for seamless loop -->
-          <span class="marquee-item">Liquid Death <span class="marquee-sep">✦</span></span>
-          <span class="marquee-item">Gulfstream Aerospace <span class="marquee-sep">✦</span></span>
-          <span class="marquee-item">Braze <span class="marquee-sep">✦</span></span>
-          <span class="marquee-item">Marketo <span class="marquee-sep">✦</span></span>
-          <span class="marquee-item">Babylist <span class="marquee-sep">✦</span></span>
-          <span class="marquee-item">Focus Lab <span class="marquee-sep">✦</span></span>
-          <span class="marquee-item">SaveLife Foundation <span class="marquee-sep">✦</span></span>
-          <span class="marquee-item">Outreach <span class="marquee-sep">✦</span></span>
-          <span class="marquee-item">Heyo <span class="marquee-sep">✦</span></span>
-          <span class="marquee-item">Elevate Cities <span class="marquee-sep">✦</span></span>
-          <span class="marquee-item">Miami WaterKeeper <span class="marquee-sep">✦</span></span>
-          <span class="marquee-item">Geomi <span class="marquee-sep">✦</span></span>
-          <span class="marquee-item">E.M. Perry Group <span class="marquee-sep">✦</span></span>
-          <span class="marquee-item">Versus <span class="marquee-sep">✦</span></span>
-          <span class="marquee-item">Sunrail Strategies <span class="marquee-sep">✦</span></span>
-          <span class="marquee-item">Brand by Boudica <span class="marquee-sep">✦</span></span>
-          <span class="marquee-item">Tillster <span class="marquee-sep">✦</span></span>
-          <span class="marquee-item">Concierge AI <span class="marquee-sep">✦</span></span>
-          <span class="marquee-item">Bare Metal Project <span class="marquee-sep">✦</span></span>
-          <span class="marquee-item">The Lab School of Washington <span class="marquee-sep">✦</span></span>
-          <span class="marquee-item">Brilliant Cities <span class="marquee-sep">✦</span></span>
-          <span class="marquee-item">Sprimont Health <span class="marquee-sep">✦</span></span>
-          <span class="marquee-item">Rocket Learning <span class="marquee-sep">✦</span></span>
-          <span class="marquee-item">Gravitee <span class="marquee-sep">✦</span></span>
-          <span class="marquee-item">FreeFrom <span class="marquee-sep">✦</span></span>
-          <span class="marquee-item">Vibe <span class="marquee-sep">✦</span></span>
-          <span class="marquee-item">Oriel <span class="marquee-sep">✦</span></span>
-          <span class="marquee-item">Thrum <span class="marquee-sep">✦</span></span>
-          <span class="marquee-item">LG Nova <span class="marquee-sep">✦</span></span>
-          <span class="marquee-item">Paytouch <span class="marquee-sep">✦</span></span>
-          <span class="marquee-item">Pry Financials <span class="marquee-sep">✦</span></span>
-          <span class="marquee-item">Eventrise <span class="marquee-sep">✦</span></span>
-          <span class="marquee-item">Four Friends Foundation <span class="marquee-sep">✦</span></span>
-          <span class="marquee-item">The Robot Agency <span class="marquee-sep">✦</span></span>
-        </div>
+    <div class="brands-bar" aria-label="Brands I've worked with">
+      <div class="container brands-bar-inner">
+        <span class="brands-label">Brands I've worked with</span>
+        <div class="brands-names" id="brandsNames" aria-live="polite"></div>
       </div>
     </div>
 
@@ -1664,7 +1613,7 @@
               <span class="way-num">01 / Story Loom</span>
               <h3 class="way-title">Narrative OS Build</h3>
               <p class="way-body">We work deeply together in coaching sessions to map your journey and truths, then co-create your brand strategy and language: Golden Thread, story bank, convictions, messaging architecture, and a voice system you can embody confidently.</p>
-              <a href="mailto:clea@mythograph.co" class="btn btn--indigo">Apply for Story Loom →</a>
+              <a href="#" class="btn btn--indigo" onclick="openModal('modal-sl');return false;">Apply for Story Loom →</a>
             </div>
 
             <div class="way-card">
@@ -1678,7 +1627,7 @@
                 <li>A gentle "launch" post that invites without performing</li>
                 <li>An aligned marketing plan for what comes next</li>
               </ul>
-              <a href="mailto:clea@mythograph.co" class="btn btn--ink">Apply for Full Build →</a>
+              <a href="#" class="btn btn--ink" onclick="openModal('modal-fb');return false;">Apply for Full Build →</a>
             </div>
           </div>
         </div>
@@ -1784,7 +1733,7 @@
               <p class="pc-price">$3,600</p>
               <p class="pc-desc">Golden Thread, story bank, convictions, messaging architecture, voice system, and applied draft(s).</p>
               <div style="margin-top: 28px;">
-                <a href="mailto:clea@mythograph.co" class="btn btn--indigo">Apply →</a>
+                <a href="#" class="btn btn--indigo" onclick="openModal('modal-sl');return false;">Apply →</a>
               </div>
             </div>
             <div class="pricing-card">
@@ -1793,7 +1742,7 @@
               <p class="pc-price">$6,750</p>
               <p class="pc-desc">Everything in Story Loom, plus a visual brand identity and self-hosted website built and launched.</p>
               <div style="margin-top: 28px;">
-                <a href="mailto:clea@mythograph.co" class="btn btn--ink">Apply →</a>
+                <a href="#" class="btn btn--ink" onclick="openModal('modal-fb');return false;">Apply →</a>
               </div>
             </div>
           </div>
@@ -1811,7 +1760,7 @@
           <p class="not-sure-body">
             If you want to begin with a single session, start with the <strong>Golden Thread Session</strong> ($200). If you decide to move into Story Loom from there, it's credited back to you.
           </p>
-          <a href="mailto:clea@mythograph.co" class="btn btn--terra">Book a Golden Thread Session →</a>
+          <a href="#" class="btn btn--terra" data-cal-link="clea-hernandez/golden-thread-session" data-cal-namespace="golden-thread-session" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'>Book a Golden Thread Session →</a>
         </div>
       </div>
     </section>
@@ -1840,8 +1789,8 @@
         <div class="closing-inner fade-in">
           <h2 class="closing-h2">The story you've kept half-hidden is usually the one that changes everything.</h2>
           <div class="closing-btns">
-            <a href="mailto:clea@mythograph.co" class="btn btn--terra">Apply for Story Loom →</a>
-            <a href="mailto:clea@mythograph.co" class="btn btn--ghost">Book a Golden Thread Session →</a>
+            <a href="#" class="btn btn--terra" onclick="openModal('modal-sl');return false;">Apply for Story Loom →</a>
+            <a href="#" class="btn btn--ghost" data-cal-link="clea-hernandez/golden-thread-session" data-cal-namespace="golden-thread-session" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'>Book a Golden Thread Session →</a>
           </div>
         </div>
       </div>
@@ -1958,6 +1907,75 @@
         });
       });
     })();
+  </script>
+
+  <!-- ═══ FORM MODALS ═══ -->
+  <div class="form-modal" id="modal-sl" role="dialog" aria-modal="true" aria-label="Story Loom application">
+    <div class="form-modal-inner">
+      <button class="form-modal-close" aria-label="Close">✕</button>
+      <iframe src="https://funky-wolfberry-3b2.notion.site/ebd//245b10e912a080d79f6be41ca8504c8d" allowfullscreen></iframe>
+    </div>
+  </div>
+  <div class="form-modal" id="modal-fb" role="dialog" aria-modal="true" aria-label="Full Build application">
+    <div class="form-modal-inner">
+      <button class="form-modal-close" aria-label="Close">✕</button>
+      <iframe src="https://funky-wolfberry-3b2.notion.site/ebd//c3336c2e709446808c0c626d4348f721" allowfullscreen></iframe>
+    </div>
+  </div>
+
+  <script>
+    /* ── Modal system ── */
+    function openModal(id) {
+      document.getElementById(id).classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeModal(id) {
+      document.getElementById(id).classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    document.querySelectorAll('.form-modal').forEach(function(m) {
+      m.querySelector('.form-modal-close').addEventListener('click', function() { closeModal(m.id); });
+      m.addEventListener('click', function(e) { if (e.target === m) closeModal(m.id); });
+    });
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') document.querySelectorAll('.form-modal.open').forEach(function(m) { closeModal(m.id); });
+    });
+  </script>
+
+  <script>
+    /* ── Brands cycling bar ── */
+    (function() {
+      var brands = [
+        'Liquid Death','Gulfstream Aerospace','Braze','Marketo','Babylist','Focus Lab',
+        'SaveLife Foundation','Outreach','Heyo','Elevate Cities','Miami WaterKeeper','Geomi',
+        'E.M. Perry Group','Versus','Sunrail Strategies','Brand by Boudica','Tillster','Concierge AI',
+        'Bare Metal Project','The Lab School of Washington','Brilliant Cities','Sprimont Health','Rocket Learning','Gravitee',
+        'FreeFrom','Vibe','Oriel','Thrum','LG Nova','Paytouch',
+        'Pry Financials','Eventrise','Four Friends Foundation','The Robot Agency'
+      ];
+      var el = document.getElementById('brandsNames');
+      if (!el) return;
+      var offset = 0, COUNT = 6;
+      function show() {
+        el.style.opacity = '0';
+        setTimeout(function() {
+          var html = '';
+          for (var i = 0; i < COUNT; i++) html += '<span class="brand-name">' + brands[(offset + i) % brands.length] + '</span>';
+          el.innerHTML = html;
+          el.style.opacity = '1';
+          offset = (offset + COUNT) % brands.length;
+        }, 380);
+      }
+      show();
+      setInterval(show, 3000);
+    })();
+  </script>
+
+  <!-- Cal.com element-click embed -->
+  <script type="text/javascript">
+    (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+    Cal("init", "golden-thread-session", {origin:"https://app.cal.com"});
+    Cal.ns["golden-thread-session"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
   </script>
 </body>
 </html>
