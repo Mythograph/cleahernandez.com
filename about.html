@@ -615,7 +615,7 @@
           <h1 class="about-hero-h1" style="margin-top: 24px;">
             Bringing joy to the creative work of remembering who you are.
           </h1>
-          <figure class="sidebar-painting" style="margin-top: 28px;">
+          <figure class="sidebar-painting" style="margin-top: 28px; max-width: 240px;">
             <img
               src="clea_painting.jpg"
               alt="Abstract expressionist portrait of Cléa Hernández — seated figure in teal, yellow, and blue brushwork on a grey-blue ground"
@@ -665,16 +665,6 @@
 
       </div>
     </section>
-
-    <!-- ─── PHOTO STRIP ─── -->
-    <div class="mj-strip" style="height: auto; background: var(--mist);" role="img" aria-label="Cléa Hernández at a whiteboard session">
-      <img
-        src="PHOTO-2023-10-06-10-32-56.jpg"
-        alt="Cléa Hernández at a whiteboard session"
-        style="height: auto; max-height: 560px; object-fit: contain; object-position: center center;"
-        loading="lazy"
-      />
-    </div>
 
     <!-- ─── FULL STORY ─── -->
     <section class="story">
@@ -762,7 +752,16 @@
           <!-- Sidebar -->
           <div class="about-sidebar fade-in delay-1">
 
-            <div class="sidebar-card">
+            <figure style="margin: 0; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--border);">
+              <img
+                src="PHOTO-2023-10-06-10-32-56.jpg"
+                alt="Cléa Hernández at a whiteboard session"
+                style="width: 100%; height: auto; display: block;"
+                loading="lazy"
+              />
+            </figure>
+
+            <div class="sidebar-card" style="margin-top: 32px;">
               <p class="sidebar-card-title">Influences</p>
               <p style="font-size: 14px; line-height: 1.7; color: var(--ink-muted); margin-bottom: 14px;">The work we do together doesn't come out of nowhere. It grows from a weird and wonderful stack of influences that shape how I see story, systems, and possibility. Here are some of them:</p>
               <ul class="sidebar-list">
