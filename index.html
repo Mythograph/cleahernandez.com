@@ -868,10 +868,32 @@
     /* ════════════════════════════════════════════════════════════
        WHAT STORY LOOM IS
     ════════════════════════════════════════════════════════════ */
-    .sl-what { padding: 80px 0; }
-    .sl-what-inner { max-width: 720px; margin: 0 auto; }
+    .sl-what { padding: 96px 0; }
+    .sl-what-inner {
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      gap: 72px;
+      align-items: center;
+    }
+    .sl-program-name {
+      font-family: var(--display);
+      font-size: clamp(48px, 7vw, 96px);
+      font-weight: 700;
+      line-height: 0.95;
+      letter-spacing: -0.03em;
+      color: var(--ink);
+      margin: 16px 0 20px;
+    }
+    .sl-subhead {
+      font-family: var(--serif);
+      font-size: clamp(18px, 2vw, 24px);
+      font-weight: 400;
+      font-style: italic;
+      color: var(--ink-muted);
+      margin-bottom: 28px;
+    }
     .sl-lead {
-      font-size: clamp(17px, 1.8vw, 20px); font-weight: 400;
+      font-size: clamp(16px, 1.5vw, 18px); font-weight: 400;
       line-height: 1.82; color: var(--ink-muted); margin-bottom: 8px;
     }
     .sl-features { list-style: none; padding: 0; margin: 24px 0 0; display: grid; gap: 12px; }
@@ -883,6 +905,16 @@
       font-size: 16px; line-height: 1.72; color: var(--ink-muted);
     }
     .sl-features li strong { color: var(--ink); font-weight: 500; }
+    .sl-what-img {
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      border-radius: 2px;
+    }
+    @media (max-width: 860px) {
+      .sl-what-inner { grid-template-columns: 1fr; }
+      .sl-what-img { aspect-ratio: 16 / 9; }
+    }
 
     /* ════════════════════════════════════════════════════════════
        WHAT YOU LEAVE WITH
@@ -1402,17 +1434,26 @@
     <section class="sl-what">
       <div class="container">
         <div class="sl-what-inner fade-in">
-          <p class="eyebrow" style="margin-bottom: 20px;">Story Loom</p>
-          <h2 class="section-h2" style="margin-bottom: 28px;">A relational brand-build.</h2>
-          <p class="sl-lead">
-            Story Loom is a 1:1 container where we uncover the living intelligence inside your work, then architect it into a narrative system that can hold:
-          </p>
-          <ul class="sl-features">
-            <li>the truth of what you do <strong>(without flattening it)</strong></li>
-            <li>the specificity of who it's for <strong>(without niche panic)</strong></li>
-            <li>the emotional and ethical spine of your point of view <strong>(without posturing)</strong></li>
-            <li>the language you can actually use <strong>(without sounding like anyone else)</strong></li>
-          </ul>
+          <div class="sl-what-text">
+            <span class="pill pill--indigo">The Signature Program</span>
+            <h2 class="sl-program-name">Story Loom</h2>
+            <p class="sl-subhead">A co-creative brand build.</p>
+            <p class="sl-lead">
+              Story Loom is a co-creative brand build, where we uncover the stories and messages that are most alive for you, then architect them into a narrative ecosystem that can hold:
+            </p>
+            <ul class="sl-features">
+              <li>the truth of what you do <strong>(without flattening it)</strong></li>
+              <li>the specificity of who it's for <strong>(without niche panic)</strong></li>
+              <li>the emotional and ethical spine of your point of view <strong>(without posturing)</strong></li>
+              <li>the language you can actually use <strong>(without sounding like anyone else)</strong></li>
+            </ul>
+          </div>
+          <img
+            class="sl-what-img"
+            src="mj_storyloom_archetype.png"
+            alt="Surrealist narrative archetype image — golden threads of story emerging from deep interior work"
+            loading="lazy"
+          />
         </div>
       </div>
     </section>
