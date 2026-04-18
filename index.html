@@ -1005,25 +1005,20 @@
     /* ════════════════════════════════════════════════════════════
        RIGHT FOR YOU IF
     ════════════════════════════════════════════════════════════ */
-    .rfyi-section { padding: 80px 0; }
-    .rfyi-inner { max-width: 720px; margin: 0 auto; }
-    .rfyi-list { list-style: none; padding: 0; margin-top: 28px; display: grid; gap: 10px; }
-    .rfyi-list li {
-      padding: 14px 20px 14px 44px;
-      position: relative;
-      font-size: clamp(15px, 1.4vw, 17px);
-      line-height: 1.75;
-      color: var(--ink-muted);
-      background: var(--mist);
-      border-left: 3px solid var(--terra);
-      border-radius: 0 var(--radius) var(--radius) 0;
+    .rfyi-section { padding: 80px 0; background: var(--fog); }
+    .rfyi-inner { display: grid; grid-template-columns: 1fr 1.5fr; gap: 72px; align-items: start; }
+    .rfyi-cards { display: grid; gap: 10px; }
+    .rfyi-card {
+      display: flex; align-items: flex-start; gap: 16px;
+      padding: 18px 22px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
     }
-    .rfyi-list li::before {
-      content: '✦';
-      position: absolute; left: 16px; top: 14px;
-      color: var(--terra); font-size: 11px;
-    }
-    .rfyi-list li strong { color: var(--ink); font-weight: 500; }
+    .rfyi-card-icon { color: var(--terra); font-size: 12px; flex-shrink: 0; margin-top: 3px; }
+    .rfyi-card-text { font-size: 15px; line-height: 1.72; color: var(--ink-muted); margin: 0; }
+    .rfyi-card-text strong { color: var(--ink); font-weight: 600; }
+    @media (max-width: 800px) { .rfyi-inner { grid-template-columns: 1fr; gap: 40px; } }
 
     /* ════════════════════════════════════════════════════════════
        HOW IT WORKS
@@ -1502,21 +1497,35 @@
     ═══════════════════════════════════════════════════════════════ -->
     <section class="rfyi-section">
       <div class="container">
-        <div class="rfyi-inner fade-in">
-          <p class="eyebrow" style="margin-bottom: 20px;">Right for you if</p>
-          <h2 class="section-h2" style="margin-bottom: 20px;">You know the work wants to say something more.</h2>
-          <p style="font-size: 17px; line-height: 1.8; color: var(--ink-muted); margin-bottom: 32px;">You haven't yet found language for it that doesn't sound like everyone else. Or the work you've built doesn't feel like it fully holds what you actually believe. This is where we start.</p>
-          <div class="rfyi-list" style="list-style:none; padding:0;">
-            <div style="text-align:center; color:var(--terra); margin: 0 0 20px; font-size: 15px; letter-spacing:.1em;">✦</div>
-            <p style="font-size: 16px; line-height: 1.75; color: var(--ink-muted); margin-bottom: 20px;">You're a founder, practitioner, creative, speaker, or expert who needs a brand narrative as nuanced as your actual thinking</p>
-            <div style="text-align:center; color:var(--terra); margin: 0 0 20px; font-size: 15px; letter-spacing:.1em;">✦</div>
-            <p style="font-size: 16px; line-height: 1.75; color: var(--ink-muted); margin-bottom: 20px;">You're in the <strong>meaning-making years</strong> — exhausted by performing for a system you no longer want to replicate</p>
-            <div style="text-align:center; color:var(--terra); margin: 0 0 20px; font-size: 15px; letter-spacing:.1em;">✦</div>
-            <p style="font-size: 16px; line-height: 1.75; color: var(--ink-muted); margin-bottom: 20px;">You have <strong>lived experience</strong> that hasn't fully made it into your public work — and you sense it should</p>
-            <div style="text-align:center; color:var(--terra); margin: 0 0 20px; font-size: 15px; letter-spacing:.1em;">✦</div>
-            <p style="font-size: 16px; line-height: 1.75; color: var(--ink-muted); margin-bottom: 20px;">You want to build work that <strong>contributes to something larger</strong> — and need the narrative infrastructure to say that clearly</p>
-            <div style="text-align:center; color:var(--terra); margin: 0 0 20px; font-size: 15px; letter-spacing:.1em;">✦</div>
-            <p style="font-size: 16px; line-height: 1.75; color: var(--ink-muted); margin-bottom: 0;">You're done with <strong>borrowed frameworks</strong> that never quite fit — you want to excavate your own</p>
+        <div class="rfyi-inner">
+          <!-- Left column -->
+          <div class="fade-in">
+            <p class="eyebrow" style="margin-bottom: 20px;">Right for you if</p>
+            <h2 class="section-h2" style="margin-bottom: 20px;">You know the work wants to say something more.</h2>
+            <p style="font-size: 16px; line-height: 1.8; color: var(--ink-muted);">You haven't yet found language for it that doesn't sound like everyone else. Or the work you've built doesn't feel like it fully holds what you actually believe. This is where we start.</p>
+          </div>
+          <!-- Right column -->
+          <div class="rfyi-cards fade-in delay-1">
+            <div class="rfyi-card">
+              <span class="rfyi-card-icon">✦</span>
+              <p class="rfyi-card-text">You're a founder, practitioner, creative, speaker, or expert who needs a brand narrative as nuanced as your actual thinking</p>
+            </div>
+            <div class="rfyi-card">
+              <span class="rfyi-card-icon">✦</span>
+              <p class="rfyi-card-text">You're in the <strong>meaning-making years</strong> — exhausted by performing for a system you no longer want to replicate</p>
+            </div>
+            <div class="rfyi-card">
+              <span class="rfyi-card-icon">✦</span>
+              <p class="rfyi-card-text">You have <strong>lived experience</strong> that hasn't fully made it into your public work — and you sense it should</p>
+            </div>
+            <div class="rfyi-card">
+              <span class="rfyi-card-icon">✦</span>
+              <p class="rfyi-card-text">You want to build work that <strong>contributes to something larger</strong> — and need the narrative infrastructure to say that clearly</p>
+            </div>
+            <div class="rfyi-card">
+              <span class="rfyi-card-icon">✦</span>
+              <p class="rfyi-card-text">You're done with <strong>borrowed frameworks</strong> that never quite fit — you want to excavate your own</p>
+            </div>
           </div>
         </div>
       </div>
