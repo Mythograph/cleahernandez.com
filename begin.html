@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Begin — Cléa Hernández</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,300;1,9..144,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --white:      #FAFAF7;
+      --ink:        #1A1410;
+      --ink-muted:  #7A6D5E;
+      --terra:      #C05A3C;
+      --gold:       #C8A24A;
+      --mist:       #F2ECE4;
+      --border:     rgba(34, 24, 48, 0.09);
+      --serif:      'Fraunces', Georgia, serif;
+      --body:       'DM Sans', system-ui, -apple-system, sans-serif;
+      --max:        1160px;
+      --pad:        40px;
+      --radius:     4px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--body);
+      background: var(--white);
+      color: var(--ink);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+    body::after {
+      content: ''; position: fixed; inset: 0;
+      pointer-events: none; z-index: 9999; opacity: 0.030;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-size: 200px 200px;
+    }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; }
+
+    .container { max-width: var(--max); margin: 0 auto; padding: 0 var(--pad); }
+
+    /* ── Buttons ── */
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-family: var(--body); font-size: 12px; font-weight: 500;
+      letter-spacing: .07em; text-transform: uppercase;
+      padding: 14px 28px; border-radius: var(--radius);
+      cursor: pointer; transition: opacity .18s, transform .15s;
+      border: none; line-height: 1; text-decoration: none;
+    }
+    .btn:hover { opacity: .82; transform: translateY(-1px); }
+    .btn--terra   { background: var(--terra); color: #fff; }
+    .btn--terra-o { background: transparent; color: var(--terra); border: 2px solid var(--terra); }
+    .btn--full    { width: 100%; justify-content: center; }
+
+    /* ── Nav ── */
+    .nav-wrap {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(250, 250, 247, 0.94);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+    }
+    .nav {
+      display: flex; align-items: center; justify-content: space-between;
+      height: 68px; max-width: var(--max); margin: 0 auto; padding: 0 var(--pad);
+    }
+    .nav-logo {
+      font-family: var(--serif); font-size: 22px; font-weight: 400; font-style: italic;
+      color: var(--terra); letter-spacing: .01em;
+    }
+
+    /* ── Hero ── */
+    .hero {
+      padding: 88px 0 72px;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+    }
+    .hero-eyebrow {
+      font-family: var(--body); font-size: 10px; font-weight: 500;
+      letter-spacing: .2em; text-transform: uppercase;
+      color: var(--terra); margin-bottom: 24px; display: block;
+    }
+    .hero-h1 {
+      font-family: var(--serif);
+      font-size: clamp(40px, 6vw, 72px);
+      font-weight: 600; line-height: 1.1; letter-spacing: -0.02em;
+      color: var(--ink); margin-bottom: 24px;
+    }
+    .hero-subhead {
+      font-size: 18px; font-weight: 300;
+      line-height: 1.8; color: var(--ink-muted);
+      max-width: 580px; margin: 0 auto 20px;
+    }
+    .hero-note {
+      font-size: 13px; color: var(--ink-muted);
+      max-width: 520px; margin: 0 auto;
+      line-height: 1.7; opacity: 0.8;
+    }
+
+    /* ── Pricing ── */
+    .pricing { padding: 80px 0; }
+    .pricing-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 40px;
+      align-items: start;
+    }
+    .offer-col { display: flex; flex-direction: column; gap: 0; }
+    .offer-header { margin-bottom: 28px; }
+    .offer-label {
+      display: block;
+      font-family: var(--body); font-size: 10px; font-weight: 600;
+      letter-spacing: .18em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 10px;
+    }
+    .offer-h2 {
+      font-family: var(--serif); font-size: clamp(28px, 3vw, 40px);
+      font-weight: 600; line-height: 1.1; color: var(--ink);
+      margin-bottom: 10px;
+    }
+    .offer-desc {
+      font-size: 15px; font-weight: 300; color: var(--ink-muted);
+      line-height: 1.7; margin-bottom: 8px;
+    }
+    .offer-timeline {
+      font-size: 12px; font-weight: 500; letter-spacing: .1em;
+      text-transform: uppercase; color: var(--ink-muted); opacity: 0.65;
+    }
+
+    .plan-cards { display: flex; flex-direction: column; gap: 12px; }
+    .plan-card {
+      background: var(--mist);
+      border-radius: var(--radius);
+      padding: 24px 28px;
+    }
+    .plan-card-top {
+      display: flex; align-items: center; justify-content: space-between;
+      margin-bottom: 16px; flex-wrap: wrap; gap: 8px;
+    }
+    .plan-name {
+      font-size: 13px; font-weight: 500; color: var(--ink-muted);
+      letter-spacing: .04em;
+    }
+    .plan-price {
+      font-family: var(--serif); font-size: 22px; font-weight: 600;
+      color: var(--ink); line-height: 1;
+    }
+    .plan-price-sub {
+      font-size: 13px; font-weight: 400; color: var(--ink-muted);
+    }
+    .plan-badge {
+      display: inline-flex; align-items: center;
+      font-family: var(--body); font-size: 9px; font-weight: 600;
+      letter-spacing: .15em; text-transform: uppercase;
+      color: var(--ink); background: var(--gold);
+      padding: 4px 10px; border-radius: 100px;
+    }
+    .plan-note {
+      font-size: 12px; color: var(--ink-muted);
+      margin-top: 10px; line-height: 1.6; font-style: italic;
+    }
+
+    /* ── FAQ ── */
+    .faq {
+      background: var(--ink); padding: 88px 0;
+      color: rgba(250, 250, 247, 0.6);
+    }
+    .faq-inner { max-width: 680px; margin: 0 auto; }
+    .faq-h2 {
+      font-family: var(--serif); font-size: clamp(28px, 4vw, 44px);
+      font-weight: 600; line-height: 1.2;
+      color: rgba(250, 250, 247, 0.92);
+      margin-bottom: 52px;
+    }
+    .faq-list { display: flex; flex-direction: column; gap: 36px; }
+    .faq-q {
+      font-family: var(--serif); font-size: 17px; font-style: italic;
+      color: rgba(250, 250, 247, 0.85); margin-bottom: 10px; line-height: 1.4;
+    }
+    .faq-a {
+      font-size: 15px; font-weight: 300; line-height: 1.8;
+      color: rgba(250, 250, 247, 0.5);
+    }
+
+    /* ── Footer line ── */
+    .page-footer {
+      padding: 40px 0;
+      text-align: center;
+      border-top: 1px solid var(--border);
+    }
+    .page-footer p {
+      font-size: 14px; color: var(--ink-muted);
+    }
+    .page-footer a {
+      color: var(--terra); text-decoration: underline;
+      text-underline-offset: 3px; transition: opacity .15s;
+    }
+    .page-footer a:hover { opacity: .75; }
+
+    /* ── Responsive ── */
+    @media (max-width: 760px) {
+      :root { --pad: 24px; }
+      .pricing-grid { grid-template-columns: 1fr; gap: 56px; }
+      .plan-card-top { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Minimal nav — logo only, no links to/from this page -->
+  <header class="nav-wrap">
+    <nav class="nav">
+      <a href="index.html" class="nav-logo">Cléa Hernández</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ── HERO ── -->
+    <section class="hero">
+      <div class="container">
+        <span class="hero-eyebrow">You're in.</span>
+        <h1 class="hero-h1">Ready to begin.</h1>
+        <p class="hero-subhead">
+          You're in the right place. Choose your program and payment preference below — you'll receive your intake form within 24 hours of your first payment.
+        </p>
+        <p class="hero-note">
+          ACH is preferred, but choose whatever works best for you.
+        </p>
+      </div>
+    </section>
+
+    <!-- ── PRICING ── -->
+    <section class="pricing">
+      <div class="container">
+        <div class="pricing-grid">
+
+          <!-- Full Build (left / anchor offer) -->
+          <div class="offer-col">
+            <div class="offer-header">
+              <span class="offer-label">Brand + Website</span>
+              <h2 class="offer-h2">Full Build</h2>
+              <p class="offer-desc">Everything in Story Loom, plus visual brand identity and a self-hosted website built and launched.</p>
+              <span class="offer-timeline">8 weeks</span>
+            </div>
+
+            <div class="plan-cards">
+
+              <div class="plan-card">
+                <div class="plan-card-top">
+                  <span class="plan-name">Pay in Full</span>
+                  <span class="plan-price">$6,750</span>
+                </div>
+                <a href="https://buy.stripe.com/dRmaEY3H95Jh1Yn0H8fAc03" class="btn btn--terra btn--full">Begin — Pay in Full</a>
+                <p class="plan-note">Pay in full and keep it simple — no follow-up payments to track.</p>
+              </div>
+
+              <div class="plan-card">
+                <div class="plan-card-top">
+                  <span class="plan-name">2 Installments</span>
+                  <span class="plan-price">$3,375 <span class="plan-price-sub">× 2</span></span>
+                </div>
+                <a href="https://buy.stripe.com/00waEYelN8VtgTh1LcfAc05" class="btn btn--terra btn--full">Begin — 2 Installments</a>
+              </div>
+
+              <div class="plan-card">
+                <div class="plan-card-top">
+                  <span class="plan-name">3 Installments</span>
+                  <span class="plan-price">$2,250 <span class="plan-price-sub">× 3</span></span>
+                </div>
+                <a href="https://buy.stripe.com/fZu9AUa5xc7F8mL0H8fAc04" class="btn btn--terra-o btn--full">Begin — 3 Installments</a>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Story Loom (right / natural choice) -->
+          <div class="offer-col">
+            <div class="offer-header">
+              <span class="offer-label">Narrative OS</span>
+              <h2 class="offer-h2">Story Loom</h2>
+              <p class="offer-desc">Uncover your stories and architect them into a narrative ecosystem that's entirely yours.</p>
+              <span class="offer-timeline">6 weeks</span>
+            </div>
+
+            <div class="plan-cards">
+
+              <div class="plan-card">
+                <div class="plan-card-top">
+                  <span class="plan-name">Pay in Full</span>
+                  <span class="plan-price">$3,600</span>
+                </div>
+                <a href="https://buy.stripe.com/14AeVe7Xp7Rp46v4XofAc06" class="btn btn--terra btn--full">Begin — Pay in Full</a>
+                <p class="plan-note">Pay in full and keep it simple — no follow-up payments to track.</p>
+              </div>
+
+              <div class="plan-card">
+                <div class="plan-card-top">
+                  <span class="plan-name">2 Installments</span>
+                  <span class="plan-price">$1,800 <span class="plan-price-sub">× 2</span></span>
+                </div>
+                <a href="https://buy.stripe.com/eVq7sM2D59ZxgTh0H8fAc07" class="btn btn--terra btn--full">Begin — 2 Installments</a>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── FAQ ── -->
+    <section class="faq">
+      <div class="container">
+        <div class="faq-inner">
+          <h2 class="faq-h2">A few things you might be wondering</h2>
+          <div class="faq-list">
+
+            <div class="faq-item">
+              <p class="faq-q">What happens after I pay?</p>
+              <p class="faq-a">You'll receive an email from me within 24 hours with your intake form and everything you need to get started.</p>
+            </div>
+
+            <div class="faq-item">
+              <p class="faq-q">When do we officially begin?</p>
+              <p class="faq-a">Once your intake form is complete, we'll schedule your first session. Most clients start within a week of payment.</p>
+            </div>
+
+            <div class="faq-item">
+              <p class="faq-q">What if I have questions before we start?</p>
+              <p class="faq-a">Just reply to my confirmation email with your questions and we'll sort it.</p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── Footer line ── -->
+  <footer class="page-footer">
+    <div class="container">
+      <p>Have questions now? <a href="#" data-cal-link="clea-hernandez/fit-call" data-cal-namespace="fit-call" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'>Let's chat →</a></p>
+    </div>
+  </footer>
+
+  <!-- Cal.com embed -->
+  <script type="text/javascript">
+    (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+    Cal("init", "fit-call", {origin:"https://app.cal.com"});
+    Cal.ns["fit-call"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+  </script>
+</body>
+</html>
