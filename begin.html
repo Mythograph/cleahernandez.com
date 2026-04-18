@@ -16,6 +16,7 @@
       --ink:        #1A1410;
       --ink-muted:  #7A6D5E;
       --terra:      #C05A3C;
+      --indigo:     #3A4F99;
       --gold:       #C8A24A;
       --mist:       #F2ECE4;
       --border:     rgba(34, 24, 48, 0.09);
@@ -190,16 +191,19 @@
 
     /* ── Footer line ── */
     .page-footer {
-      padding: 40px 0;
+      padding: 72px 0;
       text-align: center;
       border-top: 1px solid var(--border);
     }
     .page-footer p {
-      font-size: 14px; color: var(--ink-muted);
+      font-family: var(--serif);
+      font-size: clamp(22px, 3vw, 36px);
+      font-weight: 600; line-height: 1.3;
+      color: var(--ink);
     }
     .page-footer a {
       color: var(--terra); text-decoration: underline;
-      text-underline-offset: 3px; transition: opacity .15s;
+      text-underline-offset: 4px; transition: opacity .15s;
     }
     .page-footer a:hover { opacity: .75; }
 
@@ -282,9 +286,9 @@
           </div>
 
           <!-- Story Loom (right / natural choice) -->
-          <div class="offer-col">
+          <div class="offer-col" style="border-top: 3px solid var(--indigo); padding-top: 24px;">
             <div class="offer-header">
-              <span class="offer-label">Narrative OS</span>
+              <span class="offer-label" style="color: var(--indigo);">Narrative OS</span>
               <h2 class="offer-h2">Story Loom</h2>
               <p class="offer-desc">Uncover your stories and architect them into a narrative ecosystem that's entirely yours.</p>
               <span class="offer-timeline">6 weeks</span>
@@ -348,7 +352,7 @@
   <!-- ── Footer line ── -->
   <footer class="page-footer">
     <div class="container">
-      <p>Have questions now? <a href="#" data-cal-link="clea-hernandez/fit-call" data-cal-namespace="fit-call" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'>Let's chat →</a></p>
+      <p>Have questions I didn't answer yet? <a href="#" data-cal-link="clea-hernandez/fit-call" data-cal-namespace="fit-call" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'>Let's chat.</a></p>
     </div>
   </footer>
 
