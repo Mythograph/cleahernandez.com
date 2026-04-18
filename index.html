@@ -1693,12 +1693,9 @@
 
           <div class="quote-card fade-in delay-3" style="background: var(--mist); display: flex; flex-direction: column; justify-content: center; align-items: flex-start; gap: 16px;">
             <p style="font-family: var(--serif); font-size: 17px; font-style: italic; color: var(--ink); line-height: 1.6;">
-              Ready to find<br>your true story?
+              Want to learn more?<br>Let's chat.
             </p>
-            <p style="font-size: 14px; color: var(--ink-muted); font-weight: 300; line-height: 1.7;">
-              Start with a free 30-minute conversation.
-            </p>
-            <a href="mailto:clea@mythograph.co" class="btn btn--terra">Book a call →</a>
+            <a href="#" class="btn btn--terra" data-cal-link="clea-hernandez/fit-call" data-cal-namespace="fit-call" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'>Book a fit call →</a>
           </div>
 
         </div>
@@ -1959,6 +1956,8 @@
     (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
     Cal("init", "golden-thread-session", {origin:"https://app.cal.com"});
     Cal.ns["golden-thread-session"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+    Cal("init", "fit-call", {origin:"https://app.cal.com"});
+    Cal.ns["fit-call"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
   </script>
 </body>
 </html>
