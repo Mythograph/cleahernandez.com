@@ -215,9 +215,7 @@
       padding: 88px 0 72px;
       overflow: hidden;
       position: relative;
-      background:
-        url('https://images.squarespace-cdn.com/content/v1/675db1cc11683a20789145a9/abab559e-0a49-4238-8d06-4cf00b9d975f/Archetype_Marketo.jpg') 20% 30% / 130% auto no-repeat,
-        var(--ink);
+      background: var(--ink);
     }
     .hero-inner {
       display: grid;
@@ -226,13 +224,7 @@
     }
 
     /* — Text side — */
-    .hero-text {
-      padding: 40px 44px;
-      background: rgba(7,2,2,0.60);
-      border-radius: 8px;
-      backdrop-filter: blur(2px);
-      -webkit-backdrop-filter: blur(2px);
-    }
+    .hero-text { padding-right: 16px; }
     .hero-eyebrow { margin-bottom: 26px; color: rgba(200,162,74,0.85); }
 
     .hero-h1 {
@@ -1243,6 +1235,15 @@
 
         <!-- Visual column: Photo + astronomical ornament -->
         <div class="hero-visual">
+
+          <div class="hero-photo-frame">
+            <img
+              src="https://images.squarespace-cdn.com/content/v1/675db1cc11683a20789145a9/abab559e-0a49-4238-8d06-4cf00b9d975f/Archetype_Marketo.jpg"
+              alt="Surrealist archetype image — a woman holds a card, golden narrative threads"
+              loading="eager"
+              style="object-position: 20% 30%;"
+            />
+          </div>
 
           <!-- Astronomical circle — the Es Paradis quality -->
           <svg class="hero-astro" viewBox="0 0 490 490" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
