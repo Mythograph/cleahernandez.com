@@ -216,7 +216,6 @@
       overflow: hidden;
       position: relative;
       background:
-        linear-gradient(to right, rgba(7,2,2,0.82) 40%, rgba(7,2,2,0.45) 100%),
         url('https://images.squarespace-cdn.com/content/v1/675db1cc11683a20789145a9/abab559e-0a49-4238-8d06-4cf00b9d975f/Archetype_Marketo.jpg') center 30% / 130% auto no-repeat,
         var(--ink);
     }
@@ -227,7 +226,13 @@
     }
 
     /* — Text side — */
-    .hero-text { padding-right: 16px; }
+    .hero-text {
+      padding: 40px 44px;
+      background: rgba(7,2,2,0.60);
+      border-radius: 8px;
+      backdrop-filter: blur(2px);
+      -webkit-backdrop-filter: blur(2px);
+    }
     .hero-eyebrow { margin-bottom: 26px; color: rgba(200,162,74,0.85); }
 
     .hero-h1 {
@@ -1227,9 +1232,6 @@
           </h1>
 
           <p class="hero-body fade-in delay-2">
-            Most entrepreneurs are still building on a scarcity story they inherited. If you're building something that matters — a practice, a body of work, a way of being in the world shaped by what you believe is possible — your work deserves a narrative field that's genuine and expansive.
-          </p>
-          <p class="hero-body fade-in delay-2" style="margin-top: -16px;">
             I build brands for founders, creatives, coaches, practitioners, and experts who are done performing for the attention economy. So you can express your value with clarity, without flattening your truth into a persona.
           </p>
 
@@ -1329,6 +1331,9 @@
           </p>
           <p class="problem-body">
             At best, the language doesn't quite fit. At worst, it degrades our integrity and trust, the communities we're here to serve, and the planet we all share.
+          </p>
+          <p class="problem-body">
+            Most entrepreneurs are still building on a scarcity story they inherited. If you're building something that matters — a practice, a body of work, a way of being in the world shaped by what you believe is possible — your work deserves a narrative field that's genuine and expansive.
           </p>
           <p class="problem-body">
             Right now, we need stories from people with vision who aren't selling the status quo.
