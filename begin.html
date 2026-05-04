@@ -80,14 +80,8 @@
 
     /* ── Hero ── */
     .hero {
-      padding: 88px 0 72px;
+      padding: 88px 0 0;
       text-align: center;
-      border-bottom: 1px solid var(--border);
-    }
-    .hero-eyebrow {
-      font-family: var(--body); font-size: 10px; font-weight: 500;
-      letter-spacing: .2em; text-transform: uppercase;
-      color: var(--terra); margin-bottom: 24px; display: block;
     }
     .hero-h1 {
       font-family: var(--serif);
@@ -101,9 +95,14 @@
       max-width: 580px; margin: 0 auto 20px;
     }
     .hero-note {
-      font-size: 13px; color: var(--ink-muted);
-      max-width: 520px; margin: 0 auto;
-      line-height: 1.7; opacity: 0.8;
+      font-size: 15px; font-style: italic;
+      color: var(--ink-muted);
+      max-width: 520px; margin: 0 auto 64px;
+      line-height: 1.7;
+    }
+    .hero-rule {
+      border: none;
+      border-top: 1px solid var(--border);
     }
 
     /* ── Pricing ── */
@@ -112,8 +111,14 @@
       display: grid; grid-template-columns: 1fr 1fr; gap: 40px;
       align-items: start;
     }
-    .offer-col { display: flex; flex-direction: column; gap: 0; }
-    .offer-header { margin-bottom: 28px; }
+    .offer-col { display: flex; flex-direction: column; gap: 16px; }
+
+    /* Offer header card */
+    .offer-header {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px 32px;
+    }
     .offer-label {
       display: block;
       font-family: var(--body); font-size: 10px; font-weight: 600;
@@ -134,18 +139,40 @@
       text-transform: uppercase; color: var(--ink-muted); opacity: 0.65;
     }
 
-    .plan-cards { display: flex; flex-direction: column; gap: 12px; }
-    .plan-card {
+    /* ACH preferred card */
+    .payment-ach {
       background: var(--mist);
+      border: 1px solid rgba(34, 24, 48, 0.13);
+      border-radius: var(--radius);
+      padding: 24px 28px;
+      position: relative;
+    }
+    .preferred-badge {
+      position: absolute;
+      top: 0; right: 0;
+      background: var(--terra);
+      color: #fff;
+      font-family: var(--body);
+      font-size: 9px; font-weight: 600;
+      letter-spacing: .14em; text-transform: uppercase;
+      padding: 5px 12px;
+      border-radius: 0 var(--radius) 0 var(--radius);
+    }
+
+    /* Credit card card */
+    .payment-cc {
+      border: 1px solid var(--border);
       border-radius: var(--radius);
       padding: 24px 28px;
     }
+
+    /* Shared payment block elements */
     .plan-card-top {
       display: flex; align-items: center; justify-content: space-between;
       margin-bottom: 16px; flex-wrap: wrap; gap: 8px;
     }
     .plan-name {
-      font-size: 13px; font-weight: 500; color: var(--ink-muted);
+      font-size: 13px; font-weight: 500; color: var(--ink);
       letter-spacing: .04em;
     }
     .plan-price {
@@ -155,17 +182,62 @@
     .plan-price-sub {
       font-size: 13px; font-weight: 400; color: var(--ink-muted);
     }
-    .plan-badge {
-      display: inline-flex; align-items: center;
-      font-family: var(--body); font-size: 9px; font-weight: 600;
-      letter-spacing: .15em; text-transform: uppercase;
-      color: var(--ink); background: var(--gold);
-      padding: 4px 10px; border-radius: 100px;
-    }
     .plan-note {
-      font-size: 12px; color: var(--ink-muted);
-      margin-top: 10px; line-height: 1.6; font-style: italic;
+      font-size: 13px; color: var(--ink-muted);
+      margin-bottom: 16px; line-height: 1.6;
     }
+    .plan-note--credit {
+      color: var(--terra);
+      font-size: 13px;
+      margin-bottom: 8px;
+      line-height: 1.6;
+    }
+    .plan-note--italic {
+      font-style: italic;
+      color: var(--ink-muted);
+      font-size: 13px;
+      margin-bottom: 16px;
+      line-height: 1.6;
+    }
+
+    /* OR PAY BY CARD divider */
+    .payment-divider {
+      display: flex; align-items: center; gap: 14px;
+      color: var(--ink-muted);
+      font-size: 10px; font-weight: 500;
+      letter-spacing: .16em; text-transform: uppercase;
+    }
+    .payment-divider::before, .payment-divider::after {
+      content: ''; flex: 1;
+      border-top: 1px solid var(--border);
+    }
+
+    /* Installment toggle link */
+    .installment-link {
+      display: block;
+      font-size: 12px;
+      color: var(--terra);
+      margin-top: 12px;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 0;
+      font-family: var(--body);
+      text-align: left;
+    }
+    .installment-link:hover { opacity: .75; }
+
+    /* Collapsible installment options */
+    .installment-options {
+      margin-top: 20px;
+      display: flex; flex-direction: column; gap: 16px;
+      border-top: 1px solid var(--border);
+      padding-top: 20px;
+    }
+    .installment-options[hidden] { display: none; }
+    .installment-item { display: flex; flex-direction: column; gap: 10px; }
 
     /* ── FAQ ── */
     .faq {
@@ -211,7 +283,7 @@
     @media (max-width: 760px) {
       :root { --pad: 24px; }
       .pricing-grid { grid-template-columns: 1fr; gap: 56px; }
-      .plan-card-top { flex-direction: column; align-items: flex-start; }
+      .plan-card-top { flex-wrap: wrap; }
     }
   </style>
 </head>
@@ -230,15 +302,15 @@
     <!-- ── HERO ── -->
     <section class="hero">
       <div class="container">
-        <span class="hero-eyebrow">You're in.</span>
         <h1 class="hero-h1">Ready to begin.</h1>
         <p class="hero-subhead">
           You're in the right place. Choose your program and payment preference below — you'll receive your intake form within 24 hours of your first payment.
         </p>
         <p class="hero-note">
-          ACH is preferred, but choose whatever works best for you.
+          Bank transfer (ACH) is preferred — see below for a $100 credit when you pay this way.
         </p>
       </div>
+      <hr class="hero-rule" />
     </section>
 
     <!-- ── PRICING ── -->
@@ -246,74 +318,126 @@
       <div class="container">
         <div class="pricing-grid">
 
-          <!-- Story Loom Full Build (left / anchor offer) -->
+          <!-- Story Loom Full Build -->
           <div class="offer-col">
+
             <div class="offer-header">
               <span class="offer-label">Brand + Website</span>
               <h2 class="offer-h2">Story Loom Full Build</h2>
               <p class="offer-desc">Everything in Story Loom, plus visual brand identity and a self-hosted website built and launched.</p>
-              <span class="offer-timeline">8 weeks</span>
+              <span class="offer-timeline">8 Weeks</span>
             </div>
 
-            <div class="plan-cards">
-
-              <div class="plan-card">
-                <div class="plan-card-top">
-                  <span class="plan-name">Pay in Full</span>
-                  <span class="plan-price">$6,750</span>
-                </div>
-                <a href="https://buy.stripe.com/dRmaEY3H95Jh1Yn0H8fAc03" class="btn btn--terra btn--full">Begin — Pay in Full</a>
-                <p class="plan-note">Pay in full and keep it simple — no follow-up payments to track.</p>
+            <div class="payment-ach">
+              <span class="preferred-badge">Preferred</span>
+              <div class="plan-card-top">
+                <span class="plan-name">Pay by Bank Transfer (ACH)</span>
+                <span class="plan-price">$6,650</span>
               </div>
-
-              <div class="plan-card">
-                <div class="plan-card-top">
-                  <span class="plan-name">2 Installments</span>
-                  <span class="plan-price">$3,375 <span class="plan-price-sub">× 2</span></span>
+              <p class="plan-note--credit">$100 credit applied — saves you money, keeps overhead low for both of us.</p>
+              <p class="plan-note--italic">ACH is a direct bank transfer — secure, simple, and just like paying a bill online.</p>
+              <a href="#" class="btn btn--terra btn--full">Begin — Pay by Bank Transfer</a>
+              <button class="installment-link" onclick="toggleInstallments(this)">Prefer installments? See ACH installment options →</button>
+              <div class="installment-options" hidden>
+                <div class="installment-item">
+                  <div class="plan-card-top">
+                    <span class="plan-name">2 Installments</span>
+                    <span class="plan-price">$3,325 <span class="plan-price-sub">× 2</span></span>
+                  </div>
+                  <a href="#" class="btn btn--terra btn--full">Begin — 2 Installments (ACH)</a>
                 </div>
-                <a href="https://buy.stripe.com/00waEYelN8VtgTh1LcfAc05" class="btn btn--terra btn--full">Begin — 2 Installments</a>
-              </div>
-
-              <div class="plan-card">
-                <div class="plan-card-top">
-                  <span class="plan-name">3 Installments</span>
-                  <span class="plan-price">$2,250 <span class="plan-price-sub">× 3</span></span>
+                <div class="installment-item">
+                  <div class="plan-card-top">
+                    <span class="plan-name">3 Installments</span>
+                    <span class="plan-price">$2,217 <span class="plan-price-sub">× 3</span></span>
+                  </div>
+                  <a href="#" class="btn btn--terra btn--full">Begin — 3 Installments (ACH)</a>
                 </div>
-                <a href="https://buy.stripe.com/fZu9AUa5xc7F8mL0H8fAc04" class="btn btn--terra-o btn--full">Begin — 3 Installments</a>
               </div>
-
             </div>
+
+            <div class="payment-divider"><span>Or Pay by Card</span></div>
+
+            <div class="payment-cc">
+              <div class="plan-card-top">
+                <span class="plan-name">Pay in Full — Credit Card</span>
+                <span class="plan-price">$6,750</span>
+              </div>
+              <p class="plan-note">Pay in full and keep it simple — no follow-up payments to track.</p>
+              <a href="https://buy.stripe.com/dRmaEY3H95Jh1Yn0H8fAc03" class="btn btn--terra-o btn--full">Begin — Pay in Full</a>
+              <button class="installment-link" onclick="toggleInstallments(this)">Prefer installments? See card installment options →</button>
+              <div class="installment-options" hidden>
+                <div class="installment-item">
+                  <div class="plan-card-top">
+                    <span class="plan-name">2 Installments</span>
+                    <span class="plan-price">$3,375 <span class="plan-price-sub">× 2</span></span>
+                  </div>
+                  <a href="https://buy.stripe.com/00waEYelN8VtgTh1LcfAc05" class="btn btn--terra-o btn--full">Begin — 2 Installments</a>
+                </div>
+                <div class="installment-item">
+                  <div class="plan-card-top">
+                    <span class="plan-name">3 Installments</span>
+                    <span class="plan-price">$2,250 <span class="plan-price-sub">× 3</span></span>
+                  </div>
+                  <a href="https://buy.stripe.com/fZu9AUa5xc7F8mL0H8fAc04" class="btn btn--terra-o btn--full">Begin — 3 Installments</a>
+                </div>
+              </div>
+            </div>
+
           </div>
 
-          <!-- Story Loom (right / natural choice) -->
-          <div class="offer-col" style="border-top: 3px solid var(--indigo); padding-top: 24px;">
+          <!-- Story Loom -->
+          <div class="offer-col">
+
             <div class="offer-header">
               <span class="offer-label" style="color: var(--indigo);">Narrative OS</span>
               <h2 class="offer-h2">Story Loom</h2>
               <p class="offer-desc">Uncover your stories and architect them into a narrative ecosystem that's entirely yours.</p>
-              <span class="offer-timeline">6 weeks</span>
+              <span class="offer-timeline">6 Weeks</span>
             </div>
 
-            <div class="plan-cards">
-
-              <div class="plan-card">
-                <div class="plan-card-top">
-                  <span class="plan-name">Pay in Full</span>
-                  <span class="plan-price">$3,600</span>
-                </div>
-                <a href="https://buy.stripe.com/14AeVe7Xp7Rp46v4XofAc06" class="btn btn--terra btn--full">Begin — Pay in Full</a>
-                <p class="plan-note">Pay in full and keep it simple — no follow-up payments to track.</p>
+            <div class="payment-ach">
+              <span class="preferred-badge">Preferred</span>
+              <div class="plan-card-top">
+                <span class="plan-name">Pay by Bank Transfer (ACH)</span>
+                <span class="plan-price">$3,500</span>
               </div>
-
-              <div class="plan-card">
-                <div class="plan-card-top">
-                  <span class="plan-name">2 Installments</span>
-                  <span class="plan-price">$1,800 <span class="plan-price-sub">× 2</span></span>
+              <p class="plan-note--credit">$100 credit applied — saves you money, keeps overhead low for both of us.</p>
+              <p class="plan-note--italic">ACH is a direct bank transfer — secure, simple, and just like paying a bill online.</p>
+              <a href="#" class="btn btn--terra btn--full">Begin — Pay by Bank Transfer</a>
+              <button class="installment-link" onclick="toggleInstallments(this)">Prefer installments? See ACH installment options →</button>
+              <div class="installment-options" hidden>
+                <div class="installment-item">
+                  <div class="plan-card-top">
+                    <span class="plan-name">2 Installments</span>
+                    <span class="plan-price">$1,750 <span class="plan-price-sub">× 2</span></span>
+                  </div>
+                  <a href="#" class="btn btn--terra btn--full">Begin — 2 Installments (ACH)</a>
                 </div>
-                <a href="https://buy.stripe.com/eVq7sM2D59ZxgTh0H8fAc07" class="btn btn--terra btn--full">Begin — 2 Installments</a>
               </div>
-
             </div>
+
+            <div class="payment-divider"><span>Or Pay by Card</span></div>
+
+            <div class="payment-cc">
+              <div class="plan-card-top">
+                <span class="plan-name">Pay in Full — Credit Card</span>
+                <span class="plan-price">$3,600</span>
+              </div>
+              <p class="plan-note">Pay in full and keep it simple — no follow-up payments to track.</p>
+              <a href="https://buy.stripe.com/14AeVe7Xp7Rp46v4XofAc06" class="btn btn--terra-o btn--full">Begin — Pay in Full</a>
+              <button class="installment-link" onclick="toggleInstallments(this)">Prefer installments? See card installment options →</button>
+              <div class="installment-options" hidden>
+                <div class="installment-item">
+                  <div class="plan-card-top">
+                    <span class="plan-name">2 Installments</span>
+                    <span class="plan-price">$1,800 <span class="plan-price-sub">× 2</span></span>
+                  </div>
+                  <a href="https://buy.stripe.com/eVq7sM2D59ZxgTh0H8fAc07" class="btn btn--terra-o btn--full">Begin — 2 Installments</a>
+                </div>
+              </div>
+            </div>
+
           </div>
 
         </div>
@@ -354,6 +478,20 @@
     (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
     Cal("init", "fit-call", {origin:"https://app.cal.com"});
     Cal.ns["fit-call"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+  </script>
+
+  <script>
+    function toggleInstallments(btn) {
+      const options = btn.nextElementSibling;
+      const isHidden = options.hasAttribute('hidden');
+      if (isHidden) {
+        options.removeAttribute('hidden');
+        btn.textContent = btn.textContent.replace('See', 'Hide').replace('→', '↑');
+      } else {
+        options.setAttribute('hidden', '');
+        btn.textContent = btn.textContent.replace('Hide', 'See').replace('↑', '→');
+      }
+    }
   </script>
 </body>
 </html>
