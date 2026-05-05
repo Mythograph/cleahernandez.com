@@ -168,57 +168,50 @@
     .mobile-menu .mobile-cta:hover { opacity: .85; color: #fff; }
 
     /* ════════════════════════════════════════════════════════════
-       HERO — softer, narrower than service-page heroes
+       HERO — indigo field, vellum + gold typography
     ════════════════════════════════════════════════════════════ */
     .res-hero {
-      background: var(--mist);
+      background: var(--indigo);
       padding: 88px 0 72px;
       position: relative; overflow: hidden;
-      border-bottom: 1px solid var(--border);
+      border-bottom: 1px solid rgba(0,0,0,0.18);
     }
     .res-hero::before {
       content: '';
-      position: absolute; top: -120px; right: -120px;
-      width: 480px; height: 480px;
-      background: radial-gradient(ellipse at center, rgba(200,162,74,0.18) 0%, transparent 65%);
+      position: absolute; top: -160px; right: -160px;
+      width: 560px; height: 560px;
+      background: radial-gradient(ellipse at center, rgba(200,162,74,0.32) 0%, transparent 65%);
       pointer-events: none;
     }
     .res-hero::after {
       content: '';
-      position: absolute; bottom: -160px; left: -120px;
-      width: 420px; height: 420px;
-      background: radial-gradient(ellipse at center, rgba(58,79,153,0.10) 0%, transparent 65%);
+      position: absolute; bottom: -180px; left: -160px;
+      width: 480px; height: 480px;
+      background: radial-gradient(ellipse at center, rgba(192,90,60,0.18) 0%, transparent 65%);
       pointer-events: none;
-    }
-    .res-hero-mark {
-      display: inline-block;
-      font-family: var(--serif); font-style: italic; font-weight: 400;
-      font-size: 13px; letter-spacing: .04em;
-      color: var(--indigo); opacity: .85;
-      margin-bottom: 14px;
-    }
-    .res-hero-mark::before {
-      content: '✦ ';
-      color: var(--gold); margin-right: 4px;
     }
     .res-hero-inner {
       max-width: 760px; position: relative; z-index: 1;
     }
-    .res-hero .eyebrow { margin-bottom: 22px; display: block; }
+    .res-hero .eyebrow {
+      margin-bottom: 22px; display: block;
+      color: rgba(200,162,74,0.92);
+    }
     .res-hero-h1 {
       font-family: var(--display);
       font-size: clamp(40px, 5.6vw, 76px);
       font-weight: 700; line-height: 1.04; letter-spacing: -0.025em;
-      color: var(--ink); margin-bottom: 28px;
+      color: #F5EFE6; margin-bottom: 28px;
+      text-shadow: 0 1px 24px rgba(0,0,0,0.25);
     }
-    .res-hero-h1 .accent { color: var(--terra); font-style: italic; font-weight: 400; }
+    .res-hero-h1 .accent { color: var(--gold); font-style: italic; font-weight: 400; }
     .res-hero-body {
       font-size: clamp(17px, 1.6vw, 19px); font-weight: 400;
-      line-height: 1.78; color: var(--ink-muted); max-width: 600px;
+      line-height: 1.78; color: rgba(245,239,230,0.82); max-width: 600px;
       margin-bottom: 18px;
     }
     .res-hero-body:last-child { margin-bottom: 0; }
-    .res-hero-body strong { color: var(--ink); font-weight: 500; }
+    .res-hero-body strong { color: #F5EFE6; font-weight: 500; }
 
     /* ════════════════════════════════════════════════════════════
        SECTION SCAFFOLD
@@ -313,10 +306,18 @@
       border: 1px solid var(--border);
       border-top: 3px solid var(--indigo);
       border-radius: var(--radius);
-      padding: 8px;
-      min-height: 320px;
+      overflow: hidden;
     }
-    .kit-embed > * { width: 100%; }
+    .kit-embed iframe {
+      width: 100%;
+      height: 620px;
+      border: 0;
+      display: block;
+      background: var(--white);
+    }
+    @media (max-width: 980px) {
+      .kit-embed iframe { height: 560px; }
+    }
 
     /* Eyebrow variants */
     .eyebrow--indigo { color: var(--indigo); }
@@ -501,16 +502,15 @@
       <div class="container">
         <div class="res-hero-inner fade-in">
           <span class="eyebrow">Resources</span>
-          <span class="res-hero-mark">a slow, growing library</span>
           <h1 class="res-hero-h1">
             Start with what's<br>
             <span class="accent">alive in you</span> right now.
           </h1>
           <p class="res-hero-body">
-            A small, growing library of exercises, audio meditations, and tools for the in-between seasons — when you're searching for the through-line, dreaming forward, or quietly composing the next chapter of your work.
+            A growing library of exercises, audio meditations, and tools for the in-between seasons — when you're searching for the through-line, dreaming forward, or quietly composing the next chapter of your work.
           </p>
           <p class="res-hero-body">
-            Each one is paired with the moment it's most useful. Take what speaks. Leave the rest for later.
+            Each one is paired with the moment it's most useful.
           </p>
         </div>
       </div>
@@ -554,9 +554,17 @@
           <div class="featured-right">
             <!-- ═══════════════════════════════════════════════════════════════
                  KIT EMBED — The Origin Thread landing page
+                 NOTE: this URL is a Kit *Landing Page*, which can't be embedded
+                 via the script tag (that only works for inline Forms). The
+                 iframe below loads the landing page directly. If you'd prefer
+                 a cleaner inline form, create a Form in Kit (not a Landing
+                 Page) and swap this iframe for the script embed.
             ═══════════════════════════════════════════════════════════════ -->
             <div class="kit-embed">
-              <script async data-uid="5419219c7f" src="https://mythograph.kit.com/5419219c7f/index.js"></script>
+              <iframe
+                src="https://mythograph.kit.com/5419219c7f"
+                title="Get The Origin Thread"
+                loading="lazy"></iframe>
             </div>
           </div>
         </article>
