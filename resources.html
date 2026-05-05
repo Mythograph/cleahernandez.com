@@ -183,6 +183,24 @@
       background: radial-gradient(ellipse at center, rgba(200,162,74,0.18) 0%, transparent 65%);
       pointer-events: none;
     }
+    .res-hero::after {
+      content: '';
+      position: absolute; bottom: -160px; left: -120px;
+      width: 420px; height: 420px;
+      background: radial-gradient(ellipse at center, rgba(58,79,153,0.10) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .res-hero-mark {
+      display: inline-block;
+      font-family: var(--serif); font-style: italic; font-weight: 400;
+      font-size: 13px; letter-spacing: .04em;
+      color: var(--indigo); opacity: .85;
+      margin-bottom: 14px;
+    }
+    .res-hero-mark::before {
+      content: '✦ ';
+      color: var(--gold); margin-right: 4px;
+    }
     .res-hero-inner {
       max-width: 760px; position: relative; z-index: 1;
     }
@@ -248,6 +266,10 @@
       border-color: rgba(200,162,74,.35);
       color: #8a6c24; background: var(--gold-pale);
     }
+    .pill--indigo {
+      border-color: rgba(58,79,153,.30);
+      color: var(--indigo); background: var(--indigo-pale);
+    }
     .pill--muted {
       border-color: var(--border);
       color: var(--ink-muted); background: transparent;
@@ -285,30 +307,19 @@
       border-left: 1px solid var(--border);
       position: relative;
     }
-    .kit-slot {
+    .kit-embed {
+      width: 100%;
       background: var(--white);
       border: 1px solid var(--border);
+      border-top: 3px solid var(--indigo);
       border-radius: var(--radius);
-      padding: 32px 28px;
-      text-align: center;
+      padding: 8px;
+      min-height: 320px;
     }
-    .kit-slot-label {
-      font-size: 10px; font-weight: 500;
-      letter-spacing: .18em; text-transform: uppercase;
-      color: var(--gold); margin-bottom: 14px; display: block;
-    }
-    .kit-slot-h4 {
-      font-family: var(--serif); font-size: 22px; font-weight: 600;
-      color: var(--ink); margin-bottom: 10px; line-height: 1.25;
-    }
-    .kit-slot-body {
-      font-size: 14px; line-height: 1.65; color: var(--ink-muted);
-      margin-bottom: 20px;
-    }
-    .kit-slot-note {
-      font-size: 11px; color: var(--ink-muted); opacity: 0.7;
-      margin-top: 14px; font-style: italic;
-    }
+    .kit-embed > * { width: 100%; }
+
+    /* Eyebrow variants */
+    .eyebrow--indigo { color: var(--indigo); }
 
     /* ════════════════════════════════════════════════════════════
        IN THE WORKS — vertical state-cards
@@ -327,6 +338,12 @@
       transition: border-color .2s, transform .2s;
     }
     .work-card:hover { border-color: rgba(192,90,60,.35); }
+    .work-card--loom {
+      border-top: 3px solid var(--indigo);
+      background: linear-gradient(180deg, rgba(58,79,153,0.025) 0%, var(--white) 60%);
+    }
+    .work-card--loom:hover { border-color: rgba(58,79,153,.35); }
+    .work-card--loom .work-state-eyebrow { color: var(--indigo); }
     .work-state {
       border-right: 1px solid var(--border);
       padding-right: 36px;
@@ -484,6 +501,7 @@
       <div class="container">
         <div class="res-hero-inner fade-in">
           <span class="eyebrow">Resources</span>
+          <span class="res-hero-mark">a slow, growing library</span>
           <h1 class="res-hero-h1">
             Start with what's<br>
             <span class="accent">alive in you</span> right now.
@@ -528,32 +546,17 @@
             </p>
             <div class="featured-meta">
               <span><strong>Format</strong> · Notion template</span>
-              <span><strong>Time</strong> · 45–90 min</span>
+              <span><strong>Time</strong> · 15–30 min</span>
               <span><strong>Cost</strong> · Free</span>
             </div>
-            <a href="https://mythograph.notion.site/" target="_blank" rel="noopener" class="btn btn--terra">
-              Preview the Template →
-            </a>
           </div>
 
           <div class="featured-right">
             <!-- ═══════════════════════════════════════════════════════════════
-                 KIT EMBED SLOT — replace this block with your Kit embed code
-                 once the landing page is built.
-                 e.g. <script async data-uid="XXXXX" src="https://mythograph.kit.com/XXXXX/index.js"></script>
+                 KIT EMBED — The Origin Thread landing page
             ═══════════════════════════════════════════════════════════════ -->
-            <div class="kit-slot" id="kitSlot">
-              <span class="kit-slot-label">Get the Template</span>
-              <h4 class="kit-slot-h4">Send it to my inbox</h4>
-              <p class="kit-slot-body">
-                Drop your email and I'll send The Origin Thread along with a short companion note on how to use it.
-              </p>
-              <a href="https://mythograph.notion.site/" target="_blank" rel="noopener" class="btn btn--ink" style="width: 100%; justify-content: center;">
-                Get The Origin Thread →
-              </a>
-              <p class="kit-slot-note">
-                A proper signup form is on its way — for now, this opens the live template.
-              </p>
+            <div class="kit-embed">
+              <script async data-uid="5419219c7f" src="https://mythograph.kit.com/5419219c7f/index.js"></script>
             </div>
           </div>
         </article>
@@ -569,7 +572,7 @@
     <section class="res-section res-section--fog">
       <div class="container">
         <div class="res-section-head fade-in">
-          <span class="eyebrow">In the works</span>
+          <span class="eyebrow eyebrow--indigo">In the works</span>
           <h2 class="section-h2">Coming soon, paired with the moment they're for.</h2>
           <p>I'm building these slowly and on purpose. Each one is meant for a specific season — what you might be reaching for next. Join the list below if you'd like to know when they land.</p>
         </div>
@@ -585,7 +588,6 @@
             <div class="work-resource">
               <div class="work-pills">
                 <span class="pill">Custom Narrative</span>
-                <span class="pill pill--gold">$27</span>
                 <span class="pill pill--muted">Coming soon</span>
               </div>
               <h3 class="work-h3">Mythograph Soul's Journey Narrative</h3>
@@ -594,7 +596,6 @@
               </p>
               <div class="work-meta">
                 <span><strong>Format</strong> · Personalised PDF</span>
-                <span><strong>Cost</strong> · $27</span>
               </div>
             </div>
           </article>
@@ -623,14 +624,14 @@
           </article>
 
           <!-- 3. Story Loom Course -->
-          <article class="work-card fade-in">
+          <article class="work-card work-card--loom fade-in">
             <div class="work-state">
               <span class="work-state-eyebrow">When you're ready to</span>
               <p class="work-state-prompt">…build a body of work with structure — a brand and narrative that can hold your whole vision.</p>
             </div>
             <div class="work-resource">
               <div class="work-pills">
-                <span class="pill">Self-paced Course</span>
+                <span class="pill pill--indigo">Self-paced Course</span>
                 <span class="pill pill--muted">Coming this year</span>
               </div>
               <h3 class="work-h3">Story Loom — the standalone course</h3>
@@ -645,14 +646,14 @@
           </article>
 
           <!-- 4. Story Loom App -->
-          <article class="work-card fade-in">
+          <article class="work-card work-card--loom fade-in">
             <div class="work-state">
               <span class="work-state-eyebrow">When you want a</span>
               <p class="work-state-prompt">…living tool that helps you keep narrative coherence as you, or your team, evolve.</p>
             </div>
             <div class="work-resource">
               <div class="work-pills">
-                <span class="pill">App / Subscription</span>
+                <span class="pill pill--indigo">App / Subscription</span>
                 <span class="pill pill--muted">Coming this year</span>
               </div>
               <h3 class="work-h3">Story Loom — the app</h3>
