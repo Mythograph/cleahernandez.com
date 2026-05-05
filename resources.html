@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resources · Cléa Hernández</title>
+  <meta name="description" content="Free and low-cost resources to help you find the through-line of your story — exercises, audio meditations, and tools for narrative-led creative work." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,300;1,9..144,400;1,9..144,600;1,9..144,700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --white:      #FAFAF7;
+      --ink:        #1A1410;
+      --ink-muted:  #7A6D5E;
+      --terra:      #C05A3C;
+      --terra-pale: rgba(192,90,60,0.07);
+      --indigo:     #3A4F99;
+      --indigo-pale:rgba(58,79,153,0.07);
+      --gold:       #C8A24A;
+      --gold-pale:  rgba(200,162,74,0.10);
+      --sage:       #7A9E7E;
+      --sage-pale:  rgba(122,158,126,0.10);
+      --mist:       #F2ECE4;
+      --fog:        #E4E1DC;
+      --border:     rgba(34,24,48,0.09);
+
+      --serif:      'Playfair Display', Georgia, serif;
+      --display:    'Fraunces', Georgia, serif;
+      --body:       'DM Sans', system-ui, -apple-system, sans-serif;
+
+      --max:        1160px;
+      --pad:        40px;
+      --radius:     4px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--body); background: var(--white);
+      color: var(--ink); line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+    body::after {
+      content: ''; position: fixed; inset: 0;
+      pointer-events: none; z-index: 9999; opacity: 0.030;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-size: 200px 200px;
+    }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; }
+
+    .container { max-width: var(--max); margin: 0 auto; padding: 0 var(--pad); }
+
+    /* ─── Typography ─── */
+    .eyebrow {
+      font-family: var(--body); font-size: 13px; font-weight: 500;
+      letter-spacing: .15em; text-transform: uppercase; color: var(--terra);
+    }
+    .section-h2 {
+      font-family: var(--serif);
+      font-size: clamp(28px, 3.6vw, 44px);
+      font-weight: 600;
+      line-height: 1.18; letter-spacing: -0.02em; color: var(--ink);
+    }
+    .section-lead {
+      font-size: 17px; font-weight: 300;
+      line-height: 1.78; color: var(--ink-muted); max-width: 640px;
+    }
+    .ornament {
+      display: flex; align-items: center; gap: 14px;
+      padding: 14px 0; color: var(--gold); font-size: 9px; opacity: 0.55;
+    }
+    .ornament::before, .ornament::after {
+      content: ''; flex: 1; max-width: 220px; height: 1px;
+      background: linear-gradient(to right, transparent, rgba(200,162,74,.35));
+    }
+    .ornament::after { background: linear-gradient(to left, transparent, rgba(200,162,74,.35)); }
+
+    /* ─── Buttons ─── */
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-family: var(--body); font-size: 12px; font-weight: 500;
+      letter-spacing: .07em; text-transform: uppercase;
+      padding: 14px 26px; border-radius: var(--radius);
+      cursor: pointer; transition: opacity .18s, transform .15s;
+      border: none; line-height: 1;
+    }
+    .btn:hover { opacity: .82; transform: translateY(-1px); }
+    .btn--terra   { background: var(--terra); color: #fff; }
+    .btn--terra-o { background: transparent; color: var(--terra); border: 1.5px solid var(--terra); }
+    .btn--ink     { background: var(--ink); color: var(--white); }
+    .btn--ghost   { background: rgba(250,250,247,.1); color: rgba(250,250,247,.85); border: 1px solid rgba(250,250,247,.2); }
+    .btn[disabled], .btn--muted {
+      background: transparent; color: var(--ink-muted);
+      border: 1.5px solid var(--border); cursor: default;
+    }
+    .btn--muted:hover { opacity: 1; transform: none; }
+
+    /* ─── NAV ─── */
+    .nav-wrap {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(250,250,247,0.94);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+    }
+    .nav { display: flex; align-items: center; justify-content: space-between; height: 68px; }
+    .nav-logo {
+      font-family: var(--serif); font-size: 22px; font-weight: 400; font-style: italic;
+      color: var(--terra); letter-spacing: .01em;
+    }
+    .nav-links { display: flex; align-items: center; gap: 24px; }
+    .nav-links a {
+      font-family: var(--body); font-size: 13px; font-weight: 400;
+      color: var(--ink); opacity: 0.68; transition: opacity .15s;
+    }
+    .nav-links a:hover, .nav-links a.active { opacity: 1; }
+    .nav-links .nav-cta {
+      opacity: 1; font-weight: 500; color: var(--terra);
+      padding: 7px 18px; border: 1.5px solid rgba(192,90,60,.45);
+      border-radius: 100px; transition: background .15s, color .15s;
+    }
+    .nav-links .nav-cta:hover { background: var(--terra); color: #fff; opacity: 1; }
+
+    /* ─── HAMBURGER + MOBILE MENU ─── */
+    .nav-hamburger {
+      display: none; flex-direction: column; justify-content: center;
+      gap: 5px; width: 36px; height: 36px;
+      background: none; border: none; cursor: pointer; padding: 4px;
+      flex-shrink: 0;
+    }
+    .nav-hamburger span {
+      display: block; width: 22px; height: 1.5px;
+      background: var(--terra); border-radius: 2px;
+      transition: transform .25s, opacity .2s; transform-origin: center;
+    }
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+    .mobile-menu {
+      display: none; position: fixed; inset: 0; z-index: 98;
+      background: var(--white); flex-direction: column;
+      justify-content: center; align-items: center;
+      padding: 80px 40px 60px; gap: 0;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      font-family: var(--display);
+      font-size: clamp(28px, 8vw, 40px);
+      font-weight: 300; color: var(--ink);
+      padding: 18px 0; text-align: center; width: 100%;
+      border-bottom: 1px solid var(--border);
+      transition: color .15s; letter-spacing: -.01em;
+    }
+    .mobile-menu a:last-child { border-bottom: none; }
+    .mobile-menu a:hover, .mobile-menu a:active { color: var(--terra); }
+    .mobile-menu .mobile-cta {
+      margin-top: 32px; font-family: var(--body);
+      font-size: 14px; font-weight: 500;
+      color: #fff; background: var(--terra);
+      padding: 14px 36px; border-radius: 100px;
+      border-bottom: none; width: auto;
+      transition: opacity .15s;
+    }
+    .mobile-menu .mobile-cta:hover { opacity: .85; color: #fff; }
+
+    /* ════════════════════════════════════════════════════════════
+       HERO — softer, narrower than service-page heroes
+    ════════════════════════════════════════════════════════════ */
+    .res-hero {
+      background: var(--mist);
+      padding: 88px 0 72px;
+      position: relative; overflow: hidden;
+      border-bottom: 1px solid var(--border);
+    }
+    .res-hero::before {
+      content: '';
+      position: absolute; top: -120px; right: -120px;
+      width: 480px; height: 480px;
+      background: radial-gradient(ellipse at center, rgba(200,162,74,0.18) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .res-hero-inner {
+      max-width: 760px; position: relative; z-index: 1;
+    }
+    .res-hero .eyebrow { margin-bottom: 22px; display: block; }
+    .res-hero-h1 {
+      font-family: var(--display);
+      font-size: clamp(40px, 5.6vw, 76px);
+      font-weight: 700; line-height: 1.04; letter-spacing: -0.025em;
+      color: var(--ink); margin-bottom: 28px;
+    }
+    .res-hero-h1 .accent { color: var(--terra); font-style: italic; font-weight: 400; }
+    .res-hero-body {
+      font-size: clamp(17px, 1.6vw, 19px); font-weight: 400;
+      line-height: 1.78; color: var(--ink-muted); max-width: 600px;
+      margin-bottom: 18px;
+    }
+    .res-hero-body:last-child { margin-bottom: 0; }
+    .res-hero-body strong { color: var(--ink); font-weight: 500; }
+
+    /* ════════════════════════════════════════════════════════════
+       SECTION SCAFFOLD
+    ════════════════════════════════════════════════════════════ */
+    .res-section { padding: 72px 0; }
+    .res-section--fog { background: var(--fog); }
+    .res-section-head {
+      max-width: 720px; margin-bottom: 40px;
+    }
+    .res-section-head .eyebrow { margin-bottom: 14px; display: block; }
+    .res-section-head .section-h2 { margin-bottom: 14px; }
+    .res-section-head p {
+      font-size: 16px; line-height: 1.78; color: var(--ink-muted);
+    }
+
+    /* ════════════════════════════════════════════════════════════
+       FEATURED — The Origin Thread
+    ════════════════════════════════════════════════════════════ */
+    .featured {
+      display: grid; grid-template-columns: 1.05fr 1fr; gap: 48px;
+      align-items: stretch;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-top: 3px solid var(--terra);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    .featured-left { padding: 48px 44px 44px; }
+    .featured-pills {
+      display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 22px;
+    }
+    .pill {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-family: var(--body); font-size: 10px; font-weight: 500;
+      letter-spacing: .12em; text-transform: uppercase;
+      padding: 5px 13px; border-radius: 100px;
+      border: 1.5px solid rgba(192,90,60,.30);
+      color: var(--terra); background: var(--terra-pale);
+    }
+    .pill--sage {
+      border-color: rgba(122,158,126,.35);
+      color: #486a4c; background: var(--sage-pale);
+    }
+    .pill--gold {
+      border-color: rgba(200,162,74,.35);
+      color: #8a6c24; background: var(--gold-pale);
+    }
+    .pill--muted {
+      border-color: var(--border);
+      color: var(--ink-muted); background: transparent;
+    }
+    .featured-prompt {
+      font-family: var(--serif); font-style: italic;
+      font-size: 17px; line-height: 1.55; color: var(--ink-muted);
+      margin-bottom: 16px;
+    }
+    .featured-h3 {
+      font-family: var(--display);
+      font-size: clamp(28px, 3.2vw, 40px);
+      font-weight: 700; line-height: 1.1; letter-spacing: -0.02em;
+      color: var(--ink); margin-bottom: 20px;
+    }
+    .featured-body {
+      font-size: 15.5px; line-height: 1.78; color: var(--ink-muted);
+      margin-bottom: 16px;
+    }
+    .featured-body strong { color: var(--ink); font-weight: 500; }
+    .featured-meta {
+      font-size: 12px; letter-spacing: .08em; text-transform: uppercase;
+      color: var(--ink-muted); margin: 22px 0 24px;
+      padding-top: 20px; border-top: 1px dashed var(--border);
+      display: flex; gap: 20px; flex-wrap: wrap;
+    }
+    .featured-meta span { display: inline-flex; align-items: center; gap: 6px; }
+    .featured-meta strong { color: var(--ink); font-weight: 600; }
+
+    /* Right side — Kit embed slot */
+    .featured-right {
+      background: var(--mist);
+      padding: 44px 40px;
+      display: flex; flex-direction: column; justify-content: center;
+      border-left: 1px solid var(--border);
+      position: relative;
+    }
+    .kit-slot {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px 28px;
+      text-align: center;
+    }
+    .kit-slot-label {
+      font-size: 10px; font-weight: 500;
+      letter-spacing: .18em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 14px; display: block;
+    }
+    .kit-slot-h4 {
+      font-family: var(--serif); font-size: 22px; font-weight: 600;
+      color: var(--ink); margin-bottom: 10px; line-height: 1.25;
+    }
+    .kit-slot-body {
+      font-size: 14px; line-height: 1.65; color: var(--ink-muted);
+      margin-bottom: 20px;
+    }
+    .kit-slot-note {
+      font-size: 11px; color: var(--ink-muted); opacity: 0.7;
+      margin-top: 14px; font-style: italic;
+    }
+
+    /* ════════════════════════════════════════════════════════════
+       IN THE WORKS — vertical state-cards
+       Each card: a moment / state on the left, a resource on the right
+    ════════════════════════════════════════════════════════════ */
+    .works-grid {
+      display: grid; gap: 20px;
+    }
+    .work-card {
+      display: grid; grid-template-columns: 280px 1fr;
+      gap: 36px; align-items: stretch;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 36px 36px;
+      transition: border-color .2s, transform .2s;
+    }
+    .work-card:hover { border-color: rgba(192,90,60,.35); }
+    .work-state {
+      border-right: 1px solid var(--border);
+      padding-right: 36px;
+      display: flex; flex-direction: column; justify-content: center;
+    }
+    .work-state-eyebrow {
+      font-size: 10px; font-weight: 500;
+      letter-spacing: .18em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 10px;
+    }
+    .work-state-prompt {
+      font-family: var(--serif); font-style: italic;
+      font-size: clamp(18px, 1.8vw, 22px);
+      line-height: 1.32; color: var(--ink);
+      letter-spacing: -0.005em;
+    }
+    .work-resource { display: flex; flex-direction: column; }
+    .work-pills { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 14px; }
+    .work-h3 {
+      font-family: var(--display);
+      font-size: clamp(20px, 2.2vw, 26px);
+      font-weight: 700; line-height: 1.18; letter-spacing: -0.015em;
+      color: var(--ink); margin-bottom: 12px;
+    }
+    .work-body {
+      font-size: 15px; line-height: 1.72; color: var(--ink-muted);
+      margin-bottom: 16px;
+    }
+    .work-body strong { color: var(--ink); font-weight: 500; }
+    .work-meta {
+      display: flex; gap: 18px; flex-wrap: wrap;
+      font-size: 11px; letter-spacing: .1em; text-transform: uppercase;
+      color: var(--ink-muted); margin-top: auto;
+    }
+    .work-meta strong { color: var(--ink); font-weight: 600; }
+
+    /* ════════════════════════════════════════════════════════════
+       NEWSLETTER BAND
+    ════════════════════════════════════════════════════════════ */
+    .nl-band { background: var(--ink); padding: 88px 0; }
+    .nl-inner {
+      max-width: 560px; margin: 0 auto; text-align: center;
+    }
+    .nl-eyebrow {
+      font-size: 11px; font-weight: 500;
+      letter-spacing: .2em; text-transform: uppercase;
+      color: rgba(200,162,74,0.85); margin-bottom: 18px; display: block;
+    }
+    .nl-h2 {
+      font-family: var(--serif);
+      font-size: clamp(28px, 3.4vw, 40px);
+      font-weight: 600; line-height: 1.2;
+      color: #F5EFF5; margin-bottom: 16px; letter-spacing: -0.02em;
+    }
+    .nl-body {
+      font-size: 16px; line-height: 1.72;
+      color: rgba(245,239,245,0.62); margin-bottom: 28px;
+    }
+    .nl-band .nl-form { margin-top: 8px; }
+
+    /* ════════════════════════════════════════════════════════════
+       MYTHOGRAPH FOOTNOTE
+    ════════════════════════════════════════════════════════════ */
+    .mythograph-footnote {
+      max-width: 720px; margin: 56px auto 0;
+      padding: 24px 0; text-align: center;
+      font-size: 14px; color: var(--ink-muted);
+      border-top: 1px solid var(--border);
+    }
+    .mythograph-footnote a { color: var(--terra); font-weight: 500; }
+
+    /* ════════════════════════════════════════════════════════════
+       FOOTER
+    ════════════════════════════════════════════════════════════ */
+    footer { background: var(--ink); color: rgba(250,250,247,.6); padding: 64px 0 36px; }
+    .footer-inner { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 64px; margin-bottom: 52px; }
+    .footer-logo {
+      font-family: var(--serif); font-size: 22px; font-weight: 400; font-style: italic;
+      color: rgba(250,250,247,.88); margin-bottom: 14px;
+    }
+    .footer-tagline { font-size: 14px; line-height: 1.7; color: rgba(250,250,247,.42); max-width: 280px; }
+    .footer-col-title {
+      font-size: 10px; font-weight: 500; letter-spacing: .18em;
+      text-transform: uppercase; color: rgba(250,250,247,.3); margin-bottom: 20px;
+    }
+    .footer-links li { margin-bottom: 12px; }
+    .footer-links a { font-size: 14px; color: rgba(250,250,247,.55); transition: color .15s; }
+    .footer-links a:hover { color: rgba(250,250,247,.88); }
+    .footer-bottom {
+      display: flex; align-items: center; justify-content: space-between;
+      padding-top: 28px; border-top: 1px solid rgba(250,250,247,.08);
+      font-size: 12px; color: rgba(250,250,247,.28);
+    }
+
+    /* ─── Fade in ─── */
+    .fade-in { opacity: 0; transform: translateY(22px); transition: opacity .6s ease, transform .6s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+    .fade-in.delay-1 { transition-delay: .12s; }
+    .fade-in.delay-2 { transition-delay: .24s; }
+
+    /* ─── Responsive ─── */
+    @media (max-width: 980px) {
+      .featured { grid-template-columns: 1fr; }
+      .featured-right { border-left: none; border-top: 1px solid var(--border); }
+      .work-card { grid-template-columns: 1fr; gap: 20px; padding: 28px 28px; }
+      .work-state { border-right: none; border-bottom: 1px dashed var(--border); padding-right: 0; padding-bottom: 20px; }
+      .footer-inner { grid-template-columns: 1fr 1fr; gap: 48px; }
+      .footer-col:first-child { grid-column: span 2; }
+    }
+    @media (max-width: 640px) {
+      :root { --pad: 24px; }
+      .nav-links a:not(.nav-cta) { display: none; }
+      .nav-links .nav-cta { display: none; }
+      .nav-hamburger { display: flex; }
+      .res-hero { padding: 60px 0 52px; }
+      .featured-left { padding: 36px 28px 32px; }
+      .featured-right { padding: 32px 24px; }
+      .res-section { padding: 56px 0; }
+      .footer-inner { grid-template-columns: 1fr; gap: 36px; }
+      .footer-col:first-child { grid-column: span 1; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <header class="nav-wrap">
+    <nav class="nav container">
+      <a href="index.html" class="nav-logo">Cléa Hernández</a>
+      <div class="nav-links">
+        <a href="index.html">Story Loom</a>
+        <a href="jungian-coaching.html">Jungian Coaching</a>
+        <a href="resources.html" class="active">Resources</a>
+        <a href="about.html">About</a>
+        <a href="work-with-me.html" class="nav-cta">Work With Me</a>
+      </div>
+      <button class="nav-hamburger" id="navHamburger" aria-label="Open navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+  <nav class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <a href="index.html">Story Loom</a>
+    <a href="jungian-coaching.html">Jungian Coaching</a>
+    <a href="resources.html">Resources</a>
+    <a href="about.html">About</a>
+    <a href="work-with-me.html" class="mobile-cta">Work With Me</a>
+  </nav>
+
+  <main>
+
+    <!-- ─── HERO ─── -->
+    <section class="res-hero">
+      <div class="container">
+        <div class="res-hero-inner fade-in">
+          <span class="eyebrow">Resources</span>
+          <h1 class="res-hero-h1">
+            Start with what's<br>
+            <span class="accent">alive in you</span> right now.
+          </h1>
+          <p class="res-hero-body">
+            A small, growing library of exercises, audio meditations, and tools for the in-between seasons — when you're searching for the through-line, dreaming forward, or quietly composing the next chapter of your work.
+          </p>
+          <p class="res-hero-body">
+            Each one is paired with the moment it's most useful. Take what speaks. Leave the rest for later.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── AVAILABLE NOW — featured: The Origin Thread ─── -->
+    <section class="res-section">
+      <div class="container">
+        <div class="res-section-head fade-in">
+          <span class="eyebrow">Available now</span>
+          <h2 class="section-h2">Begin here.</h2>
+          <p>The first resource in the library. A free Notion template designed to help you find the foundational thread your story is already trying to tell.</p>
+        </div>
+
+        <article class="featured fade-in">
+          <div class="featured-left">
+            <div class="featured-pills">
+              <span class="pill">Notion Template</span>
+              <span class="pill pill--sage">Free</span>
+            </div>
+            <p class="featured-prompt">
+              When you keep beginning the same story over and over and you can't quite name what it's about…
+            </p>
+            <h3 class="featured-h3">The Origin Thread</h3>
+            <p class="featured-body">
+              A guided exercise to surface the through-line that's been running quietly underneath your work, your relationships, the chapters of your life that seem unrelated until you look again.
+            </p>
+            <p class="featured-body">
+              You'll move through a sequence of prompts — memories, images, recurring symbols, the things you've always come back to — and end with <strong>one written sentence</strong>: the thread that's been there all along.
+            </p>
+            <p class="featured-body">
+              Most people use it as a foundation for everything else: brand language, a body of work, a creative project, or simply a more honest sense of what they're here to do.
+            </p>
+            <div class="featured-meta">
+              <span><strong>Format</strong> · Notion template</span>
+              <span><strong>Time</strong> · 45–90 min</span>
+              <span><strong>Cost</strong> · Free</span>
+            </div>
+            <a href="https://mythograph.notion.site/" target="_blank" rel="noopener" class="btn btn--terra">
+              Preview the Template →
+            </a>
+          </div>
+
+          <div class="featured-right">
+            <!-- ═══════════════════════════════════════════════════════════════
+                 KIT EMBED SLOT — replace this block with your Kit embed code
+                 once the landing page is built.
+                 e.g. <script async data-uid="XXXXX" src="https://mythograph.kit.com/XXXXX/index.js"></script>
+            ═══════════════════════════════════════════════════════════════ -->
+            <div class="kit-slot" id="kitSlot">
+              <span class="kit-slot-label">Get the Template</span>
+              <h4 class="kit-slot-h4">Send it to my inbox</h4>
+              <p class="kit-slot-body">
+                Drop your email and I'll send The Origin Thread along with a short companion note on how to use it.
+              </p>
+              <a href="https://mythograph.notion.site/" target="_blank" rel="noopener" class="btn btn--ink" style="width: 100%; justify-content: center;">
+                Get The Origin Thread →
+              </a>
+              <p class="kit-slot-note">
+                A proper signup form is on its way — for now, this opens the live template.
+              </p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ─── DIVIDER ─── -->
+    <div class="container">
+      <div class="ornament" aria-hidden="true"><span>✦</span></div>
+    </div>
+
+    <!-- ─── IN THE WORKS — state-paired resources ─── -->
+    <section class="res-section res-section--fog">
+      <div class="container">
+        <div class="res-section-head fade-in">
+          <span class="eyebrow">In the works</span>
+          <h2 class="section-h2">Coming soon, paired with the moment they're for.</h2>
+          <p>I'm building these slowly and on purpose. Each one is meant for a specific season — what you might be reaching for next. Join the list below if you'd like to know when they land.</p>
+        </div>
+
+        <div class="works-grid">
+
+          <!-- 1. Soul's Journey Narrative -->
+          <article class="work-card fade-in">
+            <div class="work-state">
+              <span class="work-state-eyebrow">When you want to</span>
+              <p class="work-state-prompt">…understand the deeper pattern of your path — and read your life like a myth.</p>
+            </div>
+            <div class="work-resource">
+              <div class="work-pills">
+                <span class="pill">Custom Narrative</span>
+                <span class="pill pill--gold">$27</span>
+                <span class="pill pill--muted">Coming soon</span>
+              </div>
+              <h3 class="work-h3">Mythograph Soul's Journey Narrative</h3>
+              <p class="work-body">
+                A custom narrative reading drawn from your Human Design chart, written in story-form rather than chart-form. It maps the archetypal arc you're already living — your gifts, your thresholds, the kind of story you came here to tell — into language you can actually use.
+              </p>
+              <div class="work-meta">
+                <span><strong>Format</strong> · Personalised PDF</span>
+                <span><strong>Cost</strong> · $27</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 2. Active Imagination Audio Meditations -->
+          <article class="work-card fade-in">
+            <div class="work-state">
+              <span class="work-state-eyebrow">When you want to</span>
+              <p class="work-state-prompt">…dream forward — and let your imagination show you what wants to be made.</p>
+            </div>
+            <div class="work-resource">
+              <div class="work-pills">
+                <span class="pill">Audio Meditations</span>
+                <span class="pill pill--sage">Free</span>
+                <span class="pill pill--muted">Coming soon</span>
+              </div>
+              <h3 class="work-h3">Active Imagination for Creative Visioning</h3>
+              <p class="work-body">
+                A small series of guided audio meditations using the Jungian practice of active imagination — a way of meeting the figures, images, and inner landscapes that already carry your next chapter. Designed for when you're between projects, in a creative block, or sensing something forming you can't quite see yet.
+              </p>
+              <div class="work-meta">
+                <span><strong>Format</strong> · Audio (Insight Timer + here)</span>
+                <span><strong>Cost</strong> · Free</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 3. Story Loom Course -->
+          <article class="work-card fade-in">
+            <div class="work-state">
+              <span class="work-state-eyebrow">When you're ready to</span>
+              <p class="work-state-prompt">…build a body of work with structure — a brand and narrative that can hold your whole vision.</p>
+            </div>
+            <div class="work-resource">
+              <div class="work-pills">
+                <span class="pill">Self-paced Course</span>
+                <span class="pill pill--muted">Coming this year</span>
+              </div>
+              <h3 class="work-h3">Story Loom — the standalone course</h3>
+              <p class="work-body">
+                The self-paced version of my 1:1 Story Loom container. The full narrative-and-brand methodology — archetypes, narrative architecture, voice, positioning — translated into something you can move through on your own time, with prompts and templates you can return to as your work grows.
+              </p>
+              <div class="work-meta">
+                <span><strong>Format</strong> · Online course</span>
+                <span><strong>Cost</strong> · TBA</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 4. Story Loom App -->
+          <article class="work-card fade-in">
+            <div class="work-state">
+              <span class="work-state-eyebrow">When you want a</span>
+              <p class="work-state-prompt">…living tool that helps you keep narrative coherence as you, or your team, evolve.</p>
+            </div>
+            <div class="work-resource">
+              <div class="work-pills">
+                <span class="pill">App / Subscription</span>
+                <span class="pill pill--muted">Coming this year</span>
+              </div>
+              <h3 class="work-h3">Story Loom — the app</h3>
+              <p class="work-body">
+                A subscription tool to keep the threads of your narrative woven over time — for individuals working on their own body of work, and for teams who need a shared narrative spine across people, products, and seasons. Two tiers planned: <strong>Individual</strong> and <strong>Teams</strong>.
+              </p>
+              <div class="work-meta">
+                <span><strong>Format</strong> · Web app</span>
+                <span><strong>Tiers</strong> · Individual · Teams</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 5. Creative Exercises Ebook -->
+          <article class="work-card fade-in">
+            <div class="work-state">
+              <span class="work-state-eyebrow">When you want</span>
+              <p class="work-state-prompt">…a small, beautiful book of creative practices to keep on your desk.</p>
+            </div>
+            <div class="work-resource">
+              <div class="work-pills">
+                <span class="pill">Ebook</span>
+                <span class="pill pill--muted">Coming this year</span>
+              </div>
+              <h3 class="work-h3">A Field Book of Creative Exercises</h3>
+              <p class="work-body">
+                A curated collection of the prompts, rituals, and somatic exercises I use most often in coaching — gathered into one quiet, illustrated companion. Built for solo practice, for journaling seasons, and for the kind of slow creative work that doesn't fit a content calendar.
+              </p>
+              <div class="work-meta">
+                <span><strong>Format</strong> · Illustrated PDF</span>
+                <span><strong>Cost</strong> · TBA</span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── NEWSLETTER ─── -->
+    <section class="nl-band">
+      <div class="container">
+        <div class="nl-inner fade-in">
+          <span class="nl-eyebrow">The List</span>
+          <h2 class="nl-h2">Be the first to know when something new lands.</h2>
+          <p class="nl-body">
+            One letter every couple of weeks — slow, considered, no funnels. You'll hear about new resources here before anywhere else, alongside essays on narrative, archetype, and the kind of work that doesn't fit the attention economy.
+          </p>
+          <div class="nl-form">
+            <script async data-uid="8ecae8880b" src="https://mythograph.kit.com/8ecae8880b/index.js"></script>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── MYTHOGRAPH FOOTNOTE ─── -->
+    <div class="container">
+      <aside class="mythograph-footnote">
+        Working with an organization? <a href="https://mythograph.co" target="_blank" rel="noopener">Visit Mythograph →</a>
+      </aside>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-col">
+          <p class="footer-logo">Cléa Hernández</p>
+          <p class="footer-tagline">Jungian Narrative Coach, brand strategist, and founder of Mythograph &amp; Story Loom.</p>
+        </div>
+        <div class="footer-col">
+          <p class="footer-col-title">Navigate</p>
+          <ul class="footer-links">
+            <li><a href="index.html">Story Loom</a></li>
+            <li><a href="jungian-coaching.html">Jungian Coaching</a></li>
+            <li><a href="resources.html">Resources</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="work-with-me.html">Work With Me</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <p class="footer-col-title">Connect</p>
+          <ul class="footer-links">
+            <li><a href="mailto:clea@mythograph.co">clea@mythograph.co</a></li>
+            <li><a href="https://mythograph.co" target="_blank" rel="noopener">Mythograph.co</a></li>
+            <li><a href="https://substack.com/@mythograph" target="_blank" rel="noopener">Substack</a></li>
+            <li><a href="https://www.linkedin.com/in/clea-hernandez/" target="_blank" rel="noopener">LinkedIn</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Cléa Hernández. All rights reserved.</span>
+        <span>Built with intention.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll fade-in -->
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
+
+  <!-- Mobile menu -->
+  <script>
+    (function() {
+      var btn = document.getElementById('navHamburger');
+      var menu = document.getElementById('mobileMenu');
+      if (!btn || !menu) return;
+      btn.addEventListener('click', function() {
+        var open = btn.classList.toggle('open');
+        menu.classList.toggle('open', open);
+        btn.setAttribute('aria-expanded', String(open));
+        menu.setAttribute('aria-hidden', String(!open));
+        document.body.style.overflow = open ? 'hidden' : '';
+      });
+      menu.querySelectorAll('a').forEach(function(a) {
+        a.addEventListener('click', function() {
+          btn.classList.remove('open');
+          menu.classList.remove('open');
+          btn.setAttribute('aria-expanded', 'false');
+          menu.setAttribute('aria-hidden', 'true');
+          document.body.style.overflow = '';
+        });
+      });
+    })();
+  </script>
+
+</body>
+</html>
