@@ -92,6 +92,7 @@
     .btn:hover { opacity: .82; transform: translateY(-1px); }
     .btn--terra   { background: var(--terra); color: #fff; }
     .btn--terra-o { background: transparent; color: var(--terra); border: 1.5px solid var(--terra); }
+    .btn--indigo  { background: var(--indigo); color: #fff; }
     .btn--ink     { background: var(--ink); color: var(--white); }
     .btn--ghost   { background: rgba(250,250,247,.1); color: rgba(250,250,247,.85); border: 1px solid rgba(250,250,247,.2); }
     .btn[disabled], .btn--muted {
@@ -231,8 +232,8 @@
        FEATURED — The Origin Thread
     ════════════════════════════════════════════════════════════ */
     .featured {
-      display: grid; grid-template-columns: 1.05fr 1fr; gap: 48px;
-      align-items: stretch;
+      max-width: 760px;
+      margin: 0 auto;
       background: var(--white);
       border: 1px solid var(--border);
       border-top: 3px solid var(--terra);
@@ -240,6 +241,7 @@
       overflow: hidden;
     }
     .featured-left { padding: 48px 44px 44px; }
+    .featured-cta { margin-top: 32px; }
     .featured-pills {
       display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 22px;
     }
@@ -283,41 +285,6 @@
       margin-bottom: 16px;
     }
     .featured-body strong { color: var(--ink); font-weight: 500; }
-    .featured-meta {
-      font-size: 12px; letter-spacing: .08em; text-transform: uppercase;
-      color: var(--ink-muted); margin: 22px 0 24px;
-      padding-top: 20px; border-top: 1px dashed var(--border);
-      display: flex; gap: 20px; flex-wrap: wrap;
-    }
-    .featured-meta span { display: inline-flex; align-items: center; gap: 6px; }
-    .featured-meta strong { color: var(--ink); font-weight: 600; }
-
-    /* Right side — Kit embed slot */
-    .featured-right {
-      background: var(--mist);
-      padding: 44px 40px;
-      display: flex; flex-direction: column; justify-content: center;
-      border-left: 1px solid var(--border);
-      position: relative;
-    }
-    .kit-embed {
-      width: 100%;
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-top: 3px solid var(--indigo);
-      border-radius: var(--radius);
-      overflow: hidden;
-    }
-    .kit-embed iframe {
-      width: 100%;
-      height: 620px;
-      border: 0;
-      display: block;
-      background: var(--white);
-    }
-    @media (max-width: 980px) {
-      .kit-embed iframe { height: 560px; }
-    }
 
     /* Eyebrow variants */
     .eyebrow--indigo { color: var(--indigo); }
@@ -374,12 +341,6 @@
       margin-bottom: 16px;
     }
     .work-body strong { color: var(--ink); font-weight: 500; }
-    .work-meta {
-      display: flex; gap: 18px; flex-wrap: wrap;
-      font-size: 11px; letter-spacing: .1em; text-transform: uppercase;
-      color: var(--ink-muted); margin-top: auto;
-    }
-    .work-meta strong { color: var(--ink); font-weight: 600; }
 
     /* ════════════════════════════════════════════════════════════
        NEWSLETTER BAND
@@ -447,8 +408,6 @@
 
     /* ─── Responsive ─── */
     @media (max-width: 980px) {
-      .featured { grid-template-columns: 1fr; }
-      .featured-right { border-left: none; border-top: 1px solid var(--border); }
       .work-card { grid-template-columns: 1fr; gap: 20px; padding: 28px 28px; }
       .work-state { border-right: none; border-bottom: 1px dashed var(--border); padding-right: 0; padding-bottom: 20px; }
       .footer-inner { grid-template-columns: 1fr 1fr; gap: 48px; }
@@ -461,7 +420,6 @@
       .nav-hamburger { display: flex; }
       .res-hero { padding: 60px 0 52px; }
       .featured-left { padding: 36px 28px 32px; }
-      .featured-right { padding: 32px 24px; }
       .res-section { padding: 56px 0; }
       .footer-inner { grid-template-columns: 1fr; gap: 36px; }
       .footer-col:first-child { grid-column: span 1; }
@@ -532,27 +490,21 @@
               <span class="pill pill--sage">Free</span>
             </div>
             <p class="featured-prompt">
-              When you keep beginning the same story over and over and you can't quite name what it's about…
+              When you can't quite name what you're all about…
             </p>
             <h3 class="featured-h3">The Origin Thread</h3>
             <p class="featured-body">
               A guided exercise to surface the through-line that's been running quietly underneath your work, your relationships, the chapters of your life that seem unrelated until you look again.
             </p>
             <p class="featured-body">
-              You'll move through a sequence of prompts — memories, images, recurring symbols, the things you've always come back to — and end with <strong>one written sentence</strong>: the thread that's been there all along.
+              You'll move through a sequence of prompts — memories, images, recurring symbols, the things you've always come back to — and end with <strong>one valuable written sentence</strong> that underpins your brand.
             </p>
             <p class="featured-body">
               Most people use it as a foundation for everything else: brand language, a body of work, a creative project, or simply a more honest sense of what they're here to do.
             </p>
-            <div class="featured-meta">
-              <span><strong>Format</strong> · Notion template</span>
-              <span><strong>Time</strong> · 15–30 min</span>
-              <span><strong>Cost</strong> · Free</span>
+            <div class="featured-cta">
+              <button type="button" class="btn btn--indigo" data-formkit-toggle="0e69ae0b2a">Get The Origin Thread</button>
             </div>
-          </div>
-
-          <div class="featured-right">
-            <script async data-uid="2e70b7eac8" src="https://mythograph.kit.com/2e70b7eac8/index.js"></script>
           </div>
         </article>
       </div>
@@ -593,11 +545,6 @@
               <p class="work-body">
                 If you'd like to read what your chart <em>means</em> as story, the Journey Narrative below is the deeper version of this same conversation.
               </p>
-              <div class="work-meta">
-                <span><strong>Format</strong> · Web tool</span>
-                <span><strong>Time</strong> · ~3 min</span>
-                <span><strong>Cost</strong> · Free</span>
-              </div>
             </div>
           </article>
 
@@ -620,11 +567,6 @@
               <p class="work-body">
                 You'll enter your birth details, view your full bodygraph inside the app, and receive a personalized narrative in your inbox to keep — something to return to as your work and life continue to unfold.
               </p>
-              <div class="work-meta">
-                <span><strong>Format</strong> · Web app + emailed copy</span>
-                <span><strong>Time</strong> · ~10 min in-app</span>
-                <span><strong>Cost</strong> · $37</span>
-              </div>
             </div>
           </article>
 
@@ -644,10 +586,6 @@
               <p class="work-body">
                 A small series of guided audio meditations using the Jungian practice of active imagination — a way of meeting the figures, images, and inner landscapes that already carry your next chapter. Designed for when you're between projects, in a creative block, or sensing something forming you can't quite see yet.
               </p>
-              <div class="work-meta">
-                <span><strong>Format</strong> · Audio (Insight Timer + here)</span>
-                <span><strong>Cost</strong> · Free</span>
-              </div>
             </div>
           </article>
 
@@ -666,10 +604,6 @@
               <p class="work-body">
                 The self-paced version of my 1:1 Story Loom container. The full narrative-and-brand methodology — archetypes, narrative architecture, voice, positioning — translated into something you can move through on your own time, with prompts and templates you can return to as your work grows.
               </p>
-              <div class="work-meta">
-                <span><strong>Format</strong> · Online course</span>
-                <span><strong>Cost</strong> · TBA</span>
-              </div>
             </div>
           </article>
 
@@ -688,10 +622,6 @@
               <p class="work-body">
                 A subscription tool to keep the threads of your narrative woven over time — for individuals working on their own body of work, and for teams who need a shared narrative spine across people, products, and seasons. Two tiers planned: <strong>Individual</strong> and <strong>Teams</strong>.
               </p>
-              <div class="work-meta">
-                <span><strong>Format</strong> · Web app</span>
-                <span><strong>Tiers</strong> · Individual · Teams</span>
-              </div>
             </div>
           </article>
 
@@ -710,10 +640,6 @@
               <p class="work-body">
                 A curated collection of the prompts, rituals, and somatic exercises I use most often in coaching — gathered into one quiet, illustrated companion. Built for solo practice, for journaling seasons, and for the kind of slow creative work that doesn't fit a content calendar.
               </p>
-              <div class="work-meta">
-                <span><strong>Format</strong> · Illustrated PDF</span>
-                <span><strong>Cost</strong> · TBA</span>
-              </div>
             </div>
           </article>
 
@@ -813,6 +739,9 @@
       });
     })();
   </script>
+
+  <!-- Kit form — The Origin Thread (modal, triggered by .btn[data-formkit-toggle]) -->
+  <script async data-uid="0e69ae0b2a" src="https://mythograph.kit.com/0e69ae0b2a/index.js"></script>
 
 </body>
 </html>
