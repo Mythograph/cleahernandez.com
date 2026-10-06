@@ -388,6 +388,13 @@
       max-width: 680px;
     }
     .invitation-eyebrow { margin-bottom: 20px; }
+    .invitation-question {
+      font-family: var(--serif); font-style: italic;
+      font-size: clamp(20px, 2.2vw, 28px); font-weight: 400;
+      line-height: 1.4; color: var(--ink-muted);
+      padding-left: 20px; border-left: 2px solid var(--gold);
+      margin-bottom: 28px;
+    }
     .invitation-h2 {
       font-family: var(--serif);
       font-size: clamp(26px, 3vw, 40px);
@@ -1026,6 +1033,18 @@
     ════════════════════════════════════════════════════════════ */
     .how-works { padding: 60px 0; border-top: 1px solid var(--border); }
     .how-works-inner { max-width: 760px; margin: 0 auto; }
+    .how-reframe { margin-bottom: 8px; }
+    .how-reframe .tl-label { margin-bottom: 6px; }
+    .how-reframe-old {
+      font-family: var(--serif); font-size: clamp(18px, 1.8vw, 22px);
+      color: var(--ink-muted); text-decoration: line-through;
+      text-decoration-color: var(--gold); margin-bottom: 20px;
+    }
+    .how-reframe-new {
+      font-family: var(--serif); font-style: italic;
+      font-size: clamp(22px, 2.6vw, 32px); line-height: 1.3;
+      color: var(--ink);
+    }
     .how-steps { display: grid; gap: 12px; margin: 32px 0 48px; }
     .how-step {
       display: grid; grid-template-columns: 10px 1fr; gap: 20px; align-items: flex-start;
@@ -1092,7 +1111,7 @@
     ════════════════════════════════════════════════════════════ */
     .pricing-section { padding: 60px 0; background: var(--mist); }
     .pricing-inner { max-width: 680px; margin: 0 auto; }
-    .pricing-intro { font-size: clamp(16px, 1.5vw, 18px); line-height: 1.82; color: var(--ink-muted); margin-bottom: 12px; }
+    .pricing-intro { font-size: clamp(16px, 1.5vw, 18px); line-height: 1.82; color: var(--ink-muted); margin-bottom: 44px; }
     .pricing-note { font-size: 14px; font-weight: 500; color: var(--terra); margin-bottom: 44px; }
     .pricing-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
     .pricing-card {
@@ -1317,6 +1336,21 @@
     </section>
 
     <!-- ═══════════════════════════════════════════════════════════════
+         INVITATION
+    ═══════════════════════════════════════════════════════════════ -->
+    <section class="invitation">
+      <div class="container">
+        <div class="invitation-inner fade-in">
+          <p class="invitation-question">&ldquo;How do I let myself be seen without becoming someone I&rsquo;m not?&rdquo;</p>
+          <h2 class="invitation-eyebrow" style="font-family: var(--serif); font-size: clamp(28px, 3.5vw, 48px); font-weight: 600; line-height: 1.15; letter-spacing: -0.02em; color: var(--ink); margin-bottom: 28px;">This is what I do.</h2>
+          <p class="invitation-body">
+            I work at the intersection of brand strategy and Jungian depth psychology to help you notice what's actually shaping your story beneath the surface: the beliefs you inherited, the roles you learned to play, the parts of you that don't feel safe being seen. Once you've started interpreting the messages your body is telling you, you can begin to reframe your story using intentional storytelling. You stop forcing the persona that kept you safe before, because you no longer need it. Then we turn that material into honest, resonant language, you start speaking and writing confidently from inner authority, and your brand becomes a coherent narrative people can feel and trust.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════
          BRANDS BAR
     ═══════════════════════════════════════════════════════════════ -->
     <div class="brands-bar" aria-label="Brands I've worked with">
@@ -1336,20 +1370,6 @@
     </div>
 
     <!-- ═══════════════════════════════════════════════════════════════
-         INVITATION
-    ═══════════════════════════════════════════════════════════════ -->
-    <section class="invitation">
-      <div class="container">
-        <div class="invitation-inner fade-in">
-          <h2 class="invitation-eyebrow" style="font-family: var(--serif); font-size: clamp(28px, 3.5vw, 48px); font-weight: 600; line-height: 1.15; letter-spacing: -0.02em; color: var(--ink); margin-bottom: 28px;">This is what I do.</h2>
-          <p class="invitation-body">
-            I work at the intersection of brand strategy and Jungian depth psychology to help you notice what's actually shaping your story beneath the surface: the beliefs you inherited, the roles you learned to play, the parts of you that don't feel safe being seen. Once you've started interpreting the messages your body is telling you, you can begin to reframe your story using intentional storytelling. You stop forcing the persona that kept you safe before, because you no longer need it. Then we turn that material into honest, resonant language, you start speaking and writing confidently from inner authority, and your brand becomes a coherent narrative people can feel and trust.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══════════════════════════════════════════════════════════════
          WHAT STORY LOOM IS
     ═══════════════════════════════════════════════════════════════ -->
     <section class="sl-what">
@@ -1358,7 +1378,7 @@
           <div class="sl-what-text">
             <span class="pill pill--indigo">The Signature Program</span>
             <h2 class="sl-program-name">Story Loom</h2>
-            <p class="sl-subhead">A co-creative brand build.</p>
+            <p class="sl-subhead">A depth-branding experience for people who are ready to stop performing their expertise and start expressing it from inner authority.</p>
             <p class="sl-lead">
               Story Loom is a 1:1 program where we uncover the stories and messages that are most alive for you, then architect them into a narrative ecosystem that can hold:
             </p>
@@ -1402,7 +1422,7 @@
               <div class="deliverable-block-num">2</div>
               <p class="deliverable-block-title">A signature story bank you can draw from for years</p>
               <ul class="deliverable-sub-list">
-                <li><strong>Golden Thread Manifesto:</strong> the through-line that ties your story, your work, and your promise into one coherent signal.</li>
+                <li><strong>Golden Thread Reflection:</strong> the through-line that ties your story, your work, and your promise into one coherent signal.</li>
                 <li><strong>Story Bank:</strong> up to 5 signature stories, written for you, as the foundation of the story bank we create — your core beliefs, turning points, proofs, and origin moments, captured in a way you can reliably draw from, add to, and evolve.</li>
               </ul>
             </div>
@@ -1529,7 +1549,13 @@
       <div class="container">
         <div class="how-works-inner fade-in">
           <p class="eyebrow" style="margin-bottom: 20px;">How It Works</p>
-          <h2 class="section-h2" style="margin-bottom: 36px;">Signal over slogans.</h2>
+          <h2 class="section-h2" style="margin-bottom: 32px;">Signal over slogans.</h2>
+          <div class="how-reframe">
+            <p class="tl-label">Instead of asking</p>
+            <p class="how-reframe-old">What should your brand say?</p>
+            <p class="tl-label">You ask</p>
+            <p class="how-reframe-new">Who are you when you&rsquo;re no longer organizing your expression around being accepted?</p>
+          </div>
 
           <div class="how-steps">
             <div class="how-step">
@@ -1556,7 +1582,7 @@
           <div class="flow-list">
             <div class="flow-item">
               <span class="flow-label">Jungian Coaching Sessions</span>
-              <p class="flow-desc">Two 60-minute sessions a week focused on finding the narrative material that feels most alive. We work with whatever blocks clean visibility — the voice that asks <em>Who do you think you are?</em> The shadow archetypes, discomfort, symbols, ancestral messages, and all the parts that don't want to be seen. I synthesize what emerges into a <strong>Golden Thread Report</strong> so we have an emotional/narrative anchor before we build anything.</p>
+              <p class="flow-desc">Two 60-minute sessions a week focused on finding the narrative material that feels most alive. We work with whatever blocks clean visibility — the voice that asks <em>Who do you think you are?</em> The shadow archetypes, discomfort, symbols, ancestral messages, and all the parts that don't want to be seen. I synthesize what emerges into a <strong>Golden Thread Reflection</strong> so we have an emotional/narrative anchor before we build anything.</p>
             </div>
             <div class="flow-item">
               <span class="flow-label">Creative Exercises</span>
@@ -1710,7 +1736,6 @@
           <p class="eyebrow" style="margin-bottom: 20px;">Pricing</p>
           <h2 class="section-h2" style="margin-bottom: 24px;">Beta / founding round.</h2>
           <p class="pricing-intro">Right now, Story Loom is in a beta / founding round. You've probably taken the courses, filled in the frameworks, and tried to "tell your story" and still felt like you couldn't quite land it. This is different. For this founding round, you're getting the benefit of done-for-you depth at a done-with-you price, while I build the case studies and refine the work into a self-paced course and cohort-based program that won't be so hands-on.</p>
-          <p class="pricing-note">Founding pricing available through July 2026.</p>
 
           <div class="pricing-cards">
             <div class="pricing-card">
@@ -1750,7 +1775,7 @@
             The <strong>Golden Thread Session</strong> is a single 60-minute conversation where we listen beneath the performed versions of your story for what's most alive. Using Jungian tools — active imagination, archetypal framing, somatic awareness — we find the narrative thread that actually holds your work together. Most people leave with language for something they've been circling for years without being able to name.
           </p>
           <p class="not-sure-body">
-            Within the week, you'll receive a written synthesis — your Golden Thread Manifesto — that can anchor everything you build from there. If you move into Story Loom afterward, the $200 is credited back in full.
+            Within the week, you'll receive a written synthesis — your Golden Thread Reflection — that can anchor everything you build from there. If you move into Story Loom afterward, the $200 is credited back in full.
           </p>
           <a href="#" class="btn btn--terra" data-cal-link="clea-hernandez/golden-thread-session" data-cal-namespace="golden-thread-session" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'>Book a Golden Thread Session →</a>
         </div>
