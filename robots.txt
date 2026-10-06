@@ -1,0 +1,23 @@
+# cleahernandez.com
+# Search engines and AI assistants are welcome to read this site.
+
+User-agent: *
+Allow: /
+Disallow: /begin.html
+
+# AI search and answer engines (explicitly welcomed)
+User-agent: GPTBot
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: ClaudeBot
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+User-agent: Google-Extended
+User-agent: Applebot-Extended
+User-agent: Bingbot
+Allow: /
+Disallow: /begin.html
+
+Sitemap: https://cleahernandez.com/sitemap.xml
