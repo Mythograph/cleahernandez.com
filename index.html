@@ -377,6 +377,8 @@
     }
     .problem-body:last-child { margin-bottom: 0; }
     .problem-body strong { color: var(--ink); font-weight: 500; }
+    .problem-link { color: var(--terra); font-weight: 500; text-decoration: none; white-space: nowrap; }
+    .problem-link:hover { text-decoration: underline; }
 
     /* ════════════════════════════════════════════════════════════
        INVITATION SECTION
@@ -1136,6 +1138,27 @@
     .not-sure-inner { max-width: 680px; margin: 0 auto; text-align: center; }
     .not-sure-body { font-size: clamp(16px, 1.5vw, 18px); line-height: 1.8; color: var(--ink-muted); margin-bottom: 28px; }
     .not-sure-body strong { color: var(--ink); font-weight: 500; }
+    .not-sure-alt { font-size: 15px; line-height: 1.7; color: var(--ink-muted); margin-top: 28px; }
+    .not-sure-alt a { color: var(--terra); font-weight: 500; }
+
+    /* Case story */
+    .case-story { padding: 72px 0; border-top: 1px solid var(--border); }
+    .case-inner { display: grid; grid-template-columns: 5fr 7fr; gap: 56px; align-items: center; max-width: 1000px; margin: 0 auto; }
+    .case-img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: center 30%; border-radius: var(--radius); }
+    .case-body { font-size: clamp(16px, 1.5vw, 18px); line-height: 1.8; color: var(--ink-muted); margin-bottom: 20px; }
+    .case-quote {
+      font-family: var(--serif); font-style: italic; font-size: clamp(20px, 2.2vw, 26px);
+      line-height: 1.4; color: var(--ink); margin: 32px 0 28px;
+      padding-left: 20px; border-left: 2px solid var(--gold);
+    }
+    .case-quote cite { display: block; margin-top: 12px; font-family: var(--body); font-style: normal; font-size: 13px; color: var(--ink-muted); }
+    .case-links { display: flex; flex-wrap: wrap; gap: 24px; }
+    .case-links a { font-size: 14px; font-weight: 500; color: var(--terra); text-decoration: none; }
+    .case-links a:hover { text-decoration: underline; }
+    @media (max-width: 800px) {
+      .case-inner { grid-template-columns: 1fr; gap: 32px; }
+      .case-img { max-width: 360px; }
+    }
 
     /* ─── Homepage Resource Callout ─── */
     .res-callout { padding: 56px 0; border-top: 1px solid var(--border); background: var(--white); }
@@ -1315,18 +1338,15 @@
     <section class="problem">
       <div class="container">
         <div class="problem-inner fade-in">
-          <h2 class="problem-h2">Something is definitely shifting.</h2>
+          <h2 class="problem-h2">Something is shifting.</h2>
           <p class="problem-body">
-            Like so many entrepreneurs I know, I left the corporate world because I felt I had something different to offer. Instead, I found myself in a catch-22 as a strategist trying to build my own brand: I realized the strategic tools available to entrepreneurs were built for the game that's eating us alive. <em>Extract attention. Perform expertise. Optimize the funnel for endless growth.</em>
+            For years I did my little work at my little desk, writing missions and messaging programs for organizations I wanted desperately to believe in. When I finally left to build my own thing, I had the hardest time building my own brand. I had done it for hundreds of others. Why was it so impossible now?
           </p>
           <p class="problem-body">
-            At best, the language doesn't quite fit. At worst, it degrades our integrity and trust, the communities we're here to serve, and the planet we all share.
+            Eventually I saw it: the strategic tools available to entrepreneurs were built for the game that's eating us alive. <em>Extract attention. Perform expertise. Optimize the funnel for endless growth.</em> At best, that language doesn't quite fit. At worst, it degrades our integrity, the communities we're here to serve, and the planet we all share.
           </p>
           <p class="problem-body">
-            Most entrepreneurs are still building on a scarcity story they inherited. If you're building something that matters — a practice, a body of work, a way of being in the world shaped by what you believe is possible — your work deserves a narrative field that's genuine and expansive.
-          </p>
-          <p class="problem-body">
-            Right now, we need stories from people with vision who aren't selling the status quo.
+            Right now, we need stories from people with vision who aren't selling the status quo. <a href="about.html" class="problem-link">Read the longer story &rarr;</a>
           </p>
           <p class="problem-body">
             <strong>You need to tell <em>your</em> stories, and we need to hear them.</strong>
@@ -1611,50 +1631,29 @@
     </div>
 
     <!-- ═══════════════════════════════════════════════════════════════
-         TWO WAYS TO WORK TOGETHER
+         CASE STORY — Deb / Red Suitcase
     ═══════════════════════════════════════════════════════════════ -->
-    <section class="two-ways">
+    <section class="case-story">
       <div class="container">
-        <div class="two-ways-inner fade-in">
-          <p class="eyebrow" style="margin-bottom: 20px;">Two Ways to Work Together</p>
-          <h2 class="section-h2">Find the right container for where you are.</h2>
-
-          <div class="two-ways-grid">
-            <div class="way-card way-card--featured">
-              <span class="way-num">01 / Story Loom</span>
-              <h3 class="way-title">Narrative OS Build</h3>
-              <p class="way-body">We work deeply together in coaching sessions to map your journey and truths, then co-create your brand strategy and language: Golden Thread, story bank, convictions/POV, messaging architecture, and a voice system you can embody confidently.</p>
-              <a href="#" class="btn btn--terra" data-cal-link="clea-hernandez/fit-call" data-cal-namespace="fit-call" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'>Book a Clarity Call →</a>
-            </div>
-
-            <div class="way-card">
-              <span class="way-num">02 / Full Build</span>
-              <h3 class="way-title">Brand + Website</h3>
-              <p class="way-body">For the people who want the full thing built, launched, and live. Full Build includes everything in Story Loom, plus:</p>
-              <ul class="way-includes-list">
-                <li>A <strong>basic visual brand identity</strong> (color, type, mark)</li>
-                <li>A <strong>self-hosted website built and launched</strong> (so you're not trapped in monthly platform fees)</li>
-                <li>A <strong>simple live website</strong> (typically 3–5 pages)</li>
-                <li>A <strong>gentle "launch" post</strong> that invites without performing</li>
-                <li>An <strong>aligned marketing plan</strong> (so you know what to do next without feeling like a content machine)</li>
-              </ul>
-              <p style="font-size: 14px; color: var(--ink-muted); margin-top: 12px; margin-bottom: 16px;"><strong>Timeline:</strong> Full Build runs <strong>8 weeks</strong> (Story Loom foundation + build).</p>
-              <a href="#" class="btn btn--terra" data-cal-link="clea-hernandez/fit-call" data-cal-namespace="fit-call" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'>Book a Clarity Call →</a>
-            </div>
+        <div class="case-inner fade-in">
+          <img class="case-img" src="deb_case.webp" alt="Deb Fenwick, Jungian coach and founder of Red Suitcase" loading="lazy" />
+          <div class="case-text">
+            <p class="eyebrow" style="margin-bottom: 20px;">A Story Loom in the world</p>
+            <h2 class="section-h2" style="margin-bottom: 24px;">Deb's practice, made visible.</h2>
+            <p class="case-body">Deb is a Jungian-informed coach for people in threshold seasons. She works with dreams, symbols, and creative practice, and she doesn't rush anyone toward a tidy interpretation.</p>
+            <p class="case-body">The words at the center of her brand (<em>threshold, ensouled, sovereign</em>) were already hers. They came from years of doing this work herself. In her Story Loom Full Build, we found that language and built around it, so her brand now works the way her coaching does: you meet the container before you meet the offer.</p>
+            <blockquote class="case-quote">
+              &ldquo;You've interpreted my vision in a way I never could have.&rdquo;
+              <cite>Deb F., Red Suitcase Soul-Centered Coaching</cite>
+            </blockquote>
+            <p class="case-links">
+              <a href="https://redsuitcasecoaching.com" target="_blank" rel="noopener noreferrer">Visit Red Suitcase &rarr;</a>
+              <a href="the-circle.html">Meet The Circle &rarr;</a>
+            </p>
           </div>
         </div>
       </div>
     </section>
-
-
-    <!-- Editorial art strip -->
-    <div class="photo-strip" aria-hidden="false">
-      <img
-        src="mj_homepage_editorial.png"
-        alt="Surrealist editorial image — a woman channels golden threads of narrative light, mid-century Ibiza poster aesthetic"
-        loading="lazy"
-      />
-    </div>
 
     <!-- ═══════════════════════════════════════════════════════════════
          TESTIMONIALS / KIND WORDS
@@ -1669,14 +1668,8 @@
 
         <div class="quotes-grid">
 
-          <div class="quote-card fade-in">
-            <span class="quote-mark">"</span>
-            <p class="quote-text">I'm absolutely astounded by your exquisite Story Loom offering and every extra mile you've traveled on this project. The deep listening and energetic attunement you've brought — you've interpreted my vision in a way I never could have.</p>
-            <p class="quote-name">Deb F.</p>
-            <p class="quote-role">Jungian Coach, Red Suitcase</p>
-          </div>
 
-          <div class="quote-card fade-in delay-1">
+          <div class="quote-card fade-in">
             <span class="quote-mark">"</span>
             <p class="quote-text">Clea is one of the special ones. She explores beyond copy and dives straight into the core, purpose, and ultimate goals of the people behind the brand.</p>
             <p class="quote-name">Eric M.</p>
@@ -1711,73 +1704,55 @@
             <p class="quote-role">Co-founder, BeMinded</p>
           </div>
 
-          <div class="quote-card fade-in delay-3" style="background: var(--mist); display: flex; flex-direction: column; justify-content: center; align-items: flex-start; gap: 16px;">
-            <p style="font-family: var(--serif); font-size: 17px; font-style: italic; color: var(--ink); line-height: 1.6;">
-              Want to learn more?<br>Let's chat.
-            </p>
-            <a href="#" class="btn btn--terra" data-cal-link="clea-hernandez/fit-call" data-cal-namespace="fit-call" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'>Book a Clarity Call →</a>
-          </div>
 
         </div>
       </div>
     </section>
 
-    <!-- Photo accent -->
-    <div class="photo-strip" style="height: 300px;">
-      <img src="mj_pyramid_dusk.png" alt="Pyramid at dusk with golden threads — archetypal threshold image" loading="lazy" style="object-position: center 50%;" />
+    <!-- Editorial art strip -->
+    <div class="photo-strip" aria-hidden="false">
+      <img
+        src="mj_homepage_editorial.png"
+        alt="Surrealist editorial image — a woman channels golden threads of narrative light, mid-century Ibiza poster aesthetic"
+        loading="lazy"
+      />
     </div>
 
     <!-- ═══════════════════════════════════════════════════════════════
-         PRICING
+         TWO WAYS TO WORK TOGETHER + PRICING
     ═══════════════════════════════════════════════════════════════ -->
-    <section class="pricing-section">
+    <section class="two-ways">
       <div class="container">
-        <div class="pricing-inner fade-in">
-          <p class="eyebrow" style="margin-bottom: 20px;">Pricing</p>
-          <h2 class="section-h2" style="margin-bottom: 24px;">Beta / founding round.</h2>
-          <p class="pricing-intro">Right now, Story Loom is in a beta / founding round. You've probably taken the courses, filled in the frameworks, and tried to "tell your story" and still felt like you couldn't quite land it. This is different. For this founding round, you're getting the benefit of done-for-you depth at a done-with-you price, while I build the case studies and refine the work into a self-paced course and cohort-based program that won't be so hands-on.</p>
+        <div class="two-ways-inner fade-in">
+          <p class="eyebrow" style="margin-bottom: 20px;">Two Ways to Work Together</p>
+          <h2 class="section-h2">Find the right container for where you are.</h2>
+          <p class="pricing-intro" style="margin-top: 20px; margin-bottom: 0;">Story Loom is in its founding round. You get done-for-you depth at a done-with-you price while I build case studies and shape the work into a self-paced course and a cohort program that won't be so hands-on.</p>
 
-          <div class="pricing-cards">
-            <div class="pricing-card">
-              <p class="pc-title">Story Loom</p>
-              <p style="font-size: 13px; color: var(--ink-muted); margin-bottom: 16px;">Narrative OS Build · 6 weeks</p>
+          <div class="two-ways-grid">
+            <div class="way-card way-card--featured">
+              <span class="way-num">01 / Story Loom &middot; 6 weeks</span>
+              <h3 class="way-title">Narrative OS Build</h3>
               <p class="pc-price">$3,600</p>
-              <p class="pc-desc">Golden Thread, story bank, convictions, messaging architecture, voice system, and applied draft(s).</p>
-              <div style="margin-top: 28px;">
-                <a href="#" class="btn btn--terra" data-cal-link="clea-hernandez/fit-call" data-cal-namespace="fit-call" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'>Book a Clarity Call →</a>
-                <p style="font-size: 12px; color: var(--ink-muted); margin-top: 8px; font-style: italic;">We'll find the right fit together on a call.</p>
-              </div>
+              <p class="way-body">We work deeply together in coaching sessions to map your journey and truths, then co-create your brand strategy and language: Golden Thread Reflection, story bank, convictions/POV, messaging architecture, and a voice system you can embody confidently.</p>
+              <a href="#" class="btn btn--terra" data-cal-link="clea-hernandez/fit-call" data-cal-namespace="fit-call" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'>Book a Clarity Call →</a>
             </div>
-            <div class="pricing-card">
-              <p class="pc-title">Full Build</p>
-              <p style="font-size: 13px; color: var(--ink-muted); margin-bottom: 16px;">Brand + Website · 8 weeks</p>
+
+            <div class="way-card">
+              <span class="way-num">02 / Full Build &middot; 8 weeks</span>
+              <h3 class="way-title">Brand + Website</h3>
               <p class="pc-price">$6,750</p>
-              <p class="pc-desc">Everything in Story Loom, plus a visual brand identity and self-hosted website built and launched.</p>
-              <div style="margin-top: 28px;">
-                <a href="#" class="btn btn--terra" data-cal-link="clea-hernandez/fit-call" data-cal-namespace="fit-call" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'>Book a Clarity Call →</a>
-                <p style="font-size: 12px; color: var(--ink-muted); margin-top: 8px; font-style: italic;">We'll find the right fit together on a call.</p>
-              </div>
+              <p class="way-body">For the people who want the full thing built, launched, and live. Full Build includes everything in Story Loom, plus:</p>
+              <ul class="way-includes-list">
+                <li>A <strong>basic visual brand identity</strong> (color, type, mark)</li>
+                <li>A <strong>self-hosted website built and launched</strong> (so you're not trapped in monthly platform fees)</li>
+                <li>A <strong>simple live website</strong> (typically 3–5 pages)</li>
+                <li>A <strong>gentle "launch" post</strong> that invites without performing</li>
+                <li>An <strong>aligned marketing plan</strong> (so you know what to do next without feeling like a content machine)</li>
+              </ul>
+              <a href="#" class="btn btn--terra" style="margin-top: 16px;" data-cal-link="clea-hernandez/fit-call" data-cal-namespace="fit-call" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'>Book a Clarity Call →</a>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══════════════════════════════════════════════════════════════
-         NOT SURE
-    ═══════════════════════════════════════════════════════════════ -->
-    <section class="not-sure">
-      <div class="container">
-        <div class="not-sure-inner fade-in">
-          <p class="eyebrow" style="margin-bottom: 20px;">Not sure if you're ready?</p>
-          <h2 class="section-h2" style="margin-bottom: 24px;">Start with one session.</h2>
-          <p class="not-sure-body">
-            The <strong>Golden Thread Session</strong> is a single 60-minute conversation where we listen beneath the performed versions of your story for what's most alive. Using Jungian tools — active imagination, archetypal framing, somatic awareness — we find the narrative thread that actually holds your work together. Most people leave with language for something they've been circling for years without being able to name.
-          </p>
-          <p class="not-sure-body">
-            Within the week, you'll receive a written synthesis — your Golden Thread Reflection — that can anchor everything you build from there. If you move into Story Loom afterward, the $200 is credited back in full.
-          </p>
-          <a href="#" class="btn btn--terra" data-cal-link="clea-hernandez/golden-thread-session" data-cal-namespace="golden-thread-session" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'>Book a Golden Thread Session →</a>
+          <p style="font-size: 13px; color: var(--ink-muted); margin-top: 20px; font-style: italic; text-align: center;">We'll find the right fit together on a call.</p>
         </div>
       </div>
     </section>
@@ -1798,31 +1773,27 @@
       </div>
     </section>
 
+    <!-- Photo accent -->
+    <div class="photo-strip" style="height: 300px;">
+      <img src="mj_pyramid_dusk.png" alt="Pyramid at dusk with golden threads — archetypal threshold image" loading="lazy" style="object-position: center 50%;" />
+    </div>
+
     <!-- ═══════════════════════════════════════════════════════════════
-         RESOURCE CALLOUT — The Origin Thread (free lead magnet)
+         NOT SURE
     ═══════════════════════════════════════════════════════════════ -->
-    <section class="res-callout">
+    <section class="not-sure">
       <div class="container">
-        <div class="res-callout-inner fade-in">
-          <div class="res-callout-text">
-            <span class="eyebrow">Free Resource</span>
-            <h2 class="res-callout-h2">Or, start with <em>a thread.</em></h2>
-            <p class="res-callout-body">
-              If you're not ready for a session, begin with the foundational exercise — a free Notion template designed to surface the through-line your story is already trying to tell.
-            </p>
-            <p class="res-callout-body">
-              Most people use it as the <strong>first piece of language</strong> for everything they build next.
-            </p>
-            <a href="resources.html" class="btn btn--terra-o">Explore Resources →</a>
-          </div>
-          <aside class="res-callout-aside">
-            <span class="pill pill--gold">Notion Template · Free</span>
-            <p class="res-callout-aside-title">The Origin Thread</p>
-            <p class="res-callout-aside-meta">45–90 min · self-guided</p>
-            <p class="res-callout-body" style="margin-bottom: 0;">
-              A guided sequence of prompts that ends with one written sentence: the thread that's been there all along.
-            </p>
-          </aside>
+        <div class="not-sure-inner fade-in">
+          <p class="eyebrow" style="margin-bottom: 20px;">Not sure if you're ready?</p>
+          <h2 class="section-h2" style="margin-bottom: 24px;">Start with one session.</h2>
+          <p class="not-sure-body">
+            The <strong>Golden Thread Session</strong> is a single 60-minute conversation where we listen beneath the performed versions of your story for what's most alive. Using Jungian tools — active imagination, archetypal framing, somatic awareness — we find the narrative thread that actually holds your work together. Most people leave with language for something they've been circling for years without being able to name.
+          </p>
+          <p class="not-sure-body">
+            Within the week, you'll receive a written synthesis — your Golden Thread Reflection — that can anchor everything you build from there. If you move into Story Loom afterward, the $200 is credited back in full.
+          </p>
+          <a href="#" class="btn btn--terra" data-cal-link="clea-hernandez/golden-thread-session" data-cal-namespace="golden-thread-session" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'>Book a Golden Thread Session →</a>
+          <p class="not-sure-alt">Not ready for a session? Begin with <a href="resources.html">The Origin Thread</a>, a free self-guided exercise that ends with one written sentence: the thread that's been there all along.</p>
         </div>
       </div>
     </section>
