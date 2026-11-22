@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Offerings — Cléa Hernández</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,300;1,9..144,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --white:      #FAFAF7;
+      --ink:        #1A1410;
+      --ink-muted:  #7A6D5E;
+      --terra:      #C05A3C;
+      --indigo:     #3A4F99;
+      --gold:       #C8A24A;
+      --mist:       #F2ECE4;
+      --border:     rgba(34, 24, 48, 0.09);
+      --serif:      'Fraunces', Georgia, serif;
+      --body:       'DM Sans', system-ui, -apple-system, sans-serif;
+      --max:        1160px;
+      --pad:        40px;
+      --radius:     4px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--body);
+      background: var(--white);
+      color: var(--ink);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+    body::after {
+      content: ''; position: fixed; inset: 0;
+      pointer-events: none; z-index: 9999; opacity: 0.030;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-size: 200px 200px;
+    }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; }
+
+    .container { max-width: var(--max); margin: 0 auto; padding: 0 var(--pad); }
+
+    /* ── Buttons ── */
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-family: var(--body); font-size: 12px; font-weight: 500;
+      letter-spacing: .07em; text-transform: uppercase;
+      padding: 14px 28px; border-radius: var(--radius);
+      cursor: pointer; transition: opacity .18s, transform .15s;
+      border: none; line-height: 1; text-decoration: none;
+    }
+    .btn:hover { opacity: .82; transform: translateY(-1px); }
+    .btn--terra   { background: var(--terra); color: #fff; }
+    .btn--terra-o { background: transparent; color: var(--terra); border: 2px solid var(--terra); }
+    .btn--full    { width: 100%; justify-content: center; }
+
+    /* ── Nav ── */
+    .nav-wrap {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(250, 250, 247, 0.94);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+    }
+    .nav {
+      display: flex; align-items: center; justify-content: space-between;
+      height: 68px; max-width: var(--max); margin: 0 auto; padding: 0 var(--pad);
+    }
+    .nav-logo {
+      font-family: var(--serif); font-size: 22px; font-weight: 400; font-style: italic;
+      color: var(--terra); letter-spacing: .01em;
+    }
+
+    /* ── Hero ── */
+    .hero {
+      padding: 88px 0 72px;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+    }
+    .hero-eyebrow {
+      font-family: var(--body); font-size: 10px; font-weight: 500;
+      letter-spacing: .2em; text-transform: uppercase;
+      color: var(--terra); margin-bottom: 24px; display: block;
+    }
+    .hero-h1 {
+      font-family: var(--serif);
+      font-size: clamp(40px, 6vw, 72px);
+      font-weight: 600; line-height: 1.1; letter-spacing: -0.02em;
+      color: var(--ink); margin-bottom: 24px;
+    }
+    .hero-subhead {
+      font-size: 18px; font-weight: 300;
+      line-height: 1.8; color: var(--ink-muted);
+      max-width: 580px; margin: 0 auto 20px;
+    }
+    .hero-note {
+      font-size: 13px; color: var(--ink-muted);
+      max-width: 520px; margin: 0 auto;
+      line-height: 1.7; opacity: 0.8;
+    }
+
+    /* ── Pricing ── */
+    .pricing { padding: 80px 0; }
+    .pricing-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 40px;
+      align-items: start;
+    }
+    .offer-col { display: flex; flex-direction: column; gap: 0; }
+    .offer-header { margin-bottom: 28px; }
+    .offer-label {
+      display: block;
+      font-family: var(--body); font-size: 10px; font-weight: 600;
+      letter-spacing: .18em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 10px;
+    }
+    .offer-h2 {
+      font-family: var(--serif); font-size: clamp(28px, 3vw, 40px);
+      font-weight: 600; line-height: 1.1; color: var(--ink);
+      margin-bottom: 10px;
+    }
+    .offer-desc {
+      font-size: 15px; font-weight: 300; color: var(--ink-muted);
+      line-height: 1.7; margin-bottom: 8px;
+    }
+    .offer-timeline {
+      font-size: 12px; font-weight: 500; letter-spacing: .1em;
+      text-transform: uppercase; color: var(--ink-muted); opacity: 0.65;
+    }
+
+    .plan-cards { display: flex; flex-direction: column; gap: 12px; }
+    .plan-card {
+      background: var(--mist);
+      border-radius: var(--radius);
+      padding: 24px 28px;
+    }
+    .plan-card-top {
+      display: flex; align-items: center; justify-content: space-between;
+      margin-bottom: 16px; flex-wrap: wrap; gap: 8px;
+    }
+    .plan-name {
+      font-size: 13px; font-weight: 500; color: var(--ink-muted);
+      letter-spacing: .04em;
+    }
+    .plan-price {
+      font-family: var(--serif); font-size: 22px; font-weight: 600;
+      color: var(--ink); line-height: 1;
+    }
+    .plan-price-sub {
+      font-size: 13px; font-weight: 400; color: var(--ink-muted);
+    }
+    .plan-badge {
+      display: inline-flex; align-items: center;
+      font-family: var(--body); font-size: 9px; font-weight: 600;
+      letter-spacing: .15em; text-transform: uppercase;
+      color: var(--ink); background: var(--gold);
+      padding: 4px 10px; border-radius: 100px;
+    }
+    .plan-note {
+      font-size: 12px; color: var(--ink-muted);
+      margin-top: 10px; line-height: 1.6; font-style: italic;
+    }
+
+    /* ── FAQ ── */
+    .faq {
+      background: var(--ink); padding: 88px 0;
+      color: rgba(250, 250, 247, 0.6);
+    }
+    .faq-inner { max-width: 680px; margin: 0 auto; }
+    .faq-h2 {
+      font-family: var(--serif); font-size: clamp(28px, 4vw, 44px);
+      font-weight: 600; line-height: 1.2;
+      color: rgba(250, 250, 247, 0.92);
+      margin-bottom: 52px;
+    }
+    .faq-list { display: flex; flex-direction: column; gap: 36px; }
+    .faq-q {
+      font-family: var(--serif); font-size: 17px; font-style: italic;
+      color: rgba(250, 250, 247, 0.85); margin-bottom: 10px; line-height: 1.4;
+    }
+    .faq-a {
+      font-size: 15px; font-weight: 300; line-height: 1.8;
+      color: rgba(250, 250, 247, 0.5);
+    }
+
+    /* ── Footer line ── */
+    .page-footer {
+      padding: 72px 0;
+      text-align: center;
+      border-top: 1px solid var(--border);
+    }
+    .page-footer p {
+      font-family: var(--serif);
+      font-size: clamp(22px, 3vw, 36px);
+      font-weight: 600; line-height: 1.3;
+      color: var(--ink);
+    }
+    .page-footer a {
+      color: var(--terra); text-decoration: underline;
+      text-underline-offset: 4px; transition: opacity .15s;
+    }
+    .page-footer a:hover { opacity: .75; }
+
+    /* ── Responsive ── */
+    @media (max-width: 760px) {
+      :root { --pad: 24px; }
+      .pricing-grid { grid-template-columns: 1fr; gap: 56px; }
+      .plan-card-top { flex-direction: column; align-items: flex-start; }
+    }
+
+    /* ── Offerings (draft, 22 Nov 2026) ── */
+    .group { padding: 72px 0; border-bottom: 1px solid var(--border); }
+    .group-head { max-width: 640px; margin-bottom: 36px; }
+    .group-label {
+      display: block; font-size: 10px; font-weight: 600; letter-spacing: .18em;
+      text-transform: uppercase; color: var(--gold); margin-bottom: 10px;
+    }
+    .group-h2 { font-family: var(--serif); font-size: clamp(28px, 3vw, 40px); font-weight: 600; line-height: 1.1; }
+    .group-desc { margin-top: 10px; font-size: 15px; font-weight: 300; color: var(--ink-muted); line-height: 1.7; }
+    .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; }
+    .card { background: var(--mist); border-radius: var(--radius); padding: 28px; display: flex; flex-direction: column; gap: 12px; }
+    .card h3 { font-family: var(--serif); font-size: 24px; font-weight: 600; line-height: 1.15; }
+    .card p { font-size: 15px; font-weight: 300; color: var(--ink-muted); line-height: 1.7; }
+    .card .price { font-family: var(--serif); font-size: 22px; font-weight: 600; color: var(--ink); }
+    .card .price small { font-family: var(--body); font-size: 13px; font-weight: 400; color: var(--ink-muted); }
+    .card .btn { margin-top: auto; justify-content: center; }
+    .card .fine { font-size: 12px; font-style: italic; color: var(--ink-muted); }
+    .draft-flag { background: var(--gold); color: var(--ink); text-align: center; font-size: 12px; padding: 8px 16px; letter-spacing: .04em; }
+
+  </style>
+  <!-- Paddle checkout (Log Book, 21 Nov): sandbox until launch. -->
+  <script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
+</head>
+
+<body>
+  <div class="draft-flag">Draft · test checkout only · not linked from the site</div>
+
+  <header class="nav-wrap">
+    <nav class="nav">
+      <a href="index.html" class="nav-logo">Cléa Hernández</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="hero">
+      <div class="container">
+        <span class="hero-eyebrow">Offerings</span>
+        <h1 class="hero-h1">Find your narrative advantage.</h1>
+        <p class="hero-subhead">See which container is right for where you are now. If you're still not sure, just book time and let's chat!</p>
+      </div>
+    </section>
+
+    <!-- ── On your own: digital, through Paddle ── -->
+    <section class="group">
+      <div class="container">
+        <div class="group-head">
+          <span class="group-label">On your own</span>
+          <h2 class="group-h2">Story Loom and the Creative Playground</h2>
+          <p class="group-desc">Work at your own pace. Your receipt comes from Paddle, who handles the payment.</p>
+        </div>
+        <div class="cards">
+          <div class="card">
+            <h3>Story Loom</h3>
+            <p>12 months of Story Loom, self-guided, with Ursa.</p>
+            <span class="price" data-price="storyLoom">&nbsp;</span>
+            <button type="button" class="btn btn--terra" data-buy="storyLoom">Buy Story Loom</button>
+          </div>
+          <div class="card">
+            <h3>Story Loom, everything</h3>
+            <p>12 months of Story Loom with Ursa, Cosmic and the Creative Playground.</p>
+            <span class="price" data-price="everything">&nbsp;</span>
+            <button type="button" class="btn btn--terra" data-buy="everything">Buy everything</button>
+          </div>
+          <div class="card">
+            <h3>Depth Play</h3>
+            <p>Seven sand trays, from how others see you to who you are underneath. A Creative Playground tool, yours to keep.</p>
+            <span class="price" data-price="depthPlay">&nbsp;</span>
+            <button type="button" class="btn btn--terra" data-buy="depthPlay">Buy Depth Play</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Sessions: booked through Cal.com ── -->
+    <section class="group">
+      <div class="container">
+        <div class="group-head">
+          <span class="group-label">Sessions</span>
+          <h2 class="group-h2">One conversation at a time</h2>
+        </div>
+        <div class="cards">
+          <div class="card">
+            <h3>Golden Thread Session</h3>
+            <p>A single 60-minute conversation to find the narrative golden thread running through your lived experience and your work, and name the next step.</p>
+            <span class="price">$200</span>
+            <p class="fine">If you join Story Loom after your Golden Thread Session, the $200 is credited towards the program price.</p>
+            <a href="#" class="btn btn--terra" data-cal-link="clea-hernandez/golden-thread-session" data-cal-namespace="golden-thread-session" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'>Book a Golden Thread Session</a>
+          </div>
+          <div class="card">
+            <h3>Jungian Coaching</h3>
+            <p>A Jungian-informed coaching container for the work beneath the work: the patterns, fears, grief, identity shifts, and shadow material that often need attention before your next public chapter can land.</p>
+            <span class="price">$100 <small>a session</small> · $500 <small>for 6</small></span>
+            <a href="#" class="btn btn--terra" data-cal-link="clea-hernandez/fit-call" data-cal-namespace="fit-call" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'>Book a Clarity Call</a>
+          </div>
+          <div class="card">
+            <h3>Human Design Reading</h3>
+            <p>Understand how your energy is designed to operate, so you can make decisions, build rhythms, and communicate in a way that feels natural. Zoom (live) or video (delivered).</p>
+            <span class="price">$175</span>
+            <a href="#" class="btn btn--terra" data-cal-link="clea-hernandez/human-design-reading" data-cal-namespace="human-design-reading" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'>Book a Human Design Reading</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Programs: 1:1, Stripe after a Clarity Call ── -->
+    <section class="group">
+      <div class="container">
+        <div class="group-head">
+          <span class="group-label">Programs</span>
+          <h2 class="group-h2">Working together, 1:1</h2>
+          <p class="group-desc">We start with a Clarity Call to find the right container. If you've already spoken with me, <a href="begin.html" style="color: var(--terra); text-decoration: underline; text-underline-offset: 3px;">begin here</a>.</p>
+        </div>
+        <div class="cards">
+          <div class="card">
+            <h3>Story Loom</h3>
+            <p>Uncover your stories and architect them into a narrative ecosystem that's entirely yours. 6 weeks.</p>
+            <span class="price">$3,600</span>
+            <a href="#" class="btn btn--terra" data-cal-link="clea-hernandez/fit-call" data-cal-namespace="fit-call" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'>Book a Clarity Call</a>
+          </div>
+          <div class="card">
+            <h3>Story Loom Full Build</h3>
+            <p>Everything in Story Loom, plus visual brand identity and a self-hosted website built and launched. 8 weeks.</p>
+            <span class="price">$6,750</span>
+            <a href="#" class="btn btn--terra" data-cal-link="clea-hernandez/fit-call" data-cal-namespace="fit-call" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'>Book a Clarity Call</a>
+          </div>
+          <div class="card">
+            <h3>VIP Day</h3>
+            <p>One focused day to excavate and shape the stories you've been carrying, resulting in a story bank of up to 10 publish- or presentation-ready stories.</p>
+            <span class="price">$2,800</span>
+            <a href="mailto:clea@mythograph.co?subject=VIP%20Day" class="btn btn--terra">Inquire about the VIP Day</a>
+          </div>
+          <div class="card">
+            <h3>Wild Minds</h3>
+            <p>A custom 2-hour workshop for business partners or a small team, starting with Human Design to map how you're each built and how your designs interact.</p>
+            <span class="price">$800</span>
+            <a href="#" class="btn btn--terra" data-cal-link="clea-hernandez/fit-call" data-cal-namespace="fit-call" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'>Book a Clarity Call</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    // Paddle checkout for the digital offerings (Log Book, 18 and 21 Nov).
+    // Prices live in Paddle and show here by themselves. Switch env to
+    // "production" and swap the token and price ids at launch.
+    const PADDLE = {
+      env: "sandbox",
+      token: "test_54168e176c57a29b29522cc0618",
+      products: {
+        storyLoom:  { priceId: "pri_01m7zbzcjm7kpff6jsmd8yghdh", successUrl: "https://app.mythograph.co/" },
+        everything: { priceId: "pri_01m7zbzctymd323e2bxr2qvmnx", successUrl: "https://app.mythograph.co/" },
+        depthPlay:  { priceId: "pri_01m7zbzdcve7atx1vss0mjth0j", successUrl: "https://playground.mythograph.co/" },
+      },
+    };
+    (function () {
+      const ready = window.Paddle && PADDLE.token && !PADDLE.token.startsWith("PASTE_");
+      document.querySelectorAll("[data-buy]").forEach(function (btn) {
+        if (!ready) { btn.disabled = true; btn.textContent = "Coming soon"; btn.style.opacity = ".5"; }
+      });
+      if (!ready) return;
+      if (PADDLE.env === "sandbox") Paddle.Environment.set("sandbox");
+      Paddle.Initialize({ token: PADDLE.token });
+      document.querySelectorAll("[data-buy]").forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          const p = PADDLE.products[btn.dataset.buy];
+          Paddle.Checkout.open({ items: [{ priceId: p.priceId, quantity: 1 }], settings: { successUrl: p.successUrl } });
+        });
+      });
+      // Show each price as Paddle has it, in the buyer's own currency.
+      const keys = Object.keys(PADDLE.products);
+      Paddle.PricePreview({ items: keys.map(function (k) { return { priceId: PADDLE.products[k].priceId, quantity: 1 }; }) })
+        .then(function (res) {
+          res.data.details.lineItems.forEach(function (line, i) {
+            const el = document.querySelector('[data-price="' + keys[i] + '"]');
+            if (el) el.textContent = line.formattedTotals.total;
+          });
+        })
+        .catch(function () {});
+    })();
+  </script>
+
+  <script type="text/javascript">
+    (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+    Cal("init", "fit-call", {origin:"https://app.cal.com"});
+    Cal.ns["fit-call"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+    Cal("init", "golden-thread-session", {origin:"https://app.cal.com"});
+    Cal.ns["golden-thread-session"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+    Cal("init", "human-design-reading", {origin:"https://app.cal.com"});
+    Cal.ns["human-design-reading"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+  </script>
+</body>
+</html>
