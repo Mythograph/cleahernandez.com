@@ -211,6 +211,21 @@
     }
     .state-empty p { font-size: 1rem; color: var(--ink-muted); }
 
+    /* ─── COMING SOON BADGE ─── */
+    .item-coming-soon {
+      display: inline-block;
+      margin-top: 8px;
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-size: .85rem;
+      font-weight: 500;
+      color: var(--ink-muted);
+      background: rgba(0,0,0,.05);
+      border: 1px dashed rgba(0,0,0,.15);
+      letter-spacing: .04em;
+      align-self: flex-start;
+    }
+
     /* ─── PADDLE NOTE ─── */
     .paddle-note {
       max-width: var(--max);
@@ -389,8 +404,19 @@
           if (item.checkout.kind === 'link') {
             btnHtml = `<a class="item-btn item-btn--terra" href="${esc(item.checkout.url)}" target="_blank" rel="noopener">${label}</a>`;
           } else if (item.checkout.kind === 'paddle') {
+            // ── PADDLE SETUP ────────────────────────────────────────────────
+            // 1. Set PADDLE_SELLER_ID above (from paddle.com → Seller ID)
+            // 2. The API returns checkout.priceId once the store item has a
+            //    productKey wired to a Paddle price env var in the app.
+            //    In Story Loom App: add the price ID to the PRODUCTS constant
+            //    in src/lib/store/items.ts and set the env var in Vercel.
+            // 3. Update the store item (via /studio/store) to use that productKey.
+            // ────────────────────────────────────────────────────────────────
             btnHtml = `<button class="item-btn item-btn--indigo" data-price-id="${esc(item.checkout.priceId)}">${label}</button>`;
           }
+        } else {
+          // No checkout yet — show a Coming Soon badge
+          btnHtml = `<span class="item-coming-soon">Coming soon</span>`;
         }
 
         card.innerHTML = `<div class="item-top">${topHtml}</div>${bodyHtml}${btnHtml}`;
