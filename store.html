@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Store · Cléa Hernández</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,300;1,9..144,400;1,9..144,600;1,9..144,700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&display=swap" rel="stylesheet" />
+  <link rel="canonical" href="https://cleahernandez.com/store.html" />
+  <meta name="description" content="Digital products from Cléa Hernández — readings, storytelling tools, and courses." />
+
+  <style>
+    /* ─── TOKENS ─── */
+    :root {
+      --ink:         #1A1410;
+      --ink-muted:   #7A6D5E;
+      --terra:       #C05A3C;
+      --terra-pale:  rgba(192,90,60,0.07);
+      --indigo:      #3A4F99;
+      --indigo-pale: rgba(58,79,153,0.07);
+      --mist:        #F2ECE4;
+      --white:       #FAFAF7;
+      --display:     'Fraunces', Georgia, serif;
+      --body:        'DM Sans', system-ui, -apple-system, sans-serif;
+      --max:         860px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--body);
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--ink);
+      background: var(--white);
+    }
+    a { color: inherit; }
+    img { display: block; max-width: 100%; }
+
+    /* ─── NAV ─── */
+    .nav-wrap { position: sticky; top: 0; z-index: 100; background: var(--white); border-bottom: 1px solid rgba(0,0,0,.07); }
+    .nav { display: flex; align-items: center; justify-content: space-between; height: 68px; max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+    .nav-logo { font-family: var(--display); font-weight: 700; font-size: 1.1rem; letter-spacing: -.01em; text-decoration: none; color: var(--ink); }
+    .nav-links { display: flex; align-items: center; gap: 24px; }
+    .nav-links a { font-size: .9rem; font-weight: 500; text-decoration: none; color: var(--ink-muted); opacity: .8; transition: opacity .15s; }
+    .nav-links a:hover, .nav-links a.active { opacity: 1; color: var(--ink); }
+    .nav-links .nav-cta {
+      background: var(--terra); color: #fff !important; opacity: 1 !important;
+      padding: 8px 18px; border-radius: 6px; font-size: .875rem; font-weight: 600;
+      transition: background .15s;
+    }
+    .nav-links .nav-cta:hover { background: #a84d33; }
+    .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; border: none; background: none; }
+    .nav-hamburger span { display: block; width: 22px; height: 2px; background: var(--ink); border-radius: 2px; transition: all .2s; }
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .mobile-nav { display: none; flex-direction: column; gap: 0; background: var(--white); border-bottom: 1px solid rgba(0,0,0,.07); }
+    .mobile-nav.open { display: flex; }
+    .mobile-nav a { display: block; padding: 14px 24px; font-size: 1rem; font-weight: 500; text-decoration: none; color: var(--ink); border-bottom: 1px solid rgba(0,0,0,.05); }
+    .mobile-cta { background: var(--terra); color: #fff !important; text-align: center; border-radius: 0; }
+    @media (max-width: 680px) {
+      .nav-links a:not(.nav-cta) { display: none; }
+      .nav-links .nav-cta { display: none; }
+      .nav-hamburger { display: flex; }
+    }
+
+    /* ─── HERO ─── */
+    .hero {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 72px 24px 56px;
+    }
+    .eyebrow {
+      display: inline-block;
+      font-size: .8rem;
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--terra);
+      margin-bottom: 16px;
+    }
+    .hero-h1 {
+      font-family: var(--display);
+      font-size: clamp(2.2rem, 5vw, 3.2rem);
+      font-weight: 600;
+      line-height: 1.1;
+      letter-spacing: -.02em;
+      color: var(--ink);
+      margin-bottom: 16px;
+    }
+    .hero-lead {
+      font-size: 1.1rem;
+      color: var(--ink-muted);
+      max-width: 560px;
+      line-height: 1.65;
+    }
+
+    /* ─── GRID ─── */
+    .items-wrap {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 24px 96px;
+    }
+    .items-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 28px;
+    }
+    @media (max-width: 520px) {
+      .items-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ─── ITEM CARD ─── */
+    .item-card {
+      background: var(--mist);
+      border-radius: 16px;
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .item-top {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .item-title {
+      font-family: var(--display);
+      font-size: 1.3rem;
+      font-weight: 600;
+      line-height: 1.25;
+      color: var(--ink);
+    }
+    .item-price {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--ink);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .item-blurb {
+      font-size: .95rem;
+      color: var(--ink-muted);
+      line-height: 1.6;
+    }
+    .item-body {
+      font-size: .9rem;
+      color: var(--ink);
+      line-height: 1.7;
+      white-space: pre-line;
+    }
+    .item-btn {
+      display: inline-block;
+      margin-top: 8px;
+      padding: 11px 22px;
+      border-radius: 8px;
+      font-size: .9rem;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background .15s, opacity .15s;
+      border: none;
+      text-align: center;
+      align-self: flex-start;
+    }
+    .item-btn--terra  { background: var(--terra); color: #fff; }
+    .item-btn--terra:hover { background: #a84d33; }
+    .item-btn--indigo { background: var(--indigo); color: #fff; }
+    .item-btn--indigo:hover { background: #2f4080; }
+
+    /* ─── STATES ─── */
+    .state-wrap {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 56px 24px 96px;
+    }
+    .state-loading {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .skeleton {
+      background: linear-gradient(90deg, var(--mist) 25%, #e8e0d4 50%, var(--mist) 75%);
+      background-size: 200% 100%;
+      animation: shimmer 1.5s infinite;
+      border-radius: 16px;
+      height: 220px;
+    }
+    @keyframes shimmer {
+      0%   { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
+    }
+    .skeleton-row { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 28px; }
+    @media (max-width: 520px) { .skeleton-row { grid-template-columns: 1fr; } }
+
+    .state-error {
+      background: var(--terra-pale);
+      border: 1px solid rgba(192,90,60,.2);
+      border-radius: 12px;
+      padding: 28px 32px;
+      max-width: 560px;
+    }
+    .state-error p { font-size: .95rem; color: var(--ink); }
+    .state-error a { color: var(--terra); text-decoration: underline; }
+
+    .state-empty {
+      padding: 20px 0;
+    }
+    .state-empty p { font-size: 1rem; color: var(--ink-muted); }
+
+    /* ─── PADDLE NOTE ─── */
+    .paddle-note {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 24px 72px;
+      font-size: .85rem;
+      color: var(--ink-muted);
+      border-top: 1px solid rgba(0,0,0,.07);
+      padding-top: 28px;
+    }
+    .paddle-note a { color: var(--ink-muted); }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--mist);
+      border-top: 1px solid rgba(0,0,0,.07);
+      padding: 48px 24px;
+    }
+    .footer-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+    .footer-name { font-family: var(--display); font-weight: 600; font-size: 1rem; }
+    .footer-links { display: flex; flex-wrap: wrap; gap: 16px; font-size: .85rem; color: var(--ink-muted); }
+    .footer-links a { text-decoration: none; }
+    .footer-links a:hover { color: var(--ink); }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <div class="nav-wrap">
+    <nav class="nav" aria-label="Main">
+      <a href="index.html" class="nav-logo">Cléa Hernández</a>
+      <div class="nav-links">
+        <a href="jungian-coaching.html">Jungian Coaching</a>
+        <a href="resources.html">Resources</a>
+        <a href="store.html" class="active">Store</a>
+        <a href="about.html">About</a>
+        <a href="work-with-me.html" class="nav-cta">Work With Me</a>
+      </div>
+      <button class="nav-hamburger" aria-label="Menu" aria-expanded="false" id="hamburger">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+    <div class="mobile-nav" id="mobile-nav" role="navigation">
+      <a href="jungian-coaching.html">Jungian Coaching</a>
+      <a href="resources.html">Resources</a>
+      <a href="store.html">Store</a>
+      <a href="about.html">About</a>
+      <a href="work-with-me.html" class="mobile-cta">Work With Me</a>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <span class="eyebrow" id="page-eyebrow">Digital products</span>
+    <h1 class="hero-h1" id="page-heading">What's available</h1>
+    <p class="hero-lead" id="page-intro">Readings, tools and courses for people doing inner and narrative work.</p>
+  </section>
+
+  <!-- ITEMS — rendered by JS -->
+  <div id="store-root" class="items-wrap" style="display:none">
+    <div class="items-grid" id="items-grid"></div>
+  </div>
+
+  <!-- LOADING SKELETON -->
+  <div id="state-loading" class="state-wrap">
+    <div class="skeleton-row">
+      <div class="skeleton"></div>
+      <div class="skeleton"></div>
+    </div>
+  </div>
+
+  <!-- ERROR STATE (hidden until needed) -->
+  <div id="state-error" class="state-wrap" style="display:none">
+    <div class="state-error">
+      <p>The shop couldn't load right now. Try refreshing, or write to
+        <a href="mailto:clea@mythograph.co">clea@mythograph.co</a> and I'll point you to what you're looking for.</p>
+    </div>
+  </div>
+
+  <!-- PADDLE NOTE -->
+  <div class="paddle-note" id="paddle-note" style="display:none">
+    Payments are handled by <a href="https://paddle.com" target="_blank" rel="noopener">Paddle.com</a>,
+    who is the Merchant of Record for all orders.
+    Full refund within 14 days of buying, for any reason — reply to your receipt or write to
+    <a href="mailto:clea@mythograph.co">clea@mythograph.co</a>.
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-name">Cléa Hernández</div>
+      <div class="footer-links">
+        <a href="jungian-coaching.html">Jungian Coaching</a>
+        <a href="resources.html">Resources</a>
+        <a href="store.html">Store</a>
+        <a href="about.html">About</a>
+        <a href="work-with-me.html">Work With Me</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- PADDLE JS (for Paddle-based checkouts) -->
+  <script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
+
+  <script>
+    /* ── Hamburger ── */
+    const hamburger = document.getElementById('hamburger');
+    const mobileNav = document.getElementById('mobile-nav');
+    hamburger.addEventListener('click', () => {
+      const open = mobileNav.classList.toggle('open');
+      hamburger.classList.toggle('open', open);
+      hamburger.setAttribute('aria-expanded', String(open));
+    });
+
+    /* ── Paddle environment ── */
+    // Paddle seller id — set this once you have it, or leave null to skip inline checkout.
+    // When null, Paddle buttons open the checkout URL directly via Paddle.js overlay.
+    const PADDLE_SELLER_ID = null; // e.g. 12345
+
+    /* ── Store fetch & render ── */
+    const API = 'https://app.mythograph.co/api/store';
+
+    async function loadStore() {
+      let data;
+      try {
+        const res = await fetch(API, { cache: 'no-store' });
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        data = await res.json();
+      } catch {
+        document.getElementById('state-loading').style.display = 'none';
+        document.getElementById('state-error').style.display = '';
+        return;
+      }
+
+      /* Update hero copy if the store has its own words */
+      if (data.heading) document.getElementById('page-heading').textContent = data.heading;
+      if (data.intro)   document.getElementById('page-intro').textContent   = data.intro;
+
+      /* Hide loading skeleton */
+      document.getElementById('state-loading').style.display = 'none';
+
+      if (!data.items || data.items.length === 0) {
+        /* Nothing published yet — show a gentle placeholder */
+        document.getElementById('store-root').style.display = '';
+        document.getElementById('items-grid').innerHTML =
+          '<p class="state-empty" style="color:var(--ink-muted);font-size:1rem">' +
+          'Nothing is listed here yet — check back soon.</p>';
+        return;
+      }
+
+      /* Render items */
+      const grid = document.getElementById('items-grid');
+      grid.innerHTML = '';
+      data.items.forEach(item => {
+        const card = document.createElement('div');
+        card.className = 'item-card';
+
+        let topHtml = `<span class="item-title">${esc(item.title)}</span>`;
+        if (item.price) topHtml += `<span class="item-price">${esc(item.price)}</span>`;
+
+        let bodyHtml = '';
+        if (item.blurb) bodyHtml += `<p class="item-blurb">${esc(item.blurb)}</p>`;
+        if (item.body)  bodyHtml += `<p class="item-body">${esc(item.body)}</p>`;
+
+        let btnHtml = '';
+        if (item.checkout) {
+          const label = esc(item.button || 'Buy');
+          if (item.checkout.kind === 'link') {
+            btnHtml = `<a class="item-btn item-btn--terra" href="${esc(item.checkout.url)}" target="_blank" rel="noopener">${label}</a>`;
+          } else if (item.checkout.kind === 'paddle') {
+            btnHtml = `<button class="item-btn item-btn--indigo" data-price-id="${esc(item.checkout.priceId)}">${label}</button>`;
+          }
+        }
+
+        card.innerHTML = `<div class="item-top">${topHtml}</div>${bodyHtml}${btnHtml}`;
+        grid.appendChild(card);
+      });
+
+      /* Wire Paddle inline checkout buttons */
+      const hasPaddle = data.items.some(i => i.checkout && i.checkout.kind === 'paddle');
+      if (hasPaddle) {
+        if (PADDLE_SELLER_ID) {
+          Paddle.Setup({ seller: PADDLE_SELLER_ID });
+        }
+        grid.querySelectorAll('[data-price-id]').forEach(btn => {
+          btn.addEventListener('click', () => {
+            if (PADDLE_SELLER_ID) {
+              Paddle.Checkout.open({ items: [{ priceId: btn.dataset.priceId, quantity: 1 }] });
+            } else {
+              window.open('https://buy.paddle.com/product/' + encodeURIComponent(btn.dataset.priceId), '_blank');
+            }
+          });
+        });
+        document.getElementById('paddle-note').style.display = '';
+      }
+
+      document.getElementById('store-root').style.display = '';
+    }
+
+    function esc(str) {
+      const d = document.createElement('div');
+      d.textContent = str ?? '';
+      return d.innerHTML;
+    }
+
+    loadStore();
+  </script>
+</body>
+</html>
